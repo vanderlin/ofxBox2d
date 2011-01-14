@@ -22,6 +22,8 @@ public:
 	ofxBox2dPolygon();
 	~ofxBox2dPolygon();
 	
+	void setup(b2World * b2dworld);
+
 	//----------------------------------------
 	void addVertex(const ofVec2f & p);
 	void addVertex(float x, float y);

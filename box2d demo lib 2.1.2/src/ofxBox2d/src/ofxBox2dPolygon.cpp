@@ -19,6 +19,16 @@ ofxBox2dPolygon::~ofxBox2dPolygon() {
 }
 
 //----------------------------------------
+void ofxBox2dPolygon::setup(b2World * b2dworld) {
+	
+	// create the body
+	b2BodyDef		bd;
+	bd.type		= b2_dynamicBody;
+	body = b2dworld->CreateBody(&bd);
+	
+}
+
+//----------------------------------------
 void ofxBox2dPolygon::calculateArea() {
 	int i, j, n = vertexes.size();
 	float polyArea = 0;
@@ -92,14 +102,8 @@ void ofxBox2dPolygon::create() {
 	}
 	
 	
-	
-	// create the body
 	b2PolygonShape	shape;
 	b2FixtureDef	fixture;
-	b2BodyDef		bd;
-	bd.type = b2_dynamicBody;
-
-	body = world->CreateBody(&bd);
 	
 	// add the verts and create the shape
 	int totalVerts = (int)vertexes.size();

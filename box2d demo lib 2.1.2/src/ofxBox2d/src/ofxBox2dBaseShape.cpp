@@ -15,7 +15,6 @@ ofxBox2dBaseShape::ofxBox2dBaseShape() {
 	setMassFromShape = true;
 	dead  = false;
 	alive = false;
-	bIsFixed = false;
 	
 	body  = NULL;
 	
