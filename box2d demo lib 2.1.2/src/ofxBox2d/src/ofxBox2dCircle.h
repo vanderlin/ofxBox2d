@@ -5,35 +5,44 @@
 #include "ofxBox2dBaseShape.h"
 
 class ofxBox2dCircle : public ofxBox2dBaseShape {
+private:
+	float _radius;
 	
 public:
 	
-	b2CircleShape shape;
+	
 	
 	//------------------------------------------------
 	ofxBox2dCircle() {
 	}
 	
 	//------------------------------------------------
-	void setup(b2World * b2dworld, float x, float y, float radius, bool isFixed=false) {
+	void setup(b2World * b2dworld, float x, float y, float radius) {
 		
 		
 		if(b2dworld == NULL) {
-			ofLog(OF_LOG_NOTICE, "- must have a valid world -");
+			ofLog(OF_LOG_NOTICE, "ofxBox2dCircle :: setup : - must have a valid world -");
 			return;
 		}
+		b2CircleShape shape;
 		
 		shape.m_p.SetZero();
 		shape.m_radius = radius / OFX_BOX2D_SCALE;
 		
+		_radius			 = radius;
+		
 		fixture.shape	 = &shape;
 		fixture.density  = density;
 		fixture.friction = friction;
+		fixture.restitution	= bounce;
 		
-		bodyDef.type = b2_dynamicBody;
+		if(density == 0.f)
+			bodyDef.type	= b2_staticBody;
+		else
+			bodyDef.type	= b2_dynamicBody;
+		
 		bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
-	
-		world = b2dworld;
+		
 		body  = b2dworld->CreateBody(&bodyDef);
 		body->CreateFixture(&fixture);
 		
@@ -94,11 +103,13 @@ public:
 		*/
 		
 		// anything that you need called
-		init();
+		//init();
 	}
 	
 	//------------------------------------------------
 	float getRadius() {
+		return _radius;
+		/*
 		b2Fixture * circle = body->GetFixtureList();
 		if(circle) {
 			b2CircleShape * circleShape = (b2CircleShape*)circle->GetShape();
@@ -106,6 +117,7 @@ public:
 				return circleShape->m_radius * OFX_BOX2D_SCALE;	
 			}
 		}
+		 */
 	}
 	
 	//------------------------------------------------ 
@@ -156,34 +168,31 @@ public:
 			return;
 		}
 		
-
-		float radius = getRadius();
-		
 		glPushMatrix();
 		glTranslatef(getPosition().x, getPosition().y, 0);
 		glRotatef(getRotation(), 0, 0, 1);
 		
 		ofSetHexColor(0xffffff);
 		
-		ofLine(0, 0, radius, 0);
+		ofLine(0, 0, _radius, 0);
 		
-		if(bIsFixed) {
+		if(isFixed()) {
 			ofSetColor(255, 0, 255);
 			ofFill();
-			ofCircle(0, 0, radius);	
+			ofCircle(0, 0, _radius);	
 		}
 		else {
 			ofSetColor(0, 255, 255);
 			ofNoFill();
-			ofCircle(0, 0, radius);
+			ofCircle(0, 0, _radius);
 			
 			ofSetColor(255, 0, 255);
 			ofFill();
-			ofCircle(0, 0, radius/10.0);
+			ofCircle(0, 0, _radius/10.0);
 			
 			ofSetColor(255, 255, 255);
 			ofNoFill();
-			ofCircle(0, 0, radius/5.0);
+			ofCircle(0, 0, _radius/5.0);
 		}
 		glPopMatrix();
 		

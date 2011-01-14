@@ -13,7 +13,6 @@ public:
 	vector <ofPoint>	points;
 	bool				bShapeCreated;
 	bool				bIsLoop;
-			b2PolygonShape shape;
 	
 	//------------------------------------------------
 	
@@ -23,28 +22,69 @@ public:
 	}
 	
 	//------------------------------------------------
+	void setup(b2World * b2dworld, const ofPoint &p1, const ofPoint &p2) {
+		
+		if(b2dworld == NULL) {
+			ofLog(OF_LOG_NOTICE, "ofxBox2dLine :: setup : - must have a valid world -");
+			return;
+		}
+		/*
+		// the line shape
+		b2PolygonShape		shape;
+		
+		//shape.m_p.SetZero();
+		shape.m_radius = 0.0f;
+		shape.SetAsEdge(b2Vec2(p1.x/OFX_BOX2D_SCALE, p1.y/OFX_BOX2D_SCALE), 
+						b2Vec2(p2.x/OFX_BOX2D_SCALE, p2.y/OFX_BOX2D_SCALE));
+		
+		
+		//bodyDef.position.Set(0.0f, 2.0f);   // the body's origin position.
+		
+		// set the properties 
+		fixture.shape	 = &shape;
+		fixture.density  = density;
+		fixture.restitution = bounce;
+		fixture.friction = friction;
+		
+		// set the type of body
+		if(density == 0.f) {
+			bodyDef.type = b2_staticBody;
+		} else {
+			bodyDef.type = b2_dynamicBody;
+		}
+		
+		// set the world and create the body
+		body = b2dworld->CreateBody(&bodyDef);
+		body->CreateFixture(&shape, density);
+		 */
+		
+	}
+	
+	//------------------------------------------------
 	void clear() {
+		/*
 		if(bShapeCreated) {
 			for(int i=0; i<points.size(); i++) {
 				points.erase(points.begin() + i);
 			}
 			points.clear();
-			destroyShape();
+			destroy();
 			dead = false;
 		}
+		 */
 	}
 	
 	//------------------------------------------------
-	void createShape() {
-		
-		if(world == NULL) {
-			ofLog(OF_LOG_NOTICE, "- must have a valid world -");
+	void create() {
+		/*
+		if(!getWorld()) {
+			ofLog(OF_LOG_NOTICE, "ofxBox2dLine :: create : - must have a valid world -");
 			return;
 		}
 		
 		int numPoints = points.size();
 		if(numPoints <= 0) return;
-		
+		*/
 		/*
 		b2Vec2 pts[numPoints];
 		for(int i=0; i<numPoints; i++) {
@@ -56,8 +96,10 @@ public:
 		body = world->CreateBody(&bodyDef);
 		*/
 		//bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);	
-		body = world->CreateBody(&bodyDef);
-
+		
+		
+		//body = world->CreateBody(&bodyDef);
+		/*
 		ofPoint a,b;
 		a = points[0];
 		for(int i = 1; i < points.size(); ++i) {
@@ -73,6 +115,7 @@ public:
 			//b2PolygonShape shape;
 			//shape.SetAsEdge(b2Vec2(x1/OFX_BOX2D_SCALE, y1/OFX_BOX2D_SCALE), b2Vec2(x2/OFX_BOX2D_SCALE, y2/OFX_BOX2D_SCALE));
 		}
+		 */
 //		shape.setAs
 		 //
 		
@@ -101,45 +144,13 @@ public:
 		
 		//body->SetMassFromShapes();
 		
-		bShapeCreated = true;
+		//bShapeCreated = true;
 		
 		// anything that you need called
-		init();
+		//init();
 	}
 	
-	//------------------------------------------------
-	void setup(b2World * b2dworld, const ofPoint &p1, const ofPoint &p2) {
-		
-		if(b2dworld == NULL) {
-			ofLog(OF_LOG_NOTICE, "- must have a valid world -");
-			return;
-		}
-		
-		// the line shape
-
-		//shape.m_p.SetZero();
-		shape.m_radius = 0.0f;
-		shape.SetAsEdge(b2Vec2(p1.x/OFX_BOX2D_SCALE, p1.y/OFX_BOX2D_SCALE), 
-						b2Vec2(p2.x/OFX_BOX2D_SCALE, p2.y/OFX_BOX2D_SCALE));
-		
-		// set the type of body
-		bodyDef.type = b2_dynamicBody;
-		//bodyDef.position.Set(0.0f, 2.0f);   // the body's origin position.
-		
-		// set the properties 
-		fixture.shape	 = &shape;
-		fixture.density  = density;
-		fixture.restitution = bounce;
-		fixture.friction = friction;
-		
-		// set the world and create the body
-		world = b2dworld;
-		body = world->CreateBody(&bodyDef);
-		body->CreateFixture(&shape, 0.0);
 	
-		
-		
-	}
 	
 	
 	/*
@@ -169,7 +180,7 @@ public:
 	
 	//------------------------------------------------
 	void draw() {
-		
+		/*
 		if(body == NULL) return;
 		
 		const b2Transform& xf = body->GetTransform();
@@ -202,7 +213,7 @@ public:
 				ofEndShape(true);
 			}
 		}
-		
+		*/
 		// TODO: can all this code be removed??
 		/*
 		 if(dead) return;
@@ -244,7 +255,7 @@ public:
 		
 		
 		
-		
+		/*
 		ofBeginShape();
 		ofSetColor(255, 0, 255);
 		ofNoFill();
@@ -252,6 +263,7 @@ public:
 			ofVertex(points[i].x, points[i].y);
 		}
 		ofEndShape();
+		 */
 	}
 	
 };
