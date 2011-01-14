@@ -5,9 +5,18 @@
 
 
 
-class ofxBox2dPolygon {
+class ofxBox2dPolygon : public ofxBox2dBaseShape {
 
+private:
+	
+	float   area;
+	ofVec2f center;
+	void calculateCentroid();
+	void calculateArea();
+	
 public:
+	
+	vector <ofVec2f> vertexes;
 	
 	//----------------------------------------
 	ofxBox2dPolygon();
@@ -16,5 +25,15 @@ public:
 	//----------------------------------------
 	void addVertex(const ofVec2f & p);
 	void addVertex(float x, float y);
+	void addVertexes(const vector <ofVec2f> & polyPoints);
+	
+	//----------------------------------------
+	ofVec2f getCenter();
+	float   getArea()   { return area;   };
+	
+	//----------------------------------------
+	void updateShape();
+	void create();
+	void draw();
 	
 };

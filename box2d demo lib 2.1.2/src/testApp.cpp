@@ -2,8 +2,6 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
-		
-
 	
 	ofSetVerticalSync(true);
 	ofBackground(20, 20, 20);
@@ -82,10 +80,11 @@ void testApp::draw() {
 	for(int i=0; i<circles.size(); i++) {
 		circles[i].draw();
 	}
-/*	for(int i=0; i<polygons.size(); i++) {
+
+	for(int i=0; i<polygons.size(); i++) {
 		polygons[i].draw();
 	}
- */
+ 
 	for(int i=0; i<boxes.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xBF2545);
@@ -107,6 +106,15 @@ void testApp::draw() {
 	
 	px = mouseX;
 	py = mouseY;
+	
+	
+	ofNoFill();
+	ofBeginShape();
+	for(int i=0; i<polyShape.size(); i++) {
+		ofVertex(polyShape[i].x, polyShape[i].y);
+	}
+	ofEndShape();
+	
 	
 	
 	string info = "";
@@ -181,17 +189,25 @@ void testApp::mouseMoved(int x, int y ) {
 
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button) {
-	
+	polyShape.push_back(ofVec2f(x, y));
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button) {
-	
+	polyShape.push_back(ofVec2f(x, y));	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
+void testApp::mouseReleased(int x, int y, int button) {
 	
+	ofxBox2dPolygon poly;
+	poly.setWorld(box2d.world);
+	poly.addVertexes(polyShape);
+	poly.create();
+	
+	polygons.push_back(poly);
+	
+	polyShape.clear();
 }
 
 //--------------------------------------------------------------

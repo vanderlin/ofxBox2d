@@ -50,8 +50,9 @@ public:
 	bool							bMouseForce;
 	
 	ofxBox2d						box2d;			  //	the box2d world
+	vector		<ofVec2f>			polyShape;
 	vector		<ofxBox2dCircle>	circles;		  //	default box2d circles
-//	vector		<ofxBox2dPolygon>	polygons;		  //	defalut box2d polgons
+	vector		<ofxBox2dPolygon>	polygons;		  //	defalut box2d polgons
 	vector		<ofxBox2dRect>		boxes;			  //	defalut box2d rects
 	vector      <ofxBox2dLine>		lines;			  //	default box2d lines (hacked)
 	vector		<CustomParticle>	customParticles;  //	this is a custom particle the extends a cirlce

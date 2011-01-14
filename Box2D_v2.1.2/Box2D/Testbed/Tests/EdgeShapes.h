@@ -53,6 +53,7 @@ public:
 
 	EdgeShapes()
 	{
+		/*
 		// Ground body
 		{
 			b2BodyDef bd;
@@ -73,7 +74,8 @@ public:
 				y1 = y2;
 			}
 		}
-
+		*/
+		
 		{
 			b2Vec2 vertices[3];
 			vertices[0].Set(-0.5f, 0.0f);
