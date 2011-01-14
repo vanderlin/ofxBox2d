@@ -43,6 +43,7 @@
 		5F17839512E0C50A00807D02 /* b2RevoluteJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F17836012E0C50A00807D02 /* b2RevoluteJoint.cpp */; };
 		5F17839612E0C50A00807D02 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F17836212E0C50A00807D02 /* b2WeldJoint.cpp */; };
 		5F17839712E0C50A00807D02 /* ofxBox2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F17836412E0C50A00807D02 /* ofxBox2d.cpp */; };
+		5F17845312E0E13400807D02 /* ofxBox2dPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F17845212E0E13400807D02 /* ofxBox2dPolygon.cpp */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
 		E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */; };
@@ -177,6 +178,7 @@
 		5F17836D12E0C50A00807D02 /* ofxBox2dRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dRender.h; sourceTree = "<group>"; };
 		5F17836E12E0C50A00807D02 /* ofxBox2dSoftBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dSoftBody.h; sourceTree = "<group>"; };
 		5F17836F12E0C50A00807D02 /* ofxBox2dUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dUtils.h; sourceTree = "<group>"; };
+		5F17845212E0E13400807D02 /* ofxBox2dPolygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBox2dPolygon.cpp; sourceTree = "<group>"; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
@@ -243,6 +245,7 @@
 				5F17836812E0C50A00807D02 /* ofxBox2dContactListener.h */,
 				5F17836912E0C50A00807D02 /* ofxBox2dJoint.h */,
 				5F17836A12E0C50A00807D02 /* ofxBox2dLine.h */,
+				5F17845212E0E13400807D02 /* ofxBox2dPolygon.cpp */,
 				5F17836B12E0C50A00807D02 /* ofxBox2dPolygon.h */,
 				5F17836C12E0C50A00807D02 /* ofxBox2dRect.h */,
 				5F17836D12E0C50A00807D02 /* ofxBox2dRender.h */,
@@ -566,6 +569,7 @@
 				5F17839512E0C50A00807D02 /* b2RevoluteJoint.cpp in Sources */,
 				5F17839612E0C50A00807D02 /* b2WeldJoint.cpp in Sources */,
 				5F17839712E0C50A00807D02 /* ofxBox2d.cpp in Sources */,
+				5F17845312E0E13400807D02 /* ofxBox2dPolygon.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
