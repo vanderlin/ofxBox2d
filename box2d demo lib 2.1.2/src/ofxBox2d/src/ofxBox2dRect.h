@@ -5,7 +5,8 @@
 #include "ofxBox2dBaseShape.h"
 
 class ofxBox2dRect : public ofxBox2dBaseShape {
-	
+private:
+	float _width, _height;
 public:
 	
 
@@ -15,57 +16,55 @@ public:
 	}
 	
 	//------------------------------------------------
-	void setup(b2World * b2dworld, float x, float y, float w, float h, bool isFixed=false) {
+	void setup(b2World * b2dworld, ofRectangle rec) {
+		setup(b2dworld, rec.x, rec.y, rec.width, rec.height);
+	}
+	
+	//------------------------------------------------
+	void setup(b2World * b2dworld, float x, float y, float w, float h) {
 		
 		if(b2dworld == NULL) {
 			ofLog(OF_LOG_NOTICE, "- must have a valid world -");
 			return;
 		}
 		
-		world				= b2dworld;
-		bIsFixed			= isFixed;
+		if (OF_RECTMODE_CORNER) {
+			w/=2; h/=2;
+			x += w; y += h;
+		}
 		
-		//Rect Shape
-		w/=2; h/=2;
+		_width	= w;
+		_height	= h;
+		
 		b2PolygonShape shape;
 		shape.SetAsBox(w/OFX_BOX2D_SCALE, h/OFX_BOX2D_SCALE);
 				
-		fixture.shape    = &shape;
-		fixture.density  = 1;
-		fixture.friction = friction;
-		//fixture.restitution = bounce;
+		fixture.shape		= &shape;
+		fixture.density		= density;
+		fixture.friction	= friction;
+		fixture.restitution = bounce;
 		
 		b2BodyDef bodyDef;
-		bodyDef.type = b2_dynamicBody;
-		x += w; y += h;
+		if(density == 0.f)
+			bodyDef.type	= b2_staticBody;
+		else
+			bodyDef.type	= b2_dynamicBody;
 		bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);	
 		
 		
-		body = world->CreateBody(&bodyDef);
+		body = b2dworld->CreateBody(&bodyDef);
 		body->CreateFixture(&fixture);
 		
-		
-		// anything that you need called
-		init();
 	}
 	
-	
-	/*
-	 //------------------------------------------------
-	 float getRadius() {
-	 b2Shape* shape		= body->GetShapeList();
-	 b2CircleShape *data = (b2CircleShape*)shape;
-	 return data->GetRadius() * OFX_BOX2D_SCALE;
-	 }
-	 */        
-	//------------------------------------------------
-	float getRotation() {
-		
-		if(body == NULL) {
-			return 0;	
-		}
-		return ofRadToDeg(body->GetAngle());
+	float getWidth() {
+		return _width;
 	}
+	
+	float getHeight() {
+		return _height;
+	}
+	
 	
 	
 	//------------------------------------------------
