@@ -1,5 +1,6 @@
 *.mode1v3
 *.pbxuser
+*.pbxproj
 build/
 obj/
 *.o
