@@ -3,6 +3,8 @@
 //--------------------------------------------------------------
 void testApp::setup() {
 		
+	// hi nick!!!
+	
 	ofSetVerticalSync(true);
 	ofBackground(20, 20, 20);
 	ofSetLogLevel(OF_LOG_NOTICE);
