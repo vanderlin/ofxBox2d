@@ -62,7 +62,7 @@ public:
 	float getRotation() {
 		
 		if(body == NULL) {
-			return;	
+			return 0;	
 		}
 		return ofRadToDeg(body->GetAngle());
 	}
