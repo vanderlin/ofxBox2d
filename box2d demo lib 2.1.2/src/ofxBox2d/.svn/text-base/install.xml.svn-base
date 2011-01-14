@@ -1,0 +1,152 @@
+<install>
+	<author>Todd Vanderlin</author>
+	<version>0.1</version>
+	
+	
+	<add>
+		<!-- 	=====================================================================	-->
+		<!--	========================== add per project using this addon =========	-->
+		<!-- 	=====================================================================	-->
+	
+	    <src>
+	
+		    <folder name="addons/ofxBox2d/src">
+			    <file>../../../addons/ofxBox2d/src/ofxBox2d.cpp</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2d.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dBaseShape.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dCircle.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dJoint.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dLine.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dPolygon.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dRect.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dRender.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dSoftBody.h</file>
+			    <file>../../../addons/ofxBox2d/src/ofxBox2dUtils.h</file>
+		    </folder>
+		
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Include">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Include/Box2D.h</file>
+		    </folder>
+		    
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Source/Collision">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2BroadPhase.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2BroadPhase.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2CollideCircle.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2CollidePoly.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2Collision.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2Collision.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2Distance.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2PairManager.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2PairManager.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2TimeOfImpact.cpp</file>
+		    </folder>
+		    
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2CircleShape.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2CircleShape.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2EdgeShape.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2EdgeShape.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2PolygonShape.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2PolygonShape.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2Shape.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes/b2Shape.h</file>
+		    </folder>
+		    
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Source/Common">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2BlockAllocator.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2BlockAllocator.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2Math.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2Math.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2Settings.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2Settings.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2StackAllocator.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/b2StackAllocator.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/Fixed.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common/jtypes.h</file>
+		    </folder>
+		    
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Source/Dynamics">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2Body.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2Body.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2ContactManager.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2ContactManager.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2Island.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2Island.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2World.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2World.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2WorldCallbacks.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/b2WorldCallbacks.h</file>
+		    </folder>
+	
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2CircleContact.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2CircleContact.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2Contact.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2Contact.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2ContactSolver.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2ContactSolver.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2EdgeAndCircleContact.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2EdgeAndCircleContact.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2NullContact.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2PolyAndCircleContact.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2PolyAndCircleContact.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2PolyAndEdgeContact.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2PolyAndEdgeContact.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2PolyContact.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2PolyContact.h</file>
+		    </folder>
+		    
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2BuoyancyController.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2BuoyancyController.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2ConstantAccelController.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2ConstantAccelController.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2ConstantForceController.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2ConstantForceController.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2Controller.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2Controller.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2GravityController.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2GravityController.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2TensorDampingController.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers/b2TensorDampingController.h</file>
+		    </folder>
+		    
+		    <folder name="addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints">
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2DistanceJoint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2DistanceJoint.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2GearJoint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2GearJoint.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2Joint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2Joint.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2LineJoint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2LineJoint.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2MouseJoint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2MouseJoint.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2PrismaticJoint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2PrismaticJoint.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2PulleyJoint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2PulleyJoint.h</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2RevoluteJoint.cpp</file>
+		    	<file>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints/b2RevoluteJoint.h</file>
+		    </folder>
+		    
+	    </src>
+	
+	    <include>
+		    <path>../../../addons/ofxBox2d/src</path>
+		    <path>../../../addons/ofxBox2d/src/lib</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Include</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/Shapes</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Source/Common</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Controllers</path>
+		    <path>../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Joints</path>
+	    </include>
+				
+	</add>
+	
+	
+</install>

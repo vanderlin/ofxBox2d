@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src
+END
+ofxBox2dRect.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dRect.h
+END
+ofxBox2d.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/84/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2d.h
+END
+ofxBox2dRender.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/84/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dRender.h
+END
+ofxBox2dUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dUtils.h
+END
+ofxBox2dContactListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dContactListener.h
+END
+ofxBox2dCircle.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/84/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dCircle.h
+END
+ofxBox2dJoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dJoint.h
+END
+ofxBox2dPolygon.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dPolygon.h
+END
+ofxBox2dLine.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dLine.h
+END
+ofxBox2dSoftBody.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/78/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dSoftBody.h
+END
+ofxBox2d.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/84/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2d.cpp
+END
+ofxBox2dBaseShape.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/84/trunk/openframeworks/addons/ofxBox2d/src/ofxBox2dBaseShape.h
+END
