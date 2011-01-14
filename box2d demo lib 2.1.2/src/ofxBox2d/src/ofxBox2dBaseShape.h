@@ -37,7 +37,7 @@ public:
 		bodyDef.allowSleep = true;
 	}		
 	
-	//------------------------------------------------ 
+	//----------------------------------------
 	~ofxBox2dBaseShape() {
 		if(alive) destroyShape();
 	}
@@ -51,12 +51,13 @@ public:
 		bounce = val;
 	}
 	
-	virtual void setPhysics(float m, float bnc, float frc) {
-		density = m; bounce = bnc; friction = frc;
+	//------------------------------------------------ 
+	virtual void setPhysics(float density, float bounce, float friction) {
+		this->density = density; this->bounce = bounce; this->friction = friction;
 	}
 	
 	//------------------------------------------------ 
-	virtual void setMass(float val) {
+	virtual void setDensity(float val) {
 		// -- this is not working ! --
 		/*b2MassData data;
 		 data.mass = 3;

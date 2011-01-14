@@ -80,8 +80,6 @@ public:
 			b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
 				
 			if(poly) {
-				ofFill();
-				ofSetHexColor(0xBF2545);
 				ofBeginShape();
 				for(int i=0; i<poly->m_vertexCount; i++) {
 					b2Vec2 pt = b2Mul(xf, poly->m_vertices[i]);

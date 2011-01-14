@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void testApp::setup() {
 		
-	// hi nick & todd!!!
+
 	
 	ofSetVerticalSync(true);
 	ofBackground(20, 20, 20);
@@ -87,6 +87,8 @@ void testApp::draw() {
 	}
  */
 	for(int i=0; i<boxes.size(); i++) {
+		ofFill();
+		ofSetHexColor(0xBF2545);
 		boxes[i].draw();
 	}
 	for(int i=0; i<lines.size(); i++) {
