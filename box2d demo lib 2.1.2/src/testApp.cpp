@@ -16,6 +16,8 @@ void testApp::setup() {
 	box2d.checkBounds(true);	// fix this...
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
+	
+	
 	/*
 	// the joints
 	for(int i=0; i<5; i++) {
@@ -55,6 +57,7 @@ void testApp::update() {
 	
 	box2d.update();
 	
+	/*
 	if(bMouseForce) {
 		float strength = 8.0f;
 		float damping  = 0.7f;
@@ -68,7 +71,7 @@ void testApp::update() {
 			customParticles[i].setDamping(damping, damping);
 		}
 		
-	}
+	}*/
 	
 }
 
@@ -76,45 +79,52 @@ void testApp::update() {
 //--------------------------------------------------------------
 void testApp::draw() {
 	
-	
 	for(int i=0; i<circles.size(); i++) {
+		ofFill();
+		ofSetHexColor(0xBFff45);
 		circles[i].draw();
 	}
 
+	
+	
 	for(int i=0; i<polygons.size(); i++) {
+		ofSetHexColor(0xFF2545);
+		ofNoFill();
 		polygons[i].draw();
 	}
- 
+
+	
 	for(int i=0; i<boxes.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xBF2545);
 		boxes[i].draw();
 	}
+	
+	
+	/*
 	for(int i=0; i<lines.size(); i++) {
-		lines[i].draw();
+		//lines[i].draw();
 	}
 	for(int i=0; i<customParticles.size(); i++) {
-		customParticles[i].draw();
+		//customParticles[i].draw();
 	}
 	
 	
 	for(int i=0; i<5; i++) ballJoints[i].draw();
 	for(int i=0; i<5; i++) joints[i].draw();
+	*/
 	
-	lineStrip.draw();
-	box2d.draw();
-	
-	px = mouseX;
-	py = mouseY;
+	//lineStrip.draw();
+	box2d.drawGround();
 	
 	
+	// draw the poly shape that we are about to make
 	ofNoFill();
 	ofBeginShape();
 	for(int i=0; i<polyShape.size(); i++) {
 		ofVertex(polyShape[i].x, polyShape[i].y);
 	}
 	ofEndShape();
-	
 	
 	
 	string info = "";
@@ -152,7 +162,7 @@ void testApp::keyPressed(int key) {
 	}	
 
 	// add some lines
-	if(key == '1') {
+	if(key == '0') {
 		ofPoint p1(ofRandomWidth(), 20);
 		ofPoint p2(p1.x+ofRandom(5, 120), ofRandom(20, 130));
 		
@@ -160,6 +170,13 @@ void testApp::keyPressed(int key) {
 		line.setPhysics(1.0, 0.4, 0.3);;
 		line.setup(box2d.getWorld(), p1, p2);
 		lines.push_back(line);
+	}
+	
+	if(key == '1') {
+		ofxBox2dCircle circle;
+		circle.setPhysics(1.0, 0.4, 0.3);;
+		circle.setup(box2d.getWorld(), ofGetMouseX(), ofGetMouseY(), ofRandom(3, 10));
+		circles.push_back(circle);
 	}
 	
 
