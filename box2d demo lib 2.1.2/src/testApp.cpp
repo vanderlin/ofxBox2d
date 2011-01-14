@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void testApp::setup() {
 		
-	// hi nick!!!
+	// hi nick & todd!!!
 	
 	ofSetVerticalSync(true);
 	ofBackground(20, 20, 20);
