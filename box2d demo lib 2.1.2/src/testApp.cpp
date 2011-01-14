@@ -201,7 +201,7 @@ void testApp::mousePressed(int x, int y, int button) {
 void testApp::mouseReleased(int x, int y, int button) {
 	
 	ofxBox2dPolygon poly;
-	poly.setWorld(box2d.world);
+	poly.setup(box2d.world);
 	poly.addVertexes(polyShape);
 	poly.create();
 	
