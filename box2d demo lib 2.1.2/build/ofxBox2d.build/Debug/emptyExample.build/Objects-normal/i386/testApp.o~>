@@ -1,0 +1,1 @@
+i686-apple-darwin10-gcc-4.2.1: -lpthread: linker input file unused because linking not done
