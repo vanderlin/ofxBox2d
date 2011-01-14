@@ -2,9 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
-	
-	// just at test
-	
+		
 	ofSetVerticalSync(true);
 	ofBackground(20, 20, 20);
 	ofSetLogLevel(OF_LOG_NOTICE);
