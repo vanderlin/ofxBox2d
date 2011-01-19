@@ -2,7 +2,7 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxBox2d.h"
-
+#include "ofShape.h"
 // ------------------------------------------------- a simple extended box2d circle
 class CustomParticle : public ofxBox2dCircle {
 	
@@ -32,7 +32,7 @@ public:
 class testApp : public ofBaseApp {
 	
 public:
-	
+	ofShape shape;
 	void setup();
 	void update();
 	void draw();
@@ -44,11 +44,10 @@ public:
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
-	
 	float px, py;
 	bool							bDrawLines;
 	bool							bMouseForce;
-	
+	bool bUpdteRand;
 	ofxBox2d						box2d;			  //	the box2d world
 	vector		<ofVec2f>			polyShape;
 	vector		<ofxBox2dCircle>	circles;		  //	default box2d circles

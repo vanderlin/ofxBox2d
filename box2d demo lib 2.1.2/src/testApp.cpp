@@ -1,7 +1,9 @@
 #include "testApp.h"
+vector <ofVec2f> pts;
 
 //--------------------------------------------------------------
 void testApp::setup() {
+	
 	
 	ofSetVerticalSync(true);
 	ofBackground(20, 20, 20);
@@ -17,7 +19,7 @@ void testApp::setup() {
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
 	
-	
+	bUpdteRand = false;
 	/*
 	// the joints
 	for(int i=0; i<5; i++) {
@@ -79,13 +81,30 @@ void testApp::update() {
 //--------------------------------------------------------------
 void testApp::draw() {
 	
+	
+	
+	
+	// draw the poly shape that we are about to make
+	ofNoFill();
+	ofBeginShape();
+	for(int i=0; i<polyShape.size(); i++) {
+		ofVertex(polyShape[i].x, polyShape[i].y);
+	}
+	ofEndShape();
+	
+	ofNoFill();
+	for(int i=0; i<polyShape.size(); i++) {
+		ofCircle(polyShape[i].x, polyShape[i].y, 1);
+	}
+
+	
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xBFff45);
 		circles[i].draw();
 	}
 
-	
+
 	
 	for(int i=0; i<polygons.size(); i++) {
 		ofSetHexColor(0xFF2545);
@@ -101,30 +120,27 @@ void testApp::draw() {
 	}
 	
 	
-	/*
+	
 	for(int i=0; i<lines.size(); i++) {
-		//lines[i].draw();
+		lines[i].draw();
 	}
+	
+	
+	/*
 	for(int i=0; i<customParticles.size(); i++) {
 		//customParticles[i].draw();
 	}
-	
 	
 	for(int i=0; i<5; i++) ballJoints[i].draw();
 	for(int i=0; i<5; i++) joints[i].draw();
 	*/
 	
+	
 	//lineStrip.draw();
 	box2d.drawGround();
 	
 	
-	// draw the poly shape that we are about to make
-	ofNoFill();
-	ofBeginShape();
-	for(int i=0; i<polyShape.size(); i++) {
-		ofVertex(polyShape[i].x, polyShape[i].y);
-	}
-	ofEndShape();
+
 	
 	
 	string info = "";
@@ -197,6 +213,17 @@ void testApp::keyPressed(int key) {
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key) {
+
+	
+	if(key == 'p') polyShape.clear();
+	
+	if(key == 'd') {
+		polyShape.clear();
+		for(int i=0; i<polygons.size(); i++) {
+			polygons[i].destroy();
+		}
+		polygons.clear();	
+	}
 }
 
 //--------------------------------------------------------------
@@ -207,24 +234,37 @@ void testApp::mouseMoved(int x, int y ) {
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button) {
 	polyShape.push_back(ofVec2f(x, y));
+		
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button) {
 	polyShape.push_back(ofVec2f(x, y));	
+	shape.addVertex(x, y);
 }
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button) {
 	
+	
+	
 	ofxBox2dPolygon poly;
 	poly.setup(box2d.world);
 	poly.addVertexes(polyShape);
-	poly.create();
 	
+	poly.simplify(2.0);
+	poly.triangulate();
+	
+	poly.create(box2d.world);
 	polygons.push_back(poly);
+
+	return;
 	
-	polyShape.clear();
+	float s = 800;//(float)polyShape.size()/30.0
+	//poly.resamplePolygon(polyShape, s);
+	//	
+	
+	//
 }
 
 //--------------------------------------------------------------
