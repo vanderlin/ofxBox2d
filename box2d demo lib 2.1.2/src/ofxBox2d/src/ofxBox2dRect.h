@@ -24,7 +24,7 @@ public:
 	void setup(b2World * b2dworld, float x, float y, float w, float h) {
 		
 		if(b2dworld == NULL) {
-			ofLog(OF_LOG_NOTICE, "- must have a valid world -");
+			ofLog(OF_LOG_NOTICE, "ofxBox2dRect :: setup : - must have a valid world -");
 			return;
 		}
 		
@@ -71,6 +71,7 @@ public:
 	void draw() {
 		
 		if(body == NULL) {
+			ofLog(OF_LOG_WARNING, "ofxBox2dRect :: draw : - setup function must be called first -");
 			return;	
 		}
 		
