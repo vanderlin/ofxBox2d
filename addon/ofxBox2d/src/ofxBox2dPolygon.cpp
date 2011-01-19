@@ -86,6 +86,7 @@ void ofxBox2dPolygon::addVertex(float x, float y) {
 
 //----------------------------------------
 void ofxBox2dPolygon::addVertexes(const vector <ofVec2f> & polyPoints) {
+	if(polyPoints.size() <= 0) return;
 	for(int i=0; i<polyPoints.size(); i++) {
 		addVertex(polyPoints[i]);	
 	}

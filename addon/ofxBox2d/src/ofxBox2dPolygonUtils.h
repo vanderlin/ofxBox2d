@@ -90,10 +90,11 @@ static void simplifyDP(float tol, ofVec2f* v, int j, int k, int* mk ){
 
 //-------------------------------------------------------------------
 // needs simplifyDP which is above
-static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol){
-	int n = V.size();
+static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 	
+	int n = V.size();
 	vector <ofVec2f> sV;
+	if(n <= 2) return sV;
 	sV.assign(n, ofVec2f());
 	
     int    i, k, m, pv;            // misc counters
