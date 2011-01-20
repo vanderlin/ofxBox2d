@@ -21,10 +21,11 @@ public:
 	void windowResized(int w, int h);
 	
 	ofxBox2d		box2d;
-	ofxBox2dJoint	joints[10];
-	ofxBox2dCircle	circles[10];
+	ofxBox2dJoint	joints[20];
+	ofxBox2dCircle	circles[20];
 	
 	int				index;
+	int				num;
 };
 
 #endif
