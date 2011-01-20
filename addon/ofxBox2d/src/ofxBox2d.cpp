@@ -95,7 +95,7 @@ void ofxBox2d::mouseReleased(ofMouseEventArgs &e) {
 
 // ------------------------------------------------------ 
 void ofxBox2d::grabShapeDown(float x, float y) {
-	/*
+	
 	if(bEnableGrabbing) {
 		b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 		
@@ -111,42 +111,26 @@ void ofxBox2d::grabShapeDown(float x, float y) {
 		aabb.upperBound = p + d;
 		
 		// Query the world for overlapping shapes.
-		const int32 k_maxCount = 10000;
-		b2Shape* shapes[k_maxCount];
-		int32 count = world->Query(worldAABB, shapes, k_maxCount);
-		b2Body* body = NULL;
+		QueryCallback callback(p);
+		world->QueryAABB(&callback, aabb);
 		
-		for (int32 i = 0; i < count; ++i) {
-			
-			b2Body* shapeBody = shapes[i]->GetBody();
-			if (shapeBody->IsStatic() == false && shapeBody->GetMass() > 0.0f) {
-				bool inside = shapes[i]->TestPoint(shapeBody->GetXForm(), p);
-				if (inside) {
-					body = shapes[i]->GetBody();
-					break;
-				}
-			}
-		}
-		
-		if (body) {
-			
+		if (callback.m_fixture) {
+			b2Body* body = callback.m_fixture->GetBody();
 			b2MouseJointDef md;
-			md.body1 = world->GetGroundBody();
-			md.body2 = body;
+			md.bodyA = ground;
+			md.bodyB = body;
 			md.target = p;
-#ifdef TARGET_FLOAT32_IS_FIXED
-			md.maxForce = (body->GetMass() < 16.0)? 
-			(1000.0f * body->GetMass()) : float32(16000.0);
-#else
 			md.maxForce = 1000.0f * body->GetMass();
-#endif
 			mouseJoint = (b2MouseJoint*)world->CreateJoint(&md);
-			body->WakeUp();
-			
+			body->SetAwake(true);
 		}
+		
+		
 	}
-	 */
+	
 }
+
+// ------------------------------------------------------ 
 void ofxBox2d::grabShapeUp(float x, float y) {
 	
 	if(mouseJoint && bEnableGrabbing) {
@@ -154,6 +138,9 @@ void ofxBox2d::grabShapeUp(float x, float y) {
 		mouseJoint = NULL;
 	}
 }
+
+
+// ------------------------------------------------------ 
 void ofxBox2d::grabShapeDragged(float x, float y) {
 	b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 	if (mouseJoint && bEnableGrabbing) mouseJoint->SetTarget(p);
@@ -187,23 +174,7 @@ void ofxBox2d::createGround(float x1, float y1, float x2, float y2) {
 	b2PolygonShape shape;
 	shape.SetAsEdge(b2Vec2(x1/OFX_BOX2D_SCALE, y1/OFX_BOX2D_SCALE), b2Vec2(x2/OFX_BOX2D_SCALE, y2/OFX_BOX2D_SCALE));
 	ground->CreateFixture(&shape, 0.0f);
-	
-	/*
-	b2BodyDef bd;
-	bd.position.Set(0, 0);
-	ground = world->CreateBody(&bd);	
-	b2PolygonDef sd;
-	sd.filter.groupIndex = 1;
-	
-	sd.density = 0.0f;
-	sd.restitution = 0.0f;
-	sd.friction = 0.6;
-	float thick = 5/OFX_BOX2D_SCALE;
-	
-	//bottom
-	sd.SetAsBox((floorWidth/OFX_BOX2D_SCALE)/2, thick, 
-				b2Vec2((floorWidth/OFX_BOX2D_SCALE)/2, (bottom-thick)/OFX_BOX2D_SCALE), 0.0);
-	ground->CreateShape(&sd);*/
+
 }
 // ------------------------------------------------------ create Ground
 void ofxBox2d::createGround(const ofPoint & p1, const ofPoint & p2) {
@@ -212,34 +183,32 @@ void ofxBox2d::createGround(const ofPoint & p1, const ofPoint & p2) {
 
 // ------------------------------------------------------ create bounds
 void ofxBox2d::createBounds(float x, float y, float w, float h) {
-	/*
+	
 	if(!bWorldCreated) return;
 	
 	b2BodyDef bd;
 	bd.position.Set(0, 0);
 	ground = world->CreateBody(&bd);	
-	b2PolygonDef sd;
-	sd.filter.groupIndex = 1;
 	
-	sd.density = 0.0f;
-	sd.restitution = 0.0f;
-	sd.friction = 0.6;
-	float thick = 10/OFX_BOX2D_SCALE;
+	b2PolygonShape shape;
 	
 	// w h x y r 
 	//right
-	sd.SetAsBox(thick, (h/OFX_BOX2D_SCALE)/2, b2Vec2((w/OFX_BOX2D_SCALE), (h/OFX_BOX2D_SCALE)/2), 0.0);
-	ground->CreateShape(&sd);
+	shape.SetAsEdge(b2Vec2(w/OFX_BOX2D_SCALE, 0), b2Vec2(w/OFX_BOX2D_SCALE, h/OFX_BOX2D_SCALE));
+	ground->CreateFixture(&shape, 0.0f);
+	
 	//left
-	sd.SetAsBox(thick, (h/OFX_BOX2D_SCALE)/2, b2Vec2(0, (h/OFX_BOX2D_SCALE)/2), 0.0);
-	ground->CreateShape(&sd);
+	shape.SetAsEdge(b2Vec2(0, 0), b2Vec2(0, h/OFX_BOX2D_SCALE));
+	ground->CreateFixture(&shape, 0.0f);
+	
 	//top
-	sd.SetAsBox((w/OFX_BOX2D_SCALE)/2, thick, b2Vec2((w/OFX_BOX2D_SCALE)/2, 0), 0.0);
-	ground->CreateShape(&sd);
+	shape.SetAsEdge(b2Vec2(0, 0), b2Vec2(w/OFX_BOX2D_SCALE, 0));
+	ground->CreateFixture(&shape, 0.0f);
+	
 	//bottom
-	sd.SetAsBox((w/OFX_BOX2D_SCALE)/2, thick, b2Vec2((w/OFX_BOX2D_SCALE)/2, h/OFX_BOX2D_SCALE), 0.0);
-	ground->CreateShape(&sd);
-	 */
+	shape.SetAsEdge(b2Vec2(0, h/OFX_BOX2D_SCALE), b2Vec2(w/OFX_BOX2D_SCALE, h/OFX_BOX2D_SCALE));
+	ground->CreateFixture(&shape, 0.0f);
+	
 }
 
 // ------------------------------------------------------ check if shapes are out of bounds
@@ -304,7 +273,7 @@ void ofxBox2d::update() {
 // ------------------------------------------------------ 
 void ofxBox2d::drawGround() {
 	
-	
+	if(ground == NULL) return;
 	
 	const b2Transform& xf = ground->GetTransform();
 	for (b2Fixture* f = ground->GetFixtureList(); f; f = f->GetNext()) {
@@ -323,42 +292,42 @@ void ofxBox2d::drawGround() {
 	
 	
 	//
-//	GetFixtureList
-//	b2PolygonShape* poly = (b2PolygonShape*)fixture->GetShape();
-//	int32 vertexCount = poly->m_vertexCount;
-//	b2Assert(vertexCount <= b2_maxPolygonVertices);
-//	b2Vec2 vertices[b2_maxPolygonVertices];
-//	
-//	for (int32 i = 0; i < vertexCount; ++i)
-//	{
-//		vertices[i] = b2Mul(xf, poly->m_vertices[i]);
-//	}
-//	
-//	m_debugDraw->DrawSolidPolygon(vertices, vertexCount, color);
-//	
+	//	GetFixtureList
+	//	b2PolygonShape* poly = (b2PolygonShape*)fixture->GetShape();
+	//	int32 vertexCount = poly->m_vertexCount;
+	//	b2Assert(vertexCount <= b2_maxPolygonVertices);
+	//	b2Vec2 vertices[b2_maxPolygonVertices];
+	//	
+	//	for (int32 i = 0; i < vertexCount; ++i)
+	//	{
+	//		vertices[i] = b2Mul(xf, poly->m_vertices[i]);
+	//	}
+	//	
+	//	m_debugDraw->DrawSolidPolygon(vertices, vertexCount, color);
+	//	
 	/*
 	 //draw the ground
-	if(ground != NULL) {
-		for(b2Shape* s=ground->GetShapeList(); s; s=s->GetNext()) {
-			
-			const b2XForm& xf = ground->GetXForm();		
-			b2PolygonShape* poly = (b2PolygonShape*)s;
-			int count = poly->GetVertexCount();
-			const b2Vec2* verts = poly->GetVertices();
-			ofEnableAlphaBlending();
-			ofFill();
-			ofSetColor(90, 90, 90, 100);
-			ofBeginShape();
-			for(int j=0; j<count; j++) {
-				
-				b2Vec2 pt = b2Mul(xf, verts[j]);
-				
-				ofVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
-			}
-			ofEndShape();
-			ofDisableAlphaBlending();
-		}
-	}
+	 if(ground != NULL) {
+	 for(b2Shape* s=ground->GetShapeList(); s; s=s->GetNext()) {
+	 
+	 const b2XForm& xf = ground->GetXForm();		
+	 b2PolygonShape* poly = (b2PolygonShape*)s;
+	 int count = poly->GetVertexCount();
+	 const b2Vec2* verts = poly->GetVertices();
+	 ofEnableAlphaBlending();
+	 ofFill();
+	 ofSetColor(90, 90, 90, 100);
+	 ofBeginShape();
+	 for(int j=0; j<count; j++) {
+	 
+	 b2Vec2 pt = b2Mul(xf, verts[j]);
+	 
+	 ofVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
+	 }
+	 ofEndShape();
+	 ofDisableAlphaBlending();
+	 }
+	 }
 	 */
 	
 }
@@ -366,27 +335,27 @@ void ofxBox2d::drawGround() {
 // ------------------------------------------------------ 
 void ofxBox2d::draw() {
 	/*
-	if(mouseJoint) {
-		b2Body* mbody = mouseJoint->GetBody2();
-		b2Vec2 p1 = mbody->GetWorldPoint(mouseJoint->m_localAnchor);
-		b2Vec2 p2 = mouseJoint->m_target;
-		
-		p1 *= OFX_BOX2D_SCALE;
-		p2 *= OFX_BOX2D_SCALE;
-		
-		//draw a line from touched shape
-		ofEnableAlphaBlending();
-		ofSetLineWidth(2.0);
-		ofSetColor(200, 200, 200, 200);
-		ofLine(p1.x, p1.y, p2.x, p2.y);
-		ofNoFill();
-		ofSetLineWidth(1.0);
-		ofCircle(p1.x, p1.y, 2);
-		ofCircle(p2.x, p2.y, 5);
-		ofDisableAlphaBlending();
-	}
-	
-
+	 if(mouseJoint) {
+	 b2Body* mbody = mouseJoint->GetBody2();
+	 b2Vec2 p1 = mbody->GetWorldPoint(mouseJoint->m_localAnchor);
+	 b2Vec2 p2 = mouseJoint->m_target;
+	 
+	 p1 *= OFX_BOX2D_SCALE;
+	 p2 *= OFX_BOX2D_SCALE;
+	 
+	 //draw a line from touched shape
+	 ofEnableAlphaBlending();
+	 ofSetLineWidth(2.0);
+	 ofSetColor(200, 200, 200, 200);
+	 ofLine(p1.x, p1.y, p2.x, p2.y);
+	 ofNoFill();
+	 ofSetLineWidth(1.0);
+	 ofCircle(p1.x, p1.y, 2);
+	 ofCircle(p2.x, p2.y, 5);
+	 ofDisableAlphaBlending();
+	 }
+	 
+	 
 	 */
 	
 	drawGround();

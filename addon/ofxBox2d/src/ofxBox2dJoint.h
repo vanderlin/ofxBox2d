@@ -1,78 +1,44 @@
 #pragma once
-
+#include "ofMain.h"
+#include "Box2D.h"
+#include "ofxBox2dUtils.h"
 
 class ofxBox2dJoint {
 	
 public:
 	
-	b2World * world;
-	b2Joint * joint;
+	b2World* world;
+	b2DistanceJoint* joint;
+	int jointType;
 	bool alive;
 	
-	ofxBox2dJoint() {
-		world = NULL;
-		alive = false;
-	}
+	ofxBox2dJoint();
+	ofxBox2dJoint(b2World* b2world, b2Body* body1, b2Body* body2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
+	ofxBox2dJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
 	
-	void setWorld(b2World * w) {
-		if(w == NULL) {
-			ofLog(OF_LOG_NOTICE, "- box2d world needed -");	
-			return;
-		}
-		world = w;
-		alive = true;
-	}
+	void setWorld(b2World * w);
 	
-	void destroyJoint() {
-		world->DestroyJoint(joint);
-		joint = NULL;
-	}
+	void setup(b2World* b2world, b2Body* body1, b2Body* body2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
+	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
 	
-	void addJoint(b2Body * a, b2Body * b, float stiffness=3.0f, float damping=0.6f, bool collideConnected=true) {
-		/*
-		if(world == NULL) {
-			ofLog(OF_LOG_NOTICE, "- no joint added - box2d world needed -");	
-			return;
-		}
-		
-		b2DistanceJointDef jd;
-		b2Vec2 p1, p2, d;
-		
-		jd.frequencyHz  = stiffness;
-		jd.dampingRatio = damping;
-		
-		jd.body1 = a;
-		jd.body2 = b;
-		
-		jd.localAnchor1.Set(0, 0);
-		jd.localAnchor2.Set(0, 0);
-		jd.collideConnected = collideConnected;
-		
-		p1 = jd.body1->GetWorldPoint(jd.localAnchor1);
-		p2 = jd.body2->GetWorldPoint(jd.localAnchor2);
-		d = p2 - p1;
-		jd.length = d.Length();
-		
-		joint = world->CreateJoint(&jd);
-		 */
-	}
+	bool isSetup();
 	
-	void draw(int alpha=200) {
-		/*
-		if(!alive) return;
-		
-		ofEnableAlphaBlending();
-		ofSetColor(255, 0, 255, alpha);
-		
-		b2Vec2 p1 = joint->GetAnchor1();
-		b2Vec2 p2 = joint->GetAnchor2();
-		
-		p1 *= OFX_BOX2D_SCALE;
-		p2 *= OFX_BOX2D_SCALE;
-		ofLine(p1.x, p1.y, p2.x, p2.y);	   
-		ofDisableAlphaBlending();
-		 */
-	}
+	void draw();
+	void destroy();
+	
+	/// Manipulating the length can lead to non-physical behavior when the frequency is zero.
+	void setLength(float $len);
+	float getLength();
+	
+	void setFrequency(float $freq);
+	float getFrequency();
+	
+	void setDamping(float $ratio);
+	float getDamping();
+	
+	ofVec2f getReactionForce(float inv_dt) const;
+	b2Vec2 getReactionForceB2D(float inv_dt) const;
+	float getReactionTorque(float inv_dt) const;
 };
 
 
