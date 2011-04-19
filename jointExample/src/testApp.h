@@ -1,17 +1,15 @@
-#ifndef _TEST_APP
-#define _TEST_APP
 
-
+#pragma once
 #include "ofMain.h"
 #include "ofxBox2d.h"
 
 class testApp : public ofBaseApp{
-
+	
 public:
 	void setup();
 	void update();
 	void draw();
-
+	
 	void keyPressed  (int key);
 	void keyReleased(int key);
 	void mouseMoved(int x, int y );
@@ -27,5 +25,3 @@ public:
 	int				index;
 	int				num;
 };
-
-#endif

@@ -2,11 +2,12 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
+	
 	ofSetVerticalSync(true);
 	ofBackground(20, 20, 20);
 	
 	box2d.init();
-	box2d.setGravity(0, 10);
+	box2d.setGravity(0, 0);
 	box2d.createBounds();
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
@@ -47,22 +48,22 @@ void testApp::draw() {
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key) {
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::mouseMoved(int x, int y ) {
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button) {
-
+	
 }
 
 //--------------------------------------------------------------
@@ -92,11 +93,11 @@ void testApp::mousePressed(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button) {
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h) {
-
+	
 }
 

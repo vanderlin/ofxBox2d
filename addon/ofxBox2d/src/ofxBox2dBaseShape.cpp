@@ -103,12 +103,14 @@ void ofxBox2dBaseShape::setPhysics(float density, float bounce, float friction) 
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setData(void*data) {
+	printf("data not set");
+
 	if(data == NULL) {
 		ofLog(OF_LOG_NOTICE, "- data is NULL -");
 		return;
 	}
 	
-	if(body) {
+	if(isBody()) {
 		body->SetUserData(data);
 	}
 	else {
