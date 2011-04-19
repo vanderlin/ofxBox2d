@@ -28,7 +28,7 @@ public:
 			return;
 		}
 		
-		if (OF_RECTMODE_CORNER) {
+		if (OF_RECTMODE_CENTER) {
 			w/=2; h/=2;
 			x += w; y += h;
 		}
