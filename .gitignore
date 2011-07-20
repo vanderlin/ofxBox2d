@@ -1,12 +1,9 @@
 *.mode1v3
+*.pbxuser
 build/
 obj/
 *.o
 *.app/
 *.DS_Store
-<<<<<<< HEAD
-=======
-project.pbxproj
->>>>>>> 183167c8a0c5ebede134b1a414ee675811323eb1
 Project.xcconfig
 /Dev
