@@ -5,6 +5,6 @@ build/
 obj/
 *.o
 *.app/
-/addon/.DS_Store
+*.DS_Store
 project.pbxproj
 /Box2D_v2.1.2/Contributions/Platforms/iPhone/Box2D.xcodeproj/project.pbxproj
