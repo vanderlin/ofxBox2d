@@ -6,6 +6,5 @@ obj/
 *.o
 *.app/
 *.DS_Store
-project.pbxproj
-/Box2D_v2.1.2/Contributions/Platforms/iPhone/Box2D.xcodeproj/project.pbxproj
 Project.xcconfig
+/Dev
