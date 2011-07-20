@@ -1,1282 +1,0 @@
-TBox2D_shared
-v7
-r0
-t316402315.657345
-cCheck dependencies
-cPhaseScriptExecution "CMake ReRun" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112194011219401121940000.sh
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DistanceJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2FrictionJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2GearJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Joint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2LineJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2MouseJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PrismaticJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PulleyJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2RevoluteJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WeldJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleContact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Contact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactSolver.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonAndCircleContact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonContact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TOISolver.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Body.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactManager.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Fixture.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Island.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2World.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WorldCallbacks.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BlockAllocator.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Math.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Settings.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2StackAllocator.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleShape.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonShape.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BroadPhase.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollideCircle.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollideCircle.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollidePolygon.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollidePolygon.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Collision.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Distance.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DynamicTree.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TimeOfImpact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cLd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib normal x86_64
-cPhaseScriptExecution "CMake PostBuild Rules" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112203011220301122030000.sh
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004CAA740B00000000000000EE
-t1286239243
-s238
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp
-c000000004B667EF00000000000000BC7
-t1265008368
-s3015
-i<Box2D/Collision/Shapes/b2CircleShape.h>
-i<new>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
-c000000004B667EF000000000000009D9
-t1265008368
-s2521
-i<Box2D/Collision/Shapes/b2Shape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp
-c000000004BC0D4A80000000000002B9E
-t1270928552
-s11166
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-i<new>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
-c000000004B667EF00000000000000FBB
-t1265008368
-s4027
-i<Box2D/Collision/Shapes/b2Shape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2Shape.h
-c000000004B94330A0000000000000D18
-t1268003594
-s3352
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/b2Collision.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.cpp
-c000000004B667EF00000000000000C5A
-t1265008368
-s3162
-i<Box2D/Collision/b2BroadPhase.h>
-i<cstring>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.h
-c000000004B667EF00000000000001928
-t1265008368
-s6440
-i<Box2D/Common/b2Settings.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/b2DynamicTree.h>
-i<algorithm>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollideCircle.cpp
-c000000004B667EF000000000000011A5
-t1265008368
-s4517
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/Shapes/b2CircleShape.h>
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollidePolygon.cpp
-c000000004B667EF00000000000002245
-t1265008368
-s8773
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.cpp
-c000000004BB16C4000000000000018BA
-t1269918784
-s6330
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/b2Distance.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.h
-c000000004BB16C2E0000000000002091
-t1269918766
-s8337
-i<Box2D/Common/b2Math.h>
-i<climits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.cpp
-c000000004B67A730000000000000330C
-t1265084208
-s13068
-i<Box2D/Collision/b2Distance.h>
-i<Box2D/Collision/Shapes/b2CircleShape.h>
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.h
-c000000004B667EF00000000000000F42
-t1265008368
-s3906
-i<Box2D/Common/b2Math.h>
-i<climits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.cpp
-c000000004B667EF0000000000000215E
-t1265008368
-s8542
-i<Box2D/Collision/b2DynamicTree.h>
-i<cstring>
-i<cfloat>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.h
-c000000004B92E5C20000000000001D32
-t1267918274
-s7474
-i<Box2D/Collision/b2Collision.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.cpp
-c000000004BC407820000000000002F75
-t1271138178
-s12149
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/b2Distance.h>
-i<Box2D/Collision/b2TimeOfImpact.h>
-i<Box2D/Collision/Shapes/b2CircleShape.h>
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-i<cstdio>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.h
-c000000004B667EF00000000000000798
-t1265008368
-s1944
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/b2Distance.h>
-i<climits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.cpp
-c000000004B93E05E000000000000139B
-t1267982430
-s5019
-i<Box2D/Common/b2BlockAllocator.h>
-i<cstdlib>
-i<climits>
-i<cstring>
-i<memory>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.h
-c000000004B667EF0000000000000072E
-t1265008368
-s1838
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.cpp
-c000000004B667EF000000000000007CB
-t1265008368
-s1995
-i<Box2D/Common/b2Math.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.h
-c000000004BC405BC0000000000003B41
-t1271137724
-s15169
-i<Box2D/Common/b2Settings.h>
-i<cmath>
-i<cfloat>
-i<cstddef>
-i<limits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.cpp
-c000000004BC9E0D6000000000000049C
-t1271521494
-s1180
-i<Box2D/Common/b2Settings.h>
-i<cstdlib>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.h
-c000000004BB766C00000000000001534
-t1270310592
-s5428
-i<cassert>
-i<cmath>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.cpp
-c000000004B667EF00000000000000857
-t1265008368
-s2135
-i<Box2D/Common/b2StackAllocator.h>
-i<Box2D/Common/b2Math.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.h
-c000000004B667EF000000000000006C7
-t1265008368
-s1735
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp
-c000000004B667EF00000000000000830
-t1265008368
-s2096
-i<Box2D/Dynamics/Contacts/b2CircleContact.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Collision/b2TimeOfImpact.h>
-i<new>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.h
-c000000004B667EF000000000000005BF
-t1265008368
-s1471
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp
-c000000004BB7746800000000000019AD
-t1270314088
-s6573
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/Contacts/b2CircleContact.h>
-i<Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h>
-i<Box2D/Dynamics/Contacts/b2PolygonContact.h>
-i<Box2D/Dynamics/Contacts/b2ContactSolver.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/b2TimeOfImpact.h>
-i<Box2D/Collision/Shapes/b2Shape.h>
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2World.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
-c000000004BC6A0340000000000001AF6
-t1271308340
-s6902
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/Shapes/b2Shape.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/b2Fixture.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp
-c000000004BB16CA80000000000004825
-t1269918888
-s18469
-i<Box2D/Dynamics/Contacts/b2ContactSolver.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2World.h>
-i<Box2D/Common/b2StackAllocator.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.h
-c000000004B667EF00000000000000846
-t1265008368
-s2118
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Dynamics/b2Island.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp
-c000000004B667EF000000000000008AF
-t1265008368
-s2223
-i<Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h>
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Collision/b2TimeOfImpact.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-i<new>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h
-c000000004B667EF000000000000005F5
-t1265008368
-s1525
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp
-c000000004B667EF00000000000000843
-t1265008368
-s2115
-i<Box2D/Dynamics/Contacts/b2PolygonContact.h>
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Collision/b2TimeOfImpact.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-i<new>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.h
-c000000004B667EF000000000000005C4
-t1265008368
-s1476
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.cpp
-c000000004B667EF00000000000001911
-t1265008368
-s6417
-i<Box2D/Dynamics/Contacts/b2TOISolver.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Common/b2StackAllocator.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.h
-c000000004B667EF00000000000000656
-t1265008368
-s1622
-i<Box2D/Common/b2Math.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp
-c000000004B667EF00000000000001805
-t1265008368
-s6149
-i<Box2D/Dynamics/Joints/b2DistanceJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
-c000000004BB7C7B60000000000000F89
-t1270335414
-s3977
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp
-c000000004B667EF00000000000001881
-t1265008368
-s6273
-i<Box2D/Dynamics/Joints/b2FrictionJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
-c000000004B667EF00000000000000B38
-t1265008368
-s2872
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp
-c000000004B667EF00000000000001C6E
-t1265008368
-s7278
-i<Box2D/Dynamics/Joints/b2GearJoint.h>
-i<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
-i<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
-c000000004B667EF00000000000000CE4
-t1265008368
-s3300
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp
-c000000004B667EF0000000000000129D
-t1265008368
-s4765
-i<Box2D/Dynamics/Joints/b2Joint.h>
-i<Box2D/Dynamics/Joints/b2DistanceJoint.h>
-i<Box2D/Dynamics/Joints/b2LineJoint.h>
-i<Box2D/Dynamics/Joints/b2MouseJoint.h>
-i<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
-i<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
-i<Box2D/Dynamics/Joints/b2PulleyJoint.h>
-i<Box2D/Dynamics/Joints/b2GearJoint.h>
-i<Box2D/Dynamics/Joints/b2WeldJoint.h>
-i<Box2D/Dynamics/Joints/b2FrictionJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2World.h>
-i<Box2D/Common/b2BlockAllocator.h>
-i<new>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.h
-c000000004B667EF00000000000001692
-t1265008368
-s5778
-i<Box2D/Common/b2Math.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.cpp
-c000000004B667EF00000000000003A8A
-t1265008368
-s14986
-i<Box2D/Dynamics/Joints/b2LineJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.h
-c000000004B8CA7A40000000000001411
-t1267509156
-s5137
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp
-c000000004B667EF00000000000001493
-t1265008368
-s5267
-i<Box2D/Dynamics/Joints/b2MouseJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
-c000000004B667EF00000000000000DE9
-t1265008368
-s3561
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp
-c000000004B67BECE0000000000003E16
-t1265090254
-s15894
-i<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
-c000000004B8B699C0000000000001524
-t1267427740
-s5412
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp
-c000000004B667EF00000000000002B94
-t1265008368
-s11156
-i<Box2D/Dynamics/Joints/b2PulleyJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
-c000000004B667EF00000000000001148
-t1265008368
-s4424
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp
-c000000004B67B2D60000000000003266
-t1265087190
-s12902
-i<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
-c000000004B667EF0000000000000156E
-t1265008368
-s5486
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp
-c000000004B667EF0000000000000198D
-t1265008368
-s6541
-i<Box2D/Dynamics/Joints/b2WeldJoint.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
-c000000004B667EF00000000000000A29
-t1265008368
-s2601
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.cpp
-c000000004B94330A00000000000028FF
-t1268003594
-s10495
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2World.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.h
-c000000004BB7C74A00000000000055A5
-t1270335306
-s21925
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/Shapes/b2Shape.h>
-i<memory>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.cpp
-c000000004BA9A71000000000000018BA
-t1269409552
-s6330
-i<Box2D/Dynamics/b2ContactManager.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.h
-c000000004BA704F00000000000000637
-t1269236976
-s1591
-i<Box2D/Collision/b2BroadPhase.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.cpp
-c000000004B667EF0000000000000103D
-t1265008368
-s4157
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Collision/Shapes/b2CircleShape.h>
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-i<Box2D/Collision/b2BroadPhase.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Common/b2BlockAllocator.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.h
-c000000004BB7C92800000000000022D3
-t1270335784
-s8915
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/Shapes/b2Shape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.cpp
-c000000004B667EF00000000000003290
-t1265008368
-s12944
-i<Box2D/Dynamics/b2Island.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2World.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/Contacts/b2ContactSolver.h>
-i<Box2D/Dynamics/Joints/b2Joint.h>
-i<Box2D/Common/b2StackAllocator.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.h
-c000000004BA9A5120000000000000A2C
-t1269409042
-s2604
-i<Box2D/Common/b2Math.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2TimeStep.h
-c000000004B667EF000000000000004F4
-t1265008368
-s1268
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp
-c000000004BC9DB80000000000000601D
-t1271520128
-s24605
-i<Box2D/Dynamics/b2World.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2Island.h>
-i<Box2D/Dynamics/Joints/b2PulleyJoint.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/Contacts/b2ContactSolver.h>
-i<Box2D/Dynamics/Contacts/b2TOISolver.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/b2BroadPhase.h>
-i<Box2D/Collision/Shapes/b2CircleShape.h>
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-i<Box2D/Collision/b2TimeOfImpact.h>
-i<new>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.h
-c000000004BA8DC600000000000002229
-t1269357664
-s8745
-i<Box2D/Common/b2Math.h>
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Common/b2StackAllocator.h>
-i<Box2D/Dynamics/b2ContactManager.h>
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp
-c000000004BAFBE3800000000000007C2
-t1269808696
-s1986
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-i<Box2D/Dynamics/b2Fixture.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
-c000000004BAFBE3C0000000000001EDC
-t1269808700
-s7900
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/Box2D.LinkFileList
-c000000004D2BB3030000000000001130
-t1294709507
-s4400
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BlockAllocator.o
-t1294709514
-s24020
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Body.o
-t1294709513
-s83376
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BroadPhase.o
-t1294709515
-s28560
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleContact.o
-t1294709513
-s44704
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleShape.o
-t1294709514
-s26320
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollideCircle.o
-t1294709515
-s22732
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollidePolygon.o
-t1294709515
-s30432
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Collision.o
-t1294709515
-s30528
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Contact.o
-t1294709513
-s60788
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactManager.o
-t1294709514
-s84536
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactSolver.o
-t1294709513
-s89628
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Distance.o
-t1294709515
-s43044
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DistanceJoint.o
-t1294709511
-s59152
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DynamicTree.o
-t1294709515
-s31444
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Fixture.o
-t1294709514
-s53088
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2FrictionJoint.o
-t1294709512
-s66244
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2GearJoint.o
-t1294709512
-s70496
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Island.o
-t1294709514
-s69180
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Joint.o
-t1294709512
-s54136
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2LineJoint.o
-t1294709512
-s78236
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Math.o
-t1294709514
-s14672
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2MouseJoint.o
-t1294709512
-s68984
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonAndCircleContact.o
-t1294709513
-s45164
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonContact.o
-t1294709513
-s44756
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonShape.o
-t1294709514
-s45720
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PrismaticJoint.o
-t1294709512
-s84568
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PulleyJoint.o
-t1294709512
-s69936
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2RevoluteJoint.o
-t1294709512
-s82408
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Settings.o
-t1294709514
-s5960
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2StackAllocator.o
-t1294709514
-s10596
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TOISolver.o
-t1294709513
-s59080
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TimeOfImpact.o
-t1294709515
-s44072
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WeldJoint.o
-t1294709513
-s60564
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2World.o
-t1294709514
-s132716
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WorldCallbacks.o
-t1294709514
-s38264
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112194011219401121940000.sh
-c000000004D2BB303000000000000008C
-t1294709507
-s140
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112203011220301122030000.sh
-c000000004D2BB30300000000000000BB
-t1294709507
-s187
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib
-t1294709515
-s365896
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies316402307#316402307#0(0"0(0#1#0"8630327744#0"0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BlockAllocator.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.456327
-e316402314.632085
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BlockAllocator.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.cpp316402314#316402314#0(0"0(0#0#72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.cpp8643546752#985"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BlockAllocator.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Body.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.710086
-e316402313.993575
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Body.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@72"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.cpp316402313#316402313#0(0"0(0#0#64"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.cpp8635419552#967"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Body.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BroadPhase.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.834095
-e316402315.034783
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BroadPhase.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.cpp316402314#316402315#0(0"0(0#0#71"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.cpp8603743360#980"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2BroadPhase.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleContact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.977098
-e316402313.186211
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleContact.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@90"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp316402312#316402313#0(0"0(0#0#82"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp8643630368#994"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleContact.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleShape.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.694365
-e316402314.833881
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleShape.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@87"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp316402314#316402314#0(0"0(0#0#79"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp8643662784#989"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CircleShape.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollideCircle.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollideCircle.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.953323
-e316402315.077115
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollideCircle.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollideCircle.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollideCircle.cpp316402314#316402315#0(0"0(0#0#74"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollideCircle.cpp8644700608#986"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollideCircle.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollideCircle.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollidePolygon.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollidePolygon.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402315.035237
-e316402315.176954
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollidePolygon.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollidePolygon.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@83"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollidePolygon.cpp316402315#316402315#0(0"0(0#0#75"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollidePolygon.cpp8640473504#988"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2CollidePolygon.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2CollidePolygon.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Collision.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402315.077216
-e316402315.210123
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Collision.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@78"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.cpp316402315#316402315#0(0"0(0#0#70"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.cpp8636260576#978"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Collision.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Contact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.090754
-e316402313.382826
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Contact.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp316402313#316402313#0(0"0(0#0#76"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp8630096576#982"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Contact.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactManager.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.790790
-e316402314.040794
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactManager.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.cpp316402313#316402314#0(0"0(0#0#74"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.cpp8627250848#987"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactManager.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactSolver.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.186299
-e316402313.511268
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactSolver.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@90"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp316402313#316402313#0(0"0(0#0#82"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp8625202688#994"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2ContactSolver.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Distance.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402315.177037
-e316402315.368345
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Distance.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@77"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.cpp316402315#316402315#0(0"0(0#0#69"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.cpp8623623136#976"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Distance.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DistanceJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402311.709473
-e316402311.915240
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DistanceJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@88"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp316402311#316402311#0(0"0(0#0#80"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp8645866336#992"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DistanceJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DynamicTree.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402315.210211
-e316402315.344668
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DynamicTree.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.cpp316402315#316402315#0(0"0(0#0#72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.cpp8599084512#982"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2DynamicTree.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Fixture.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.993745
-e316402314.210223
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Fixture.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@75"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.cpp316402313#316402314#0(0"0(0#0#67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.cpp8643518144#973"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Fixture.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2FrictionJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402311.915676
-e316402312.149520
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2FrictionJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@88"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp316402311#316402312#0(0"0(0#0#80"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp8639744864#992"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2FrictionJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2GearJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402311.957590
-e316402312.190236
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2GearJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp316402311#316402312#0(0"0(0#0#76"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp8644948960#984"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2GearJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Island.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.040869
-e316402314.292820
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Island.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@74"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.cpp316402314#316402314#0(0"0(0#0#66"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.cpp8641061024#971"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Island.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Island.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Joint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.149603
-e316402312.387732
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Joint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp316402312#316402312#0(0"0(0#0#72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp8601017600#976"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Joint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2LineJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.190323
-e316402312.461600
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2LineJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.cpp316402312#316402312#0(0"0(0#0#76"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.cpp8600151488#984"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2LineJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Math.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.578292
-e316402314.679892
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Math.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@70"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.cpp316402314#316402314#0(0"0(0#0#62"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.cpp8639158592#965"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Math.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2MouseJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.387907
-e316402312.620345
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2MouseJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@85"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp316402312#316402312#0(0"0(0#0#77"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp8626709760#986"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2MouseJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonAndCircleContact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.382905
-e316402313.581102
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonAndCircleContact.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@100"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp316402313#316402313#0(0"0(0#0#92"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp8643535168#1014"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonAndCircleContact.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonContact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.511348
-e316402313.710004
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonContact.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@91"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp316402313#316402313#0(0"0(0#0#83"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp8636701664#996"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonContact.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonShape.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.785403
-e316402314.953247
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonShape.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@88"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp316402314#316402314#0(0"0(0#0#80"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp8630060800#991"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PolygonShape.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PrismaticJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.461681
-e316402312.722192
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PrismaticJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@89"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp316402312#316402312#0(0"0(0#0#81"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp8618748352#994"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PrismaticJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PulleyJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.620437
-e316402312.871426
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PulleyJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@86"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp316402312#316402312#0(0"0(0#0#78"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp8643727168#988"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2PulleyJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2RevoluteJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.722279
-e316402312.977014
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2RevoluteJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@88"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp316402312#316402312#0(0"0(0#0#80"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp8640622912#992"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2RevoluteJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Settings.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.632175
-e316402314.694277
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Settings.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@74"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.cpp316402314#316402314#0(0"0(0#0#66"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.cpp8644263328#973"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2Settings.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2StackAllocator.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.679977
-e316402314.785321
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2StackAllocator.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.cpp316402314#316402314#0(0"0(0#0#72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.cpp8644068256#985"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2StackAllocator.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TOISolver.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402313.581188
-e316402313.790704
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TOISolver.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@86"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.cpp316402313#316402313#0(0"0(0#0#78"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.cpp8644002656#986"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2TOISolver.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TOISolver.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TimeOfImpact.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402315.344759
-e316402315.546091
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TimeOfImpact.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@81"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.cpp316402315#316402315#0(0"0(0#0#73"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.cpp8643985024#984"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2TimeOfImpact.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WeldJoint.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402312.871515
-e316402313.090662
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WeldJoint.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp316402312#316402313#0(0"0(0#0#76"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp8644414624#984"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WeldJoint.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2World.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.210375
-e316402314.578219
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2World.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp: In member function 'void b2World::DrawShape(b2Fixture*, const b2Transform&, const b2Color&)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp:900: warning: enumeration value 'e_unknown' not handled in switch
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp:900: warning: enumeration value 'e_typeCount' not handled in switch
-lSLF07#2@73"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp316402314#316402314#0(427"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp: In member function 'void b2World::DrawShape(b2Fixture*, const b2Transform&, const b2Color&)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp:900: warning: enumeration value 'e_unknown' not handled in switch/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp:900: warning: enumeration value 'e_typeCount' not handled in switch2(22@51"Enumeration value 'e_unknown' not handled in switch316402314#161#132#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp293212928#900#0#900#0#0"0(22@53"Enumeration value 'e_typeCount' not handled in switch316402314#293#134#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp293212928#900#0#900#0#0"0(0#0#65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp8626935648#969"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2World.o0#
-
-CCompileC Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WorldCallbacks.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402314.292906
-e316402314.456242
-r1
-xCompileC
-xBuild/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WorldCallbacks.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp316402314#316402314#0(0"0(0#0#74"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp8644982656#987"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DBox2D_shared_EXPORTS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.. -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources -fPIC -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/b2WorldCallbacks.o0#
-
-CLd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib normal x86_64
-s316402315.546254
-e316402315.615408
-r1
-xLd
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib
-xnormal
-xx86_64
-lSLF07#2@76"Link /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib316402315#316402315#0(0"0(0#0#0"8618928800#707"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -dynamiclib -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -filelist /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/Box2D.LinkFileList -install_name /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib -mmacosx-version-min=10.6 -dynamiclib -headerpad_max_install_names -single_module -current_version 2.1.0 -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib0#
-
-CPhaseScriptExecution "CMake PostBuild Rules" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112203011220301122030000.sh
-s316402315.615500
-e316402315.657308
-r1
-xPhaseScriptExecution
-xCMake PostBuild Rules
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112203011220301122030000.sh
-oecho "Depend check for xcode"
-oDepend check for xcode
-ocd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debug
-o/bin/rm -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/HelloWorld/Debug/HelloWorld
-o/bin/rm -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed
-lSLF07#2@47"Run custom shell script 'CMake PostBuild Rules'316402315#316402315#0(415"echo "Depend check for xcode"Depend check for xcodecd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debug/bin/rm -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/HelloWorld/Debug/HelloWorld/bin/rm -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed5(13@30"echo "Depend check for xcode"316402315#0#30#0(1@0"0(13@23"Depend check for xcode316402315#30#23#0(1@0"0(13@200"cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debug316402315#53#200#0(1@0"0(13@84"/bin/rm -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/HelloWorld/Debug/HelloWorld316402315#253#84#0(1@0"0(13@78"/bin/rm -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed316402315#337#78#0(1@0"0(0#0#0"8617833344#15470"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER todd    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv BUILD_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv CACHE_ROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv CONFIGURATION_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/Box2D.dst    setenv DWARF_DSYM_FILE_NAME libBox2D.dylib.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv DYLIB_CURRENT_VERSION 2.1.0    setenv DYLIB_INSTALL_NAME_BASE /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLE_EXTENSION dylib    setenv EXECUTABLE_NAME libBox2D.dylib    setenv EXECUTABLE_PATH libBox2D.dylib    setenv EXECUTABLE_PREFIX lib    setenv EXECUTABLE_SUFFIX .dylib    setenv FILE_LIST /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/FixedFiles    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME libBox2D.dylib    setenv GCC3_VERSION 3.3    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PREPROCESSOR_DEFINITIONS "'CMAKE_INTDIR=\"Debug\"' Box2D_shared_EXPORTS"    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE NO    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include\" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.."    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PREPROCESS NO    setenv INSTALL_DIR /tmp/Box2D.dst/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER todd    setenv INSTALL_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv INSTALL_ROOT /tmp/Box2D.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DYLIB_INSTALL_NAME /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Box2D-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug\" "    setenv LIBRARY_STYLE DYNAMIC    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/Box2D.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_dylib    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_VERSION_ACTUAL 1066    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0606    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal    setenv OBJROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "   -fPIC  "    setenv OTHER_CPLUSPLUSFLAGS "   -fPIC  "    setenv OTHER_LDFLAGS " -dynamiclib -headerpad_max_install_names "    setenv PACKAGE_TYPE com.apple.package-type.mach-o-dylib    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2423    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH /usr/local/include    setenv PRODUCT_NAME Box2D    setenv PRODUCT_SETTINGS_PATH     setenv PRODUCT_TYPE com.apple.product-type.library.dynamic    setenv PROFILING_CODE NO    setenv PROJECT Box2D    setenv PROJECT_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/DerivedSources    setenv PROJECT_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv PROJECT_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D.xcodeproj    setenv PROJECT_NAME Box2D    setenv PROJECT_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build    setenv PUBLIC_HEADERS_FOLDER_PATH /usr/local/include    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/ResourceManagerResources    setenv REZ_EXECUTABLE YES    setenv REZ_OBJECTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/DerivedSources    setenv SHARED_PRECOMPS_DIR /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv SRCROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE debugging    setenv SYMBOL_REPOSITORY_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/SymbolRepositories    setenv SYMROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME Box2D_shared    setenv TARGET_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv TARGET_NAME Box2D_shared    setenv TARGET_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv UID 501    setenv UNSTRIPPED_PRODUCT NO    setenv USER todd    setenv USER_APPS_DIR /Users/todd/Applications    setenv USER_LIBRARY_DIR /Users/todd/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP NO    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSION_INFO_BUILDER todd    setenv VERSION_INFO_FILE Box2D_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:Box2D  PROJECT:Box2D-\""    setenv WARNING_CFLAGS "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas"    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2423    setenv XCODE_VERSION_ACTUAL 0325    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT /Developer/SDKs/MacOSX10.6.sdk    /bin/sh -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112203011220301122030000.sh0#
-
-CPhaseScriptExecution "CMake ReRun" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112194011219401121940000.sh
-s316402307.860807
-e316402307.896432
-r1
-xPhaseScriptExecution
-xCMake ReRun
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112194011219401121940000.sh
-omake: `CMakeFiles/cmake.check_cache' is up to date.
-lSLF07#2@37"Run custom shell script 'CMake ReRun'316402307#316402307#0(52"make: `CMakeFiles/cmake.check_cache' is up to date.1(13@52"make: `CMakeFiles/cmake.check_cache' is up to date.316402307#0#52#0(1@0"0(0#0#0"8624508352#15470"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER todd    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv BUILD_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv CACHE_ROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv CONFIGURATION_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/Box2D.dst    setenv DWARF_DSYM_FILE_NAME libBox2D.dylib.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv DYLIB_CURRENT_VERSION 2.1.0    setenv DYLIB_INSTALL_NAME_BASE /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLE_EXTENSION dylib    setenv EXECUTABLE_NAME libBox2D.dylib    setenv EXECUTABLE_PATH libBox2D.dylib    setenv EXECUTABLE_PREFIX lib    setenv EXECUTABLE_SUFFIX .dylib    setenv FILE_LIST /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/FixedFiles    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME libBox2D.dylib    setenv GCC3_VERSION 3.3    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PREPROCESSOR_DEFINITIONS "'CMAKE_INTDIR=\"Debug\"' Box2D_shared_EXPORTS"    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE NO    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/include\" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/.."    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PREPROCESS NO    setenv INSTALL_DIR /tmp/Box2D.dst/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER todd    setenv INSTALL_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv INSTALL_ROOT /tmp/Box2D.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DYLIB_INSTALL_NAME /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.dylib    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Box2D-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug\" "    setenv LIBRARY_STYLE DYNAMIC    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal/x86_64/Box2D.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_dylib    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_VERSION_ACTUAL 1066    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0606    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Objects-normal    setenv OBJROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "   -fPIC  "    setenv OTHER_CPLUSPLUSFLAGS "   -fPIC  "    setenv OTHER_LDFLAGS " -dynamiclib -headerpad_max_install_names "    setenv PACKAGE_TYPE com.apple.package-type.mach-o-dylib    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2423    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH /usr/local/include    setenv PRODUCT_NAME Box2D    setenv PRODUCT_SETTINGS_PATH     setenv PRODUCT_TYPE com.apple.product-type.library.dynamic    setenv PROFILING_CODE NO    setenv PROJECT Box2D    setenv PROJECT_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/DerivedSources    setenv PROJECT_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv PROJECT_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D.xcodeproj    setenv PROJECT_NAME Box2D    setenv PROJECT_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build    setenv PUBLIC_HEADERS_FOLDER_PATH /usr/local/include    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/ResourceManagerResources    setenv REZ_EXECUTABLE YES    setenv REZ_OBJECTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/DerivedSources    setenv SHARED_PRECOMPS_DIR /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv SRCROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE debugging    setenv SYMBOL_REPOSITORY_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/SymbolRepositories    setenv SYMROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME Box2D_shared    setenv TARGET_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug    setenv TARGET_NAME Box2D_shared    setenv TARGET_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build    setenv TEMP_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D    setenv UID 501    setenv UNSTRIPPED_PRODUCT NO    setenv USER todd    setenv USER_APPS_DIR /Users/todd/Applications    setenv USER_LIBRARY_DIR /Users/todd/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP NO    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSION_INFO_BUILDER todd    setenv VERSION_INFO_FILE Box2D_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:Box2D  PROJECT:Box2D-\""    setenv WARNING_CFLAGS "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas"    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2423    setenv XCODE_VERSION_ACTUAL 0325    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT /Developer/SDKs/MacOSX10.6.sdk    /bin/sh -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Box2D.build/Debug/Box2D_shared.build/Script-112194011219401121940000.sh0#
-

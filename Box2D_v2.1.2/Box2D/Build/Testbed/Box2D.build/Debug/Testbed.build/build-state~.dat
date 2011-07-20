@@ -1,755 +1,0 @@
-TTestbed
-v7
-r0
-t316402326.062384
-cCheck dependencies
-cPhaseScriptExecution "CMake ReRun" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-11915C011915C011915C0000.sh
-cCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Main.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Render.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Test.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/TestEntries.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cLd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed normal x86_64
-cPhaseScriptExecution "CMake PostBuild Rules" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-1191CE01191CE01191CE0000.sh
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004CAA740B00000000000000EE
-t1286239243
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/GLUT.framework/Headers/glut.h
-c000000004C23CCCC000000000000578C
-t1277414604
-s22412
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/GL/gl.h
-c000000004C23CB040000000000020658
-t1277414148
-s132696
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/GL/glu.h
-c000000004C23CADD0000000000004363
-t1277414109
-s17251
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
-c000000004BBD2CE90000000000002DF5
-t1270689001
-s11765
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Box2D.h
-c000000004BB7CCAA00000000000008C9
-t1270336682
-s2249
-i<Box2D/Common/b2Settings.h>
-i<Box2D/Collision/Shapes/b2CircleShape.h>
-i<Box2D/Collision/Shapes/b2PolygonShape.h>
-i<Box2D/Collision/b2BroadPhase.h>
-i<Box2D/Collision/b2Distance.h>
-i<Box2D/Collision/b2DynamicTree.h>
-i<Box2D/Collision/b2TimeOfImpact.h>
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Dynamics/b2Fixture.h>
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-i<Box2D/Dynamics/b2TimeStep.h>
-i<Box2D/Dynamics/b2World.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/Joints/b2DistanceJoint.h>
-i<Box2D/Dynamics/Joints/b2FrictionJoint.h>
-i<Box2D/Dynamics/Joints/b2GearJoint.h>
-i<Box2D/Dynamics/Joints/b2LineJoint.h>
-i<Box2D/Dynamics/Joints/b2MouseJoint.h>
-i<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
-i<Box2D/Dynamics/Joints/b2PulleyJoint.h>
-i<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
-i<Box2D/Dynamics/Joints/b2WeldJoint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
-c000000004B667EF000000000000009D9
-t1265008368
-s2521
-i<Box2D/Collision/Shapes/b2Shape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
-c000000004B667EF00000000000000FBB
-t1265008368
-s4027
-i<Box2D/Collision/Shapes/b2Shape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/Shapes/b2Shape.h
-c000000004B94330A0000000000000D18
-t1268003594
-s3352
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/b2Collision.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2BroadPhase.h
-c000000004B667EF00000000000001928
-t1265008368
-s6440
-i<Box2D/Common/b2Settings.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/b2DynamicTree.h>
-i<algorithm>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Collision.h
-c000000004BB16C2E0000000000002091
-t1269918766
-s8337
-i<Box2D/Common/b2Math.h>
-i<climits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2Distance.h
-c000000004B667EF00000000000000F42
-t1265008368
-s3906
-i<Box2D/Common/b2Math.h>
-i<climits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2DynamicTree.h
-c000000004B92E5C20000000000001D32
-t1267918274
-s7474
-i<Box2D/Collision/b2Collision.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Collision/b2TimeOfImpact.h
-c000000004B667EF00000000000000798
-t1265008368
-s1944
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/b2Distance.h>
-i<climits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2BlockAllocator.h
-c000000004B667EF0000000000000072E
-t1265008368
-s1838
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Math.h
-c000000004BC405BC0000000000003B41
-t1271137724
-s15169
-i<Box2D/Common/b2Settings.h>
-i<cmath>
-i<cfloat>
-i<cstddef>
-i<limits>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2Settings.h
-c000000004BB766C00000000000001534
-t1270310592
-s5428
-i<cassert>
-i<cmath>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Common/b2StackAllocator.h
-c000000004B667EF000000000000006C7
-t1265008368
-s1735
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
-c000000004BC6A0340000000000001AF6
-t1271308340
-s6902
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/Shapes/b2Shape.h>
-i<Box2D/Dynamics/Contacts/b2Contact.h>
-i<Box2D/Dynamics/b2Fixture.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
-c000000004BB7C7B60000000000000F89
-t1270335414
-s3977
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
-c000000004B667EF00000000000000B38
-t1265008368
-s2872
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
-c000000004B667EF00000000000000CE4
-t1265008368
-s3300
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2Joint.h
-c000000004B667EF00000000000001692
-t1265008368
-s5778
-i<Box2D/Common/b2Math.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2LineJoint.h
-c000000004B8CA7A40000000000001411
-t1267509156
-s5137
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
-c000000004B667EF00000000000000DE9
-t1265008368
-s3561
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
-c000000004B8B699C0000000000001524
-t1267427740
-s5412
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
-c000000004B667EF00000000000001148
-t1265008368
-s4424
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
-c000000004B667EF0000000000000156E
-t1265008368
-s5486
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
-c000000004B667EF00000000000000A29
-t1265008368
-s2601
-i<Box2D/Dynamics/Joints/b2Joint.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Body.h
-c000000004BB7C74A00000000000055A5
-t1270335306
-s21925
-i<Box2D/Common/b2Math.h>
-i<Box2D/Collision/Shapes/b2Shape.h>
-i<memory>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2ContactManager.h
-c000000004BA704F00000000000000637
-t1269236976
-s1591
-i<Box2D/Collision/b2BroadPhase.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2Fixture.h
-c000000004BB7C92800000000000022D3
-t1270335784
-s8915
-i<Box2D/Dynamics/b2Body.h>
-i<Box2D/Collision/b2Collision.h>
-i<Box2D/Collision/Shapes/b2Shape.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2TimeStep.h
-c000000004B667EF000000000000004F4
-t1265008368
-s1268
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2World.h
-c000000004BA8DC600000000000002229
-t1269357664
-s8745
-i<Box2D/Common/b2Math.h>
-i<Box2D/Common/b2BlockAllocator.h>
-i<Box2D/Common/b2StackAllocator.h>
-i<Box2D/Dynamics/b2ContactManager.h>
-i<Box2D/Dynamics/b2WorldCallbacks.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
-c000000004BAFBE3C0000000000001EDC
-t1269808700
-s7900
-i<Box2D/Common/b2Settings.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Main.o
-t1294709524
-s132816
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Render.o
-t1294709524
-s35444
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Test.o
-t1294709524
-s112708
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/TestEntries.o
-t1294709525
-s460424
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Testbed.LinkFileList
-c000000004D2BB31400000000000001D1
-t1294709524
-s465
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-11915C011915C011915C0000.sh
-c000000004D2BB314000000000000008C
-t1294709524
-s140
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-1191CE01191CE01191CE0000.sh
-c000000004D2BB31400000000000000BA
-t1294709524
-s186
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed
-t1294709526
-s1448248
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp
-c000000004B667EEE00000000000024FD
-t1265008366
-s9469
-i"Render.h"
-i"Test.h"
-i"glui/GL/glui.h"
-i<cstdio>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.cpp
-c000000004B667EEE0000000000001497
-t1265008366
-s5271
-i"Render.h"
-i"freeglut/GL/glut.h"
-i<cstdio>
-i<cstdarg>
-i<cstring>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.h
-c000000004B667EEE000000000000073B
-t1265008366
-s1851
-i<Box2D/Box2D.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp
-c000000004B782FC800000000000022B5
-t1266167752
-s8885
-i"Test.h"
-i"Render.h"
-i"freeglut/GL/glut.h"
-i<cstdio>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h
-c000000004B667EEE0000000000001219
-t1265008366
-s4633
-i<Box2D/Box2D.h>
-i"Render.h"
-i<cstdlib>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ApplyForce.h
-c000000004B667EEC0000000000001119
-t1265008364
-s4377
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/BodyTypes.h
-c000000004B93EC9A0000000000000F10
-t1267985562
-s3856
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Breakable.h
-c000000004B8B34580000000000000F09
-t1267414104
-s3849
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Bridge.h
-c000000004B8B34580000000000000B99
-t1267414104
-s2969
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Cantilever.h
-c000000004B8B34580000000000001200
-t1267414104
-s4608
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Chain.h
-c000000004B8B34580000000000000797
-t1267414104
-s1943
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/CharacterCollision.h
-c000000004B8B34580000000000001283
-t1267414104
-s4739
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/CollisionFiltering.h
-c000000004B667EEE00000000000014AB
-t1265008366
-s5291
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/CollisionProcessing.h
-c000000004BB7706600000000000013BB
-t1270313062
-s5051
-i<algorithm>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/CompoundShapes.h
-c000000004B8B34580000000000000FC2
-t1267414104
-s4034
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Confined.h
-c000000004BB7C2DE0000000000000E57
-t1270334174
-s3671
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h
-c000000004B8B34580000000000000EF8
-t1267414104
-s3832
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/DistanceTest.h
-c000000004B667EEE0000000000000C42
-t1265008366
-s3138
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Dominos.h
-c000000004B8B34560000000000001363
-t1267414102
-s4963
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/DynamicTreeTest.h
-c000000004B667EEE0000000000001D95
-t1265008366
-s7573
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/EdgeShapes.h
-c000000004BB7726E0000000000001500
-t1270313582
-s5376
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Gears.h
-c000000004B8B36100000000000000FA7
-t1267414544
-s4007
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/LineJoint.h
-c000000004B8B361000000000000007A0
-t1267414544
-s1952
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/OneSidedPlatform.h
-c000000004BC6A0440000000000000B68
-t1271308356
-s2920
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyCollision.h
-c000000004B667EEC0000000000000BFE
-t1265008364
-s3070
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h
-c000000004B8B36100000000000001A0A
-t1267414544
-s6666
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Prismatic.h
-c000000004B8B695A0000000000000AF2
-t1267427674
-s2802
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Pulleys.h
-c000000004B8B361000000000000009E7
-t1267414544
-s2535
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Pyramid.h
-c000000004B8B3610000000000000092F
-t1267414544
-s2351
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h
-c000000004BC0D59600000000000025BC
-t1270928790
-s9660
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Revolute.h
-c000000004B8B36100000000000000A80
-t1267414544
-s2688
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/SensorTest.h
-c000000004B8B36100000000000001004
-t1267414544
-s4100
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ShapeEditing.h
-c000000004B8B36100000000000000919
-t1267414544
-s2329
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/SliderCrank.h
-c000000004B8B33B60000000000000FBE
-t1267413942
-s4030
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/SphereStack.h
-c000000004B8B36100000000000000819
-t1267414544
-s2073
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp
-c000000004BC9DF4A0000000000000D9F
-t1271521098
-s3487
-i"../Framework/Test.h"
-i"../Framework/Render.h"
-i"../../freeglut/GL/glut.h"
-i<cstring>
-i"ApplyForce.h"
-i"BodyTypes.h"
-i"Breakable.h"
-i"Bridge.h"
-i"Cantilever.h"
-i"ContinuousTest.h"
-i"Chain.h"
-i"CharacterCollision.h"
-i"CollisionFiltering.h"
-i"CollisionProcessing.h"
-i"CompoundShapes.h"
-i"Confined.h"
-i"DistanceTest.h"
-i"Dominos.h"
-i"DynamicTreeTest.h"
-i"EdgeShapes.h"
-i"Gears.h"
-i"LineJoint.h"
-i"OneSidedPlatform.h"
-i"PolyCollision.h"
-i"PolyShapes.h"
-i"Prismatic.h"
-i"Pulleys.h"
-i"Pyramid.h"
-i"RayCast.h"
-i"Revolute.h"
-i"SensorTest.h"
-i"ShapeEditing.h"
-i"SliderCrank.h"
-i"SphereStack.h"
-i"TheoJansen.h"
-i"TimeOfImpact.h"
-i"VaryingFriction.h"
-i"VaryingRestitution.h"
-i"VerticalStack.h"
-i"Web.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TheoJansen.h
-c000000004BA9A7200000000000001888
-t1269409568
-s6280
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TimeOfImpact.h
-c000000004BC4070C0000000000000F7D
-t1271138060
-s3965
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/VaryingFriction.h
-c000000004B8B36100000000000000B84
-t1267414544
-s2948
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/VaryingRestitution.h
-c000000004BC9DF4A0000000000000728
-t1271521098
-s1832
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/VerticalStack.h
-c000000004BB7B85C0000000000000F0A
-t1270331484
-s3850
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/Web.h
-c000000004B8B3610000000000000160F
-t1267414544
-s5647
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/GL/freeglut.h
-c000000003F94FF6200000000000002A9
-t1066729314
-s681
-i"freeglut_std.h"
-i"freeglut_ext.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/GL/freeglut_ext.h
-c000000004A804D5E0000000000001E96
-t1249922398
-s7830
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/GL/freeglut_std.h
-c000000004A804D5E0000000000006628
-t1249922398
-s26152
-i<Windows.h>
-i<GL/gl.h>
-i<GL/glu.h>
-i<stdlib.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/GL/glut.h
-c000000004B69047200000000000002CF
-t1265173618
-s719
-i"freeglut.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h
-c000000004B667EEA00000000000178C9
-t1265008362
-s96457
-i<GL/freeglut.h>
-i<GL/openglut.h>
-i<GLUT/glut.h>
-i"../../freeglut/GL/glut.h"
-i<cstdlib>
-i<cstdio>
-i<cstring>
-i<string>
-i<vector>
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies316402324#316402324#0(0"0(0#1#0"8646406592#0"0#
-
-CCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Main.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402324.204883
-e316402324.710878
-r1
-xCompileC
-xBuild/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Main.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp:20:
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h: In constructor 'Settings::Settings()':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:87: warning: 'Settings::drawStats' will be initialized after
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:78: warning:   'int32 Settings::drawShapes'
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:55: warning:   when initialized here
-oIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp:21:
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'void GLUI_Main::adjust_glut_xy(int&, int&)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:703: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_down_handler(int, int)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:827: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:827: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_up_handler(int, int, bool)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:828: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:828: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:828: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_held_down_handler(int, int, bool)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:829: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:829: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:829: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::key_handler(unsigned char, int)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:830: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:830: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::special_handler(int, int)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:831: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:831: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_over(int, int, int)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:835: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:835: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:835: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual void GLUI_Control::activate(int)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:839: warning: statement has no effect
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual void GLUI_Control::set_text(const char*)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:897: warning: statement has no effect
-lSLF07#2@73"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#316402324#0(3446"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp:20:/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h: In constructor 'Settings::Settings()':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:87: warning: 'Settings::drawStats' will be initialized after/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:78: warning:   'int32 Settings::drawShapes'/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:55: warning:   when initialized hereIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp:21:/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'void GLUI_Main::adjust_glut_xy(int&, int&)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:703: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_down_handler(int, int)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:827: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:827: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_up_handler(int, int, bool)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:828: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:828: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:828: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_held_down_handler(int, int, bool)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:829: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:829: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:829: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::key_handler(unsigned char, int)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:830: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:830: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::special_handler(int, int)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:831: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:831: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual int GLUI_Control::mouse_over(int, int, int)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:835: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:835: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:835: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual void GLUI_Control::activate(int)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:839: warning: statement has no effect/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h: In member function 'virtual void GLUI_Control::set_text(const char*)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h:897: warning: statement has no effect21(22@47"'Settings::drawStats' will be initialized after316402324#196#125#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#20#0#20#0#0"0(13@114"'Settings::drawStats' will be initialized after in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h316402324#18446744073709551615#0#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#87#0#87#0#0"0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#87#0#87#0#0"0(22@28"'int32 Settings::drawShapes'316402324#321#108#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#20#0#20#0#0"0(13@95"'int32 Settings::drawShapes' in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h316402324#18446744073709551615#0#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#78#0#78#0#0"0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#78#0#78#0#0"0(22@21"When initialized here316402324#429#101#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#20#0#20#0#0"0(13@88"When initialized here in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h316402324#18446744073709551615#0#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#55#0#55#0#0"0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#55#0#55#0#0"0(22@23"Statement has no effect316402324#742#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#703#0#703#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#703#0#703#0#0"0(22@23"Statement has no effect316402324#966#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#827#0#827#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#827#0#827#0#0"0(22@23"Statement has no effect316402324#1058#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#827#0#827#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#827#0#827#0#0"0(22@23"Statement has no effect316402324#1286#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#828#0#828#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#828#0#828#0#0"0(22@23"Statement has no effect316402324#1378#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#828#0#828#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#828#0#828#0#0"0(22@23"Statement has no effect316402324#1470#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#828#0#828#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#828#0#828#0#0"0(22@23"Statement has no effect316402324#1705#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#829#0#829#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#829#0#829#0#0"0(22@23"Statement has no effect316402324#1797#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#829#0#829#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#829#0#829#0#0"0(22@23"Statement has no effect316402324#1889#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#829#0#829#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#829#0#829#0#0"0(22@23"Statement has no effect316402324#2116#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#830#0#830#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#830#0#830#0#0"0(22@23"Statement has no effect316402324#2208#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#830#0#830#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#830#0#830#0#0"0(22@23"Statement has no effect316402324#2429#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#831#0#831#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#831#0#831#0#0"0(22@23"Statement has no effect316402324#2521#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#831#0#831#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#831#0#831#0#0"0(22@23"Statement has no effect316402324#2742#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#835#0#835#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#835#0#835#0#0"0(22@23"Statement has no effect316402324#2834#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#835#0#835#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#835#0#835#0#0"0(22@23"Statement has no effect316402324#2926#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#835#0#835#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#835#0#835#0#0"0(22@23"Statement has no effect316402324#3136#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#839#0#839#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#839#0#839#0#0"0(22@23"Statement has no effect316402324#3354#92#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp286701166#21#0#21#0#0"0(13@80"Statement has no effect in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h316402324#18446744073709551615#0#0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#897#0#897#0#0"0(6@53"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/glui/GL/glui.h286701162#897#0#897#0#0"0(0#0#65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp8599842080#1052"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Main.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Main.o0#
-
-CCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Render.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402324.205648
-e316402324.540105
-r1
-xCompileC
-xBuild/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Render.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@75"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.cpp316402324#316402324#0(0"0(0#0#67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.cpp8641176448#1056"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Render.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Render.o0#
-
-CCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Test.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402324.540182
-e316402324.942971
-r1
-xCompileC
-xBuild/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Test.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp:19:
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h: In constructor 'Settings::Settings()':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:87: warning: 'Settings::drawStats' will be initialized after
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:78: warning:   'int32 Settings::drawShapes'
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:55: warning:   when initialized here
-lSLF07#2@73"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp316402324#316402324#0(530"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp:19:/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h: In constructor 'Settings::Settings()':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:87: warning: 'Settings::drawStats' will be initialized after/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:78: warning:   'int32 Settings::drawShapes'/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h:55: warning:   when initialized here3(22@47"'Settings::drawStats' will be initialized after316402324#196#125#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp287860552#19#0#19#0#0"0(13@114"'Settings::drawStats' will be initialized after in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h316402324#18446744073709551615#0#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#87#0#87#0#0"0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#87#0#87#0#0"0(22@28"'int32 Settings::drawShapes'316402324#321#108#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp287860552#19#0#19#0#0"0(13@95"'int32 Settings::drawShapes' in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h316402324#18446744073709551615#0#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#78#0#78#0#0"0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#78#0#78#0#0"0(22@21"When initialized here316402324#429#101#2(7@87"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp316402324#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp287860552#19#0#19#0#0"0(13@88"When initialized here in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h316402324#18446744073709551615#0#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#55#0#55#0#0"0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.h286701166#55#0#55#0#0"0(0#0#65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp8645192096#1052"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Framework/Test.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Test.o0#
-
-CCompileC Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/TestEntries.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s316402324.711106
-e316402325.563640
-r1
-xCompileC
-xBuild/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/TestEntries.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:19:
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h: In constructor 'Settings::Settings()':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h:87: warning: 'Settings::drawStats' will be initialized after
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h:78: warning:   'int32 Settings::drawShapes'
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h:55: warning:   when initialized here
-oIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:29:
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h: In member function 'virtual void ContinuousTest::Step(Settings*)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h:107: warning: unused variable 'b2_toiMaxIters'
-oIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:44:
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h: In member function 'void PolyShapesCallback::DrawFixture(b2Fixture*)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h:49: warning: enumeration value 'e_unknown' not handled in switch
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h:49: warning: enumeration value 'e_typeCount' not handled in switch
-oIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:48:
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h: In member function 'virtual float32 RayCastMultipleCallback::ReportFixture(b2Fixture*, const b2Vec2&, const b2Vec2&, float32)':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h:114: warning: unused variable 'index'
-lSLF07#2@76"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402324#316402325#0(1804"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:19:/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h: In constructor 'Settings::Settings()':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h:87: warning: 'Settings::drawStats' will be initialized after/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h:78: warning:   'int32 Settings::drawShapes'/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h:55: warning:   when initialized hereIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:29:/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h: In member function 'virtual void ContinuousTest::Step(Settings*)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h:107: warning: unused variable 'b2_toiMaxIters'In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:44:/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h: In member function 'void PolyShapesCallback::DrawFixture(b2Fixture*)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h:49: warning: enumeration value 'e_unknown' not handled in switch/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h:49: warning: enumeration value 'e_typeCount' not handled in switchIn file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp:48:/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h: In member function 'virtual float32 RayCastMultipleCallback::ReportFixture(b2Fixture*, const b2Vec2&, const b2Vec2&, float32)':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h:114: warning: unused variable 'index'7(22@47"'Settings::drawStats' will be initialized after316402324#208#134#2(7@90"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402324#18446744073709551615#0#0(6@68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp293213898#19#0#19#0#0"0(13@123"'Settings::drawStats' will be initialized after in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h316402324#18446744073709551615#0#0(6@72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h286701166#87#0#87#0#0"0(6@72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h286701166#87#0#87#0#0"0(22@28"'int32 Settings::drawShapes'316402324#342#117#2(7@90"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402324#18446744073709551615#0#0(6@68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp293213898#19#0#19#0#0"0(13@104"'int32 Settings::drawShapes' in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h316402324#18446744073709551615#0#0(6@72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h286701166#78#0#78#0#0"0(6@72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h286701166#78#0#78#0#0"0(22@21"When initialized here316402324#459#110#2(7@90"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402324#18446744073709551615#0#0(6@68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp293213898#19#0#19#0#0"0(13@97"When initialized here in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h316402324#18446744073709551615#0#0(6@72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h286701166#55#0#55#0#0"0(6@72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/../Framework/Test.h286701166#55#0#55#0#0"0(22@32"Unused variable 'b2_toiMaxIters'316402325#802#117#2(7@90"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402325#18446744073709551615#0#0(6@68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp293213898#29#0#29#0#0"0(13@105"Unused variable 'b2_toiMaxIters' in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h316402325#18446744073709551615#0#0(6@69"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h289106904#107#0#107#0#0"0(6@69"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/ContinuousTest.h289106904#107#0#107#0#19"unused variable '*'0(22@51"Enumeration value 'e_unknown' not handled in switch316402325#1152#131#2(7@90"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402325#18446744073709551615#0#0(6@68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp293213898#44#0#44#0#0"0(13@120"Enumeration value 'e_unknown' not handled in switch in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h316402325#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h289107344#49#0#49#0#0"0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h289107344#49#0#49#0#0"0(22@53"Enumeration value 'e_typeCount' not handled in switch316402325#1283#133#2(7@90"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402325#18446744073709551615#0#0(6@68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp293213898#44#0#44#0#0"0(13@122"Enumeration value 'e_typeCount' not handled in switch in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h316402325#18446744073709551615#0#0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h289107344#49#0#49#0#0"0(6@65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/PolyShapes.h289107344#49#0#49#0#0"0(22@23"Unused variable 'index'316402325#1703#101#2(7@90"In file included from /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp316402325#18446744073709551615#0#0(6@68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp293213898#48#0#48#0#0"0(13@89"Unused variable 'index' in /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h316402325#18446744073709551615#0#0(6@62"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h292621590#114#0#114#0#0"0(6@62"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/RayCast.h292621590#114#0#114#0#19"unused variable '*'0(0#0#68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp8624182016#1062"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Testbed/Tests/TestEntries.cpp -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/TestEntries.o0#
-
-CLd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed normal x86_64
-s316402325.563816
-e316402326.033936
-r1
-xLd
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed
-xnormal
-xx86_64
-old: warning: directory '/usr/X11/lib/Debug' following -L not found
-old: warning: directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/Debug' following -L not found
-old: warning: directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/Debug' following -L not found
-old: warning: directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/Debug' following -L not found
-lSLF07#2@71"Link /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed316402325#316402326#0(402"ld: warning: directory '/usr/X11/lib/Debug' following -L not foundld: warning: directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/Debug' following -L not foundld: warning: directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/Debug' following -L not foundld: warning: directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/Debug' following -L not found4(22@53"Directory '/usr/X11/lib/Debug' following -L not found316402326#0#67#0(6@0"316402326#0#0#0#0#0"0(22@97"Directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/Debug' following -L not found316402326#67#111#0(6@0"316402326#0#0#0#0#0"0(22@100"Directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/Debug' following -L not found316402326#178#114#0(6@0"316402326#0#0#0#0#0"0(22@96"Directory '/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/Debug' following -L not found316402326#292#110#0(6@0"316402326#0#0#0#0#0"0(0#0#0"8628983264#1262"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug -L/usr/X11/lib/Debug -L/Developer/SDKs/MacOSX10.6.sdk/usr/X11/lib -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/Debug -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/Debug -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/Debug -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug -filelist /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Testbed.LinkFileList -mmacosx-version-min=10.6 -Wl,-search_paths_first -headerpad_max_install_names /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.a /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/libglui.a -lGL -lGLU -lGLUT -lX11 -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed0#
-
-CPhaseScriptExecution "CMake PostBuild Rules" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-1191CE01191CE01191CE0000.sh
-s316402326.034019
-e316402326.062345
-r1
-xPhaseScriptExecution
-xCMake PostBuild Rules
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-1191CE01191CE01191CE0000.sh
-oecho "Depend check for xcode"
-oDepend check for xcode
-ocd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debug
-omake[1]: Nothing to be done for `all.Debug'.
-lSLF07#2@47"Run custom shell script 'CMake PostBuild Rules'316402326#316402326#0(298"echo "Depend check for xcode"Depend check for xcodecd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debugmake[1]: Nothing to be done for `all.Debug'.4(13@30"echo "Depend check for xcode"316402326#0#30#0(1@0"0(13@23"Depend check for xcode316402326#30#23#0(1@0"0(13@200"cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debug316402326#53#200#0(1@0"0(13@45"make[1]: Nothing to be done for `all.Debug'.316402326#253#45#0(1@0"0(0#0#0"8600861504#15503"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER todd    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv BUILD_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv CACHE_ROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv CONFIGURATION_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/Box2D.dst    setenv DWARF_DSYM_FILE_NAME Testbed.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLE_NAME Testbed    setenv EXECUTABLE_PATH Testbed    setenv FILE_LIST /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/FixedFiles    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME Testbed    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PREPROCESSOR_DEFINITIONS "'CMAKE_INTDIR=\"Debug\"' FREEGLUT_EXPORTS FREEGLUT_STATIC _CRT_SECURE_NO_WARNINGS"    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE NO    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/include /Users/todd/Desktop/Box2D_v2.1.2/Box2D /Developer/SDKs/MacOSX10.6.sdk/usr/X11/include"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PREPROCESS NO    setenv INSTALL_DIR /tmp/Box2D.dst    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER todd    setenv INSTALL_ROOT /tmp/Box2D.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Testbed-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug /usr/X11/lib/Debug /Developer/SDKs/MacOSX10.6.sdk/usr/X11/lib /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Testbed.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_VERSION_ACTUAL 1066    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0606    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal    setenv OBJROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "    "    setenv OTHER_CPLUSPLUSFLAGS "    "    setenv OTHER_LDFLAGS " -Wl,-search_paths_first -headerpad_max_install_names /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.a /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/libglui.a -lGL -lGLU -lGLUT -lX11"    setenv PACKAGE_TYPE com.apple.package-type.mach-o-executable    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2423    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRODUCT_NAME Testbed    setenv PRODUCT_SETTINGS_PATH     setenv PRODUCT_TYPE com.apple.product-type.tool    setenv PROFILING_CODE NO    setenv PROJECT Box2D    setenv PROJECT_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/DerivedSources    setenv PROJECT_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv PROJECT_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D.xcodeproj    setenv PROJECT_NAME Box2D    setenv PROJECT_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/ResourceManagerResources    setenv REZ_EXECUTABLE YES    setenv REZ_OBJECTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/DerivedSources    setenv SHARED_PRECOMPS_DIR /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv SRCROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/SymbolRepositories    setenv SYMROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME Testbed    setenv TARGET_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv TARGET_NAME Testbed    setenv TARGET_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv UID 501    setenv UNSTRIPPED_PRODUCT NO    setenv USER todd    setenv USER_APPS_DIR /Users/todd/Applications    setenv USER_LIBRARY_DIR /Users/todd/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP NO    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSION_INFO_BUILDER todd    setenv VERSION_INFO_FILE Testbed_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:Testbed  PROJECT:Box2D-\""    setenv WARNING_CFLAGS "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas"    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2423    setenv XCODE_VERSION_ACTUAL 0325    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT /Developer/SDKs/MacOSX10.6.sdk    /bin/sh -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-1191CE01191CE01191CE0000.sh0#
-
-CPhaseScriptExecution "CMake ReRun" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-11915C011915C011915C0000.sh
-s316402324.165006
-e316402324.204806
-r1
-xPhaseScriptExecution
-xCMake ReRun
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-11915C011915C011915C0000.sh
-omake: `CMakeFiles/cmake.check_cache' is up to date.
-lSLF07#2@37"Run custom shell script 'CMake ReRun'316402324#316402324#0(52"make: `CMakeFiles/cmake.check_cache' is up to date.1(13@52"make: `CMakeFiles/cmake.check_cache' is up to date.316402324#0#52#0(1@0"0(0#0#0"8623765088#15503"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER todd    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv BUILD_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv CACHE_ROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/Testbed    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv CONFIGURATION_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/Box2D.dst    setenv DWARF_DSYM_FILE_NAME Testbed.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLE_NAME Testbed    setenv EXECUTABLE_PATH Testbed    setenv FILE_LIST /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/FixedFiles    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME Testbed    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PREPROCESSOR_DEFINITIONS "'CMAKE_INTDIR=\"Debug\"' FREEGLUT_EXPORTS FREEGLUT_STATIC _CRT_SECURE_NO_WARNINGS"    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE NO    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/include /Users/todd/Desktop/Box2D_v2.1.2/Box2D /Developer/SDKs/MacOSX10.6.sdk/usr/X11/include"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PREPROCESS NO    setenv INSTALL_DIR /tmp/Box2D.dst    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER todd    setenv INSTALL_ROOT /tmp/Box2D.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Testbed-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug /usr/X11/lib/Debug /Developer/SDKs/MacOSX10.6.sdk/usr/X11/lib /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/Debug /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal/x86_64/Testbed.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_VERSION_ACTUAL 1066    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0606    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Objects-normal    setenv OBJROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "    "    setenv OTHER_CPLUSPLUSFLAGS "    "    setenv OTHER_LDFLAGS " -Wl,-search_paths_first -headerpad_max_install_names /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D/Debug/libBox2D.a /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/glui/Debug/libglui.a -lGL -lGLU -lGLUT -lX11"    setenv PACKAGE_TYPE com.apple.package-type.mach-o-executable    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2423    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRODUCT_NAME Testbed    setenv PRODUCT_SETTINGS_PATH     setenv PRODUCT_TYPE com.apple.product-type.tool    setenv PROFILING_CODE NO    setenv PROJECT Box2D    setenv PROJECT_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/DerivedSources    setenv PROJECT_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv PROJECT_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D.xcodeproj    setenv PROJECT_NAME Box2D    setenv PROJECT_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/ResourceManagerResources    setenv REZ_EXECUTABLE YES    setenv REZ_OBJECTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug/DerivedSources    setenv SHARED_PRECOMPS_DIR /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv SRCROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/SymbolRepositories    setenv SYMROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME Testbed    setenv TARGET_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Debug    setenv TARGET_NAME Testbed    setenv TARGET_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build    setenv TEMP_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed    setenv UID 501    setenv UNSTRIPPED_PRODUCT NO    setenv USER todd    setenv USER_APPS_DIR /Users/todd/Applications    setenv USER_LIBRARY_DIR /Users/todd/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP NO    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSION_INFO_BUILDER todd    setenv VERSION_INFO_FILE Testbed_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:Testbed  PROJECT:Box2D-\""    setenv WARNING_CFLAGS "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas"    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2423    setenv XCODE_VERSION_ACTUAL 0325    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT /Developer/SDKs/MacOSX10.6.sdk    /bin/sh -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Testbed/Box2D.build/Debug/Testbed.build/Script-11915C011915C011915C0000.sh0#
-

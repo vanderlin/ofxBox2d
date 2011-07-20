@@ -1,922 +1,0 @@
-Tfreeglut_static
-v7
-r0
-t316402337.584972
-cCheck dependencies
-cPhaseScriptExecution "CMake ReRun" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114AD90114AD90114AD90000.sh
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_callbacks.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_callbacks.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_cursor.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_cursor.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_display.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_display.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_ext.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_ext.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font_data.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font_data.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_gamemode.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_geometry.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_geometry.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_glutfont_definitions.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_glutfont_definitions.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_init.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_init.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_input_devices.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_input_devices.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_joystick.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_main.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_menu.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_menu.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_misc.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_misc.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_overlay.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_overlay.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_spaceball.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_spaceball.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_state.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_state.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_mono_roman.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_mono_roman.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_roman.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_roman.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_structure.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_structure.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_teapot.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_videoresize.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_videoresize.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_window.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_window.c normal x86_64 c com.apple.compilers.gcc.4_2
-cLibtool /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a normal x86_64
-cPhaseScriptExecution "CMake PostBuild Rules" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114B4A0114B4A0114B4A0000.sh
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004CAA740B00000000000000EE
-t1286239243
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h
-c000000004C23A0120000000000012048
-t1277403154
-s73800
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/hid/IOHIDLib.h
-c000000004C23A0110000000000000609
-t1277403153
-s1545
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/GL/gl.h
-c000000004C23CB040000000000020658
-t1277414148
-s132696
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/GL/glu.h
-c000000004C23CADD0000000000004363
-t1277414109
-s17251
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/GL/glx.h
-c000000004C23CB040000000000004303
-t1277414148
-s17155
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/X11/Xatom.h
-c000000004C23B88000000000000009D6
-t1277409408
-s2518
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/X11/Xlib.h
-c000000004C23B9E0000000000001844B
-t1277409760
-s99403
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/X11/Xutil.h
-c000000004C23B9E0000000000000529A
-t1277409760
-s21146
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/X11/cursorfont.h
-c000000004C23B9E00000000000000C64
-t1277409760
-s3172
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/X11/extensions/XInput.h
-c000000004C23B8110000000000008C18
-t1277409297
-s35864
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/X11/extensions/xf86vmode.h
-c000000004C23B8700000000000002179
-t1277409392
-s8569
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include/X11/keysym.h
-c000000004C23B8800000000000000B4C
-t1277409408
-s2892
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/errno.h
-c000000004BBD2CE900000000000003EB
-t1270689001
-s1003
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/fcntl.h
-c000000004BBD2CE900000000000003EA
-t1270689001
-s1002
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/mach/mach.h
-c000000004BD247AA0000000000001057
-t1272072106
-s4183
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/math.h
-c000000004A5C14A000000000000004F1
-t1247548576
-s1265
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
-c000000004BBD2CE90000000000004174
-t1270689001
-s16756
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
-c000000004BBD2CE90000000000002DF5
-t1270689001
-s11765
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h
-c000000004BBD2CE90000000000001731
-t1270689001
-s5937
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/ioctl.h
-c000000004C239946000000000000116C
-t1277401414
-s4460
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/param.h
-c000000004C23994700000000000027BE
-t1277401415
-s10174
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/time.h
-c000000004C2399480000000000001E17
-t1277401416
-s7703
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/types.h
-c000000004C2399480000000000002905
-t1277401416
-s10501
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/termios.h
-c000000004BBD2CE900000000000004D4
-t1270689001
-s1236
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/time.h
-c000000004BBD2CE9000000000000178E
-t1270689001
-s6030
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
-c000000004BBD2CE9000000000000563E
-t1270689001
-s22078
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
-c000000004A11EB240000000000000C7E
-t1242688292
-s3198
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
-c000000004A11EB2400000000000010DD
-t1242688292
-s4317
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_callbacks.o
-t1294709515
-s26256
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_cursor.o
-t1294709516
-s11660
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_display.o
-t1294709516
-s10852
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_ext.o
-t1294709516
-s27204
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font.o
-t1294709516
-s16716
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font_data.o
-t1294709516
-s320748
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_gamemode.o
-t1294709516
-s13120
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_geometry.o
-t1294709516
-s57504
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_glutfont_definitions.o
-t1294709516
-s3232
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_init.o
-t1294709516
-s27756
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_input_devices.o
-t1294709516
-s15340
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_joystick.o
-t1294709516
-s24256
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_main.o
-t1294709516
-s38000
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_menu.o
-t1294709517
-s30420
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_misc.o
-t1294709517
-s13624
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_overlay.o
-t1294709517
-s4960
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_spaceball.o
-t1294709517
-s28736
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_state.o
-t1294709517
-s20548
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_static.LinkFileList
-c000000004D2BB30B0000000000000CC1
-t1294709515
-s3265
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_mono_roman.o
-t1294709517
-s50092
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_roman.o
-t1294709517
-s50084
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_structure.o
-t1294709517
-s22584
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_teapot.o
-t1294709517
-s12880
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_videoresize.o
-t1294709517
-s4328
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_window.o
-t1294709517
-s44736
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114AD90114AD90114AD90000.sh
-c000000004D2BB30B000000000000008C
-t1294709515
-s140
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114B4A0114B4A0114B4A0000.sh
-c000000004D2BB30B00000000000000C4
-t1294709515
-s196
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a
-t1294709517
-s883600
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/GL/freeglut.h
-c000000003F94FF6200000000000002A9
-t1066729314
-s681
-i"freeglut_std.h"
-i"freeglut_ext.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/GL/freeglut_ext.h
-c000000004A804D5E0000000000001E96
-t1249922398
-s7830
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/GL/freeglut_std.h
-c000000004A804D5E0000000000006628
-t1249922398
-s26152
-i<Windows.h>
-i<GL/gl.h>
-i<GL/glu.h>
-i<stdlib.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_callbacks.c
-c000000004AF407D800000000000029A3
-t1257506776
-s10659
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_cursor.c
-c000000004AF0B1000000000000002C1A
-t1257287936
-s11290
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i<X11/cursorfont.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_display.c
-c0000000047520F660000000000000D31
-t1196560230
-s3377
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_ext.c
-c000000004A804D5E0000000000001EE4
-t1249922398
-s7908
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font.c
-c000000004A22635C0000000000002FD6
-t1243767644
-s12246
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font_data.c
-c0000000041D8FEA8000000000005FC70
-t1104740008
-s392304
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c
-c0000000046EC8D700000000000004903
-t1189907824
-s18691
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_geometry.c
-c0000000042CE5A1A000000000000A1E0
-t1120819738
-s41440
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_glutfont_definitions.c
-c00000000492535020000000000000F97
-t1227175170
-s3991
-i<GL/freeglut_std.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_init.c
-c000000004AF017DC0000000000008DB0
-t1257248732
-s36272
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i<limits.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_input_devices.c
-c000000004AF017DC0000000000002CDA
-t1257248732
-s11482
-i"config.h"
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i<errno.h>
-i<sys/ioctl.h>
-i<sys/time.h>
-i<time.h>
-i<stdio.h>
-i<stdlib.h>
-i<unistd.h>
-i<string.h>
-i<termios.h>
-i<fcntl.h>
-i<sys/types.h>
-i<sys/types.h>
-i<winbase.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_internal.h
-c000000004B03CC72000000000000877F
-t1258540146
-s34687
-i"config.h"
-i<Windows.h>
-i<WindowsX.h>
-i<MMSystem.h>
-i<tchar.h>
-i<GL/glx.h>
-i<X11/Xlib.h>
-i<X11/Xatom.h>
-i<X11/keysym.h>
-i<X11/extensions/XInput.h>
-i<X11/extensions/xf86vmode.h>
-i<stdio.h>
-i<string.h>
-i<math.h>
-i<stdlib.h>
-i<sys/types.h>
-i<unistd.h>
-i<sys/time.h>
-i<time.h>
-i<sys/time.h>
-i<time.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c
-c000000004AFE168C000000000000D866
-t1258165900
-s55398
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i<sys/param.h>
-i<InputSprocket.h>
-i<mach/mach.h>
-i<IOKit/IOkitLib.h>
-i<IOKit/hid/IOHIDLib.h>
-i<windows.h>
-i<mmsystem.h>
-i<regstr.h>
-i<sys/ioctl.h>
-i<fcntl.h>
-i<errno.h>
-i<sys/joystick.h>
-i<machine/joystick.h>
-i<linux/joystick.h>
-i<usbhid.h>
-i<usb.h>
-i<libusbhid.h>
-i<usbhid.h>
-i<dev/usb/usb.h>
-i<dev/usb/usbhid.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c
-c000000004AF407D8000000000001272F
-t1257506776
-s75567
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i<errno.h>
-i<stdarg.h>
-i<gx.h>
-i<limits.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_menu.c
-c000000004A6898D6000000000000801D
-t1248368854
-s32797
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_misc.c
-c000000004911CDDC00000000000018A2
-t1225903580
-s6306
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_overlay.c
-c0000000041D8FEA80000000000000851
-t1104740008
-s2129
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_spaceball.c
-c000000004AF60A120000000000002AD5
-t1257638418
-s10965
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i<X11/Xlib.h>
-i<stdio.h>
-i<stdlib.h>
-i<string.h>
-i<errno.h>
-i<X11/Xlib.h>
-i<X11/Xutil.h>
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_state.c
-c000000004B03372E0000000000006789
-t1258501934
-s26505
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_mono_roman.c
-c000000004911CDB0000000000000BCBC
-t1225903536
-s48316
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_roman.c
-c000000004911CDB0000000000000BA92
-t1225903536
-s47762
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_structure.c
-c000000004B03372E0000000000004736
-t1258501934
-s18230
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot.c
-c000000004512C02E00000000000019F9
-t1158856750
-s6649
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i"freeglut_teapot_data.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot_data.h
-c000000004512C02E0000000000014BA5
-t1158856750
-s84901
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_videoresize.c
-c0000000041D8FEA800000000000007C9
-t1104740008
-s1993
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-
-N/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_window.c
-c000000004B03372E000000000000CECB
-t1258501934
-s52939
-i<GL/freeglut.h>
-i"freeglut_internal.h"
-i<limits.h>
-i<Aygshell.h>
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies316402337#316402337#0(0"0(0#1#0"8620655520#0"0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_callbacks.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_callbacks.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402315.726336
-e316402315.915296
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_callbacks.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_callbacks.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@76"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_callbacks.c316402315#316402315#0(0"0(0#0#68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_callbacks.c8635115040#1134"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_callbacks.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_callbacks.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_cursor.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_cursor.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402315.915474
-e316402316.055807
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_cursor.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_cursor.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@73"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_cursor.c316402315#316402316#0(0"0(0#0#65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_cursor.c8620661280#1128"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_cursor.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_cursor.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_display.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_display.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402315.917335
-e316402316.050391
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_display.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_display.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@74"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_display.c316402315#316402316#0(0"0(0#0#66"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_display.c8620504192#1130"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_display.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_display.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_ext.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_ext.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.050482
-e316402316.203896
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_ext.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_ext.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@70"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_ext.c316402316#316402316#0(0"0(0#0#62"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_ext.c8643539328#1122"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_ext.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_ext.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.203975
-e316402316.350865
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@71"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font.c316402316#316402316#0(0"0(0#0#63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font.c8623727872#1124"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font_data.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font_data.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.055882
-e316402316.384988
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font_data.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font_data.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@76"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font_data.c316402316#316402316#0(0"0(0#0#68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font_data.c8639960576#1134"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_font_data.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_font_data.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_gamemode.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.350948
-e316402316.486305
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_gamemode.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c: In function 'glutEnterGameMode':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c:465: warning: implicit declaration of function 'usleep'
-lSLF07#2@75"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c316402316#316402316#0(226"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c: In function 'glutEnterGameMode':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c:465: warning: implicit declaration of function 'usleep'1(22@41"Implicit declaration of function 'usleep'316402316#102#124#0(6@67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c211600624#465#0#465#0#36"implicit declaration of function '*'0(0#0#67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c8616868000#1132"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_gamemode.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_gamemode.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_geometry.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_geometry.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.385174
-e316402316.656002
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_geometry.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_geometry.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@75"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_geometry.c316402316#316402316#0(0"0(0#0#67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_geometry.c8626069952#1132"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_geometry.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_geometry.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_glutfont_definitions.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_glutfont_definitions.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.486392
-e316402316.592095
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_glutfont_definitions.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_glutfont_definitions.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@87"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_glutfont_definitions.c316402316#316402316#0(0"0(0#0#79"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_glutfont_definitions.c8620707008#1156"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_glutfont_definitions.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_glutfont_definitions.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_init.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_init.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.592183
-e316402316.762415
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_init.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_init.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@71"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_init.c316402316#316402316#0(0"0(0#0#63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_init.c8618029344#1124"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_init.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_init.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_input_devices.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_input_devices.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.656081
-e316402316.789307
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_input_devices.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_input_devices.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_input_devices.c316402316#316402316#0(0"0(0#0#72"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_input_devices.c8643767232#1142"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_input_devices.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_input_devices.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_joystick.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.762502
-e316402316.914632
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_joystick.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c: In function 'fghJoystickRawRead':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c:756: warning: implicit declaration of function 'read'
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c: In function 'fgJoystickClose':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c:1663: warning: implicit declaration of function 'close'
-lSLF07#2@75"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c316402316#316402316#0(449"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c: In function 'fghJoystickRawRead':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c:756: warning: implicit declaration of function 'read'/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c: In function 'fgJoystickClose':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c:1663: warning: implicit declaration of function 'close'2(22@39"Implicit declaration of function 'read'316402316#103#122#0(6@67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c279858700#756#0#756#0#36"implicit declaration of function '*'0(22@40"Implicit declaration of function 'close'316402316#325#124#0(6@67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c279858700#1663#0#1663#0#36"implicit declaration of function '*'0(0#0#67"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c8635508064#1132"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_joystick.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_joystick.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_main.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.789386
-e316402316.964007
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_main.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c: In function 'fgSystemTime':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c:315: warning: implicit declaration of function 'gettimeofday'
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c: In function 'fghSleepForEvents':
-o/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c:474: warning: implicit declaration of function 'select'
-lSLF07#2@71"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c316402316#316402316#0(437"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c: In function 'fgSystemTime':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c:315: warning: implicit declaration of function 'gettimeofday'/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c: In function 'fghSleepForEvents':/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c:474: warning: implicit declaration of function 'select'2(22@47"Implicit declaration of function 'gettimeofday'316402316#93#126#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c279199576#315#0#315#0#36"implicit declaration of function '*'0(22@41"Implicit declaration of function 'select'316402316#317#120#0(6@63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c279199576#474#0#474#0#36"implicit declaration of function '*'0(0#0#63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c8625128736#1124"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_main.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_main.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_menu.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_menu.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.914713
-e316402317.156556
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_menu.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_menu.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@71"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_menu.c316402316#316402317#0(0"0(0#0#63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_menu.c8621465952#1124"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_menu.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_menu.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_misc.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_misc.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402316.964096
-e316402317.095466
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_misc.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_misc.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@71"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_misc.c316402316#316402317#0(0"0(0#0#63"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_misc.c8644170176#1124"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_misc.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_misc.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_overlay.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_overlay.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.095647
-e316402317.210677
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_overlay.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_overlay.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@74"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_overlay.c316402317#316402317#0(0"0(0#0#66"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_overlay.c8635528896#1130"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_overlay.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_overlay.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_spaceball.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_spaceball.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.156644
-e316402317.308242
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_spaceball.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_spaceball.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@76"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_spaceball.c316402317#316402317#0(0"0(0#0#68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_spaceball.c8637224288#1134"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_spaceball.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_spaceball.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_state.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_state.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.210761
-e316402317.341525
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_state.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_state.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@72"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_state.c316402317#316402317#0(0"0(0#0#64"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_state.c8620406240#1126"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_state.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_state.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_mono_roman.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_mono_roman.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.308333
-e316402317.463884
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_mono_roman.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_mono_roman.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_mono_roman.c316402317#316402317#0(0"0(0#0#76"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_mono_roman.c8620514176#1150"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_mono_roman.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_mono_roman.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_roman.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_roman.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.341617
-e316402317.505940
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_roman.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_roman.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_roman.c316402317#316402317#0(0"0(0#0#71"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_roman.c8620291904#1140"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_stroke_roman.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_stroke_roman.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_structure.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_structure.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.463957
-e316402317.608453
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_structure.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_structure.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@76"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_structure.c316402317#316402317#0(0"0(0#0#68"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_structure.c8640591808#1134"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_structure.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_structure.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_teapot.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.506032
-e316402317.637658
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_teapot.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@73"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot.c316402317#316402317#0(0"0(0#0#65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot.c8627248480#1128"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_teapot.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_teapot.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_videoresize.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_videoresize.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.608540
-e316402317.716274
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_videoresize.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_videoresize.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@78"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_videoresize.c316402317#316402317#0(0"0(0#0#70"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_videoresize.c8621059840#1138"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_videoresize.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_videoresize.o0#
-
-CCompileC Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_window.o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_window.c normal x86_64 c com.apple.compilers.gcc.4_2
-s316402317.637737
-e316402317.841425
-r1
-xCompileC
-xBuild/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_window.o
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_window.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@73"Compile /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_window.c316402317#316402317#0(0"0(0#0#65"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_window.c8620290752#1128"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -DCMAKE_INTDIR="Debug" -DFREEGLUT_EXPORTS -DFREEGLUT_STATIC -D_CRT_SECURE_NO_WARNINGS -D__unix__ -DHAVE_FCNTL_H -DHAVE_GETTIMEOFDAY -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/usr/X11/include -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources/x86_64 -I/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/freeglut_window.c -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_window.o0#
-
-CLibtool /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a normal x86_64
-s316402317.841501
-e316402317.861093
-r1
-xLibtool
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a
-xnormal
-xx86_64
-lSLF07#2@63"Libtool Build/freeglut/Debug/libfreeglut_static.a normal x86_64316402317#316402317#0(0"0(0#0#0"8626147712#488"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/libtool -static -arch_only x86_64 -syslibroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug -filelist /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_static.LinkFileList -o /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a0#
-
-CPhaseScriptExecution "CMake PostBuild Rules" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114B4A0114B4A0114B4A0000.sh
-s316402337.319739
-e316402337.584672
-r1
-xPhaseScriptExecution
-xCMake PostBuild Rules
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114B4A0114B4A0114B4A0000.sh
-oecho "Depend check for xcode"
-oDepend check for xcode
-ocd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debug
-omake[1]: Nothing to be done for `all.Debug'.
-lSLF07#2@47"Run custom shell script 'CMake PostBuild Rules'316402337#316402337#0(298"echo "Depend check for xcode"Depend check for xcodecd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debugmake[1]: Nothing to be done for `all.Debug'.4(13@30"echo "Depend check for xcode"316402337#0#30#0(1@0"0(13@23"Depend check for xcode316402337#30#23#0(1@0"0(13@200"cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build && make -C /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build -f /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/CMakeScripts/XCODE_DEPEND_HELPER.make all.Debug316402337#53#200#0(1@0"0(13@45"make[1]: Nothing to be done for `all.Debug'.316402337#253#45#0(1@0"0(0#0#0"8647361984#15431"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER todd    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv BUILD_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv CACHE_ROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a    setenv CODE_SIGNING_ALLOWED NO    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv CONFIGURATION_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/Box2D.dst    setenv DWARF_DSYM_FILE_NAME libfreeglut_static.a.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLE_EXTENSION a    setenv EXECUTABLE_NAME libfreeglut_static.a    setenv EXECUTABLE_PATH libfreeglut_static.a    setenv EXECUTABLE_PREFIX lib    setenv EXECUTABLE_SUFFIX .a    setenv FILE_LIST /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/FixedFiles    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME libfreeglut_static.a    setenv GCC3_VERSION 3.3    setenv GCC_ENABLE_SYMBOL_SEPARATION NO    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PREPROCESSOR_DEFINITIONS "'CMAKE_INTDIR=\"Debug\"' FREEGLUT_EXPORTS FREEGLUT_STATIC _CRT_SECURE_NO_WARNINGS __unix__ HAVE_FCNTL_H HAVE_GETTIMEOFDAY"    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE NO    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include /Developer/SDKs/MacOSX10.6.sdk/usr/X11/include /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/."    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PREPROCESS NO    setenv INSTALL_DIR /tmp/Box2D.dst    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER todd    setenv INSTALL_ROOT /tmp/Box2D.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/freeglut_static-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug\" "    setenv LIBRARY_STYLE STATIC    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_static.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE staticlib    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_VERSION_ACTUAL 1066    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0606    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal    setenv OBJROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "    "    setenv OTHER_CPLUSPLUSFLAGS "    "    setenv PACKAGE_TYPE com.apple.package-type.static-library    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PFE_FILE_C_DIALECTS c    setenv PKGINFO_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2423    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH /usr/local/include    setenv PRODUCT_NAME freeglut_static    setenv PRODUCT_SETTINGS_PATH     setenv PRODUCT_TYPE com.apple.product-type.library.static    setenv PROFILING_CODE NO    setenv PROJECT Box2D    setenv PROJECT_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/DerivedSources    setenv PROJECT_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv PROJECT_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D.xcodeproj    setenv PROJECT_NAME Box2D    setenv PROJECT_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build    setenv PUBLIC_HEADERS_FOLDER_PATH /usr/local/include    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/ResourceManagerResources    setenv REZ_EXECUTABLE YES    setenv REZ_OBJECTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP YES    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/DerivedSources    setenv SHARED_PRECOMPS_DIR /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv SRCROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE debugging    setenv SYMBOL_REPOSITORY_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/SymbolRepositories    setenv SYMROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME freeglut_static    setenv TARGET_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv TARGET_NAME freeglut_static    setenv TARGET_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv UID 501    setenv UNSTRIPPED_PRODUCT NO    setenv USER todd    setenv USER_APPS_DIR /Users/todd/Applications    setenv USER_LIBRARY_DIR /Users/todd/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP NO    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSION_INFO_BUILDER todd    setenv VERSION_INFO_FILE freeglut_static_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:freeglut_static  PROJECT:Box2D-\""    setenv WARNING_CFLAGS "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas"    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2423    setenv XCODE_VERSION_ACTUAL 0325    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT /Developer/SDKs/MacOSX10.6.sdk    /bin/sh -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114B4A0114B4A0114B4A0000.sh0#
-
-CPhaseScriptExecution "CMake ReRun" /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114AD90114AD90114AD90000.sh
-s316402337.269667
-e316402337.318213
-r1
-xPhaseScriptExecution
-xCMake ReRun
-x/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114AD90114AD90114AD90000.sh
-omake: `CMakeFiles/cmake.check_cache' is up to date.
-lSLF07#2@37"Run custom shell script 'CMake ReRun'316402337#316402337#0(52"make: `CMakeFiles/cmake.check_cache' is up to date.1(13@52"make: `CMakeFiles/cmake.check_cache' is up to date.316402337#0#52#0(1@0"0(0#0#0"8641862752#15431"    cd /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER todd    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv BUILD_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv CACHE_ROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/libfreeglut_static.a    setenv CODE_SIGNING_ALLOWED NO    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv CONFIGURATION_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/Box2D.dst    setenv DWARF_DSYM_FILE_NAME libfreeglut_static.a.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLE_EXTENSION a    setenv EXECUTABLE_NAME libfreeglut_static.a    setenv EXECUTABLE_PATH libfreeglut_static.a    setenv EXECUTABLE_PREFIX lib    setenv EXECUTABLE_SUFFIX .a    setenv FILE_LIST /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/FixedFiles    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME libfreeglut_static.a    setenv GCC3_VERSION 3.3    setenv GCC_ENABLE_SYMBOL_SEPARATION NO    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PREPROCESSOR_DEFINITIONS "'CMAKE_INTDIR=\"Debug\"' FREEGLUT_EXPORTS FREEGLUT_STATIC _CRT_SECURE_NO_WARNINGS __unix__ HAVE_FCNTL_H HAVE_GETTIMEOFDAY"    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE NO    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/include /Developer/SDKs/MacOSX10.6.sdk/usr/X11/include /Users/todd/Desktop/Box2D_v2.1.2/Box2D/freeglut/."    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PREPROCESS NO    setenv INSTALL_DIR /tmp/Box2D.dst    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER todd    setenv INSTALL_ROOT /tmp/Box2D.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/freeglut_static-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug\" "    setenv LIBRARY_STYLE STATIC    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal/x86_64/freeglut_static.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE staticlib    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_VERSION_ACTUAL 1066    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0606    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Objects-normal    setenv OBJROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "    "    setenv OTHER_CPLUSPLUSFLAGS "    "    setenv PACKAGE_TYPE com.apple.package-type.static-library    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PFE_FILE_C_DIALECTS c    setenv PKGINFO_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2423    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH /usr/local/include    setenv PRODUCT_NAME freeglut_static    setenv PRODUCT_SETTINGS_PATH     setenv PRODUCT_TYPE com.apple.product-type.library.static    setenv PROFILING_CODE NO    setenv PROJECT Box2D    setenv PROJECT_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/DerivedSources    setenv PROJECT_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv PROJECT_FILE_PATH /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/Box2D.xcodeproj    setenv PROJECT_NAME Box2D    setenv PROJECT_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build    setenv PUBLIC_HEADERS_FOLDER_PATH /usr/local/include    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/ResourceManagerResources    setenv REZ_EXECUTABLE YES    setenv REZ_OBJECTS_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP YES    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug/DerivedSources    setenv SHARED_PRECOMPS_DIR /var/folders/8G/8GvgwmGoE-SyW-xh2f2CNk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv SRCROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE debugging    setenv SYMBOL_REPOSITORY_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/SymbolRepositories    setenv SYMROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME freeglut_static    setenv TARGET_BUILD_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Debug    setenv TARGET_NAME freeglut_static    setenv TARGET_TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_FILES_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_FILE_DIR /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build    setenv TEMP_ROOT /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut    setenv UID 501    setenv UNSTRIPPED_PRODUCT NO    setenv USER todd    setenv USER_APPS_DIR /Users/todd/Applications    setenv USER_LIBRARY_DIR /Users/todd/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP NO    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSION_INFO_BUILDER todd    setenv VERSION_INFO_FILE freeglut_static_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:freeglut_static  PROJECT:Box2D-\""    setenv WARNING_CFLAGS "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas"    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2423    setenv XCODE_VERSION_ACTUAL 0325    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv _REAL_SDKROOT /Developer/SDKs/MacOSX10.6.sdk    /bin/sh -c /Users/todd/Desktop/Box2D_v2.1.2/Box2D/Build/freeglut/Box2D.build/Debug/freeglut_static.build/Script-114AD90114AD90114AD90000.sh0#
-
