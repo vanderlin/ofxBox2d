@@ -8,16 +8,16 @@ class ofxBox2dBaseShape {
 	
 public:
 	b2FixtureDef	fixture;
-	b2BodyDef	bodyDef;
-	b2Body*		body;
+	b2BodyDef		bodyDef;
+	b2Body*			body;
 	
-	bool		dead;
-	bool		alive;
-	bool		setMassFromShape;
+	bool			dead;
+	bool			alive;
+	bool			setMassFromShape;
 	
-	float		density;
-	float		bounce;
-	float		friction;
+	float			density;
+	float			bounce;
+	float			friction;
 	
 	ofxBox2dBaseShape();	
 	
@@ -50,7 +50,7 @@ public:
 	
 
 	//------------------------------------------------ 
-	void setData(void*data);
+	void* setData(void*data);
 	
 	//------------------------------------------------ 
 	void* getData();

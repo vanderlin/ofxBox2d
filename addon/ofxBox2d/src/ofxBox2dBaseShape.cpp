@@ -102,16 +102,17 @@ void ofxBox2dBaseShape::setPhysics(float density, float bounce, float friction) 
 
 
 //------------------------------------------------ 
-void ofxBox2dBaseShape::setData(void*data) {
+void* ofxBox2dBaseShape::setData(void*data) {
 
 	if(data == NULL) {
 		ofLog(OF_LOG_NOTICE, "- data is NULL -");
-		return;
+		return NULL;
 	}
 	
 	if(isBody()) {
 		ofLog(OF_LOG_NOTICE, "- custom data set %p", data);
 		body->SetUserData(data);
+		return data;
 	}
 	else {
 		ofLog(OF_LOG_NOTICE, "- must have a valid body -");
@@ -121,10 +122,11 @@ void ofxBox2dBaseShape::setData(void*data) {
 //------------------------------------------------ 
 void* ofxBox2dBaseShape::getData() {
 	if(body) {
-		body->GetUserData();
+		return body->GetUserData();
 	}
 	else {
 		ofLog(OF_LOG_NOTICE, "- must have a valid body -");
+		return NULL;
 	}
 }
 
