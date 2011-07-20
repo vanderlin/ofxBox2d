@@ -1,0 +1,9 @@
+This is a simple wrapper for box2d using Openframeworks. The examples below are still in progressive, but should be stable for the most part. Please open up a issue if you have suggestions or find bugs. 
+
+thanks,
+Todd
+
+
+Install:
+The xcode projects have the box2d addon in ../addon/ofxBox2d. This is not your openframeworks add-on folder. 
+ 
