@@ -1,19 +1,13 @@
-
 #pragma once
 #include "ofMain.h"
 #include "ofxBox2d.h"
-
 
 
 // A simple little Data class. This is were
 // you can store anything you want.
 class Data {
 public:
-	Data()  { 
-		id = (int)ofRandom(0, 100);
-	}
-	
-	int		r, g, b;
+	ofColor color;
 	string  name;
 	int		id;
 };
@@ -24,19 +18,23 @@ class CustomParticle : public ofxBox2dCircle {
 	
 public:
 	
-	Data * myData;
-	
 	void setupTheCustomData() {
+		
+		static int colors[] = {0xcae72b, 0xe63b8f, 0x2bb0e7};
+		static string abc   = "abcdefghijklmnopqrstuvwxyz";
 		
 		// we are using a Data pointer because 
 		// box2d needs to have a pointer not 
 		// a referance
-		myData = new Data();
-		myData->id = ofRandom(0, 100);
-		myData->r  = ofRandom(0, 255);
-		myData->g  = ofRandom(0, 255);
-		myData->b  = ofRandom(0, 255);
-		setData(myData);
+		setData(new Data());
+		Data * theData = (Data*)getData();
+		
+		theData->id = ofRandom(0, 100);
+		theData->name += abc[(int)ofRandom(0, abc.size())];
+		theData->color.setHex(colors[(int)ofRandom(0, 3)]);
+
+		printf("setting the custom data!\n");
+		
 	}
 	
 	void draw() {
@@ -49,17 +47,20 @@ public:
 			// or tapping into box2d's solver.
 			
 			float radius = getRadius();
-			glPushMatrix();
-			glTranslatef(getPosition().x, getPosition().y, 0);
-			ofSetColor(theData->r, theData->g, theData->b);
+			ofPushMatrix();
+			ofTranslate(getPosition());
+			ofRotateZ(getRotation());
+			ofSetColor(theData->color);
 			ofFill();
 			ofCircle(0, 0, radius);	
+			
 			ofSetColor(255);
-			ofDrawBitmapString(ofToString(theData->id), -10, -10);
+			ofDrawBitmapString(theData->name, -5, 5);
+			ofPopMatrix();
 		}
-		
-		glPopMatrix();
 	}
+		
+		
 };
 
 // ------------------------------------------------- App

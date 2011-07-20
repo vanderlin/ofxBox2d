@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void testApp::setup() {
 	
-	ofBackground(0, 0, 0);
+	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
 	
@@ -12,30 +12,24 @@ void testApp::setup() {
 	box2d.setGravity(0, 20);
 	box2d.createGround();
 	box2d.setFPS(30.0);
-
 	
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
-	
-	
 	box2d.update();	
-	
-	
 }
 
 //--------------------------------------------------------------
 void testApp::draw() {
 	
-	box2d.draw();
-	
 	for(int i=0; i<particles.size(); i++) {
 		particles[i].draw();
 	}
-	string info = "FPS: "+ofToString(ofGetFrameRate());
-	info += "\nClick to add particles\nThe numbers and color are from the custom data.";
-	ofSetColor(255, 255, 0);
+	
+	string info = "FPS: "+ofToString(ofGetFrameRate(), 1);
+	info += "\nClick to add particles\nThe letters and color are from the custom data.";
+	ofSetHexColor(0x444342);
 	ofDrawBitmapString(info, 20, 20);
 }
 
