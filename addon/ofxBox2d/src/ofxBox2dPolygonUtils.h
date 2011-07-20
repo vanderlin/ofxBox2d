@@ -11,6 +11,7 @@
 #include "ofMain.h"
 #include "del_interface.hpp"
 #include <algorithm>
+
 using namespace tpp;
 
 
@@ -29,6 +30,10 @@ typedef struct{
 	ofVec2f P0;
 	ofVec2f P1;
 }Segment;
+
+typedef struct {
+	ofVec2f a,b,c;	
+} TriangleShape;
 
 // dot product (3D) which allows vector operations in arguments
 //#define dot(u,v)   ((u).x * (v).x + (u).y * (v).y + (u).z * (v).z)
@@ -165,6 +170,38 @@ static bool insidePolygon(const ofVec2f & p, const vector<ofVec2f> & polygon){
 }
 
 //-------------------------------------------------------------------
+static bool insidePolygon(const ofVec2f & p, const ofPolyline &polygon){
+	if(polygon.size() < 1) return false;
+	int counter = 0;
+	int i;
+	double xinters;
+	ofVec2f p1,p2;
+	float x = p.x; 
+	float y = p.y;
+	int N = polygon.size();
+	
+	p1 = polygon[0];
+	for (i=1;i<=N;i++) {
+		p2 = polygon[i % N];
+		if (y > MIN(p1.y,p2.y)) {
+			if (y <= MAX(p1.y,p2.y)) {
+				if (x <= MAX(p1.x,p2.x)) {
+					if (p1.y != p2.y) {
+						xinters = (y-p1.y)*(p2.x-p1.x)/(p2.y-p1.y)+p1.x;
+						if (p1.x == p2.x || x <= xinters)
+							counter++;
+					}
+				}
+			}
+		}
+		p1 = p2;
+	}
+	
+	if (counter % 2 == 0) return false;
+	else return true;
+}
+
+//-------------------------------------------------------------------
 static ofVec2f getTriangleCenter(const ofVec2f & a, const ofVec2f & b, const ofVec2f & c) {
 	ofVec2f center;
 	center += a;
@@ -174,6 +211,35 @@ static ofVec2f getTriangleCenter(const ofVec2f & a, const ofVec2f & b, const ofV
 	return center;
 }
 
+//-------------------------------------------------------------------
+static float getArea(const vector <ofVec2f> pts) {
+	int i, j, n = pts.size();
+	float polyArea = 0;
+	for (i = 0; i < n; i++) {
+		j = (i + 1) % n;
+		polyArea += pts[i].x * pts[j].y;
+		polyArea -= pts[j].x * pts[i].y;
+	}
+	polyArea /= 2.0;
+	return polyArea;
+}
+
+//-------------------------------------------------------------------
+static float getTriangleArea(ofVec2f &a, ofVec2f &b, ofVec2f &c) {
+	vector <ofVec2f> pts;
+	pts.push_back(a);
+	pts.push_back(b);
+	pts.push_back(c);
+	int i, j, n = pts.size();
+	float polyArea = 0;
+	for (i = 0; i < n; i++) {
+		j = (i + 1) % n;
+		polyArea += pts[i].x * pts[j].y;
+		polyArea -= pts[j].x * pts[i].y;
+	}
+	polyArea /= 2.0;
+	return polyArea;
+}
 
 //-------------------------------------------------------------------
 static ofRectangle getPolygonBounds(const vector <ofVec2f> & vertices) {
@@ -197,6 +263,19 @@ static ofRectangle getPolygonBounds(const vector <ofVec2f> & vertices) {
 	bounds.height = ABS(bottom - bounds.y); 
 	return bounds;
 }
+
+//-------------------------------------------------------------------
+static void addRandomPointsInside(ofPolyline &poly, int amt=100) {
+	
+	ofRectangle bounds = poly.getBoundingBox();
+	
+	for (int i=0; i<amt; i++) {
+		float x = ofRandom(bounds.x, bounds.x+bounds.width);
+		float y = ofRandom(bounds.y, bounds.y+bounds.height);
+		if( insidePolygon(ofVec2f(x, y), poly) ) poly.addVertex(x, y);
+	}
+}
+
 //-------------------------------------------------------------------
 static void addRandomPointsInside(vector <ofVec2f> & vertices, int amt=100) {
 	
@@ -211,10 +290,76 @@ static void addRandomPointsInside(vector <ofVec2f> & vertices, int amt=100) {
 
 
 //-------------------------------------------------------------------
-static vector <ofVec2f> triangulatePolygon(const vector <ofVec2f> &ptsIn, bool addPointsInside=false, int amt=100) {
+static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pts, 
+															const ofPolyline &polyOutline) {
+	
+	vector <TriangleShape> triangles;
+	
+	if(pts.size() < 3 || polyOutline.size() < 3) return triangles;
+	
+	// now triangluate from the polyline
+	vector <Delaunay::Point>	delaunayPts;
+	Delaunay::Point				tempP;
+	for(int i=0; i<pts.size(); i++) {
+		tempP[0] = pts[i].x;
+		tempP[1] = pts[i].y;
+		delaunayPts.push_back(tempP);
+	}
+	
+	Delaunay delobject(delaunayPts);
+	delobject.Triangulate();
+	
+	// get all the triangles
+	for(Delaunay::fIterator fit=delobject.fbegin(); fit!=delobject.fend(); ++fit) {
+		
+		float triArea = delobject.area(fit);
+		
+		int pta   = delobject.Org(fit);
+		int ptb   = delobject.Dest(fit);
+		int ptc   = delobject.Apex(fit);
+		
+		if(pta == -1 || ptb == -1 || ptc == -1) {
+			printf("don't have a triangle man!\n");
+			continue;
+		}
+		
+		ofVec2f a = pts[pta];
+		ofVec2f b = pts[ptb];
+		ofVec2f c = pts[ptc];
+		
+		ofVec2f center = getTriangleCenter(a, b, c);
+		
+		float disA  = 5;//ofDist(center.x, center.y, a.x, a.y);
+		float disB  = 5;//ofDist(center.x, center.y, b.x, b.y);
+		float disC  = 5;//ofDist(center.x, center.y, c.x, c.y);
+		
+		if(triArea < 1.0 || 
+		   disA < 2.0 ||
+		   disB < 2.0 ||
+		   disC < 2.0) {
+			continue;
+		}
+		if(!insidePolygon(center, polyOutline)) {
+			continue;	
+		}
+		
+		TriangleShape shape;
+		shape.a = a;
+		shape.b = b;
+		shape.c = c;
+		triangles.push_back(shape);
+		
+	}	
+	
+	return triangles;
+}
+
+
+//-------------------------------------------------------------------
+static vector <TriangleShape> triangulatePolygon(const vector <ofVec2f> &ptsIn, bool addPointsInside=false, int amt=100) {
 	
 	vector <ofVec2f> pts;
-	vector <ofVec2f> triangles;
+	vector <TriangleShape> triangles;
 
 	if(ptsIn.size() < 3) return triangles;
 
@@ -245,6 +390,12 @@ static vector <ofVec2f> triangulatePolygon(const vector <ofVec2f> &ptsIn, bool a
 		int pta   = delobject.Org(fit);
 		int ptb   = delobject.Dest(fit);
 		int ptc   = delobject.Apex(fit);
+		
+		if(pta == -1 || ptb == -1 || ptc == -1) {
+			printf("don't have a triangle man!\n");
+			continue;
+		}
+		
 		ofVec2f a = pts[pta];
 		ofVec2f b = pts[ptb];
 		ofVec2f c = pts[ptc];
@@ -264,18 +415,27 @@ static vector <ofVec2f> triangulatePolygon(const vector <ofVec2f> &ptsIn, bool a
 		if(!insidePolygon(center, pts)) {
 			continue;	
 		}
-		if(pta == -1 || ptb == -1 || ptc == -1) {
-			continue;
-		}
 		
-		triangles.push_back(a);
-		triangles.push_back(b);
-		triangles.push_back(c);
+		TriangleShape shape;
+		shape.a = a;
+		shape.b = b;
+		shape.c = c;
+		triangles.push_back(shape);
 		
 	}	
 	
 	return triangles;
 }
+
+//-------------------------------------------------------------------
+static vector <TriangleShape> triangulatePolygon(const ofPolyline &poly, bool addPointsInside=false, int amt=100) {
+	vector <ofVec2f> pts;
+	for (int i=0; i<poly.size(); i++) {
+		pts.push_back(poly[i]);
+	}
+	return triangulatePolygon(pts, addPointsInside, amt);
+}
+
 
 // Implementation of Monotone Chain Convex Hull algorithm.
 //-------------------------------------------------------------------

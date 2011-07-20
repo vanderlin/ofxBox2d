@@ -3,6 +3,12 @@
 #include "ofMain.h"
 #include "Box2D.h"
 
+/*
+
+ ***    THIS NEEDS WORK!    ***    
+
+*/
+
 class ofxBox2dContactListener : public b2ContactListener {
 	
 public:

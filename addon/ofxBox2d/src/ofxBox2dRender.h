@@ -22,7 +22,7 @@ public:
 	}
 	void DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color) {
 		
-		ofSetColor(0xffffff);
+		ofSetHexColor(0xffffff);
 		ofBeginShape();
 		for(int i=0; i<vertexCount; ++i) {
 			ofVertex(vertices[i].x*OFX_BOX2D_SCALE, vertices[i].y*OFX_BOX2D_SCALE);
