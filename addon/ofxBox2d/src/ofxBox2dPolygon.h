@@ -4,8 +4,7 @@
 #include "ofxBox2dBaseShape.h"
 #include "ofxBox2dPolygonUtils.h"
 
-
-class ofxBox2dPolygon : public ofxBox2dBaseShape {
+class ofxBox2dPolygon : public ofxBox2dBaseShape, public ofPolyline {
 
 private:
 	
@@ -14,13 +13,13 @@ private:
 	float   area;
 	ofVec2f center;
 	void calculateCentroid();
-	void calculateArea();
+	float calculateArea();
 	
 public:
 	
+	ofPolyline				drawShape;
 	ofRectangle				bounds;
 	vector <TriangleShape>	triangles;
-	ofPolyline				poly;
 	
 	//----------------------------------------
 	ofxBox2dPolygon();
@@ -30,10 +29,6 @@ public:
 	void setup(b2World * b2dworld);
 
 	//----------------------------------------
-	void addVertex(const ofVec2f & p);
-	void addVertex(float x, float y);
-	void addVertexes(const vector <ofVec2f> & polyPoints);
-	void addVertexes(const ofPolyline &polyline);
 	void addTriangle(const ofVec2f &a, const ofVec2f &b, const ofVec2f &c);
 	
 	//----------------------------------------
@@ -44,8 +39,8 @@ public:
 	
 	//----------------------------------------
 	ofVec2f getCenter();
-	float   getArea()   { return area;   };
-	
+	float   getArea()     { return area; };
+	bool	isGoodShape() { return calculateArea() > 15; }
 	//----------------------------------------
 	void updateShape();
 	void create(b2World * b2dworld);
