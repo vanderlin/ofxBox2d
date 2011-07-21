@@ -201,6 +201,61 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 	updateShape();
 }
 
+//------------------------------------------------
+void ofxBox2dPolygon::addAttractionPoint (ofVec2f pt, float amt) {
+    // we apply forces at each vertex. 
+    if(body != NULL) {
+        const b2Transform& xf = body->GetTransform();
+		
+        for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
+            b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
+            
+            if(poly) {
+                b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+                
+                for(int i=0; i<poly->GetVertexCount(); i++) {
+                    b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
+                    b2Vec2 D = P - qt; 
+                    b2Vec2 F = amt * D;
+                    body->ApplyForce(F, P);
+                }                    
+            }
+        }
+    }
+}
+
+
+//----------------------------------------
+void ofxBox2dPolygon::addAttractionPoint (float x, float y, float amt) {
+    addAttractionPoint(ofVec2f(x, y), amt);
+}
+
+//----------------------------------------
+void ofxBox2dPolygon::addRepulsionForce(float x, float y, float amt) {
+	addRepulsionForce(ofVec2f(x, y), amt);
+}
+void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
+	// we apply forces at each vertex. 
+    if(body != NULL) {
+        const b2Transform& xf = body->GetTransform();
+		
+        for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
+            b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
+            
+            if(poly) {
+                b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+                
+                for(int i=0; i<poly->GetVertexCount(); i++) {
+                    b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
+                    b2Vec2 D = P - qt; 
+                    b2Vec2 F = amt * D;
+                    body->ApplyForce(-F, P);
+                }                    
+            }
+        }
+    }
+}
+
 //----------------------------------------
 void ofxBox2dPolygon::draw() {
 	

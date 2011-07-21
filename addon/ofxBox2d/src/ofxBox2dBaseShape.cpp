@@ -103,7 +103,7 @@ void ofxBox2dBaseShape::setPhysics(float density, float bounce, float friction) 
 
 //------------------------------------------------ 
 void* ofxBox2dBaseShape::setData(void*data) {
-
+	
 	if(data == NULL) {
 		ofLog(OF_LOG_NOTICE, "- data is NULL -");
 		return NULL;
@@ -241,25 +241,6 @@ void ofxBox2dBaseShape::addImpulseForce(ofVec2f pt, ofVec2f amt) {
 }
 
 //------------------------------------------------
-void ofxBox2dBaseShape::addAttractionPoint(ofVec2f pt, float amt, float minDis) {
-	
-	// if(minDis == NULL) minDis = 1; // not using this
-	
-	if(body != NULL) {
-		b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
-		b2Vec2 D = P - body->GetPosition(); 
-		
-		P.Normalize();
-		b2Vec2 F = amt * D;
-		body->ApplyForce(F, P);
-	}
-}
-
-void ofxBox2dBaseShape::addAttractionPoint(float x, float y, float amt, float minDis) {
-	addAttractionPoint(ofVec2f(x, y), amt, minDis);
-}
-
-//------------------------------------------------
 void ofxBox2dBaseShape::addRepulsionForce(ofVec2f pt, float radius, float amt) {
 	/*if(body != NULL) {
 	 b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
@@ -270,7 +251,7 @@ void ofxBox2dBaseShape::addRepulsionForce(ofVec2f pt, float radius, float amt) {
 	 body->ApplyForce(F, P);
 	 }
 	 }*/
-
+	
 	
 	if(body != NULL) {
 		b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);

@@ -18,7 +18,6 @@ public:
 	float			density;
 	float			bounce;
 	float			friction;
-	
 	ofxBox2dBaseShape();	
 	
 	//----------------------------------------
@@ -105,10 +104,6 @@ public:
 	
 	//------------------------------------------------
 	virtual void addImpulseForce(ofVec2f pt, ofVec2f amt);
-	
-	//------------------------------------------------
-	virtual void addAttractionPoint(ofVec2f pt, float amt, float minDis=NULL);
-	virtual void addAttractionPoint(float x, float y, float amt, float minDis=NULL);
 	
 	//------------------------------------------------
 	virtual void addRepulsionForce(ofVec2f pt, float radius, float amt);

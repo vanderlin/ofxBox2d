@@ -45,6 +45,64 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 }
 
 //------------------------------------------------
+void ofxBox2dCircle::addRepulsionForce(float x, float y, float amt) {
+	addRepulsionForce(ofVec2f(x, y), amt);
+}
+
+//------------------------------------------------
+void ofxBox2dCircle::addRepulsionForce(ofVec2f pt, float amt) {
+	const b2Transform& xf = body->GetTransform();
+	b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+	
+	float cx  =  body->GetPosition().x / OFX_BOX2D_SCALE;
+	float cy  =  body->GetPosition().y / OFX_BOX2D_SCALE;
+	float r   =  getRadius() / OFX_BOX2D_SCALE;
+	float ori =  DEG_TO_RAD * getRotation();
+	
+	b2Vec2 A(cx,cy); 
+	b2Vec2 B(cx+r*cos(ori), cy+r*sin(ori));
+	
+	b2Vec2 qtA = b2Mul(xf, A);
+	b2Vec2 qtB = b2Mul(xf, B);
+	b2Vec2 DA = P - qtA; 
+	b2Vec2 DB = P - qtB;
+	b2Vec2 FA = amt * DA;
+	b2Vec2 FB = amt * DB;
+	
+	body->ApplyForce(-FA, P);
+	body->ApplyForce(-FB, P);
+}
+
+//------------------------------------------------
+void ofxBox2dCircle::addAttractionPoint(float x, float y, float amt) {
+	addAttractionPoint(ofVec2f(x, y), amt);
+}
+
+//------------------------------------------------
+void ofxBox2dCircle::addAttractionPoint(ofVec2f pt, float amt) {
+	const b2Transform& xf = body->GetTransform();
+	b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+	
+	float cx  =  body->GetPosition().x / OFX_BOX2D_SCALE;
+	float cy  =  body->GetPosition().y / OFX_BOX2D_SCALE;
+	float r   =  getRadius() / OFX_BOX2D_SCALE;
+	float ori =  DEG_TO_RAD * getRotation();
+	
+	b2Vec2 A(cx,cy); 
+	b2Vec2 B(cx+r*cos(ori), cy+r*sin(ori));
+	
+	b2Vec2 qtA = b2Mul(xf, A);
+	b2Vec2 qtB = b2Mul(xf, B);
+	b2Vec2 DA = P - qtA; 
+	b2Vec2 DB = P - qtB;
+	b2Vec2 FA = amt * DA;
+	b2Vec2 FB = amt * DB;
+	
+	body->ApplyForce(FA, P);
+	body->ApplyForce(FB, P);
+}
+
+//------------------------------------------------
 float ofxBox2dCircle::getRadius() {
 	return radius;
 }

@@ -25,6 +25,13 @@ public:
 	//------------------------------------------------
 	virtual void draw();
 	
+	//------------------------------------------------
+    void addAttractionPoint(float x, float y, float amt=1);
+    void addAttractionPoint(ofVec2f pt, float amt=1);
+	
+	void addRepulsionForce(float x, float y, float amt);
+	void addRepulsionForce(ofVec2f pt, float amt);
+
 };
 
 

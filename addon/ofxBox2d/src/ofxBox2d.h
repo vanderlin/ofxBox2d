@@ -13,6 +13,7 @@
 #include "ofxBox2dContactListener.h"
 
 
+
 class ofxBox2d : public b2ContactListener {
 	
 private:

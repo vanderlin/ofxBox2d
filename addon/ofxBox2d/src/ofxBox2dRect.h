@@ -23,7 +23,14 @@ public:
 	
 	//------------------------------------------------
 	void draw();
-	
+
+	//------------------------------------------------
+	void addAttractionPoint(float x, float y, float amt);
+	void addAttractionPoint(ofVec2f pt, float amt);
+
+	void addRepulsionForce(float x, float y, float amt);
+	void addRepulsionForce(ofVec2f pt, float amt);
+
 };
 
 

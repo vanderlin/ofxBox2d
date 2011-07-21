@@ -58,15 +58,70 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
 	
 }
 
+//------------------------------------------------
 float ofxBox2dRect::getWidth() {
 	return _width;
 }
 
+//------------------------------------------------
 float ofxBox2dRect::getHeight() {
 	return _height;
 }
 
+//------------------------------------------------
+void ofxBox2dRect::addRepulsionForce(float x, float y, float amt) {
+	addRepulsionForce(ofVec2f(x, y), amt);
+}
 
+//------------------------------------------------
+void ofxBox2dRect::addRepulsionForce(ofVec2f pt, float amt) {
+	if(body != NULL) {
+		const b2Transform& xf = body->GetTransform();
+		for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
+			b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
+			
+			if(poly) {
+				b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+				for (int i=0; i<poly->GetVertexCount(); i++) {
+					b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
+					b2Vec2 D = P - qt; 
+					b2Vec2 F = amt * D;
+					body->ApplyForce(-F, P);
+				}                        
+			}
+		}
+	}
+}
+
+
+//------------------------------------------------
+// In ofxBox2dRect.h:
+// We compute the force for all four (transformed) corners of the rect.
+// This keeps the rect's orientation correct!
+void ofxBox2dRect::addAttractionPoint (float x, float y, float amt) {
+	addAttractionPoint(ofVec2f(x, y), amt);
+}
+
+//------------------------------------------------
+void ofxBox2dRect::addAttractionPoint (ofVec2f pt, float amt) {
+	
+	if(body != NULL) {
+		const b2Transform& xf = body->GetTransform();
+		for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
+			b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
+			
+			if(poly) {
+				b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+				for (int i=0; i<poly->GetVertexCount(); i++) {
+					b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
+					b2Vec2 D = P - qt; 
+					b2Vec2 F = amt * D;
+					body->ApplyForce(F, P);
+				}                        
+			}
+		}
+	}
+}
 
 //------------------------------------------------
 void ofxBox2dRect::draw() {

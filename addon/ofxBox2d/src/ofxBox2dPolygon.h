@@ -41,6 +41,13 @@ public:
 	ofVec2f getCenter();
 	float   getArea()     { return area; };
 	bool	isGoodShape() { return calculateArea() > 15; }
+
+	//------------------------------------------------
+	void addAttractionPoint(ofVec2f pt, float amt=1);
+	void addAttractionPoint(float x, float y, float amt=1);
+	void addRepulsionForce(float x, float y, float amt);
+	void addRepulsionForce(ofVec2f pt, float amt);
+
 	//----------------------------------------
 	void updateShape();
 	void create(b2World * b2dworld);
