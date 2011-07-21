@@ -14,6 +14,7 @@
 ofxBox2dPolygon::ofxBox2dPolygon() { 
 	bIsTriangulated = false;
 	bIsSimplified   = false;
+	bSetAsEdge	    = true;	// should this be default
 }
 
 //----------------------------------------
@@ -180,21 +181,37 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 	
 	}
 	else {
-
-		b2Vec2 verts[size()-1];
-		for (int i=0; i<size(); i++) {
-			ofVec2f p = getVertices()[i] / OFX_BOX2D_SCALE;
-			verts[i]  = b2Vec2(p.x, p.y);
+		if(bSetAsEdge) {
+			for (int i=1; i<size(); i++) {
+				b2PolygonShape	shape;
+				b2Vec2 a = screenPtToWorldPt(getVertices()[i-1]);
+				b2Vec2 b = screenPtToWorldPt(getVertices()[i]);
+				shape.SetAsEdge(a, b);
+				fixture.shape		= &shape;
+				fixture.density		= density;
+				fixture.restitution = bounce;
+				fixture.friction	= friction;	
+				
+				body->CreateFixture(&fixture);
+			}	
 		}
-		b2PolygonShape	shape;
-		shape.Set(verts, size()-1);
-
-		fixture.shape		= &shape;
-		fixture.density		= density;
-		fixture.restitution = bounce;
-		fixture.friction	= friction;	
-		
-		body->CreateFixture(&fixture);
+		else {
+			b2Vec2 verts[size()-1];
+			for (int i=0; i<size(); i++) {
+				ofVec2f p = getVertices()[i] / OFX_BOX2D_SCALE;
+				verts[i]  = b2Vec2(p.x, p.y);
+			}
+			b2PolygonShape	shape;
+			shape.Set(verts, size()-1);
+			
+			fixture.shape		= &shape;
+			fixture.density		= density;
+			fixture.restitution = bounce;
+			fixture.friction	= friction;	
+			
+			body->CreateFixture(&fixture);
+		}		
+			
 	}
 	
 	// update the area and centroid

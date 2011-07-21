@@ -142,7 +142,10 @@ void testApp::mouseReleased(int x, int y, int button) {
 	ofxBox2dPolygon poly;
 	lines.back().simplify();
 	
-	poly.addVertexes(lines.back());
+	for (int i=0; i<lines.back().size(); i++) {
+		poly.addVertex(lines.back()[i]);
+	}
+	
 	//poly.setPhysics(1, .2, 1);  // uncomment this to see it fall!
 	poly.create(box2d.getWorld());
 	polyLines.push_back(poly);

@@ -21,6 +21,9 @@ private:
 	float				fps;
 	int					velocityIterations;
 	int					positionIterations;
+	
+	
+	
 public:
 	
 	// b2AABB				worldAABB;
@@ -75,18 +78,18 @@ public:
 	
 	void		setContactListener(ofxBox2dContactListener * listener);
 	
-	void setIterations(int velocityTimes, int positionTimes);
-	void setGravity(float x, float y);
-	void setGravity(ofPoint pt);
-	void setBounds(ofPoint lowBounds, ofPoint upBounds);
-	void createBounds(float x=0, float y=0, float w=ofGetWidth(), float h=ofGetHeight());
-	void createBounds(ofRectangle &rec);
+	void		setIterations(int velocityTimes, int positionTimes);
+	void		setGravity(float x, float y);
+	void		setGravity(ofPoint pt);
+	void		setBounds(ofPoint lowBounds, ofPoint upBounds);
+	void		createBounds(float x=0, float y=0, float w=ofGetWidth(), float h=ofGetHeight());
+	void		createBounds(ofRectangle &rec);
 	
-	void createGround(const ofPoint & p1, const ofPoint & p2);
-	void createGround(float x1=0, float y1=ofGetHeight(), float x2=ofGetWidth(), float y2=ofGetHeight());
-	void checkBounds(bool b);
+	void		createGround(const ofPoint & p1, const ofPoint & p2);
+	void		createGround(float x1=0, float y1=ofGetHeight(), float x2=ofGetWidth(), float y2=ofGetHeight());
+	void		checkBounds(bool b);
 	
-	void update(); 
-	void draw();
-	void drawGround();
+	void		update(); 
+	void		draw();
+	void		drawGround();
 };
