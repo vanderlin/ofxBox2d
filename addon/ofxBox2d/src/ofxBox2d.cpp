@@ -5,6 +5,9 @@ ofxBox2d::ofxBox2d() {
 	
 }
 ofxBox2d::~ofxBox2d() {
+	if(mouseBody) {
+		world->DestroyBody(mouseBody);	
+	}
 }
 
 // ------------------------------------------------------ init
@@ -26,6 +29,9 @@ void ofxBox2d::init() {
 	
 	// mouse grabbing
 	mouseJoint = NULL;
+	mouseBody  = NULL;
+	
+	// ground/bounds
 	ground	   = NULL;
 	
 	// debug drawer
@@ -103,6 +109,11 @@ void ofxBox2d::grabShapeDown(float x, float y) {
 			return;
 		}
 		
+		if(mouseBody == NULL) {
+			b2BodyDef bd;
+			mouseBody = world->CreateBody(&bd);
+		}
+		
 		// Make a small box.
 		b2AABB aabb;
 		b2Vec2 d;
@@ -117,11 +128,11 @@ void ofxBox2d::grabShapeDown(float x, float y) {
 		if (callback.m_fixture) {
 			b2Body* body = callback.m_fixture->GetBody();
 			b2MouseJointDef md;
-			md.bodyA = ground;
-			md.bodyB = body;
-			md.target = p;
+			md.bodyA    = mouseBody;
+			md.bodyB    = body;
+			md.target   = p;
 			md.maxForce = 1000.0f * body->GetMass();
-			mouseJoint = (b2MouseJoint*)world->CreateJoint(&md);
+			mouseJoint  = (b2MouseJoint*)world->CreateJoint(&md);
 			body->SetAwake(true);
 		}
 		

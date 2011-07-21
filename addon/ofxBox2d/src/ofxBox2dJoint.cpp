@@ -96,7 +96,7 @@ void ofxBox2dJoint::destroy() {
 
 //----------------------------------------
 void ofxBox2dJoint::setLength(float len) {
-	joint->SetLength((float32)len);
+	joint->SetLength((float32)b2dNum(len));
 }
 float ofxBox2dJoint::getLength() {
 	return (float)joint->GetLength();

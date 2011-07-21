@@ -28,7 +28,7 @@ public:
 	void destroy();
 	
 	//----------------------------------------
-	/// Manipulating the length can lead to non-physical behavior when the frequency is zero.
+	// Manipulating the length can lead to non-physical behavior when the frequency is zero.
 	void  setLength(float len);
 	float getLength();
 	
@@ -41,7 +41,7 @@ public:
 	//----------------------------------------
 	ofVec2f getReactionForce(float inv_dt) const;
 	b2Vec2  getReactionForceB2D(float inv_dt) const;
-	float  getReactionTorque(float inv_dt) const;
+	float   getReactionTorque(float inv_dt) const;
 };
 
 
