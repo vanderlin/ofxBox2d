@@ -77,7 +77,7 @@ void testApp::draw() {
 		polyLines[i].draw();
 	}	
 	
-	string info = "Draw a shape with the mouse (in the green zone)\n";
+	string info = "Draw a shape with the mouse\n";
 	info += "Press 1 to add some circles\n";
 	info += "Press c to clear everything\n";
 	
