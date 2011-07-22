@@ -6,3 +6,5 @@ obj/
 *.app/
 *.DS_Store
 /Dev
+
+.svn

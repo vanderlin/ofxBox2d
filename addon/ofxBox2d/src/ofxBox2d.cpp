@@ -49,6 +49,7 @@ void ofxBox2d::init() {
 	
 	bWorldCreated = true;
 	
+	world->SetContactListener(this);
 }
 
 

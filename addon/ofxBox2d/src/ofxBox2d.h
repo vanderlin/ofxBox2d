@@ -12,7 +12,12 @@
 #include "ofxBox2dRender.h"
 #include "ofxBox2dContactListener.h"
 
-
+class ofxBox2dContactArgs : public ofEventArgs {
+public:
+	
+	b2Fixture * a;
+	b2Fixture * b;
+};
 
 class ofxBox2d : public b2ContactListener {
 	
@@ -22,6 +27,21 @@ private:
 	int					velocityIterations;
 	int					positionIterations;
 	
+	// Called when two fixtures begin to touch.
+	void BeginContact(b2Contact* contact) { 
+		ofxBox2dContactArgs args;
+		args.a = contact->GetFixtureA();
+		args.b = contact->GetFixtureB();
+		ofNotifyEvent( contactStartEvents, args, this);
+	}
+	
+	// Called when two fixtures cease to touch.
+	void EndContact(b2Contact* contact) { 
+		ofxBox2dContactArgs args;
+		args.a = contact->GetFixtureA();
+		args.b = contact->GetFixtureB();
+		ofNotifyEvent( contactEndEvents, args, this);
+	}
 	
 	
 public:
@@ -45,8 +65,11 @@ public:
 	b2Body*				mouseBody;
 	b2Body*				ground;
 	b2Body*				mainBody;
-	
 
+	// ------------------------------------------------------ 
+	ofEvent <ofxBox2dContactArgs> contactStartEvents;
+	ofEvent <ofxBox2dContactArgs> contactEndEvents;
+	
 	// ------------------------------------------------------ 
 	ofxBox2d();
 	~ofxBox2d();
