@@ -2,7 +2,6 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
-	
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);

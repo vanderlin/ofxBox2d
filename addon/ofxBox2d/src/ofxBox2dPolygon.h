@@ -32,7 +32,9 @@ public:
 
 	//----------------------------------------
 	void addTriangle(const ofVec2f &a, const ofVec2f &b, const ofVec2f &c);
-	
+	void addVertexes(vector <ofVec2f> &pts);
+	void addVertexes(ofPolyline &polyline);
+
 	//----------------------------------------
 	// Polygon helper functions
 	//----------------------------------------

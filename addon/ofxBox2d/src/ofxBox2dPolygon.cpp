@@ -92,6 +92,24 @@ void ofxBox2dPolygon::addTriangle(const ofVec2f &a, const ofVec2f &b, const ofVe
 	close();
 }
 
+/*
+ These were in ofPolyline and now are gone?
+*/
+//----------------------------------------
+void ofxBox2dPolygon::addVertexes(vector <ofVec2f> &pts) {
+	for (int i=0; i<pts.size(); i++) {
+		addVertex(pts[i].x, pts[i].y);
+	}
+}
+
+//----------------------------------------
+void ofxBox2dPolygon::addVertexes(ofPolyline &polyline) {
+	for (int i=0; i<polyline.size(); i++) {
+		addVertex(polyline[i].x, polyline[i].y);
+	}
+}
+
+
 //----------------------------------------
 void ofxBox2dPolygon::simplify(float tolerance) {
 	ofPolyline::simplify(tolerance);	

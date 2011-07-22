@@ -5,7 +5,6 @@ static int nPts  = 61*2;
 
 //--------------------------------------------------------------
 void testApp::setup() {
-	
 	ofSetVerticalSync(true);
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
@@ -44,11 +43,11 @@ void testApp::update() {
 		float damping  = 0.7f;
 		float minDis   = 100;
 		for(int i=0; i<circles.size(); i++) {
-			circles[i].addAttractionPoint(mouseX, mouseY, strength, minDis);
+			circles[i].addAttractionPoint(mouseX, mouseY, strength);
 			circles[i].setDamping(damping, damping);
 		}
 		for(int i=0; i<customParticles.size(); i++) {
-			customParticles[i].addAttractionPoint(mouseX, mouseY, strength, minDis);
+			customParticles[i].addAttractionPoint(mouseX, mouseY, strength);
 			customParticles[i].setDamping(damping, damping);
 		}
 		

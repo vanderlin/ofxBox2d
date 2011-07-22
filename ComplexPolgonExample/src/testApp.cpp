@@ -23,6 +23,7 @@ void testApp::setup() {
 	for (int i=0; i<pts.size(); i++) {
 		poly.addVertex(pts[i]);
 	}
+	poly.setAsEdge(false);
 	poly.triangulate(15);
 	poly.setPhysics(1.0, 0.3, 0.3);
 	poly.create(box2d.getWorld());
@@ -150,8 +151,11 @@ void testApp::mouseReleased(int x, int y, int button) {
 	// save the outline of the shape
 	ofPolyline outline = shape;
 	
+	// resample shape
+	ofPolyline resampled = shape.getResampledBySpacing(25);
+	
 	// trangleate the shape, return am array of traingles
-	vector <TriangleShape> tris = triangulatePolygonWithOutline(shape, outline);
+	vector <TriangleShape> tris = triangulatePolygonWithOutline(resampled, outline);
 	
 	// add some random points inside
 	addRandomPointsInside(shape, 255);
@@ -161,6 +165,7 @@ void testApp::mouseReleased(int x, int y, int button) {
 		ofxBox2dPolygon p;
 		p.addTriangle(tris[i].a, tris[i].b, tris[i].c);
 		p.setPhysics(1.0, 0.3, 0.3);
+		p.setAsEdge(false);
 		if(p.isGoodShape()) {
 			p.create(box2d.getWorld());
 			triangles.push_back(p);

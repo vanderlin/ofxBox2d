@@ -6,13 +6,13 @@ void testApp::setup() {
 	ofSetVerticalSync(true);
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
-	
+
 	box2d.init();
-	box2d.setGravity(0, 30);
+	box2d.setGravity(10, 0);
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
 	
-	anchor.setup(box2d.getWorld(), ofGetWidth()/2, 60, 4);
+	anchor.setup(box2d.getWorld(), 20, ofGetHeight()/2, 4);
 	
 	// first we add just a few circles
 	for (int i=0; i<3; i++) {

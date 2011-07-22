@@ -5,7 +5,7 @@ void testApp::setup() {
 	
 	ofSetVerticalSync(true);
 	ofBackgroundHex(0xfdefc2);
-	
+
 	box2d.init();
 	box2d.setGravity(0, 10);
 	box2d.createGround();
