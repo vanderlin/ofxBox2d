@@ -116,26 +116,17 @@ float ofxBox2dCircle::getRadius() {
  
  -- any help here :) --
  
+ here is a solution for changing the radius on the fly without
+ destroying the shape - chrispie
+ 
  */
 void ofxBox2dCircle::setRadius(float r) {
-	/*
-	 if(body != NULL) {
-	 for(b2Shape* s=body->GetShapeList(); s; s=s->GetNext()) {
-	 body->DestroyShape(s);
-	 }
-	 
-	 circle.radius	    = r/OFX_BOX2D_SCALE;
-	 circle.density		= mass;
-	 circle.restitution  = bounce;
-	 circle.friction		= friction;
-	 
-	 //body = world->CreateBody(&bodyDef);
-	 body->SetLinearVelocity(b2Vec2(0.0, 0.0));
-	 body->CreateShape(&circle);
-	 body->SetMassFromShapes();
-	 }
-	 */
-	printf("this does nothing yst!!!\n");
+	this->radius = r;
+	
+	for (b2Fixture* f= body->GetFixtureList(); f; f = f->GetNext())
+	{
+		f->GetShape()->m_radius=r/OFX_BOX2D_SCALE;
+	}
 }
 
 //------------------------------------------------
