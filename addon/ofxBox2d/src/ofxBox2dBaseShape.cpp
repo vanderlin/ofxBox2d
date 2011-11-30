@@ -130,22 +130,12 @@ void* ofxBox2dBaseShape::getData() {
 	}
 }
 
-/*
- //------------------------------------------------ 
- virtual void setFilterData(b2FilterData data) {
- for(b2Shape* s=body->GetShapeList(); s; s=s->GetNext()) {
- 
- //b2FilterData filter = s->GetFilterData();
- //			filter.groupIndex = newValue;
- //			myShape->SetFilterData(filter):
- //			myWorld->Refilter(myShape);
- 
- s->SetFilterData(data);
- world->Refilter(s);
- }
- 
- }
- */
+//------------------------------------------------
+void ofxBox2dBaseShape::setFilterData(b2Filter filter) {
+    for( b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext() ){
+        f->SetFilterData(filter);
+    }
+}
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::enableGravity(bool b) {

@@ -23,7 +23,6 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 	}
 	
 	// these are used to create the shape
-	b2BodyDef	  bodyDef;
 	b2CircleShape shape;
 	
 	shape.m_p.SetZero();
