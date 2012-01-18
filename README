@@ -6,4 +6,5 @@ Todd
 
 Install:
 The xcode projects have the box2d addon in ../addon/ofxBox2d. This is not your openframeworks add-on folder. 
- 
+
+If you would like to just copy this to your addon folder. 
