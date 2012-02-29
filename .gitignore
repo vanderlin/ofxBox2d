@@ -7,4 +7,11 @@ obj/
 *.DS_Store
 /Dev
 
-.svn
+*.svn
+
+*.xcscheme
+*.xcsettings
+*.xcworkspacedata
+*.xcworkspace
+*.xcuserdatad
+	

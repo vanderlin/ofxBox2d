@@ -14,6 +14,9 @@ static float b2dNum(float f) {
 static b2Vec2 screenPtToWorldPt(ofVec2f p) {
 	return b2Vec2(p.x/OFX_BOX2D_SCALE, p.y/OFX_BOX2D_SCALE);
 }
+static ofPoint worldPtToscreenPt(b2Vec2 p) {
+	return ofPoint(p.x*OFX_BOX2D_SCALE, p.y*OFX_BOX2D_SCALE);
+}
 
 class QueryCallback : public b2QueryCallback {
 	

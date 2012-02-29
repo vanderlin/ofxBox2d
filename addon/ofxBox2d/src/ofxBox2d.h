@@ -43,7 +43,8 @@ private:
 		ofNotifyEvent( contactEndEvents, args, this);
 	}
 	
-	
+    ofPoint				gravity;
+
 public:
 	
 	// b2AABB				worldAABB;
@@ -57,7 +58,6 @@ public:
 	bool				bCheckBounds;
 	bool				bHasContactListener;
 	
-	ofPoint				gravity;
 	b2BodyDef			bd;
 	
 	b2Body*				m_bomb;
@@ -101,9 +101,12 @@ public:
 	
 	void		setContactListener(ofxBox2dContactListener * listener);
 	
+    void        wakeupShapes();
 	void		setIterations(int velocityTimes, int positionTimes);
 	void		setGravity(float x, float y);
 	void		setGravity(ofPoint pt);
+    ofPoint     getGravity();
+    
 	void		setBounds(ofPoint lowBounds, ofPoint upBounds);
 	void		createBounds(float x=0, float y=0, float w=ofGetWidth(), float h=ofGetHeight());
 	void		createBounds(ofRectangle &rec);

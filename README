@@ -3,8 +3,8 @@ This is a simple wrapper for box2d using Openframeworks. The examples below are 
 thanks,
 Todd
 
-
 Install:
-The xcode projects have the box2d addon in ../addon/ofxBox2d. This is not your openframeworks add-on folder. 
+For all the example in ofxBox2d they include the addon/ofxBox2d. This is for easier development on the addon. 
 
-If you would like to just copy this to your addon folder. 
+If you would like you can add addon/ofxBox2d to OF/addons
+ 

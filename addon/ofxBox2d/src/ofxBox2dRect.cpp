@@ -34,8 +34,8 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
 		x += w; y += h;
 	}
 	
-	_width	= w;
-	_height	= h;
+	width	= w;
+	height	= h;
 	
 	b2PolygonShape shape;
 	shape.SetAsBox(w/OFX_BOX2D_SCALE, h/OFX_BOX2D_SCALE);
@@ -55,17 +55,45 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
 	
 	body = b2dworld->CreateBody(&bodyDef);
 	body->CreateFixture(&fixture);
-	
+
+    
+    // update the rectShape
+    getRectangleShape();
+    
+}
+
+//------------------------------------------------
+ofPolyline& ofxBox2dRect::getRectangleShape() {
+    
+    if(isBody()) {
+        
+        shape.clear();
+        const b2Transform& xf = body->GetTransform();
+        
+        for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
+            b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
+            if(poly) {
+                for(int i=0; i<poly->m_vertexCount; i++) {
+                    b2Vec2 pt = b2Mul(xf, poly->m_vertices[i]);
+                    shape.addVertex(worldPtToscreenPt(pt));
+                }
+            }
+        }
+    }
+    // we are a rectangle so close it
+    shape.setClosed(true);
+    return shape;
+    
 }
 
 //------------------------------------------------
 float ofxBox2dRect::getWidth() {
-	return _width;
+	return width;
 }
 
 //------------------------------------------------
 float ofxBox2dRect::getHeight() {
-	return _height;
+	return height;
 }
 
 //------------------------------------------------
@@ -129,21 +157,30 @@ void ofxBox2dRect::draw() {
 	if(body == NULL) {
 		return;	
 	}
-	
-	const b2Transform& xf = body->GetTransform();
-	for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
-		
-		if(poly) {
-			ofBeginShape();
-			for(int i=0; i<poly->m_vertexCount; i++) {
-				b2Vec2 pt = b2Mul(xf, poly->m_vertices[i]);
-				ofVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
-			}
-			ofEndShape(true);
-		}
-	}
-	
+    
+    // update the polyline
+    getRectangleShape();
+    
+    ofPath path;
+    for (int i=0; i<shape.size(); i++) {
+        if(i==0)path.moveTo(shape[i]);
+        else path.lineTo(shape[i]);
+    }
+    
+    // draw the path
+    path.setColor(ofGetStyle().color);
+    path.setFilled(ofGetStyle().bFill);
+    path.draw();
+    
+    // are we sleeping
+    if(isSleeping()) {
+        ofPushStyle();
+        ofEnableAlphaBlending();
+        path.setColor(ofColor(255, 100));
+        path.setFilled(true);
+        path.draw();
+        ofPopStyle();
+    }
 	
 }
 

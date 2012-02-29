@@ -8,6 +8,10 @@ ofxBox2d::~ofxBox2d() {
 	if(mouseBody) {
 		world->DestroyBody(mouseBody);	
 	}
+    if(world) {
+        delete world;
+        world = NULL;
+    }
 }
 
 // ------------------------------------------------------ init
@@ -68,13 +72,13 @@ void ofxBox2d::setContactListener(ofxBox2dContactListener * listener) {
 // ------------------------------------------------------ grab shapes Events
 void ofxBox2d::registerGrabbing() {
 #ifdef TARGET_OF_IPHONE
-	ofAddListener(ofEvents.touchDown, this, &ofxBox2d::touchDown);
-	ofAddListener(ofEvents.touchMoved, this, &ofxBox2d::touchMoved);
-	ofAddListener(ofEvents.touchUp, this, &ofxBox2d::touchUp);
+	ofAddListener(ofEvents().touchDown, this, &ofxBox2d::touchDown);
+	ofAddListener(ofEvents().touchMoved, this, &ofxBox2d::touchMoved);
+	ofAddListener(ofEvents().touchUp, this, &ofxBox2d::touchUp);
 #else
-	ofAddListener(ofEvents.mousePressed, this, &ofxBox2d::mousePressed);
-	ofAddListener(ofEvents.mouseDragged, this, &ofxBox2d::mouseDragged);
-	ofAddListener(ofEvents.mouseReleased, this, &ofxBox2d::mouseReleased);
+	ofAddListener(ofEvents().mousePressed, this, &ofxBox2d::mousePressed);
+	ofAddListener(ofEvents().mouseDragged, this, &ofxBox2d::mouseDragged);
+	ofAddListener(ofEvents().mouseReleased, this, &ofxBox2d::mouseReleased);
 #endif
 }
 
@@ -158,14 +162,32 @@ void ofxBox2d::grabShapeDragged(float x, float y) {
 	if (mouseJoint && bEnableGrabbing) mouseJoint->SetTarget(p);
 }
 
+// ------------------------------------------------------ wake up
+void ofxBox2d::wakeupShapes() {
+    
+    b2Body* bodies = world->GetBodyList();
+    while(bodies) {
+        b2Body* b = bodies;
+        if(b) {
+            if( !b->IsAwake() ) b->SetAwake(true);
+        }
+        bodies = bodies->GetNext();
+    }
+    
+}
 
 // ------------------------------------------------------ set gravity
+void ofxBox2d::setGravity(ofPoint pt) {
+    setGravity(pt.x, pt.y);
+}
 void ofxBox2d::setGravity(float x, float y) {
 	world->SetGravity(b2Vec2(x, y));
+    wakeupShapes();
 }
-void ofxBox2d::setGravity(ofPoint pt) {
-	world->SetGravity(b2Vec2(pt.x, pt.y));
+ofPoint ofxBox2d::getGravity() {
+    return ofPoint(world->GetGravity().x, world->GetGravity().y);
 }
+
 
 // ------------------------------------------------------ set bounds
 void ofxBox2d::setBounds(ofPoint lowBounds, ofPoint upBounds) {

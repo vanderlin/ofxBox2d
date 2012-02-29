@@ -7,8 +7,9 @@
 class ofxBox2dRect : public ofxBox2dBaseShape {
 
 private:
-	float _width, _height;
-
+    
+	float width, height;
+    ofPolyline   shape;
 public:
 	
 	//------------------------------------------------
@@ -18,11 +19,12 @@ public:
 	void setup(b2World * b2dworld, ofRectangle rec);
 	void setup(b2World * b2dworld, float x, float y, float w, float h);
 	
-	float getWidth();
-	float getHeight();
+	float       getWidth();
+	float       getHeight();
+    ofPolyline& getRectangleShape();
 	
 	//------------------------------------------------
-	void draw();
+    void draw();
 
 	//------------------------------------------------
 	void addAttractionPoint(float x, float y, float amt);

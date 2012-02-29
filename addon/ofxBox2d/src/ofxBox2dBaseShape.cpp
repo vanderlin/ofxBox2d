@@ -63,6 +63,15 @@ bool ofxBox2dBaseShape::isFixed() {
 	return density == 0.f ? true : false;
 }
 
+bool ofxBox2dBaseShape::isSleeping() {
+    if(isBody()) {
+        return !body->IsAwake();
+    }
+    else { 
+        ofLog(OF_LOG_ERROR, "- body is not defined -");
+        return false;
+    }
+}
 //
 b2World* ofxBox2dBaseShape::getWorld() {
 	if (isBody()) {
