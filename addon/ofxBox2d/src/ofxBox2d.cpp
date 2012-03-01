@@ -6,7 +6,7 @@ ofxBox2d::ofxBox2d() {
 }
 ofxBox2d::~ofxBox2d() {
 	if(mouseBody) {
-		world->DestroyBody(mouseBody);	
+		if(world) world->DestroyBody(mouseBody);	
 	}
     if(world) {
         delete world;

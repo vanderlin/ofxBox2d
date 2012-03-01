@@ -45,6 +45,11 @@ void ofxBox2dBaseShape::destroy() {
 }
 
 //----------------------------------------
+bool ofxBox2dBaseShape::shouldRemove(ofxBox2dBaseShape &b) {
+    return b.dead;
+}
+
+//----------------------------------------
 ofxBox2dBaseShape::~ofxBox2dBaseShape() {
 	if(alive) destroy();
 }
@@ -166,6 +171,7 @@ float ofxBox2dBaseShape::getRotation() {
 	if(body != NULL) {
 		return ofRadToDeg(body->GetAngle());
 	}
+    else return 0;
 }
 
 
@@ -176,9 +182,10 @@ void ofxBox2dBaseShape::setPosition(float x, float y) {
 		return;
 	}
 	body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), 0);
-	//body->SetLinearVelocity(b2Vec2(0, 0)); // maybe bring this back...
+	body->SetLinearVelocity(b2Vec2(0, 0)); // maybe bring this back...
 	body->SetAwake(true); // this sounds backwards but that is what the doc says todo...
 }
+
 void ofxBox2dBaseShape::setPosition(ofVec2f p) {
 	setPosition(p.x, p.y);
 }
