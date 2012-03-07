@@ -12,7 +12,7 @@ void testApp::setup(){
     
     box2d.init();
     box2d.setGravity(0, 10);
-    box2d.setFPS(30);
+    box2d.setFPS(60);
     box2d.registerGrabbing();
     box2d.createBounds();
     box2d.setIterations(1, 1); // minimum for IOS
