@@ -17,6 +17,7 @@ public:
 	
 	//------------------------------------------------
 	void setup(b2World * b2dworld, float x, float y, float radius);
+	void setup(b2World * b2dworld, ofVec2f &pts, float radius);
 	
 	//------------------------------------------------
 	float getRadius();
