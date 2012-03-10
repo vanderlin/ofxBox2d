@@ -102,7 +102,7 @@ void ofxBox2d::mouseDragged(ofMouseEventArgs &e) {
 void ofxBox2d::mouseReleased(ofMouseEventArgs &e) {
 	grabShapeUp(e.x, e.y);
 }
-#endif;
+#endif
 
 // ------------------------------------------------------ 
 void ofxBox2d::grabShapeDown(float x, float y) {
