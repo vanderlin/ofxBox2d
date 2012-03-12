@@ -3,6 +3,9 @@
 #include "Box2D.h"
 #include "ofxBox2dUtils.h"
 
+#define BOX2D_DEFAULT_FREQ      4.0
+#define BOX2D_DEFAULT_DAMPING   0.5
+
 class ofxBox2dJoint {
 	
 public:
