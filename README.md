@@ -34,3 +34,13 @@ Known issues
 ------------
 Check the issues on Github: https://github.com/vanderlin/ofxBox2d/issues
 
+#### Missing define in triangle_impl.hpp on Win
+
+In older versions of ofxBox2d, there is a missing define in the Triangle library that causes the build to fail on Windows. You can uncomment this in `libs\triangle\triangle_impl.hpp` by changing line 235 from this:
+<pre>
+/* #define NO_TIMER */
+</pre>
+to this:
+<pre>
+#define NO_TIMER
+</pre>
