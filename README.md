@@ -12,9 +12,6 @@ Todd
 
 Installation
 ------------
-Any steps necessary to install your addon. Optimally, this means just dropping the folder into the `openFrameworks/addons/` folder.
-
-
 Place ofxPd within a folder in the apps folder of the OF dir tree:
 <pre>
 openframeworks/addons/ofxPd
@@ -22,7 +19,6 @@ openframeworks/addons/ofxPd
 
 Compatibility
 ------------
-
 ofxBox2d is developed against the current version of OpenFramewroks.
 
 If you are using a stable version (007, 0071, ...) of OpenFrameworks then you want to use a git tag of ofxBox2d for that version. You can select the tag in the Github "Current Branch" menu or clone and check it out using git.
