@@ -69,7 +69,7 @@ void ofxBox2dPolygon::calculateCentroid() {
 
 //----------------------------------------
 ofVec2f ofxBox2dPolygon::getCenter() {	
-	if(!body) return 0;
+	if(!body) return ofVec2f(0,0);
 	const b2Transform& xf = body->GetTransform();
 	b2Vec2 b2Center = b2Mul(xf, b2Vec2(center.x/OFX_BOX2D_SCALE, center.y/OFX_BOX2D_SCALE));
 	return ofVec2f(b2Center.x*OFX_BOX2D_SCALE, b2Center.y*OFX_BOX2D_SCALE);
