@@ -12,6 +12,10 @@
 #include "ofxBox2dRender.h"
 #include "ofxBox2dContactListener.h"
 
+#ifdef TARGET_OPENGLES
+#define OF_MAX_TOUCH_JOINTS		5			// max number of touch points on iPhone + iPad (this may change in the future though).
+#endif
+
 class ofxBox2dContactArgs : public ofEventArgs {
 public:
 	
@@ -61,8 +65,13 @@ public:
 	b2BodyDef			bd;
 	
 	b2Body*				m_bomb;
-	b2MouseJoint*		mouseJoint;
+#ifdef TARGET_OPENGLES    
+    b2MouseJoint*		touchJoints[ OF_MAX_TOUCH_JOINTS ];
+    b2Body*		        touchBodies[ OF_MAX_TOUCH_JOINTS ];
+#else
+	b2MouseJoint*		mouseJoint;    
 	b2Body*				mouseBody;
+#endif    
 	b2Body*				ground;
 	b2Body*				mainBody;
 
@@ -77,7 +86,7 @@ public:
 	void		init();
 	void		setFPS(float theFps) { fps = theFps; }
 	
-#ifdef TARGET_OF_IPHONE
+#ifdef TARGET_OPENGLES
 	void		touchDown(ofTouchEventArgs &touch);
 	void		touchMoved(ofTouchEventArgs &touch);
 	void		touchUp(ofTouchEventArgs &touch);
@@ -88,9 +97,9 @@ public:
 #endif
 	
 	void		registerGrabbing();
-	void		grabShapeDown(float x, float y);
-	void		grabShapeUp(float x, float y);
-	void		grabShapeDragged(float x, float y);
+	void		grabShapeDown(float x, float y, int id = -1 );		// -1 is reserved for mouse.
+	void		grabShapeUp(float x, float y, int id = -1 );		// -1 is reserved for mouse.
+	void		grabShapeDragged(float x, float y, int id = -1 );	// -1 is reserved for mouse.
 	
 	b2World*	getWorld()		  { return world;				   }
 	int			getBodyCount()    { return world->GetBodyCount();  }
@@ -118,4 +127,5 @@ public:
 	void		update(); 
 	void		draw();
 	void		drawGround();
+        
 };

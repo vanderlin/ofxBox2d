@@ -5,9 +5,22 @@ ofxBox2d::ofxBox2d() {
 	
 }
 ofxBox2d::~ofxBox2d() {
-	if(mouseBody) {
-		if(world) world->DestroyBody(mouseBody);	
+	
+#ifdef TARGET_OPENGLES
+    // destroy touch grabbing bodies
+    for(int i=0; i<OF_MAX_TOUCH_JOINTS; i++) {
+        if(touchBodies[i]) {
+        	if(world)
+            	world->DestroyBody(touchBodies[i]);
+        }
+    }
+#else
+    // destroy mouse grabbing body
+    if(mouseBody) {
+		if(world)
+            world->DestroyBody(mouseBody);
 	}
+#endif
     if(world) {
         delete world;
         world = NULL;
@@ -30,11 +43,18 @@ void ofxBox2d::init() {
 	setFPS(60.0);
 	velocityIterations = 40;
 	positionIterations = 20;
-	
-	// mouse grabbing
+		
+#ifdef TARGET_OPENGLES    
+    // touch grabbing
+    for( int i=0; i<OF_MAX_TOUCH_JOINTS; i++ )
+		touchJoints[ i ] = NULL;
+    for( int i=0; i<OF_MAX_TOUCH_JOINTS; i++ )
+		touchBodies[ i ] = NULL;
+#else
+    // mouse grabbing
 	mouseJoint = NULL;
 	mouseBody  = NULL;
-	
+#endif
 	// ground/bounds
 	ground	   = NULL;
 	
@@ -71,7 +91,7 @@ void ofxBox2d::setContactListener(ofxBox2dContactListener * listener) {
 
 // ------------------------------------------------------ grab shapes Events
 void ofxBox2d::registerGrabbing() {
-#ifdef TARGET_OF_IPHONE
+#ifdef TARGET_OPENGLES
 	ofAddListener(ofEvents().touchDown, this, &ofxBox2d::touchDown);
 	ofAddListener(ofEvents().touchMoved, this, &ofxBox2d::touchMoved);
 	ofAddListener(ofEvents().touchUp, this, &ofxBox2d::touchUp);
@@ -82,15 +102,15 @@ void ofxBox2d::registerGrabbing() {
 #endif
 }
 
-#ifdef TARGET_OF_IPHONE
+#ifdef TARGET_OPENGLES
 void ofxBox2d::touchDown(ofTouchEventArgs &touch) {
-	grabShapeDown(touch.x, touch.y);
+	grabShapeDown(touch.x, touch.y, touch.id);
 }
 void ofxBox2d::touchMoved(ofTouchEventArgs &touch) {
-	grabShapeDragged(touch.x, touch.y);
+	grabShapeDragged(touch.x, touch.y, touch.id);
 }
 void ofxBox2d::touchUp(ofTouchEventArgs &touch) {
-	grabShapeUp(touch.x, touch.y);
+	grabShapeUp(touch.x, touch.y, touch.id);
 }
 #else
 void ofxBox2d::mousePressed(ofMouseEventArgs &e) {
@@ -105,19 +125,35 @@ void ofxBox2d::mouseReleased(ofMouseEventArgs &e) {
 #endif
 
 // ------------------------------------------------------ 
-void ofxBox2d::grabShapeDown(float x, float y) {
+void ofxBox2d::grabShapeDown(float x, float y, int id) {
 	
 	if(bEnableGrabbing) {
-		b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
-		
-		if (mouseJoint != NULL) {
-			return;
-		}
-		
-		if(mouseBody == NULL) {
-			b2BodyDef bd;
-			mouseBody = world->CreateBody(&bd);
-		}
+		b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);		
+        
+#ifdef TARGET_OPENGLES  
+        if(id >= 0 && id < OF_MAX_TOUCH_JOINTS)
+        {
+            if(touchJoints[id] != NULL)
+               return;            
+            
+            if( touchBodies[id] == NULL) {
+                b2BodyDef bd;
+                touchBodies[id] = world->CreateBody(&bd);
+            }
+        }
+        else        
+            return;		// invalid mouse / touch id.
+#else
+      if (mouseJoint != NULL) {
+          return;
+      }
+            
+      if(mouseBody == NULL) {
+         b2BodyDef bd;
+         mouseBody = world->CreateBody(&bd);
+      }
+        
+#endif
 		
 		// Make a small box.
 		b2AABB aabb;
@@ -132,12 +168,18 @@ void ofxBox2d::grabShapeDown(float x, float y) {
 		
 		if (callback.m_fixture) {
 			b2Body* body = callback.m_fixture->GetBody();
-			b2MouseJointDef md;
-			md.bodyA    = mouseBody;
+			b2MouseJointDef md;                
 			md.bodyB    = body;
 			md.target   = p;
 			md.maxForce = 1000.0f * body->GetMass();
-			mouseJoint  = (b2MouseJoint*)world->CreateJoint(&md);
+#ifdef TARGET_OPENGLES
+            md.bodyA    = touchBodies[id];
+            touchJoints[id] = (b2MouseJoint*)world->CreateJoint(&md);
+#else
+            md.bodyA    = mouseBody;
+            mouseJoint  = (b2MouseJoint*)world->CreateJoint(&md);
+#endif           
+                
 			body->SetAwake(true);
 		}
 		
@@ -147,19 +189,39 @@ void ofxBox2d::grabShapeDown(float x, float y) {
 }
 
 // ------------------------------------------------------ 
-void ofxBox2d::grabShapeUp(float x, float y) {
-	
-	if(mouseJoint && bEnableGrabbing) {
-		world->DestroyJoint(mouseJoint);
-		mouseJoint = NULL;
-	}
+void ofxBox2d::grabShapeUp(float x, float y, int id) {
+#ifdef TARGET_OPENGLES     
+    if(id >= 0 && id < OF_MAX_TOUCH_JOINTS) {
+        if(touchJoints[id] && bEnableGrabbing){
+            world->DestroyJoint(touchJoints[id]);
+            touchJoints[id] = NULL;
+        }
+    }
+#else    
+        if(mouseJoint && bEnableGrabbing) {
+            world->DestroyJoint(mouseJoint);
+            mouseJoint = NULL;
+        }
+#endif 
+    
+    
 }
 
 
 // ------------------------------------------------------ 
-void ofxBox2d::grabShapeDragged(float x, float y) {
+void ofxBox2d::grabShapeDragged(float x, float y, int id) {
 	b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
-	if (mouseJoint && bEnableGrabbing) mouseJoint->SetTarget(p);
+#ifdef TARGET_OPENGLES  
+    if(id >= 0 && id < OF_MAX_TOUCH_JOINTS) {
+        if (touchJoints[id] && bEnableGrabbing)
+            touchJoints[id]->SetTarget(p);
+    }
+#else    
+    	if (mouseJoint && bEnableGrabbing)
+        	mouseJoint->SetTarget(p);
+#endif
+    
+    
 }
 
 // ------------------------------------------------------ wake up
