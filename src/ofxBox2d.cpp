@@ -2,8 +2,16 @@
 
 // ------------------------------------------------------ 
 ofxBox2d::ofxBox2d() {
+	world = NULL;
 	
+	m_bomb = NULL;
+	mouseJoint = NULL;
+	mouseBody = NULL;
+	ground = NULL;
+	mainBody = NULL;
 }
+
+// ------------------------------------------------------
 ofxBox2d::~ofxBox2d() {
 	if(mouseBody) {
 		if(world) world->DestroyBody(mouseBody);	
@@ -21,7 +29,6 @@ void ofxBox2d::init() {
 	bHasContactListener = false;
 	bCheckBounds		= false;
 	bEnableGrabbing		= true;
-	bWorldCreated		= false;
 	scale				= OFX_BOX2D_SCALE;
 	doSleep				= true;
 	
@@ -48,10 +55,7 @@ void ofxBox2d::init() {
 	world = new b2World(b2Vec2(gravity.x, gravity.y), doSleep);
 	world->SetDebugDraw(&debugRender);
 	
-	
-	ofLog(OF_LOG_NOTICE, "- Box2D Created -\n");
-	
-	bWorldCreated = true;
+	ofLog(OF_LOG_NOTICE, "ofxBox2d:: - world created -");
 	
 	world->SetContactListener(this);
 }
@@ -65,7 +69,7 @@ void ofxBox2d::setContactListener(ofxBox2dContactListener * listener) {
 		world->SetContactListener(listener);
 	}
 	else {
-		printf("--- you need a world ---\n");	
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - world not inited -");
 	}
 }
 
@@ -107,10 +111,15 @@ void ofxBox2d::mouseReleased(ofMouseEventArgs &e) {
 // ------------------------------------------------------ 
 void ofxBox2d::grabShapeDown(float x, float y) {
 	
+	if(world == NULL) {
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
+		return;
+	}
+	
 	if(bEnableGrabbing) {
 		b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 		
-		if (mouseJoint != NULL) {
+		if(mouseJoint != NULL) {
 			return;
 		}
 		
@@ -150,21 +159,43 @@ void ofxBox2d::grabShapeDown(float x, float y) {
 void ofxBox2d::grabShapeUp(float x, float y) {
 	
 	if(mouseJoint && bEnableGrabbing) {
+		if(world == NULL) {
+			ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
+			return;
+		}
 		world->DestroyJoint(mouseJoint);
 		mouseJoint = NULL;
 	}
 }
 
 
-// ------------------------------------------------------ 
+// ------------------------------------------------------
 void ofxBox2d::grabShapeDragged(float x, float y) {
 	b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 	if (mouseJoint && bEnableGrabbing) mouseJoint->SetTarget(p);
 }
 
+// ------------------------------------------------------ 
+int	ofxBox2d::getBodyCount() {
+	if(world)
+		return world->GetBodyCount();
+	return 0;
+}
+
+// ------------------------------------------------------
+int	ofxBox2d::getJointCount() {
+	if(world)
+		return world->GetJointCount();
+	return 0;
+}
+
 // ------------------------------------------------------ wake up
 void ofxBox2d::wakeupShapes() {
-    
+    if(world == NULL) {
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
+		return;
+	}
+	
     b2Body* bodies = world->GetBodyList();
     while(bodies) {
         b2Body* b = bodies;
@@ -181,10 +212,18 @@ void ofxBox2d::setGravity(ofPoint pt) {
     setGravity(pt.x, pt.y);
 }
 void ofxBox2d::setGravity(float x, float y) {
+	if(world == NULL) {
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
+		return;
+	}
 	world->SetGravity(b2Vec2(x, y));
     wakeupShapes();
 }
 ofPoint ofxBox2d::getGravity() {
+	if(world == NULL) {
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
+		return ofPoint();
+	}
     return ofPoint(world->GetGravity().x, world->GetGravity().y);
 }
 
@@ -198,7 +237,7 @@ void ofxBox2d::setBounds(ofPoint lowBounds, ofPoint upBounds) {
 void ofxBox2d::createGround(float x1, float y1, float x2, float y2) {
 	
 	if(world == NULL) {
-		ofLog(OF_LOG_NOTICE, "- Need a world call init first! -\n");
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
 		return;
 	}
 	
@@ -223,7 +262,10 @@ void ofxBox2d::createBounds(ofRectangle &rec) {
 // ------------------------------------------------------ create bounds
 void ofxBox2d::createBounds(float x, float y, float w, float h) {
 	
-	if(!bWorldCreated) return;
+	if(world == NULL) {
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
+		return;
+	}
 	
 	b2BodyDef bd;
 	bd.position.Set(0, 0);
@@ -266,7 +308,11 @@ void ofxBox2d::setIterations(int velocityTimes, int positionTimes) {
 
 // ------------------------------------------------------ 
 void ofxBox2d::update() {
-	if(world == NULL) return;
+	if(world == NULL) {
+		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
+		return;
+	}
+	
 	// destroy the object if we are out of the bounds
 	if(bCheckBounds) {
 		/*

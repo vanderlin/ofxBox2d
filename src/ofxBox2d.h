@@ -53,7 +53,6 @@ public:
 	
 	float				scale;
 	bool				doSleep;
-	bool				bWorldCreated;
 	bool				bEnableGrabbing;
 	bool				bCheckBounds;
 	bool				bHasContactListener;
@@ -93,8 +92,8 @@ public:
 	void		grabShapeDragged(float x, float y);
 	
 	b2World*	getWorld()		  { return world;				   }
-	int			getBodyCount()    { return world->GetBodyCount();  }
-	int			getJointCount()   { return world->GetJointCount(); }
+	int			getBodyCount();
+	int			getJointCount();
 	
 	void		enableGrabbing()  { bEnableGrabbing = true;  };
 	void		disableGrabbing() { bEnableGrabbing = false; };

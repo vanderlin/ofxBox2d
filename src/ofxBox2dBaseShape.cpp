@@ -28,11 +28,11 @@ ofxBox2dBaseShape::ofxBox2dBaseShape() {
 void ofxBox2dBaseShape::destroy() {
 	
 	if(getWorld() == NULL) {
-		ofLog(OF_LOG_NOTICE, "- must have a valid world -");
+		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - must have a valid world -");
 		return;
 	}
 	else if(body == NULL) {
-		ofLog(OF_LOG_NOTICE, "- null body -");
+		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - null body -");
 		return;
 	}		
 	
@@ -58,7 +58,7 @@ ofxBox2dBaseShape::~ofxBox2dBaseShape() {
 bool ofxBox2dBaseShape::isBody() {
 	if (body == NULL) {
 		//cout << __FILE__ << __func__ << endl;
-		ofLog(OF_LOG_ERROR, "- body is not defined -");
+		ofLog(OF_LOG_ERROR, "ofxBox2dBaseShape:: - body is not defined -");
 		return false;
 	}
 	return true;
@@ -73,7 +73,7 @@ bool ofxBox2dBaseShape::isSleeping() {
         return !body->IsAwake();
     }
     else { 
-        ofLog(OF_LOG_ERROR, "- body is not defined -");
+        ofLog(OF_LOG_ERROR, "ofxBox2dBaseShape:: - body is not defined -");
         return false;
     }
 }
@@ -119,17 +119,17 @@ void ofxBox2dBaseShape::setPhysics(float density, float bounce, float friction) 
 void* ofxBox2dBaseShape::setData(void*data) {
 	
 	if(data == NULL) {
-		ofLog(OF_LOG_NOTICE, "- data is NULL -");
+		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - data is NULL -");
 		return NULL;
 	}
 	
 	if(isBody()) {
-		ofLog(OF_LOG_NOTICE, "- custom data set %p", data);
+		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - custom data set %p", data);
 		body->SetUserData(data);
 		return data;
 	}
 	else {
-		ofLog(OF_LOG_NOTICE, "- must have a valid body -");
+		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - must have a valid body -");
 	}
 }
 
@@ -139,7 +139,7 @@ void* ofxBox2dBaseShape::getData() {
 		return body->GetUserData();
 	}
 	else {
-		ofLog(OF_LOG_NOTICE, "- must have a valid body -");
+		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - must have a valid body -");
 		return NULL;
 	}
 }
@@ -178,7 +178,7 @@ float ofxBox2dBaseShape::getRotation() {
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setPosition(float x, float y) {
 	if(!body || body == NULL) {
-		ofLog(OF_LOG_NOTICE, "- Body is NULL -");
+		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - Body is NULL -");
 		return;
 	}
 	body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), 0);

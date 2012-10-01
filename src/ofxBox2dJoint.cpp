@@ -12,6 +12,7 @@
 //----------------------------------------
 ofxBox2dJoint::ofxBox2dJoint() {
 	world = NULL;
+	joint = NULL;
 	alive = false;
 }
 
@@ -29,6 +30,12 @@ ofxBox2dJoint::ofxBox2dJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2V
 
 //----------------------------------------
 void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, float frequencyHz, float damping, bool bCollideConnected) {
+	
+	if(body1 == NULL || body2 == NULL) {
+		ofLog(OF_LOG_NOTICE, "ofxBox2dJoint :: setup : - box2d body is NULL -");
+		return;
+	}
+	
 	b2Vec2 a1, a2;
 	a1 = body1->GetWorldCenter();
 	a2 = body2->GetWorldCenter();
@@ -38,7 +45,14 @@ void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, float 
 
 //----------------------------------------
 void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, float frequencyHz, float damping, bool bCollideConnected) {
+
 	setWorld(b2world);
+
+	if(body1 == NULL || body2 == NULL) {
+		ofLog(OF_LOG_NOTICE, "ofxBox2dJoint :: setup : - box2d body is NULL -");
+		return;
+	}
+
 	b2DistanceJointDef jointDef;
 	jointDef.Initialize(body1, body2, anchor1, anchor2);
 	jointDef.collideConnected	= bCollideConnected;
@@ -87,7 +101,9 @@ void ofxBox2dJoint::draw() {
 //----------------------------------------
 void ofxBox2dJoint::destroy() {
 	if (!isSetup()) return;
-	world->DestroyJoint(joint);
+	if(joint) {
+		world->DestroyJoint(joint);
+	}
 	joint = NULL;
 	alive = false;
 }
@@ -96,26 +112,41 @@ void ofxBox2dJoint::destroy() {
 
 //----------------------------------------
 void ofxBox2dJoint::setLength(float len) {
-	joint->SetLength((float32)b2dNum(len));
+	if(joint) {
+		joint->SetLength((float32)b2dNum(len));
+	}
 }
 float ofxBox2dJoint::getLength() {
-	return (float)joint->GetLength();
+	if(joint) {
+		return (float)joint->GetLength();
+	}
+	return 0;
 }
 
 //----------------------------------------
 void ofxBox2dJoint::setFrequency(float freq) {
-	joint->SetFrequency((float32)freq);
+	if(joint) {
+		joint->SetFrequency((float32)freq);
+	}
 }
 float ofxBox2dJoint::getFrequency() {
-	return (float)joint->GetFrequency();
+	if(joint) {
+		return (float)joint->GetFrequency();
+	}
+	return 0;
 }
 
 //----------------------------------------
 void ofxBox2dJoint::setDamping(float ratio) {
-	joint->SetDampingRatio((float32)ratio);
+	if(joint) {
+		joint->SetDampingRatio((float32)ratio);
+	}
 }
 float ofxBox2dJoint::getDamping() {
-	return (float)joint->GetDampingRatio();
+	if(joint) {
+		return (float)joint->GetDampingRatio();
+	}
+	return 0;
 }
 
 
@@ -125,10 +156,16 @@ ofVec2f ofxBox2dJoint::getReactionForce(float inv_dt) const {
 	return ofVec2f(vec.x, vec.y);
 }
 b2Vec2 ofxBox2dJoint::getReactionForceB2D(float inv_dt) const {
-	return joint->GetReactionForce(inv_dt);
+	if(joint) {
+		return joint->GetReactionForce(inv_dt);
+	}
+	return b2Vec2(0, 0);
 }
 float ofxBox2dJoint::getReactionTorque(float inv_dt) const {
-	return (float)joint->GetReactionTorque(inv_dt);
+	if(joint) {
+		return (float)joint->GetReactionTorque(inv_dt);
+	}
+	return 0;
 }
 
 
