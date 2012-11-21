@@ -14,4 +14,16 @@ obj/
 *.xcworkspacedata
 *.xcworkspace
 *.xcuserdatad
-	
+
+
+#Code::Blocks
+*.depend
+*.layout
+
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.app
