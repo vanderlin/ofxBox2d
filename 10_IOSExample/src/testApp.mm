@@ -2,8 +2,16 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){	
+	// initialize the accelerometer
+	ofxAccelerometer.setup();
+	
+	//If you want a landscape oreintation 
+	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+	
+	ofBackground(127,127,127);
     
-	ofRegisterTouchEvents(this);
+    
+    ofRegisterTouchEvents(this);
 	ofxAccelerometer.setup();
 	ofxiPhoneAlerts.addListener(this);
 	ofSetFrameRate(30);
@@ -27,7 +35,7 @@ void testApp::setup(){
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
+void testApp::update(){
     
     ofVec2f gravity = ofxAccelerometer.getForce();
     gravity.y *= -1;
@@ -39,12 +47,11 @@ void testApp::update() {
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    
     ofSetHexColor(0xABDB44);
     for(vector<ofxBox2dCircle>::iterator it = circles.begin(); it != circles.end(); ++it) {
         it->draw();
     }
- 
+    
     ofSetColor(90);
     ofDrawBitmapString("double tap to add more", 20, 30);
     ofDrawBitmapString(ofToString(ofGetFrameRate(), 0)+" fps", 20, 50);
@@ -52,26 +59,26 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::exit(){
-    
+
 }
 
 //--------------------------------------------------------------
-void testApp::touchDown(ofTouchEventArgs &touch){
-    
+void testApp::touchDown(ofTouchEventArgs & touch){
+
 }
 
 //--------------------------------------------------------------
-void testApp::touchMoved(ofTouchEventArgs &touch){
-    
+void testApp::touchMoved(ofTouchEventArgs & touch){
+
 }
 
 //--------------------------------------------------------------
-void testApp::touchUp(ofTouchEventArgs &touch){
-    
+void testApp::touchUp(ofTouchEventArgs & touch){
+
 }
 
 //--------------------------------------------------------------
-void testApp::touchDoubleTap(ofTouchEventArgs &touch){
+void testApp::touchDoubleTap(ofTouchEventArgs & touch){
     ofxBox2dCircle c;
     c.setPhysics(1, 0.4, 0.4);
     c.setup(box2d.getWorld(), touch.x, touch.y, ofRandom(13, 25));
@@ -79,28 +86,27 @@ void testApp::touchDoubleTap(ofTouchEventArgs &touch){
 }
 
 //--------------------------------------------------------------
-void testApp::lostFocus(){
+void testApp::touchCancelled(ofTouchEventArgs & touch){
     
+}
+
+//--------------------------------------------------------------
+void testApp::lostFocus(){
+
 }
 
 //--------------------------------------------------------------
 void testApp::gotFocus(){
-    
+
 }
 
 //--------------------------------------------------------------
 void testApp::gotMemoryWarning(){
-    
+
 }
 
 //--------------------------------------------------------------
 void testApp::deviceOrientationChanged(int newOrientation){
-    
-}
 
-
-//--------------------------------------------------------------
-void testApp::touchCancelled(ofTouchEventArgs& args){
-    
 }
 
