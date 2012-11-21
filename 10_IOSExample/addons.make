@@ -1,0 +1,4 @@
+ofxAccelerometer
+ofxBox2d
+ofxiPhone
+ofxMultiTouch
