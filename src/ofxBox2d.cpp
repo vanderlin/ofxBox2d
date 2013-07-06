@@ -3,10 +3,18 @@
 // ------------------------------------------------------ 
 ofxBox2d::ofxBox2d() {
 	world = NULL;
-	
 	m_bomb = NULL;
+#ifdef TARGET_OPENGLES
+    // touch grabbing
+    for( int i=0; i<OF_MAX_TOUCH_JOINTS; i++ )
+		touchJoints[ i ] = NULL;
+    for( int i=0; i<OF_MAX_TOUCH_JOINTS; i++ )
+		touchBodies[ i ] = NULL;
+#else
+    // mouse grabbing
 	mouseJoint = NULL;
-	mouseBody = NULL;
+	mouseBody  = NULL;
+#endif
 	ground = NULL;
 	mainBody = NULL;
 }
