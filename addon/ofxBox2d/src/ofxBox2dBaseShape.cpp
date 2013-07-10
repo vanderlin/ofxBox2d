@@ -174,6 +174,10 @@ float ofxBox2dBaseShape::getRotation() {
     else return 0;
 }
 
+void ofxBox2dBaseShape::setRotation(float angle){
+    body->SetTransform(body->GetPosition(), DEG_TO_RAD * angle);
+}
+
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setPosition(float x, float y) {
