@@ -1,4 +1,3 @@
-
 #pragma once
 #include "ofMain.h"
 #include "Box2D.h"
@@ -66,6 +65,7 @@ public:
 	virtual void setFixedRotation(bool b);
 	virtual void setRotationFriction(float f);
 	float getRotation();
+	void setRotation(float angle);
 	
 	//------------------------------------------------ 
 	virtual void setPosition(float x, float y);
