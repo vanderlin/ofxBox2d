@@ -308,7 +308,7 @@ static void addRandomPointsInside(vector <ofVec2f> & vertices, int amt=100) {
 
 
 //-------------------------------------------------------------------
-static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pts, 
+static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pts,
 															const ofPolyline &polyOutline) {
 	
 	vector <TriangleShape> triangles;
@@ -372,7 +372,12 @@ static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pt
 	
 	return triangles;
 }
-
+static vector <TriangleShape> triangulatePolygonWithOutline(const vector <ofPoint> &pts,
+															const ofPolyline &polyOutline) {
+    ofPolyline p;
+    for (int i=0; i<pts.size(); i++) p.addVertex(pts[i]);
+    return triangulatePolygonWithOutline(p, polyOutline);
+}
 
 //-------------------------------------------------------------------
 static vector <TriangleShape> triangulatePolygon(const vector <ofVec2f> &ptsIn, bool addPointsInside=false, int amt=100) {
