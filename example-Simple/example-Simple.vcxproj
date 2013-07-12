@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="Debug|Win32">
+			<Configuration>Debug</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|Win32">
+			<Configuration>Release</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+		<RootNamespace>example-Simple</RootNamespace>
+		<Keyword>Win32Proj</Keyword>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Label="ExtensionSettings" />
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs2010\openFrameworksRelease.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs2010\openFrameworksDebug.props" />
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros" />
+	<PropertyGroup>
+		<_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+		<OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bin\</OutDir>
+		<IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\$(Configuration)\</IntDir>
+		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+		<GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+		<OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bin\</OutDir>
+		<IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\$(Configuration)\</IntDir>
+		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+		<TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_debug</TargetName>
+		<TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<ClCompile>
+			<Optimization>Disabled</Optimization>
+			<MinimalRebuild>true</MinimalRebuild>
+			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<PrecompiledHeader />
+			<WarningLevel>Level3</WarningLevel>
+			<DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxBox2d\libs;..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\addons\ofxBox2d\src</AdditionalIncludeDirectories>
+		</ClCompile>
+		<Link>
+			<OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<ProgramDatabaseFile>$(TargetDir)$(TargetName)_debugInfo.pdb</ProgramDatabaseFile>
+			<SubSystem>Console</SubSystem>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<DataExecutionPrevention />
+			<TargetMachine>MachineX86</TargetMachine>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<ClCompile>
+			<WholeProgramOptimization>false</WholeProgramOptimization>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<PrecompiledHeader />
+			<WarningLevel>Level3</WarningLevel>
+			<DebugInformationFormat />
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxBox2d\libs;..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\addons\ofxBox2d\src</AdditionalIncludeDirectories>
+		</ClCompile>
+		<Link>
+			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<OptimizeReferences>true</OptimizeReferences>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<DataExecutionPrevention />
+			<TargetMachine>MachineX86</TargetMachine>
+			<LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClCompile Include="src\main.cpp" />
+		<ClCompile Include="src\testApp.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2dCircle.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2dJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2dPolygon.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\src\ofxBox2dRect.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2BroadPhase.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2CollideCircle.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2CollidePolygon.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2Collision.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2Distance.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2DynamicTree.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2TimeOfImpact.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes\b2CircleShape.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes\b2PolygonShape.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2BlockAllocator.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2Math.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2Settings.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2StackAllocator.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2Body.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2ContactManager.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2Fixture.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2Island.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2World.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2WorldCallbacks.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2CircleContact.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2Contact.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2ContactSolver.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2PolygonContact.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2TOISolver.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2DistanceJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2FrictionJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2GearJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2Joint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2LineJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2MouseJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2PrismaticJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2PulleyJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2RevoluteJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2WeldJoint.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxBox2d\libs\triangle\del_impl.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\testApp.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2d.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dCircle.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dContactListener.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dPolygon.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dPolygonUtils.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dRect.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dRender.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\src\ofxBox2dUtils.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Box2D.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2BroadPhase.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2Collision.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2Distance.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2DynamicTree.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\b2TimeOfImpact.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes\b2CircleShape.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes\b2PolygonShape.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes\b2Shape.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2BlockAllocator.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2Math.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2Settings.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Common\b2StackAllocator.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2Body.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2ContactManager.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2Fixture.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2Island.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2TimeStep.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2World.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\b2WorldCallbacks.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2CircleContact.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2Contact.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2ContactSolver.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2PolygonContact.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts\b2TOISolver.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2DistanceJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2FrictionJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2GearJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2Joint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2LineJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2MouseJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2PrismaticJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2PulleyJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2RevoluteJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2WeldJoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\assert.hpp" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\del_interface.hpp" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\dpoint.hpp" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle.h" />
+		<ClInclude Include="..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs2010\openframeworksLib.vcxproj">
+			<Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+		</ProjectReference>
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ImportGroup Label="ExtensionTargets" />
+</Project>
