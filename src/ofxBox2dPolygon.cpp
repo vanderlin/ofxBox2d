@@ -235,6 +235,8 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 	
 	// update the area and centroid
 	updateShape();
+    
+    alive = true; // Need this, so the Body gets cleaned up in destructor
 }
 
 //------------------------------------------------
