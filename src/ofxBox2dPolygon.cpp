@@ -296,9 +296,10 @@ void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
 
 //----------------------------------------
 vector <ofPoint>& ofxBox2dPolygon::getVertices() {
-	
+    
     if(body == NULL) {
-		return;
+        static vector <ofPoint> emptyVertices;
+		return emptyVertices;
 	}
 	
 	const b2Transform& xf = body->GetTransform();
