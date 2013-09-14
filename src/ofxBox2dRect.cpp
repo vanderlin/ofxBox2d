@@ -59,7 +59,8 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
     
     // update the rectShape
     getRectangleShape();
-    
+ 
+    alive = true; // Need this, so the Body gets cleaned up in destructor
 }
 
 //------------------------------------------------

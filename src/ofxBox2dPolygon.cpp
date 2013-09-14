@@ -235,6 +235,8 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 	
 	// update the area and centroid
 	updateShape();
+    
+    alive = true; // Need this, so the Body gets cleaned up in destructor
 }
 
 //------------------------------------------------
@@ -294,9 +296,10 @@ void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
 
 //----------------------------------------
 vector <ofPoint>& ofxBox2dPolygon::getVertices() {
-	
+    
     if(body == NULL) {
-		return;
+        static vector <ofPoint> emptyVertices;
+		return emptyVertices;
 	}
 	
 	const b2Transform& xf = body->GetTransform();
