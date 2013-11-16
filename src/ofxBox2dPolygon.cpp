@@ -199,38 +199,38 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 	
 	}
 	else {
+		vector<ofPoint> pts = ofPolyline::getVertices();
 		if(bSetAsEdge) {
-			for (int i=1; i<size(); i++) {
+			for (int i=1; i<pts.size(); i++) {
 				b2PolygonShape	shape;
-				b2Vec2 a = screenPtToWorldPt(getVertices()[i-1]);
-				b2Vec2 b = screenPtToWorldPt(getVertices()[i]);
+				b2Vec2 a = screenPtToWorldPt(pts[i-1]);
+				b2Vec2 b = screenPtToWorldPt(pts[i]);
 				shape.SetAsEdge(a, b);
 				fixture.shape		= &shape;
 				fixture.density		= density;
 				fixture.restitution = bounce;
-				fixture.friction	= friction;	
+				fixture.friction	= friction;
 				
 				body->CreateFixture(&fixture);
-			}	
+			}
 		}
 		else {
             vector<b2Vec2>verts;
-            verts.assign(size()-1, b2Vec2());
-			for (int i=0; i<size(); i++) {
-				ofVec2f p = getVertices()[i] / OFX_BOX2D_SCALE;
+            verts.assign(pts.size()-1, b2Vec2());
+			for (int i=0; i<pts.size(); i++) {
+				ofVec2f p = pts[i] / OFX_BOX2D_SCALE;
 				verts[i]  = b2Vec2(p.x, p.y);
 			}
 			b2PolygonShape	shape;
-			shape.Set(&verts[0], size()-1);
+			shape.Set(&verts[0], pts.size()-1);
 			
 			fixture.shape		= &shape;
 			fixture.density		= density;
 			fixture.restitution = bounce;
-			fixture.friction	= friction;	
+			fixture.friction	= friction;
 			
 			body->CreateFixture(&fixture);
-		}		
-			
+		}
 	}
 	
 	// update the area and centroid
