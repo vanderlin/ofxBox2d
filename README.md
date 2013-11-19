@@ -5,7 +5,7 @@ ofxBox2d
 
 Introduction
 ------------
-This is a simple wrapper for box2d using Openframeworks. The examples below are still in progressive, but should be stable for the most part. Please open up a issue if you have suggestions or find bugs. The wrapper is using the version Box2D v3.2
+This is a simple wrapper for box2d using Openframeworks. The examples below are still in progressive, but should be stable for the most part. Please open up a issue if you have suggestions or find bugs. The wrapper is using the version Box2D v2.3
 
 Thanks,
 Todd
