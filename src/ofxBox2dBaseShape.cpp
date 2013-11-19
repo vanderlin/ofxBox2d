@@ -13,9 +13,7 @@
 ofxBox2dBaseShape::ofxBox2dBaseShape() {
 	
 	setMassFromShape = true;
-	dead  = false;
 	alive = false;
-	
 	body  = NULL;
 	
 	density     = 0.0;
@@ -38,15 +36,12 @@ void ofxBox2dBaseShape::destroy() {
 	
 	getWorld()->DestroyBody(body);
 	body  = NULL;
-	dead  = true;
 	alive = false;
-	
-	//printf("--- dead ---\n");
 }
 
 //----------------------------------------
 bool ofxBox2dBaseShape::shouldRemove(ofxBox2dBaseShape &b) {
-    return b.dead;
+    return !b.alive;
 }
 
 //----------------------------------------

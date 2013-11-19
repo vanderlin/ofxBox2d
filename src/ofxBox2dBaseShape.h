@@ -10,7 +10,6 @@ public:
 	b2BodyDef		bodyDef;
 	b2Body*			body;
 	
-	bool			dead;
 	bool			alive;
 	bool			setMassFromShape;
 	
