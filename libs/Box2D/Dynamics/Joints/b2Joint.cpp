@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2006-2007 Erin Catto http://www.gphysics.com
+* Copyright (c) 2006-2007 Erin Catto http://www.box2d.org
 *
 * This software is provided 'as-is', without any express or implied
 * warranty.  In no event will the authors be held liable for any damages
@@ -16,19 +16,21 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "b2Joint.h"
-#include "b2DistanceJoint.h"
-#include "b2LineJoint.h"
-#include "b2MouseJoint.h"
-#include "b2RevoluteJoint.h"
-#include "b2PrismaticJoint.h"
-#include "b2PulleyJoint.h"
-#include "b2GearJoint.h"
-#include "b2WeldJoint.h"
-#include "b2FrictionJoint.h"
-#include "b2Body.h"
-#include "b2World.h"
-#include "b2BlockAllocator.h"
+#include <Box2D/Dynamics/Joints/b2Joint.h>
+#include <Box2D/Dynamics/Joints/b2DistanceJoint.h>
+#include <Box2D/Dynamics/Joints/b2WheelJoint.h>
+#include <Box2D/Dynamics/Joints/b2MouseJoint.h>
+#include <Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+#include <Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+#include <Box2D/Dynamics/Joints/b2PulleyJoint.h>
+#include <Box2D/Dynamics/Joints/b2GearJoint.h>
+#include <Box2D/Dynamics/Joints/b2WeldJoint.h>
+#include <Box2D/Dynamics/Joints/b2FrictionJoint.h>
+#include <Box2D/Dynamics/Joints/b2RopeJoint.h>
+#include <Box2D/Dynamics/Joints/b2MotorJoint.h>
+#include <Box2D/Dynamics/b2Body.h>
+#include <Box2D/Dynamics/b2World.h>
+#include <Box2D/Common/b2BlockAllocator.h>
 
 #include <new>
 
@@ -41,63 +43,77 @@ b2Joint* b2Joint::Create(const b2JointDef* def, b2BlockAllocator* allocator)
 	case e_distanceJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2DistanceJoint));
-			joint = new (mem) b2DistanceJoint((b2DistanceJointDef*)def);
+			joint = new (mem) b2DistanceJoint(static_cast<const b2DistanceJointDef*>(def));
 		}
 		break;
 
 	case e_mouseJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2MouseJoint));
-			joint = new (mem) b2MouseJoint((b2MouseJointDef*)def);
+			joint = new (mem) b2MouseJoint(static_cast<const b2MouseJointDef*>(def));
 		}
 		break;
 
 	case e_prismaticJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2PrismaticJoint));
-			joint = new (mem) b2PrismaticJoint((b2PrismaticJointDef*)def);
+			joint = new (mem) b2PrismaticJoint(static_cast<const b2PrismaticJointDef*>(def));
 		}
 		break;
 
 	case e_revoluteJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2RevoluteJoint));
-			joint = new (mem) b2RevoluteJoint((b2RevoluteJointDef*)def);
+			joint = new (mem) b2RevoluteJoint(static_cast<const b2RevoluteJointDef*>(def));
 		}
 		break;
 
 	case e_pulleyJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2PulleyJoint));
-			joint = new (mem) b2PulleyJoint((b2PulleyJointDef*)def);
+			joint = new (mem) b2PulleyJoint(static_cast<const b2PulleyJointDef*>(def));
 		}
 		break;
 
 	case e_gearJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2GearJoint));
-			joint = new (mem) b2GearJoint((b2GearJointDef*)def);
+			joint = new (mem) b2GearJoint(static_cast<const b2GearJointDef*>(def));
 		}
 		break;
 
-	case e_lineJoint:
+	case e_wheelJoint:
 		{
-			void* mem = allocator->Allocate(sizeof(b2LineJoint));
-			joint = new (mem) b2LineJoint((b2LineJointDef*)def);
+			void* mem = allocator->Allocate(sizeof(b2WheelJoint));
+			joint = new (mem) b2WheelJoint(static_cast<const b2WheelJointDef*>(def));
 		}
 		break;
 
 	case e_weldJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2WeldJoint));
-			joint = new (mem) b2WeldJoint((b2WeldJointDef*)def);
+			joint = new (mem) b2WeldJoint(static_cast<const b2WeldJointDef*>(def));
 		}
 		break;
         
 	case e_frictionJoint:
 		{
 			void* mem = allocator->Allocate(sizeof(b2FrictionJoint));
-			joint = new (mem) b2FrictionJoint((b2FrictionJointDef*)def);
+			joint = new (mem) b2FrictionJoint(static_cast<const b2FrictionJointDef*>(def));
+		}
+		break;
+
+	case e_ropeJoint:
+		{
+			void* mem = allocator->Allocate(sizeof(b2RopeJoint));
+			joint = new (mem) b2RopeJoint(static_cast<const b2RopeJointDef*>(def));
+		}
+		break;
+
+	case e_motorJoint:
+		{
+			void* mem = allocator->Allocate(sizeof(b2MotorJoint));
+			joint = new (mem) b2MotorJoint(static_cast<const b2MotorJointDef*>(def));
 		}
 		break;
 
@@ -138,8 +154,8 @@ void b2Joint::Destroy(b2Joint* joint, b2BlockAllocator* allocator)
 		allocator->Free(joint, sizeof(b2GearJoint));
 		break;
 
-	case e_lineJoint:
-		allocator->Free(joint, sizeof(b2LineJoint));
+	case e_wheelJoint:
+		allocator->Free(joint, sizeof(b2WheelJoint));
 		break;
     
 	case e_weldJoint:
@@ -148,6 +164,14 @@ void b2Joint::Destroy(b2Joint* joint, b2BlockAllocator* allocator)
 
 	case e_frictionJoint:
 		allocator->Free(joint, sizeof(b2FrictionJoint));
+		break;
+
+	case e_ropeJoint:
+		allocator->Free(joint, sizeof(b2RopeJoint));
+		break;
+
+	case e_motorJoint:
+		allocator->Free(joint, sizeof(b2MotorJoint));
 		break;
 
 	default:
@@ -165,6 +189,7 @@ b2Joint::b2Joint(const b2JointDef* def)
 	m_next = NULL;
 	m_bodyA = def->bodyA;
 	m_bodyB = def->bodyB;
+	m_index = 0;
 	m_collideConnected = def->collideConnected;
 	m_islandFlag = false;
 	m_userData = def->userData;

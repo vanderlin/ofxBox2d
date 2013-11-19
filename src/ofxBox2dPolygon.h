@@ -43,7 +43,7 @@ public:
 	
 	//----------------------------------------
 	ofVec2f getCenter();
-	vector <ofPoint> &getVertices();
+	vector <ofPoint> &getPoints();
     float   getArea()     { return area; };
 	bool	isGoodShape() { return calculateArea() > 15; }
 	void	setAsEdge(bool set) { bSetAsEdge = set; }
