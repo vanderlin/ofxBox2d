@@ -5,7 +5,7 @@ ofxBox2d
 
 Introduction
 ------------
-This is a simple wrapper for box2d using Openframeworks. The examples below are still in progressive, but should be stable for the most part. Please open up a issue if you have suggestions or find bugs. 
+This is a simple wrapper for box2d using Openframeworks. The examples below are still in progressive, but should be stable for the most part. Please open up a issue if you have suggestions or find bugs. The wrapper is using the version Box2D v2.3
 
 Thanks,
 Todd
@@ -28,11 +28,11 @@ ofxBox2d is developed against the current version of OpenFramewroks.
 
 If you are using a stable version (007, 0071, ...) of OpenFrameworks then you want to use a git tag of ofxBox2d for that version. You can select the tag in the Github "Current Branch" menu or clone and check it out using git.
 
-For example, the following commands will clone ofxBox2d and switch to the OF 007 tagged version:
+For example, the following commands will clone ofxBox2d and switch to the OF 008 tagged version:
 <pre>
 git clone git://github.com/vanderlin/ofxBox2d.git
 cd ofxBox2d
-git checkout 007
+git checkout 008
 </pre>
 
 
