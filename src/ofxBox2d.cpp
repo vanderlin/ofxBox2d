@@ -80,7 +80,8 @@ void ofxBox2d::init() {
 	//worldAABB.lowerBound.Set(-100.0f, -100.0f);
 	//worldAABB.upperBound.Set(100.0f, 100.0f);
 	
-	world = new b2World(b2Vec2(gravity.x, gravity.y), doSleep);
+	world = new b2World(b2Vec2(gravity.x, gravity.y));
+    world->SetAllowSleeping(doSleep);
 	world->SetDebugDraw(&debugRender);
 	
 	ofLog(OF_LOG_NOTICE, "ofxBox2d:: - world created -");
@@ -319,8 +320,8 @@ void ofxBox2d::createGround(float x1, float y1, float x2, float y2) {
 	b2BodyDef bd;
 	ground = world->CreateBody(&bd);
 	
-	b2PolygonShape shape;
-	shape.SetAsEdge(b2Vec2(x1/OFX_BOX2D_SCALE, y1/OFX_BOX2D_SCALE), b2Vec2(x2/OFX_BOX2D_SCALE, y2/OFX_BOX2D_SCALE));
+	b2EdgeShape shape;
+    shape.Set(b2Vec2(x1/OFX_BOX2D_SCALE, y1/OFX_BOX2D_SCALE), b2Vec2(x2/OFX_BOX2D_SCALE, y2/OFX_BOX2D_SCALE));
 	ground->CreateFixture(&shape, 0.0f);
 
 }
@@ -346,25 +347,25 @@ void ofxBox2d::createBounds(float x, float y, float w, float h) {
 	bd.position.Set(0, 0);
 	ground = world->CreateBody(&bd);	
 	
-	b2PolygonShape shape;
+	b2EdgeShape shape;
 	
 	ofRectangle rec(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE, w/OFX_BOX2D_SCALE, h/OFX_BOX2D_SCALE);
 	
 	
 	//right wall
-	shape.SetAsEdge(b2Vec2(rec.x+rec.width, rec.y), b2Vec2(rec.x+rec.width, rec.y+rec.height));
+	shape.Set(b2Vec2(rec.x+rec.width, rec.y), b2Vec2(rec.x+rec.width, rec.y+rec.height));
 	ground->CreateFixture(&shape, 0.0f);
 	
 	//left wall
-	shape.SetAsEdge(b2Vec2(rec.x, rec.y), b2Vec2(rec.x, rec.y+rec.height));
+	shape.Set(b2Vec2(rec.x, rec.y), b2Vec2(rec.x, rec.y+rec.height));
 	ground->CreateFixture(&shape, 0.0f);
 	
 	// top wall
-	shape.SetAsEdge(b2Vec2(rec.x, rec.y), b2Vec2(rec.x+rec.width, rec.y));
+	shape.Set(b2Vec2(rec.x, rec.y), b2Vec2(rec.x+rec.width, rec.y));
 	ground->CreateFixture(&shape, 0.0f);
 	
 	// bottom wall
-	shape.SetAsEdge(b2Vec2(rec.x, rec.y+rec.height), b2Vec2(rec.x+rec.width, rec.y+rec.height));
+	shape.Set(b2Vec2(rec.x, rec.y+rec.height), b2Vec2(rec.x+rec.width, rec.y+rec.height));
 	ground->CreateFixture(&shape, 0.0f);
 	
 }
@@ -439,87 +440,18 @@ void ofxBox2d::drawGround() {
 	
 	const b2Transform& xf = ground->GetTransform();
 	for (b2Fixture* f = ground->GetFixtureList(); f; f = f->GetNext()) {
-		b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
-		if(poly) {
+		b2EdgeShape* edge = (b2EdgeShape*)f->GetShape();
+		if(edge) {
+            
 			ofNoFill();
 			ofSetColor(120, 0, 120);
-			ofBeginShape();
-			for(int i=0; i<poly->m_vertexCount; i++) {
-				b2Vec2 pt = b2Mul(xf, poly->m_vertices[i]);
-				ofVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
-			}
-			ofEndShape(true);
+			ofLine(worldPtToscreenPt(edge->m_vertex0), worldPtToscreenPt(edge->m_vertex1));
 		}
 	}
-	
-	
-	//
-	//	GetFixtureList
-	//	b2PolygonShape* poly = (b2PolygonShape*)fixture->GetShape();
-	//	int32 vertexCount = poly->m_vertexCount;
-	//	b2Assert(vertexCount <= b2_maxPolygonVertices);
-	//	b2Vec2 vertices[b2_maxPolygonVertices];
-	//	
-	//	for (int32 i = 0; i < vertexCount; ++i)
-	//	{
-	//		vertices[i] = b2Mul(xf, poly->m_vertices[i]);
-	//	}
-	//	
-	//	m_debugDraw->DrawSolidPolygon(vertices, vertexCount, color);
-	//	
-	/*
-	 //draw the ground
-	 if(ground != NULL) {
-	 for(b2Shape* s=ground->GetShapeList(); s; s=s->GetNext()) {
-	 
-	 const b2XForm& xf = ground->GetXForm();		
-	 b2PolygonShape* poly = (b2PolygonShape*)s;
-	 int count = poly->GetVertexCount();
-	 const b2Vec2* verts = poly->GetVertices();
-	 ofEnableAlphaBlending();
-	 ofFill();
-	 ofSetColor(90, 90, 90, 100);
-	 ofBeginShape();
-	 for(int j=0; j<count; j++) {
-	 
-	 b2Vec2 pt = b2Mul(xf, verts[j]);
-	 
-	 ofVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
-	 }
-	 ofEndShape();
-	 ofDisableAlphaBlending();
-	 }
-	 }
-	 */
-	
 }
 
 // ------------------------------------------------------ 
 void ofxBox2d::draw() {
-	/*
-	 if(mouseJoint) {
-	 b2Body* mbody = mouseJoint->GetBody2();
-	 b2Vec2 p1 = mbody->GetWorldPoint(mouseJoint->m_localAnchor);
-	 b2Vec2 p2 = mouseJoint->m_target;
-	 
-	 p1 *= OFX_BOX2D_SCALE;
-	 p2 *= OFX_BOX2D_SCALE;
-	 
-	 //draw a line from touched shape
-	 ofEnableAlphaBlending();
-	 ofSetLineWidth(2.0);
-	 ofSetColor(200, 200, 200, 200);
-	 ofLine(p1.x, p1.y, p2.x, p2.y);
-	 ofNoFill();
-	 ofSetLineWidth(1.0);
-	 ofCircle(p1.x, p1.y, 2);
-	 ofCircle(p2.x, p2.y, 5);
-	 ofDisableAlphaBlending();
-	 }
-	 
-	 
-	 */
-	
 	drawGround();
 }
 

@@ -239,14 +239,14 @@ void ofxBox2dBaseShape::setDamping(float f) {
 void ofxBox2dBaseShape::addForce(ofVec2f frc, float scale) {
 	if(body != NULL) {
 		frc *= scale;
-		body->ApplyForce(b2Vec2(frc.x, frc.y), body->GetPosition());
+		body->ApplyForce(b2Vec2(frc.x, frc.y), body->GetPosition(), true);
 	}
 }
 
 //------------------------------------------------
 void ofxBox2dBaseShape::addImpulseForce(ofVec2f pt, ofVec2f amt) {
 	if(body != NULL) {
-		body->ApplyLinearImpulse(b2Vec2(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE), b2Vec2(amt.x, amt.y));
+		body->ApplyLinearImpulse(b2Vec2(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE), b2Vec2(amt.x, amt.y), true);
 	}
 }
 
@@ -269,7 +269,7 @@ void ofxBox2dBaseShape::addRepulsionForce(ofVec2f pt, float radius, float amt) {
 		if(D.LengthSquared() < radius) {;
 			P.Normalize();
 			b2Vec2 F = amt * D;
-			body->ApplyForce(-F, body->GetWorldCenter());
+			body->ApplyForce(-F, body->GetWorldCenter(), true);
 		}
 	}
 }

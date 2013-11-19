@@ -71,8 +71,8 @@ void ofxBox2dCircle::addRepulsionForce(ofVec2f pt, float amt) {
 	b2Vec2 FA = amt * DA;
 	b2Vec2 FB = amt * DB;
 	
-	body->ApplyForce(-FA, P);
-	body->ApplyForce(-FB, P);
+	body->ApplyForce(-FA, P, true);
+	body->ApplyForce(-FB, P, true);
 }
 
 //------------------------------------------------
@@ -100,8 +100,8 @@ void ofxBox2dCircle::addAttractionPoint(ofVec2f pt, float amt) {
 	b2Vec2 FA = amt * DA;
 	b2Vec2 FB = amt * DB;
 	
-	body->ApplyForce(FA, P);
-	body->ApplyForce(FB, P);
+	body->ApplyForce(FA, P, true);
+	body->ApplyForce(FB, P, true);
 }
 
 //------------------------------------------------

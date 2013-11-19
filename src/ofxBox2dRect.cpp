@@ -73,7 +73,7 @@ ofPolyline& ofxBox2dRect::getRectangleShape() {
         for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
             b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
             if(poly) {
-                for(int i=0; i<poly->m_vertexCount; i++) {
+                for(int i=0; i<poly->m_count; i++) {
                     b2Vec2 pt = b2Mul(xf, poly->m_vertices[i]);
                     shape.addVertex(worldPtToscreenPt(pt));
                 }
@@ -114,7 +114,7 @@ void ofxBox2dRect::addRepulsionForce(ofVec2f pt, float amt) {
 					b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
 					b2Vec2 D = P - qt; 
 					b2Vec2 F = amt * D;
-					body->ApplyForce(-F, P);
+					body->ApplyForce(-F, P, true);
 				}                        
 			}
 		}
@@ -144,7 +144,7 @@ void ofxBox2dRect::addAttractionPoint (ofVec2f pt, float amt) {
 					b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
 					b2Vec2 D = P - qt; 
 					b2Vec2 F = amt * D;
-					body->ApplyForce(F, P);
+					body->ApplyForce(F, P, true);
 				}                        
 			}
 		}

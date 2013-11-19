@@ -8,14 +8,13 @@ class ofxBox2dPolygon : public ofxBox2dBaseShape, public ofPolyline {
 
 private:
 	
+    bool    isEdge;
 	bool	bIsSimplified;
 	bool    bIsTriangulated;
-	bool	bSetAsEdge;
-	
 	float   area;
 	ofVec2f center;
-	void calculateCentroid();
-	float calculateArea();
+	void    calculateCentroid();
+	float   calculateArea();
 	
 public:
 	
@@ -39,6 +38,7 @@ public:
 	// Polygon helper functions
 	//----------------------------------------
 	void simplify(float tolerance=0.3);
+    void simplifyToMaxVerts();
 	void triangulate(float resampleAmt=20, int nPointsInside=-1);
 	
 	//----------------------------------------
@@ -46,7 +46,6 @@ public:
 	vector <ofPoint> &getPoints();
     float   getArea()     { return area; };
 	bool	isGoodShape() { return calculateArea() > 15; }
-	void	setAsEdge(bool set) { bSetAsEdge = set; }
     
 	//------------------------------------------------
 	void addAttractionPoint(ofVec2f pt, float amt=1);

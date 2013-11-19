@@ -14,7 +14,8 @@
 ofxBox2dPolygon::ofxBox2dPolygon() { 
 	bIsTriangulated = false;
 	bIsSimplified   = false;
-	bSetAsEdge	    = true;	// should this be default
+    isEdge          = true;
+    ofPolyline::setClosed(false);
 }
 
 //----------------------------------------
@@ -117,6 +118,16 @@ void ofxBox2dPolygon::simplify(float tolerance) {
 }
 
 //----------------------------------------
+void ofxBox2dPolygon::simplifyToMaxVerts() {
+    ofPolyline p = getResampledByCount(b2_maxPolygonVertices);
+    if(p.size()) {
+        ofPolyline::clear();
+        ofPolyline::addVertices(p.getVertices());
+    }
+}
+
+
+//----------------------------------------
 void ofxBox2dPolygon::triangulate(float resampleAmt, int nPointsInside) {
 	
 	triangles.clear();
@@ -200,37 +211,33 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 	}
 	else {
 		vector<ofPoint> pts = ofPolyline::getVertices();
-		if(bSetAsEdge) {
-			for (int i=1; i<pts.size(); i++) {
-				b2PolygonShape	shape;
-				b2Vec2 a = screenPtToWorldPt(pts[i-1]);
-				b2Vec2 b = screenPtToWorldPt(pts[i]);
-				shape.SetAsEdge(a, b);
-				fixture.shape		= &shape;
-				fixture.density		= density;
-				fixture.restitution = bounce;
-				fixture.friction	= friction;
-				
-				body->CreateFixture(&fixture);
-			}
-		}
-		else {
-            vector<b2Vec2>verts;
-            verts.assign(pts.size()-1, b2Vec2());
-			for (int i=0; i<pts.size(); i++) {
-				ofVec2f p = pts[i] / OFX_BOX2D_SCALE;
-				verts[i]  = b2Vec2(p.x, p.y);
-			}
-			b2PolygonShape	shape;
-			shape.Set(&verts[0], pts.size()-1);
-			
-			fixture.shape		= &shape;
-			fixture.density		= density;
-			fixture.restitution = bounce;
-			fixture.friction	= friction;
-			
-			body->CreateFixture(&fixture);
-		}
+        
+        
+        if(pts.size() >= 2) {
+            for (int i=1; i<pts.size(); i++) {
+                b2EdgeShape shape;
+                shape.Set(screenPtToWorldPt(pts[i]), screenPtToWorldPt(pts[i-1]));
+				body->CreateFixture(&shape, 0.0f);
+            }
+        }
+        else {
+            return;
+        }
+        /*
+        vector<b2Vec2>verts;
+        for (int i=0; i<MIN((int)pts.size(), b2_maxPolygonVertices); i++) {
+            verts.push_back(screenPtToWorldPt(pts[i]));
+        }
+        b2PolygonShape	shape;
+        shape.Set(&verts[0], verts.size()-1);
+        
+        fixture.shape		= &shape;
+        fixture.density		= density;
+        fixture.restitution = bounce;
+        fixture.friction	= friction;
+        
+        body->CreateFixture(&fixture);
+        */
 	}
 	
 	// update the area and centroid
@@ -253,7 +260,7 @@ void ofxBox2dPolygon::addAttractionPoint (ofVec2f pt, float amt) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
                     b2Vec2 D = P - qt; 
                     b2Vec2 F = amt * D;
-                    body->ApplyForce(F, P);
+                    body->ApplyForce(F, P, true);
                 }                    
             }
         }
@@ -285,7 +292,7 @@ void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
                     b2Vec2 D = P - qt; 
                     b2Vec2 F = amt * D;
-                    body->ApplyForce(-F, P);
+                    body->ApplyForce(-F, P, true);
                 }                    
             }
         }
@@ -303,11 +310,9 @@ vector <ofPoint>& ofxBox2dPolygon::getPoints() {
     ofPolyline::clear();
 	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
 		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
-		
 		if(poly) {
             for(int i=0; i<poly->GetVertexCount(); i++) {
-				b2Vec2 pt = b2Mul(xf, poly->GetVertex(i));
-                ofPolyline::addVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
+                ofPolyline::addVertex( worldPtToscreenPt(b2Mul(xf, poly->GetVertex(i))) );
 			}
 			if(isClosed()) ofPolyline::close();
 		}
@@ -319,31 +324,16 @@ vector <ofPoint>& ofxBox2dPolygon::getPoints() {
 //----------------------------------------
 void ofxBox2dPolygon::draw() {
 	
-	//ofNoFill();
-	//ofRect(bounds);
-	//ofVec2f centroid = getCenter();
-	//ofCircle(centroid.x, centroid.y, 2);
 	
 	if(body == NULL) {
 		return;	
 	}
 	
-	const b2Transform& xf = body->GetTransform();
-	
-	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
-		
-		if(poly) {
-			drawShape.clear();
-			for(int i=0; i<poly->GetVertexCount(); i++) {
-				b2Vec2 pt = b2Mul(xf, poly->GetVertex(i));
-				drawShape.addVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
-			}
-			if(isClosed()) drawShape.close();
-			drawShape.draw();
-		
-		}
-	}
+    vector<ofPoint>&pts = getPoints();
+    drawShape.clear();
+    drawShape.addVertices(pts);
+    if(isClosed()) drawShape.close();
+    drawShape.draw();
 	
 	
 	

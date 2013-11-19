@@ -6,6 +6,7 @@
 
 #include "ofxBox2dCircle.h"
 #include "ofxBox2dPolygon.h"
+#include "ofxBox2dEdge.h"
 #include "ofxBox2dRect.h"
 
 #include "ofxBox2dJoint.h"
