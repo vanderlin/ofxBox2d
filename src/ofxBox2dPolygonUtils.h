@@ -507,3 +507,8 @@ static vector<hPoint> calcConvexHull(vector<hPoint> P) {
 	H.resize(k);
 	return H;
 }
+
+#undef norm2
+#undef norm
+#undef d2
+#undef d
