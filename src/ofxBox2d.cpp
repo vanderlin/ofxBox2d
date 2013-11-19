@@ -330,6 +330,8 @@ void ofxBox2d::createGround(float x1, float y1, float x2, float y2) {
 		return;
 	}
 	
+    if(ground!=NULL) world->DestroyBody(ground);
+    
 	b2BodyDef bd;
 	ground = world->CreateBody(&bd);
 	
@@ -355,7 +357,8 @@ void ofxBox2d::createBounds(float x, float y, float w, float h) {
 		ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
 		return;
 	}
-	
+	if(ground!=NULL) world->DestroyBody(ground);
+    
 	b2BodyDef bd;
 	bd.position.Set(0, 0);
 	ground = world->CreateBody(&bd);	
