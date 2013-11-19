@@ -28,13 +28,14 @@ class ofxBox2d : public b2ContactListener {
 	
 private:
 	
+    bool                enableContactEvents;
 	float				fps;
 	int					velocityIterations;
 	int					positionIterations;
 	
 	// Called when two fixtures begin to touch.
 	void BeginContact(b2Contact* contact) { 
-		ofxBox2dContactArgs args;
+		static ofxBox2dContactArgs args;
 		args.a = contact->GetFixtureA();
 		args.b = contact->GetFixtureB();
 		ofNotifyEvent( contactStartEvents, args, this);
@@ -42,7 +43,7 @@ private:
 	
 	// Called when two fixtures cease to touch.
 	void EndContact(b2Contact* contact) { 
-		ofxBox2dContactArgs args;
+		static ofxBox2dContactArgs args;
 		args.a = contact->GetFixtureA();
 		args.b = contact->GetFixtureB();
 		ofNotifyEvent( contactEndEvents, args, this);
@@ -75,7 +76,9 @@ public:
 	b2Body*				ground;
 	b2Body*				mainBody;
 
-	// ------------------------------------------------------ 
+	// ------------------------------------------------------
+    void enableEvents();
+    void disableEvents();
 	ofEvent <ofxBox2dContactArgs> contactStartEvents;
 	ofEvent <ofxBox2dContactArgs> contactEndEvents;
 	

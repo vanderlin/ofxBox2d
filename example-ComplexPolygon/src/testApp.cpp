@@ -1,5 +1,6 @@
 #include "testApp.h"
 
+
 //--------------------------------------------------------------
 void testApp::setup() {
 	
@@ -23,8 +24,7 @@ void testApp::setup() {
 	for (int i=0; i<pts.size(); i++) {
 		poly.addVertex(pts[i]);
 	}
-	poly.setAsEdge(false);
-	poly.triangulate(15);
+	poly.triangulate(25);
 	poly.setPhysics(1.0, 0.3, 0.3);
 	poly.create(box2d.getWorld());
 	triangles.push_back(poly);
@@ -122,6 +122,7 @@ void testApp::keyPressed(int key) {
 			triangles[i].destroy();
 		}
 	}
+    
 }
 
 //--------------------------------------------------------------
@@ -142,7 +143,10 @@ void testApp::mousePressed(int x, int y, int button) {
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button) {
 	
-	// This is the manuel way to triangulate the shape
+	for (int i=0; i<shape.size(); i++) {
+    cout << shape[i].x<<","<< shape[i].y<<",";
+    }
+	// This is the manual way to triangulate the shape
 	// you can then add many little triangles
 	
 	// first simplify the shape
@@ -165,7 +169,6 @@ void testApp::mouseReleased(int x, int y, int button) {
 		ofxBox2dPolygon p;
 		p.addTriangle(tris[i].a, tris[i].b, tris[i].c);
 		p.setPhysics(1.0, 0.3, 0.3);
-		p.setAsEdge(false);
 		if(p.isGoodShape()) {
 			p.create(box2d.getWorld());
 			triangles.push_back(p);
@@ -173,7 +176,7 @@ void testApp::mouseReleased(int x, int y, int button) {
 	}
 	
 	// done with shape clear it now
-	shape.clear();
+	//shape.clear();
 }
 
 //--------------------------------------------------------------

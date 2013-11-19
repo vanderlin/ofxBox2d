@@ -166,7 +166,7 @@ void testApp::mouseReleased(int x, int y, int button) {
 	drawing.simplify();
 	
 	polyLine.addVertexes(drawing);
-	polyLine.simplify();
+	//polyLine.simplifyToMaxVerts(); // this is based on the max box2d verts
 	polyLine.setPhysics(0.0, 0.5, 0.5);
 	polyLine.create(box2d.getWorld());
 		

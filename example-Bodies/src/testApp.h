@@ -48,7 +48,7 @@ public:
 	
 	ofxBox2d						box2d;			  //	the box2d world
 	ofPolyline						drawing;		  //	we draw with this first
-	ofxBox2dPolygon					polyLine;		  //	the box2d polygon/line shape
+	ofxBox2dEdge                    polyLine;		  //	the box2d edge/line shape (min 2 points)
 	vector		<ofxBox2dCircle>	circles;		  //	default box2d circles
 	vector		<ofxBox2dRect>		boxes;			  //	defalut box2d rects
 	vector		<CustomParticle>	customParticles;  //	this is a custom particle the extends a cirlce

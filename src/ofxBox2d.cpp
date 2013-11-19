@@ -2,6 +2,7 @@
 
 // ------------------------------------------------------ 
 ofxBox2d::ofxBox2d() {
+    enableContactEvents = false;
 	world = NULL;
 	m_bomb = NULL;
 #ifdef TARGET_OPENGLES
@@ -86,11 +87,23 @@ void ofxBox2d::init() {
 	
 	ofLog(OF_LOG_NOTICE, "ofxBox2d:: - world created -");
 	
-	world->SetContactListener(this);
 }
 
+// ------------------------------------------------------ enable events
+void ofxBox2d::enableEvents() {
+    if(world!=NULL) {
+        world->SetContactListener(this);
+    }
+}
 
-// ------------------------------------------------------ grab shapes 
+// ------------------------------------------------------ disable events
+void ofxBox2d::disableEvents() {
+    if(world!=NULL) {
+        world->SetContactListener(NULL);
+    }
+}
+
+// ------------------------------------------------------ grab shapes
 void ofxBox2d::setContactListener(ofxBox2dContactListener * listener) {
 	
 	if(world != NULL) {

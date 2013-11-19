@@ -42,8 +42,7 @@ public:
         }
         
         polyShape.setPhysics(0.3, 0.5, 0.1);
-    	polyShape.setAsEdge(false);
-        polyShape.create(world.getWorld());
+    	polyShape.create(world.getWorld());
 
 
     }
@@ -55,7 +54,7 @@ public:
     void draw() {
         
         mesh.clearVertices();
-        vector<ofPoint> &pts = polyShape.getVertices();
+        vector<ofPoint> &pts = polyShape.getPoints();
         ofPoint center       = polyShape.getCenter();
         for (int i=0; i<pts.size(); i++) {
             mesh.addVertex(center);

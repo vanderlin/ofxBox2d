@@ -352,9 +352,9 @@ static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pt
 		float disC  = 5;//ofDist(center.x, center.y, c.x, c.y);
 		
         if(triArea < 1.0 ||
-		   disA < 2.0 ||
-		   disB < 2.0 ||
-		   disC < 2.0) {
+		   disA < 1.0 ||
+		   disB < 1.0 ||
+		   disC < 1.0) {
 			continue;
 		}
 		if(!insidePolygon(center, pts)) {

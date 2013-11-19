@@ -8,7 +8,6 @@ class ofxBox2dPolygon : public ofxBox2dBaseShape, public ofPolyline {
 
 private:
 	
-    bool    isEdge;
 	bool	bIsSimplified;
 	bool    bIsTriangulated;
 	float   area;

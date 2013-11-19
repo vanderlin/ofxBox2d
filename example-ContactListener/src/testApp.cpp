@@ -7,6 +7,7 @@ void testApp::setup() {
 	ofBackgroundHex(0xfdefc2);
 
 	box2d.init();
+    box2d.enableEvents();   // <-- turn on the event listener
 	box2d.setGravity(0, 10);
 	box2d.createGround();
 	box2d.setFPS(30.0);
@@ -115,6 +116,9 @@ void testApp::draw() {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
 	if(key == 't') ofToggleFullscreen();
+    if(key == '1') box2d.enableEvents();
+    if(key == '2') box2d.disableEvents();
+    
 }
 
 //--------------------------------------------------------------
