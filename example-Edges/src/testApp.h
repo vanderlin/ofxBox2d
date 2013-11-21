@@ -19,8 +19,8 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void windowResized(int w, int h);
 	
-	vector <ofPolyline>			lines;
-	ofxBox2d					box2d;
-	vector <ofxBox2dCircle>		circles;
-	vector <ofxBox2dEdge>       edges;
+	vector <ofPolyline>                 lines;
+	ofxBox2d                            box2d;
+	vector <ofPtr<ofxBox2dCircle> >		circles;
+	vector <ofPtr<ofxBox2dEdge> >       edges;
 };

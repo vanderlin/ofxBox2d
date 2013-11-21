@@ -42,16 +42,16 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
 	
-	float							px, py;
-	bool							bDrawLines;
-	bool							bMouseForce;
+	float                                   px, py;
+	bool                                    bDrawLines;
+	bool                                    bMouseForce;
 	
-	ofxBox2d						box2d;			  //	the box2d world
-	ofPolyline						drawing;		  //	we draw with this first
-	ofxBox2dEdge                    polyLine;		  //	the box2d edge/line shape (min 2 points)
-	vector		<ofxBox2dCircle>	circles;		  //	default box2d circles
-	vector		<ofxBox2dRect>		boxes;			  //	defalut box2d rects
-	vector		<CustomParticle>	customParticles;  //	this is a custom particle the extends a cirlce
+	ofxBox2d                                box2d;			  //	the box2d world
+	ofPolyline                              drawing;		  //	we draw with this first
+	ofxBox2dEdge                            edgeLine;		  //	the box2d edge/line shape (min 2 points)
+	vector		<ofPtr<ofxBox2dCircle> >	circles;		  //	default box2d circles
+	vector		<ofPtr<ofxBox2dRect> >		boxes;			  //	defalut box2d rects
+	vector		<ofPtr<CustomParticle> >    customParticles;  //	this is a custom particle the extends a cirlce
 	
 	
 };

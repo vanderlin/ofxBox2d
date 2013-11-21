@@ -32,7 +32,10 @@ typedef struct{
 }Segment;
 
 typedef struct {
-	ofVec2f a,b,c;	
+	ofVec2f a,b,c;
+    void draw() {
+        ofTriangle(a,b,c);
+    }
 } TriangleShape;
 
 // dot product (3D) which allows vector operations in arguments
@@ -507,6 +510,32 @@ static vector<hPoint> calcConvexHull(vector<hPoint> P) {
 	H.resize(k);
 	return H;
 }
+static ofPolyline getConvexHull(vector<ofPoint>&linePts){
+    
+    vector < hPoint > ptsIn;
+    for (int i = 0; i < linePts.size(); i++){
+        hPoint pt;
+        pt.x = linePts[i].x;
+        pt.y = linePts[i].y;
+        
+        ptsIn.push_back(pt);
+    }
+    vector < hPoint > ptsOut;
+    
+    ptsOut =  calcConvexHull(ptsIn);
+    
+    ofPolyline outLine;
+    
+    for (int i = 0; i < ptsOut.size(); i++){
+        outLine.addVertex(ofPoint(ptsOut[i].x, ptsOut[i].y));
+    }
+    
+    return outLine;
+}
+static ofPolyline getConvexHull(ofPolyline &line){
+    return getConvexHull(line.getVertices());
+}
+
 
 #undef norm2
 #undef norm

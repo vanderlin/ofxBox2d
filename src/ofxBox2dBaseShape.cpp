@@ -22,6 +22,12 @@ ofxBox2dBaseShape::ofxBox2dBaseShape() {
 	bodyDef.allowSleep = true;
 }
 
+//----------------------------------------
+ofxBox2dBaseShape::~ofxBox2dBaseShape() {
+    ofLog(OF_LOG_VERBOSE, "~ofxBox2dBaseShape(%p)\n", body);
+    destroy();
+}
+
 //------------------------------------------------
 void ofxBox2dBaseShape::destroy() {
 	
@@ -33,20 +39,17 @@ void ofxBox2dBaseShape::destroy() {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - null body -");
 		return;
 	}		
-	
 	getWorld()->DestroyBody(body);
 	body  = NULL;
 	alive = false;
 }
 
 //----------------------------------------
-bool ofxBox2dBaseShape::shouldRemove(ofxBox2dBaseShape &b) {
-    return !b.alive;
+bool ofxBox2dBaseShape::shouldRemove(ofPtr<ofxBox2dBaseShape> shape) {
+    return !shape.get()->alive;
 }
-
-//----------------------------------------
-ofxBox2dBaseShape::~ofxBox2dBaseShape() {
-	if(alive) destroy();
+bool ofxBox2dBaseShape::shouldRemoveOffScreen(ofPtr<ofxBox2dBaseShape> shape) {
+    return !ofRectangle(0, 0, ofGetWidth(), ofGetHeight()).inside(shape.get()->getPosition());
 }
 
 //----------------------------------------
@@ -193,9 +196,11 @@ void ofxBox2dBaseShape::setPosition(ofVec2f p) {
 ofVec2f ofxBox2dBaseShape::getPosition() {
 	ofVec2f p;
 	if(body != NULL) {
-		p.set(body->GetPosition().x, body->GetPosition().y);
-		p *= OFX_BOX2D_SCALE;
-	}
+        const b2Transform& xf = body->GetTransform();
+        b2Vec2 pos      = body->GetLocalCenter();
+        b2Vec2 b2Center = b2Mul(xf, pos);
+		p = worldPtToscreenPt(b2Center);
+    }
 	return p;
 }
 

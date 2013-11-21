@@ -8,10 +8,22 @@
 
 #include "ofxBox2dEdge.h"
 
+//----------------------------------------
+void ofxBox2dEdge::clear() {
+    ofxBox2dEdge::destroy();
+}
+
+//----------------------------------------
+void ofxBox2dEdge::destroy() {
+    ofPolyline::clear();
+    ofxBox2dBaseShape::destroy();
+}
 
 //----------------------------------------
 void ofxBox2dEdge::create(b2World * b2dworld) {
    
+    bFlagShapeUpdate = false;
+    
     if(size() < 2) {
 		printf("need at least 3 points\n");
 		return;
@@ -33,6 +45,15 @@ void ofxBox2dEdge::create(b2World * b2dworld) {
         edge.Set(screenPtToWorldPt(pts[i-1]), screenPtToWorldPt(pts[i]));
         body->CreateFixture(&edge, density);
     }
+    
+    mesh.setUsage(body->GetType()==b2_staticBody?GL_STATIC_DRAW:GL_DYNAMIC_DRAW);
+    mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+    for(int i=0; i<(int)size(); i++) {
+        mesh.addVertex(ofVec3f(pts[i].x, pts[i].y));
+    }
+    
+    
+    alive = true;
 }
 
 /*
@@ -54,22 +75,31 @@ void ofxBox2dEdge::addVertexes(ofPolyline &polyline) {
 
 //----------------------------------------
 void ofxBox2dEdge::updateShape() {
+    if(body==NULL) return;
+    const b2Transform& xf = body->GetTransform();
+    ofPolyline::clear();
     
+	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
+		b2EdgeShape * edge = (b2EdgeShape*)f->GetShape();
+	
+        if(edge) {
+            ofPolyline::addVertex(worldPtToscreenPt(edge->m_vertex2));
+            ofPolyline::addVertex(worldPtToscreenPt(edge->m_vertex1));
+		}
+	}
+    bFlagShapeUpdate = true;
 }
 
 //----------------------------------------
 void ofxBox2dEdge::draw() {
     if(body==NULL) return;
    
-	
-	const b2Transform& xf = body->GetTransform();
-    ofPolyline::clear();
-	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2EdgeShape * edge = (b2EdgeShape*)f->GetShape();
-		if(edge) {
-            ofLine(worldPtToscreenPt(edge->m_vertex1), worldPtToscreenPt(edge->m_vertex2));
-		}
-	}
+	if(!bFlagShapeUpdate && body->GetType() != b2_staticBody) {
+        printf("Need to update shape first\n");
+    }
+    mesh.draw(OF_MESH_WIREFRAME);
+    //ofPolyline::draw();
+    bFlagShapeUpdate = false;
 }
 
 

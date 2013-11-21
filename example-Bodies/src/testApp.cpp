@@ -21,12 +21,12 @@ void testApp::setup() {
 	for (int i=0; i<nPts; i+=2) {
 		float x = pts[i];
 		float y = pts[i+1];
-		polyLine.addVertex(x, y);
+		edgeLine.addVertex(x, y);
 	}
 	
 	// make the shape
-	polyLine.setPhysics(0.0, 0.5, 0.5);
-	polyLine.create(box2d.getWorld());		
+	edgeLine.setPhysics(0.0, 0.5, 0.5);
+	edgeLine.create(box2d.getWorld());
 	
 }
 
@@ -43,16 +43,22 @@ void testApp::update() {
 		float damping  = 0.7f;
 		float minDis   = 100;
 		for(int i=0; i<circles.size(); i++) {
-			circles[i].addAttractionPoint(mouseX, mouseY, strength);
-			circles[i].setDamping(damping, damping);
+			circles[i].get()->addAttractionPoint(mouseX, mouseY, strength);
+			circles[i].get()->setDamping(damping, damping);
 		}
 		for(int i=0; i<customParticles.size(); i++) {
-			customParticles[i].addAttractionPoint(mouseX, mouseY, strength);
-			customParticles[i].setDamping(damping, damping);
+			customParticles[i].get()->addAttractionPoint(mouseX, mouseY, strength);
+			customParticles[i].get()->setDamping(damping, damping);
 		}
 		
 	}
 	
+    // remove shapes offscreen
+    ofRemove(boxes, ofxBox2dBaseShape::shouldRemoveOffScreen);
+    ofRemove(circles, ofxBox2dBaseShape::shouldRemoveOffScreen);
+    ofRemove(customParticles, ofxBox2dBaseShape::shouldRemoveOffScreen);
+    
+    
 }
 
 
@@ -63,22 +69,25 @@ void testApp::draw() {
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0x90d4e3);
-		circles[i].draw();
+		circles[i].get()->draw();
 	}
 	
 	for(int i=0; i<boxes.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xe63b8b);
-		boxes[i].draw();
+		boxes[i].get()->draw();
 	}
 	
 	for(int i=0; i<customParticles.size(); i++) {
-		customParticles[i].draw();
+		customParticles[i].get()->draw();
 	}
 	
 	ofNoFill();
 	ofSetHexColor(0x444342);
-	if(drawing.size()==0) polyLine.draw();
+	if(drawing.size()==0) {
+        edgeLine.updateShape();
+        edgeLine.draw();
+    }
 	else drawing.draw();
 	
 	
@@ -100,30 +109,30 @@ void testApp::keyPressed(int key) {
 	
 	if(key == 'c') {
 		float r = ofRandom(4, 20);		// a random radius 4px - 20px
-		ofxBox2dCircle circle;
-		circle.setPhysics(3.0, 0.53, 0.1);
-		circle.setup(box2d.getWorld(), mouseX, mouseY, r);
-		circles.push_back(circle);
+		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+		circles.back().get()->setPhysics(3.0, 0.53, 0.1);
+		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+		
 	}
 	
 	if(key == 'b') {
 		float w = ofRandom(4, 20);	
 		float h = ofRandom(4, 20);	
-		ofxBox2dRect rect;
-		rect.setPhysics(3.0, 0.53, 0.1);
-		rect.setup(box2d.getWorld(), mouseX, mouseY, w, h);
-		boxes.push_back(rect);
+		boxes.push_back(ofPtr<ofxBox2dRect>(new ofxBox2dRect));
+		boxes.back().get()->setPhysics(3.0, 0.53, 0.1);
+		boxes.back().get()->setup(box2d.getWorld(), mouseX, mouseY, w, h);
 	}
 	
 	if(key == 'z') {
+        
+		customParticles.push_back(ofPtr<CustomParticle>(new CustomParticle));
+        CustomParticle * p = customParticles.back().get();
 		float r = ofRandom(3, 10);		// a random radius 4px - 20px
-		CustomParticle p;
-		p.setPhysics(0.4, 0.53, 0.31);
-		p.setup(box2d.getWorld(), mouseX, mouseY, r);
-		p.color.r = ofRandom(20, 100);
-		p.color.g = 0;
-		p.color.b = ofRandom(150, 255);
-		customParticles.push_back(p);
+		p->setPhysics(0.4, 0.53, 0.31);
+		p->setup(box2d.getWorld(), mouseX, mouseY, r);
+		p->color.r = ofRandom(20, 100);
+		p->color.g = 0;
+		p->color.b = ofRandom(150, 255);
 	}	
 		
 	if(key == 'f') bMouseForce = !bMouseForce;
@@ -151,9 +160,9 @@ void testApp::mouseDragged(int x, int y, int button) {
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button) {
 	
-	if(polyLine.isBody()) {
+	if(edgeLine.isBody()) {
 		drawing.clear();
-		polyLine.destroy();	
+		edgeLine.destroy();
 	}
 	
 	drawing.addVertex(x, y);
@@ -165,10 +174,10 @@ void testApp::mouseReleased(int x, int y, int button) {
 	drawing.setClosed(false);
 	drawing.simplify();
 	
-	polyLine.addVertexes(drawing);
+	edgeLine.addVertexes(drawing);
 	//polyLine.simplifyToMaxVerts(); // this is based on the max box2d verts
-	polyLine.setPhysics(0.0, 0.5, 0.5);
-	polyLine.create(box2d.getWorld());
+	edgeLine.setPhysics(0.0, 0.5, 0.5);
+	edgeLine.create(box2d.getWorld());
 		
 	drawing.clear();
 

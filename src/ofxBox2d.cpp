@@ -56,7 +56,7 @@ void ofxBox2d::init() {
 	
 	// gravity
 	gravity.set(0, 5.0f);
-	setFPS(60.0);
+	setFPS(30.0);
 	velocityIterations = 40;
 	positionIterations = 20;
 		
@@ -72,19 +72,24 @@ void ofxBox2d::init() {
 	mouseBody  = NULL;
 #endif
 	// ground/bounds
-	ground	   = NULL;
-	
 	// debug drawer
 	debugRender.setScale(scale);
 	debugRender.SetFlags(1);
 	
 	//worldAABB.lowerBound.Set(-100.0f, -100.0f);
 	//worldAABB.upperBound.Set(100.0f, 100.0f);
-	
+	delete world;
+    world = NULL;
 	world = new b2World(b2Vec2(gravity.x, gravity.y));
     world->SetAllowSleeping(doSleep);
 	world->SetDebugDraw(&debugRender);
 	
+    
+	if(ground!=NULL) {
+        world->DestroyBody(ground);
+        ground = NULL;
+    }
+
 	ofLog(OF_LOG_NOTICE, "ofxBox2d:: - world created -");
 	
 }
@@ -346,7 +351,7 @@ void ofxBox2d::createGround(const ofPoint & p1, const ofPoint & p2) {
 }
 
 // ------------------------------------------------------ create bounds
-void ofxBox2d::createBounds(ofRectangle &rec) {
+void ofxBox2d::createBounds(ofRectangle rec) {
 	createBounds(rec.x, rec.y, rec.width, rec.height);
 }
 

@@ -76,12 +76,12 @@ void testApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 50) == 0) {
-		ofxBox2dCircle c;
-		c.setPhysics(1, 0.5, 0.9);
-		c.setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-30, 30), -20, ofRandom(20, 50));
+		ofPtr <ofxBox2dCircle> c = ofPtr <ofxBox2dCircle>(new ofxBox2dCircle);
+		c.get()->setPhysics(1, 0.5, 0.9);
+		c.get()->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-30, 30), -20, ofRandom(20, 50));
 		
-		c.setData(new SoundData());
-		SoundData * sd = (SoundData*)c.getData();
+		c.get()->setData(new SoundData());
+		SoundData * sd = (SoundData*)c.get()->getData();
 		sd->soundID = ofRandom(0, N_SOUNDS);
 		sd->bHit	= false;
 		
@@ -97,13 +97,13 @@ void testApp::draw() {
 	
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
-		SoundData * data = (SoundData*)circles[i].getData();
+		SoundData * data = (SoundData*)circles[i].get()->getData();
 		
 		if(data && data->bHit) ofSetHexColor(0xff0000);
 		else ofSetHexColor(0x4ccae9);
 		
 
-		circles[i].draw();
+		circles[i].get()->draw();
 	}
 	
 	
@@ -136,7 +136,16 @@ void testApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button) {
-	
+    ofPtr <ofxBox2dCircle> c = ofPtr <ofxBox2dCircle>(new ofxBox2dCircle);
+    c.get()->setPhysics(1, 0.5, 0.9);
+    c.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 50));
+    
+    c.get()->setData(new SoundData());
+    SoundData * sd = (SoundData*)c.get()->getData();
+    sd->soundID = ofRandom(0, N_SOUNDS);
+    sd->bHit	= false;
+    
+    circles.push_back(c);
 }
 
 //--------------------------------------------------------------

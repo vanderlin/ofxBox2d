@@ -3,13 +3,14 @@
 //--------------------------------------------------------------
 void testApp::setup() {
 	
+    ofDisableAntiAliasing();
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
 	
 	// Box2d
 	box2d.init();
-	box2d.setGravity(0, 20);
+	box2d.setGravity(0, 30);
 	box2d.createGround();
 	box2d.setFPS(30.0);
 	
@@ -28,15 +29,15 @@ void testApp::setup() {
 	for (int i=0; i<strLines.size(); i++) {
 		vector <string> pts = ofSplitString(strLines[i], ",");
 		if(pts.size() > 0) {
-			ofxBox2dEdge edge;
+			ofPtr <ofxBox2dEdge> edge = ofPtr<ofxBox2dEdge>(new ofxBox2dEdge);
 			for (int j=0; j<pts.size(); j+=2) {
 				if(pts[j].size() > 0) {
 					float x = ofToFloat(pts[j]);
 					float y = ofToFloat(pts[j+1]);
-					edge.addVertex(x, y);
+					edge.get()->addVertex(x, y);
 				}				
 			}
-			edge.create(box2d.getWorld());
+			edge.get()->create(box2d.getWorld());
 			edges.push_back(edge);
 		}
 	}
@@ -48,12 +49,15 @@ void testApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-		ofxBox2dCircle c;
-		c.setPhysics(1, 0.5, 0.1);
-		c.setup(box2d.getWorld(), ofRandom(20, 50), -20, ofRandom(3, 10));
-		circles.push_back(c);		
+		ofPtr<ofxBox2dCircle> c = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+		c.get()->setPhysics(0.2, 0.2, 0.002);
+		c.get()->setup(box2d.getWorld(), ofRandom(20, 50), -20, ofRandom(3, 10));
+        c.get()->setVelocity(0, 15); // shoot them down!
+		circles.push_back(c);
 	}
 	
+    
+    
 	box2d.update();	
 }
 
@@ -65,7 +69,7 @@ void testApp::draw() {
 	for (int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xc0dd3b);
-		circles[i].draw();
+		circles[i].get()->draw();
 	}
 	
 	ofSetHexColor(0x444342);
@@ -74,7 +78,7 @@ void testApp::draw() {
 		lines[i].draw();
 	}	
 	for (int i=0; i<edges.size(); i++) {
-		edges[i].draw();
+		edges[i].get()->draw();
 	}	
 	
 	string info = "Draw a shape with the mouse\n";
@@ -90,17 +94,15 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 	
 	if(key == '1') {
-		ofxBox2dCircle c;
-		c.setPhysics(1, 0.5, 0.5);
-		c.setup(box2d.getWorld(), mouseX, mouseY, 10);
+        ofPtr<ofxBox2dCircle> c = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+		c.get()->setPhysics(1, 0.5, 0.5);
+		c.get()->setup(box2d.getWorld(), mouseX, mouseY, 10);
 		circles.push_back(c);
 	}
 	
 	if(key == 'c') {
 		lines.clear();
-		for (int i=0; i<edges.size(); i++) {
-			edges[i].destroy();
-		}
+		edges.clear();
 	}
 	
 	/*
@@ -139,15 +141,15 @@ void testApp::mousePressed(int x, int y, int button) {
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button) {
 	
-	ofxBox2dEdge edge;
+    ofPtr <ofxBox2dEdge> edge = ofPtr<ofxBox2dEdge>(new ofxBox2dEdge);
 	lines.back().simplify();
 	
 	for (int i=0; i<lines.back().size(); i++) {
-		edge.addVertex(lines.back()[i]);
+		edge.get()->addVertex(lines.back()[i]);
 	}
 	
 	//poly.setPhysics(1, .2, 1);  // uncomment this to see it fall!
-	edge.create(box2d.getWorld());
+	edge.get()->create(box2d.getWorld());
 	edges.push_back(edge);
 	
 	//lines.clear();

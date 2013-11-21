@@ -15,11 +15,16 @@
 class ofxBox2dEdge : public ofxBox2dBaseShape, public ofPolyline {
     
 private:
-		
-    public:
+    bool bFlagShapeUpdate;
+    
+public:
 
+    ofVboMesh mesh;
     void addVertexes(ofPolyline &polyline);
     void addVertexes(vector <ofVec2f> &pts);
+    
+    void clear();
+    void destroy();
     
     void create(b2World * b2dworld);
     void updateShape();

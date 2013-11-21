@@ -28,9 +28,9 @@ void testApp::setup(){
     
     // add some cirlces to world A
     for(int i=0; i<10; i++) {
-        ofxBox2dCircle c;
-        c.setPhysics(1, 0.5, 1);
-        c.setup(box2dA.getWorld(), 250+ofRandom(-50, 50), 10, ofRandom(10,30));
+        ofPtr<ofxBox2dCircle> c = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+        c.get()->setPhysics(1, 0.5, 1);
+        c.get()->setup(box2dA.getWorld(), 250+ofRandom(-50, 50), 10, ofRandom(10,30));
         circlesA.push_back(c);
     }
     
@@ -38,9 +38,9 @@ void testApp::setup(){
     
     // add some cirlces to world B
     for(int i=0; i<10; i++) {
-        ofxBox2dCircle c;
-        c.setPhysics(1, 0.5, 1);
-        c.setup(box2dB.getWorld(), 750+ofRandom(-50, 50), 10, ofRandom(10,30));
+        ofPtr<ofxBox2dCircle> c = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+        c.get()->setPhysics(1, 0.5, 1);
+        c.get()->setup(box2dB.getWorld(), 750+ofRandom(-50, 50), 10, ofRandom(10,30));
         circlesB.push_back(c);
     }
     
@@ -49,17 +49,17 @@ void testApp::setup(){
     // shared between both worlds
     for(int i=0; i<20; i++) {
         
-        ofxBox2dRect r;
-        r.setPhysics(1, 0.7, 0.9);
+        ofPtr<ofxBox2dRect> r = ofPtr<ofxBox2dRect>(new ofxBox2dRect);
+        r.get()->setPhysics(1, 0.7, 0.9);
         
         // add to world A
         if(i <= 9) {
-            r.setup(box2dA.getWorld(), 250+ofRandom(-50, 50), 10, ofRandom(10,30), ofRandom(10,30));            
+            r.get()->setup(box2dA.getWorld(), 250+ofRandom(-50, 50), 10, ofRandom(10,30), ofRandom(10,30));
         }
         
         // add to world B
         else {
-            r.setup(box2dB.getWorld(), 750+ofRandom(-50, 50), 10, ofRandom(10,30), ofRandom(10,30));
+            r.get()->setup(box2dB.getWorld(), 750+ofRandom(-50, 50), 10, ofRandom(10,30), ofRandom(10,30));
         }
         
         // add to one vector
@@ -112,20 +112,20 @@ void testApp::draw(){
     // A World Circles
     for (int i=0; i<circlesA.size(); i++) {
         ofSetHexColor(0xBFE364);
-        circlesA[i].draw();
+        circlesA[i].get()->draw();
     }
     
     // B World Circles
     for (int i=0; i<circlesB.size(); i++) {
         ofSetHexColor(0xE83AAB);
-        circlesB[i].draw();
+        circlesB[i].get()->draw();
     }
     
     // Shared Rects
     for (int i=0; i<sharedRects.size(); i++) {
         ofSetHexColor(0x2F9BA1);
         ofFill();
-        sharedRects[i].draw();
+        sharedRects[i].get()->draw();
     }
     
     
