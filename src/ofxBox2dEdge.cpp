@@ -100,7 +100,7 @@ void ofxBox2dEdge::updateShape() {
     }
     
     bFlagShapeUpdate = true;
-    updateShape();
+    flagHasChanged();
 }
 
 //----------------------------------------
