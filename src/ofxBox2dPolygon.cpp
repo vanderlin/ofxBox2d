@@ -199,7 +199,7 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
     mesh.setUsage(GL_STATIC_DRAW);
 
     flagHasChanged();
-
+    alive = true;
 }
 
 //------------------------------------------------

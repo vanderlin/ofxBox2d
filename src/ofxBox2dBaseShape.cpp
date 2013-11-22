@@ -38,7 +38,8 @@ void ofxBox2dBaseShape::destroy() {
 	else if(body == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - null body -");
 		return;
-	}		
+	}
+    
 	getWorld()->DestroyBody(body);
 	body  = NULL;
 	alive = false;
@@ -173,7 +174,7 @@ float ofxBox2dBaseShape::getRotation() {
 }
 
 void ofxBox2dBaseShape::setRotation(float angle){
-    body->SetTransform(body->GetPosition(), DEG_TO_RAD * angle);
+    body->SetTransform(body->GetWorldCenter(), DEG_TO_RAD * angle);
 }
 
 

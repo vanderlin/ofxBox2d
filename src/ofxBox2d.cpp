@@ -27,20 +27,26 @@ ofxBox2d::~ofxBox2d() {
     // destroy touch grabbing bodies
     for(int i=0; i<OF_MAX_TOUCH_JOINTS; i++) {
         if(touchBodies[i]) {
-        	if(world)
-            	world->DestroyBody(touchBodies[i]);
+        	if(world) world->DestroyBody(touchBodies[i]);
         }
     }
 #else
     // destroy mouse grabbing body
     if(mouseBody) {
-		if(world)
-            world->DestroyBody(mouseBody);
+		if(world) world->DestroyBody(mouseBody);
 	}
 #endif
     if(world) {
+            for (b2Body* f = world->GetBodyList(); f; f = f->GetNext()) {
+                world->DestroyBody(f);
+            }
+            for (b2Joint* f = world->GetJointList(); f; f = f->GetNext()) {
+                world->DestroyJoint(f);
+            }
+        /*
+        // This is not safe...
         delete world;
-        world = NULL;
+        world = NULL;*/
     }
 }
 
@@ -82,7 +88,7 @@ void ofxBox2d::init() {
     world = NULL;
 	world = new b2World(b2Vec2(gravity.x, gravity.y));
     world->SetAllowSleeping(doSleep);
-	world->SetDebugDraw(&debugRender);
+	//world->SetDebugDraw(&debugRender);
 	
     
 	if(ground!=NULL) {

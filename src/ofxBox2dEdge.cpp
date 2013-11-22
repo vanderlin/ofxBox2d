@@ -10,13 +10,16 @@
 
 //----------------------------------------
 void ofxBox2dEdge::clear() {
-    ofxBox2dEdge::destroy();
+    ofPolyline::clear();
+    ofxBox2dBaseShape::destroy();
+    mesh.clear();
 }
 
 //----------------------------------------
 void ofxBox2dEdge::destroy() {
     ofPolyline::clear();
     ofxBox2dBaseShape::destroy();
+    mesh.clear();
 }
 
 //----------------------------------------
@@ -45,14 +48,14 @@ void ofxBox2dEdge::create(b2World * b2dworld) {
         edge.Set(screenPtToWorldPt(pts[i-1]), screenPtToWorldPt(pts[i]));
         body->CreateFixture(&edge, density);
     }
-    
+    mesh.clear();
     mesh.setUsage(body->GetType()==b2_staticBody?GL_STATIC_DRAW:GL_DYNAMIC_DRAW);
     mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
     for(int i=0; i<(int)size(); i++) {
         mesh.addVertex(ofVec3f(pts[i].x, pts[i].y));
     }
     
-    
+    flagHasChanged();
     alive = true;
 }
 
@@ -62,15 +65,17 @@ void ofxBox2dEdge::create(b2World * b2dworld) {
 //----------------------------------------
 void ofxBox2dEdge::addVertexes(vector <ofVec2f> &pts) {
 	for (int i=0; i<pts.size(); i++) {
-		addVertex(pts[i].x, pts[i].y);
+        ofPolyline::addVertex(pts[i].x, pts[i].y);
 	}
+    flagHasChanged();
 }
 
 //----------------------------------------
 void ofxBox2dEdge::addVertexes(ofPolyline &polyline) {
 	for (int i=0; i<polyline.size(); i++) {
-		addVertex(polyline[i].x, polyline[i].y);
+		ofPolyline::addVertex(polyline[i].x, polyline[i].y);
 	}
+    flagHasChanged();
 }
 
 //----------------------------------------
@@ -78,16 +83,24 @@ void ofxBox2dEdge::updateShape() {
     if(body==NULL) return;
     const b2Transform& xf = body->GetTransform();
     ofPolyline::clear();
-    
-	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2EdgeShape * edge = (b2EdgeShape*)f->GetShape();
-	
+    mesh.clear();
+    mesh.setUsage(body->GetType()==b2_staticBody?GL_STATIC_DRAW:GL_DYNAMIC_DRAW);
+    mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+   
+    for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
+        b2EdgeShape * edge = (b2EdgeShape*)f->GetShape();
+        
         if(edge) {
             ofPolyline::addVertex(worldPtToscreenPt(edge->m_vertex2));
             ofPolyline::addVertex(worldPtToscreenPt(edge->m_vertex1));
-		}
-	}
+            
+            mesh.addVertex(ofVec3f(worldPtToscreenPt(edge->m_vertex2)));
+            mesh.addVertex(ofVec3f(worldPtToscreenPt(edge->m_vertex1)));
+        }
+    }
+    
     bFlagShapeUpdate = true;
+    updateShape();
 }
 
 //----------------------------------------

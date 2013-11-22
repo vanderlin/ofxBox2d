@@ -29,16 +29,12 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
 		return;
 	}
 	
-	if (OF_RECTMODE_CORNER) {
-		w/=2; h/=2;
-		x += w; y += h;
-	}
-	
-	width	= w;
-	height	= h;
-	
+    w /= 2;
+    h /= 2;
+	width = w; height = h;
+    
 	b2PolygonShape shape;
-	shape.SetAsBox(w/OFX_BOX2D_SCALE, h/OFX_BOX2D_SCALE);
+	shape.SetAsBox(width/OFX_BOX2D_SCALE, height/OFX_BOX2D_SCALE);
 	
 	fixture.shape		= &shape;
 	fixture.density		= density;
@@ -46,22 +42,30 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
 	fixture.restitution = bounce;
 	
 	b2BodyDef bodyDef;
-	if(density == 0.f)
-		bodyDef.type	= b2_staticBody;
-	else
-		bodyDef.type	= b2_dynamicBody;
-	bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);	
+	if(density == 0.f) bodyDef.type	= b2_staticBody;
+	else               bodyDef.type	= b2_dynamicBody;
+	bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 	
 	
 	body = b2dworld->CreateBody(&bodyDef);
 	body->CreateFixture(&fixture);
-
     
-    // update the rectShape
-    getRectangleShape();
-    
+    updateMesh();
+    alive = true;
 }
 
+//------------------------------------------------
+void ofxBox2dRect::updateMesh() {
+    
+    float w = getWidth();
+    float h = getHeight();
+    ofPath path;
+    path.rectangle(-w/2, -h/2, w, h);
+    mesh.clear();
+    mesh = path.getTessellation();
+    mesh.setUsage(GL_STATIC_DRAW);
+}
+/*
 //------------------------------------------------
 ofPolyline& ofxBox2dRect::getRectangleShape() {
     
@@ -84,21 +88,11 @@ ofPolyline& ofxBox2dRect::getRectangleShape() {
     shape.setClosed(true);
     return shape;
     
-}
+}*/
 
 //------------------------------------------------
-float ofxBox2dRect::getWidth() {
-	return width;
-}
-
-//------------------------------------------------
-float ofxBox2dRect::getHeight() {
-	return height;
-}
-
-//------------------------------------------------
-void ofxBox2dRect::addRepulsionForce(float x, float y, float amt) {
-	addRepulsionForce(ofVec2f(x, y), amt);
+void ofxBox2dRect::addRepulsionForce(float fx, float fy, float amt) {
+	addRepulsionForce(ofVec2f(fx,fy), amt);
 }
 
 //------------------------------------------------
@@ -126,8 +120,8 @@ void ofxBox2dRect::addRepulsionForce(ofVec2f pt, float amt) {
 // In ofxBox2dRect.h:
 // We compute the force for all four (transformed) corners of the rect.
 // This keeps the rect's orientation correct!
-void ofxBox2dRect::addAttractionPoint (float x, float y, float amt) {
-	addAttractionPoint(ofVec2f(x, y), amt);
+void ofxBox2dRect::addAttractionPoint (float fx, float fy, float amt) {
+	addAttractionPoint(ofVec2f(fx, fy), amt);
 }
 
 //------------------------------------------------
@@ -158,9 +152,31 @@ void ofxBox2dRect::draw() {
 		return;	
 	}
     
-    // update the polyline
-    getRectangleShape();
+    ofPushMatrix();
+    ofTranslate(ofxBox2dBaseShape::getPosition());
+    ofRotate(getRotation());
+    mesh.draw(ofGetFill()==OF_FILLED?OF_MESH_FILL:OF_MESH_WIREFRAME);
+    ofPopMatrix();
     
+    /*
+    const b2Transform& xf = body->GetTransform();
+    ofPolyline shape;
+    for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
+        b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
+        if(poly) {
+            for(int i=0; i<poly->m_count; i++) {
+                b2Vec2 pt = b2Mul(xf, poly->m_vertices[i]);
+                shape.addVertex(worldPtToscreenPt(pt));
+            }
+        }
+    }
+    shape.close();
+    shape.draw();*/
+
+
+    // update the polyline
+    // getRectangleShape();
+    /*
     ofPath path;
     for (int i=0; i<shape.size(); i++) {
         if(i==0)path.moveTo(shape[i]);
@@ -181,7 +197,7 @@ void ofxBox2dRect::draw() {
         path.draw();
         ofPopStyle();
     }
-	
+	*/
 }
 
 
