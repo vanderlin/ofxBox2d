@@ -10,10 +10,35 @@ This is a simple wrapper for box2d using Openframeworks. The examples below are 
 Thanks,
 Todd
 
--- Updated with changes and bug fixes from Pull Requests
-Contributors: danomatika, jefftimesten, Danoli3 and Julapy
--Danoli3
+Instructions
+------------
+When making a vector of objects you need to be careful. You either need to make a vector of pointers of use the `ofPtr` object.     
+    
+Everytime you push into the vector `circles` the object is destroyed and the created.
+This causing issues for the `b2dBody body` object owned by box2d.       
+  
+        
+***Incorrect way to store objects.***         
+```
+vector <ofxBox2dCircle> circles;
+ofxBox2dCircle circle;
+circles.push_back(circle);
+```
 
+***Here is the how to create a vector of box2d objects.***   
+```
+// in your header files
+vector <ofPtr<ofxBox2dCircle> > circles;
+
+
+// now add a circle to the vector
+ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+
+// to grab the pointer you use the get() function of ofPtr (std::shared_ptr)
+circle.get()->setPhysics(3.0, 0.53, 0.1);
+circle.get()->setup(box2d.getWorld(), 100, 100, 10);
+circles.push_back(circle);
+```
 
 Installation
 ------------
