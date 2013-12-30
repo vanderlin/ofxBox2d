@@ -56,7 +56,8 @@ public:
         
         mesh.clearVertices();
         vector<ofPoint> &pts = polyShape.getPoints();
-        ofPoint center       = polyShape.getCenter();
+        ofPoint center       = polyShape.getCentroid2D();
+        
         for (int i=0; i<pts.size(); i++) {
             mesh.addVertex(center);
             mesh.addVertex(pts[i]);
