@@ -14,7 +14,8 @@
 ofxBox2dPolygon::ofxBox2dPolygon() { 
 	bIsTriangulated = false;
 	bIsSimplified   = false;
-	bSetAsEdge	    = true;	// should this be default
+    ofPolyline::setClosed(true);
+
 }
 
 //----------------------------------------
@@ -22,65 +23,16 @@ ofxBox2dPolygon::~ofxBox2dPolygon() {
 }
 
 //----------------------------------------
+void ofxBox2dPolygon::clear() {
+	ofxBox2dBaseShape::destroy();
+    ofxBox2dPolygon::clear();
+    mesh.clear();
+}
+
+//----------------------------------------
 void ofxBox2dPolygon::destroy() {
 	ofxBox2dBaseShape::destroy();
 	clear();
-}
-
-//----------------------------------------
-void ofxBox2dPolygon::setup(b2World * b2dworld) {
-	
-	
-	
-}
-
-//----------------------------------------
-float ofxBox2dPolygon::calculateArea() {
-	int i, j, n = (int)size();
-	float polyArea = 0;
-	for (i = 0; i < n; i++) {
-		j = (i + 1) % n;
-		polyArea += getVertices()[i].x * getVertices()[j].y;
-		polyArea -= getVertices()[j].x * getVertices()[i].y;
-	}
-	polyArea /= 2.0;
-	area = polyArea;
-	return area;
-}
-
-//----------------------------------------
-void ofxBox2dPolygon::calculateCentroid() {
-	float cx = 0, cy = 0;
-	int i, j, n = (int)size();
-	
-	float factor = 0;
-	for (i = 0; i < n; i++) {
-		j = (i + 1) % n;
-		factor = (getVertices()[i].x * getVertices()[j].y - getVertices()[j].x * getVertices()[i].y);
-		cx += (getVertices()[i].x + getVertices()[j].x) * factor;
-		cy += (getVertices()[i].y + getVertices()[j].y) * factor;
-	}
-	area *= 6.0f;
-	factor = 1 / area;
-	cx *= factor;
-	cy *= factor;
-	center.set(cx, cy);	
-}
-
-//----------------------------------------
-ofVec2f ofxBox2dPolygon::getCenter() {	
-	if(!body) return ofVec2f(0,0);
-	const b2Transform& xf = body->GetTransform();
-	b2Vec2 b2Center = b2Mul(xf, b2Vec2(center.x/OFX_BOX2D_SCALE, center.y/OFX_BOX2D_SCALE));
-	return ofVec2f(b2Center.x*OFX_BOX2D_SCALE, b2Center.y*OFX_BOX2D_SCALE);
-};
-
-//----------------------------------------
-void ofxBox2dPolygon::updateShape() {
-	
-	calculateArea();
-	calculateCentroid();
-	bounds = getBoundingBox();
 }
 
 //----------------------------------------
@@ -109,7 +61,6 @@ void ofxBox2dPolygon::addVertexes(ofPolyline &polyline) {
 	}
 }
 
-
 //----------------------------------------
 void ofxBox2dPolygon::simplify(float tolerance) {
 	ofPolyline::simplify(tolerance);	
@@ -117,10 +68,19 @@ void ofxBox2dPolygon::simplify(float tolerance) {
 }
 
 //----------------------------------------
-void ofxBox2dPolygon::triangulate(float resampleAmt, int nPointsInside) {
+void ofxBox2dPolygon::simplifyToMaxVerts() {
+    ofPolyline p = getResampledByCount(b2_maxPolygonVertices);
+    if(p.size()) {
+        ofPolyline::clear();
+        ofPolyline::addVertices(p.getVertices());
+    }
+}
+
+//----------------------------------------
+void ofxBox2dPolygon::triangulatePoly(float resampleAmt, int nPointsInside) {
 	
 	triangles.clear();
-	
+	bool wasClosed = isClosed();
 	if(size() > 0) {
 		
 		// copy over the points into a polyline
@@ -142,7 +102,8 @@ void ofxBox2dPolygon::triangulate(float resampleAmt, int nPointsInside) {
 		triangles = triangulatePolygonWithOutline(newPoly, polyOutline);
 			
 		clear();
-		
+		if(wasClosed) ofPolyline::setClosed(wasClosed);
+        
 		// now add back into polyshape
 		for (int i=0; i<newPoly.size(); i++) {
 			addVertex(newPoly[i]);
@@ -152,12 +113,19 @@ void ofxBox2dPolygon::triangulate(float resampleAmt, int nPointsInside) {
 	bIsTriangulated = true;
 }
 
+//----------------------------------------
+void ofxBox2dPolygon::makeConvexPoly() {
+    ofPolyline convex = getConvexHull(ofPolyline::getVertices());
+    ofPolyline::clear();
+    ofPolyline::addVertices(convex.getVertices());
+    bIsTriangulated = false;
+}
 
 //----------------------------------------
 void ofxBox2dPolygon::create(b2World * b2dworld) {
 
-	if(size() < 3) {
-		printf("need at least 3 points\n");
+	if(size() <= 3) {
+		ofLog(OF_LOG_NOTICE, "need at least 3 points: %i\n", (int)size());
 		return;	
 	}
 	
@@ -199,44 +167,39 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 	
 	}
 	else {
-		if(bSetAsEdge) {
-			for (int i=1; i<size(); i++) {
-				b2PolygonShape	shape;
-				b2Vec2 a = screenPtToWorldPt(getVertices()[i-1]);
-				b2Vec2 b = screenPtToWorldPt(getVertices()[i]);
-				shape.SetAsEdge(a, b);
-				fixture.shape		= &shape;
-				fixture.density		= density;
-				fixture.restitution = bounce;
-				fixture.friction	= friction;	
-				
-				body->CreateFixture(&fixture);
-			}	
-		}
-		else {
-            vector<b2Vec2>verts;
-            verts.assign(size()-1, b2Vec2());
-			for (int i=0; i<size(); i++) {
-				ofVec2f p = getVertices()[i] / OFX_BOX2D_SCALE;
-				verts[i]  = b2Vec2(p.x, p.y);
-			}
-			b2PolygonShape	shape;
-			shape.Set(&verts[0], size()-1);
-			
-			fixture.shape		= &shape;
-			fixture.density		= density;
-			fixture.restitution = bounce;
-			fixture.friction	= friction;	
-			
-			body->CreateFixture(&fixture);
-		}		
-			
-	}
-	
-	// update the area and centroid
-	updateShape();
+        makeConvexPoly();
+		vector<ofPoint> pts = ofPolyline::getVertices();
+        vector<b2Vec2>verts;
+        for (int i=0; i<MIN((int)pts.size(), b2_maxPolygonVertices); i++) {
+            verts.push_back(screenPtToWorldPt(pts[i]));
+        }
+        b2PolygonShape shape;
+        shape.Set(&verts[0], verts.size()-1);
+        
+        fixture.shape		= &shape;
+        fixture.density		= density;
+        fixture.restitution = bounce;
+        fixture.friction	= friction;
+        
+        body->CreateFixture(&fixture);
     
-    alive = true; // Need this, so the Body gets cleaned up in destructor
+        
+    }
+    
+    vector<ofPoint> pts = ofPolyline::getVertices();
+    mesh.clear();
+    ofPath path;
+    ofPoint center = getCentroid2D();
+    for (int i=0; i<pts.size(); i++) {
+        ofPoint p(pts[i].x, pts[i].y);
+        p -= center;
+        path.lineTo(p);
+    }
+    mesh = path.getTessellation();
+    mesh.setUsage(GL_STATIC_DRAW);
+
+    flagHasChanged();
+    alive = true;
 }
 
 //------------------------------------------------
@@ -255,7 +218,7 @@ void ofxBox2dPolygon::addAttractionPoint (ofVec2f pt, float amt) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
                     b2Vec2 D = P - qt; 
                     b2Vec2 F = amt * D;
-                    body->ApplyForce(F, P);
+                    body->ApplyForce(F, P, true);
                 }                    
             }
         }
@@ -287,7 +250,7 @@ void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
                     b2Vec2 D = P - qt; 
                     b2Vec2 F = amt * D;
-                    body->ApplyForce(-F, P);
+                    body->ApplyForce(-F, P, true);
                 }                    
             }
         }
@@ -295,23 +258,20 @@ void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
 }
 
 //----------------------------------------
-vector <ofPoint>& ofxBox2dPolygon::getVertices() {
-    
+vector <ofPoint>& ofxBox2dPolygon::getPoints() {
+	
     if(body == NULL) {
-        static vector <ofPoint> emptyVertices;
-		return emptyVertices;
+		return ofPolyline::getVertices();
 	}
-	
+	bool wasClosed = isClosed();
 	const b2Transform& xf = body->GetTransform();
-	
+    ofPolyline::clear();
+    ofPolyline::setClosed(wasClosed);
 	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
 		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
-		
 		if(poly) {
-            ofPolyline::clear();
             for(int i=0; i<poly->GetVertexCount(); i++) {
-				b2Vec2 pt = b2Mul(xf, poly->GetVertex(i));
-                ofPolyline::addVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
+                ofPolyline::addVertex( worldPtToscreenPt(b2Mul(xf, poly->GetVertex(i))) );
 			}
 			if(isClosed()) ofPolyline::close();
 		}
@@ -322,35 +282,30 @@ vector <ofPoint>& ofxBox2dPolygon::getVertices() {
 
 //----------------------------------------
 void ofxBox2dPolygon::draw() {
-	
-	//ofNoFill();
-	//ofRect(bounds);
-	//ofVec2f centroid = getCenter();
-	//ofCircle(centroid.x, centroid.y, 2);
-	
 	if(body == NULL) {
-		return;	
+        ofLog(OF_LOG_ERROR, "ofxBox2dPolygon::draw body null\n");
+        return;
 	}
+    ofPushMatrix();
+    ofTranslate(getPosition());
+    ofRotate(getRotation(), 0, 0, 1);
+    mesh.draw(ofGetFill()==OF_OUTLINE?OF_MESH_WIREFRAME:OF_MESH_FILL);
+    ofPopMatrix();
 	
+    /*
 	const b2Transform& xf = body->GetTransform();
-	
-	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
+    for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
 		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
-		
 		if(poly) {
-			drawShape.clear();
-			for(int i=0; i<poly->GetVertexCount(); i++) {
-				b2Vec2 pt = b2Mul(xf, poly->GetVertex(i));
-				drawShape.addVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
+            drawShape.clear();
+            for(int i=0; i<poly->GetVertexCount(); i++) {
+                drawShape.addVertex( worldPtToscreenPt(b2Mul(xf, poly->GetVertex(i))) );
 			}
 			if(isClosed()) drawShape.close();
-			drawShape.draw();
-		
+            drawShape.draw();
 		}
 	}
-	
-	
-	
+	*/
 }
 
 

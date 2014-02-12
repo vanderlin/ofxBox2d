@@ -18,6 +18,7 @@ static ofPoint worldPtToscreenPt(b2Vec2 p) {
 	return ofPoint(p.x*OFX_BOX2D_SCALE, p.y*OFX_BOX2D_SCALE);
 }
 
+
 class QueryCallback : public b2QueryCallback {
 	
 public:

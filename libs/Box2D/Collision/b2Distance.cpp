@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2007-2009 Erin Catto http://www.gphysics.com
+* Copyright (c) 2007-2009 Erin Catto http://www.box2d.org
 *
 * This software is provided 'as-is', without any express or implied
 * warranty.  In no event will the authors be held liable for any damages
@@ -16,20 +16,22 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "b2Distance.h"
-#include "b2CircleShape.h"
-#include "b2PolygonShape.h"
+#include <Box2D/Collision/b2Distance.h>
+#include <Box2D/Collision/Shapes/b2CircleShape.h>
+#include <Box2D/Collision/Shapes/b2EdgeShape.h>
+#include <Box2D/Collision/Shapes/b2ChainShape.h>
+#include <Box2D/Collision/Shapes/b2PolygonShape.h>
 
 // GJK using Voronoi regions (Christer Ericson) and Barycentric coordinates.
 int32 b2_gjkCalls, b2_gjkIters, b2_gjkMaxIters;
 
-void b2DistanceProxy::Set(const b2Shape* shape)
+void b2DistanceProxy::Set(const b2Shape* shape, int32 index)
 {
 	switch (shape->GetType())
 	{
 	case b2Shape::e_circle:
 		{
-			const b2CircleShape* circle = (b2CircleShape*)shape;
+			const b2CircleShape* circle = static_cast<const b2CircleShape*>(shape);
 			m_vertices = &circle->m_p;
 			m_count = 1;
 			m_radius = circle->m_radius;
@@ -38,10 +40,40 @@ void b2DistanceProxy::Set(const b2Shape* shape)
 
 	case b2Shape::e_polygon:
 		{
-			const b2PolygonShape* polygon = (b2PolygonShape*)shape;
+			const b2PolygonShape* polygon = static_cast<const b2PolygonShape*>(shape);
 			m_vertices = polygon->m_vertices;
-			m_count = polygon->m_vertexCount;
+			m_count = polygon->m_count;
 			m_radius = polygon->m_radius;
+		}
+		break;
+
+	case b2Shape::e_chain:
+		{
+			const b2ChainShape* chain = static_cast<const b2ChainShape*>(shape);
+			b2Assert(0 <= index && index < chain->m_count);
+
+			m_buffer[0] = chain->m_vertices[index];
+			if (index + 1 < chain->m_count)
+			{
+				m_buffer[1] = chain->m_vertices[index + 1];
+			}
+			else
+			{
+				m_buffer[1] = chain->m_vertices[0];
+			}
+
+			m_vertices = m_buffer;
+			m_count = 2;
+			m_radius = chain->m_radius;
+		}
+		break;
+
+	case b2Shape::e_edge:
+		{
+			const b2EdgeShape* edge = static_cast<const b2EdgeShape*>(shape);
+			m_vertices = &edge->m_vertex1;
+			m_count = 2;
+			m_radius = edge->m_radius;
 		}
 		break;
 
@@ -109,6 +141,7 @@ struct b2Simplex
 			v->wA = b2Mul(transformA, wALocal);
 			v->wB = b2Mul(transformB, wBLocal);
 			v->w = v->wB - v->wA;
+			v->a = 1.0f;
 			m_count = 1;
 		}
 	}
@@ -212,7 +245,7 @@ struct b2Simplex
 		{
 		case 0:
 			b2Assert(false);
-			return 0.0;
+			return 0.0f;
 
 		case 1:
 			return 0.0f;
@@ -433,8 +466,7 @@ void b2Distance(b2DistanceOutput* output,
 	int32 saveA[3], saveB[3];
 	int32 saveCount = 0;
 
-	b2Vec2 closestPoint = simplex.GetClosestPoint();
-	float32 distanceSqr1 = closestPoint.LengthSquared();
+	float32 distanceSqr1 = b2_maxFloat;
 	float32 distanceSqr2 = distanceSqr1;
 
 	// Main iteration loop.
@@ -500,10 +532,10 @@ void b2Distance(b2DistanceOutput* output,
 
 		// Compute a tentative new simplex vertex using support points.
 		b2SimplexVertex* vertex = vertices + simplex.m_count;
-		vertex->indexA = proxyA->GetSupport(b2MulT(transformA.R, -d));
+		vertex->indexA = proxyA->GetSupport(b2MulT(transformA.q, -d));
 		vertex->wA = b2Mul(transformA, proxyA->GetVertex(vertex->indexA));
 		b2Vec2 wBLocal;
-		vertex->indexB = proxyB->GetSupport(b2MulT(transformB.R, d));
+		vertex->indexB = proxyB->GetSupport(b2MulT(transformB.q, d));
 		vertex->wB = b2Mul(transformB, proxyB->GetVertex(vertex->indexB));
 		vertex->w = vertex->wB - vertex->wA;
 

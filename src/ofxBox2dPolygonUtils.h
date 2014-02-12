@@ -32,7 +32,10 @@ typedef struct{
 }Segment;
 
 typedef struct {
-	ofVec2f a,b,c;	
+	ofVec2f a,b,c;
+    void draw() {
+        ofTriangle(a,b,c);
+    }
 } TriangleShape;
 
 // dot product (3D) which allows vector operations in arguments
@@ -351,16 +354,17 @@ static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pt
 		float disB  = 5;//ofDist(center.x, center.y, b.x, b.y);
 		float disC  = 5;//ofDist(center.x, center.y, c.x, c.y);
 		
-        /*
-		if(triArea < 1.0 || 
-		   disA < 2.0 ||
-		   disB < 2.0 ||
-		   disC < 2.0) {
+        if(triArea < 1.0 ||
+		   disA < 1.0 ||
+		   disB < 1.0 ||
+		   disC < 1.0) {
 			continue;
 		}
-		if(!insidePolygon(center, polyOutline)) {
-			continue;	
-		}*/
+		if(!insidePolygon(center, pts)) {
+			continue;
+		}
+        
+    
 		
 		TriangleShape shape;
 		shape.a = a;
@@ -506,3 +510,34 @@ static vector<hPoint> calcConvexHull(vector<hPoint> P) {
 	H.resize(k);
 	return H;
 }
+static ofPolyline getConvexHull(vector<ofPoint>&linePts){
+    
+    vector < hPoint > ptsIn;
+    for (int i = 0; i < linePts.size(); i++){
+        hPoint pt;
+        pt.x = linePts[i].x;
+        pt.y = linePts[i].y;
+        
+        ptsIn.push_back(pt);
+    }
+    vector < hPoint > ptsOut;
+    
+    ptsOut =  calcConvexHull(ptsIn);
+    
+    ofPolyline outLine;
+    
+    for (int i = 0; i < ptsOut.size(); i++){
+        outLine.addVertex(ofPoint(ptsOut[i].x, ptsOut[i].y));
+    }
+    
+    return outLine;
+}
+static ofPolyline getConvexHull(ofPolyline &line){
+    return getConvexHull(line.getVertices());
+}
+
+
+#undef norm2
+#undef norm
+#undef d2
+#undef d

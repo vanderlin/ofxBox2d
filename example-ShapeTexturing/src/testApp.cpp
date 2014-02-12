@@ -6,7 +6,8 @@ void testApp::setup() {
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
-	
+	ofDisableAntiAliasing();
+    
     // find all the texture files and load them
     ofDirectory dir;
     ofDisableArbTex();
@@ -32,9 +33,9 @@ void testApp::update() {
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
 		 
-        shapes.push_back(TextureShape());
-        shapes.back().setTexture(&textures[(int)ofRandom(textures.size())]);
-        shapes.back().setup(box2d, (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 50));
+        shapes.push_back(ofPtr<TextureShape>(new TextureShape));
+        shapes.back().get()->setTexture(&textures[(int)ofRandom(textures.size())]);
+        shapes.back().get()->setup(box2d, (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 50));
    
     }
 	
@@ -45,7 +46,7 @@ void testApp::update() {
 void testApp::draw() {
 	
 	for (int i=0; i<shapes.size(); i++) {
-        shapes[i].draw();
+        shapes[i].get()->draw();
     }
     
 	
@@ -64,10 +65,7 @@ void testApp::keyPressed(int key) {
 	
 	
 	if(key == 'c') {
-		for (int i=0; i<shapes.size(); i++) {
-			shapes[i].polyShape.destroy();
-		}
-        shapes.clear();
+		shapes.clear();
 	}
 }
 

@@ -21,11 +21,11 @@ public:
 	
 	// little helper function to load
 	// point that we saved
-	vector <ofVec2f> loadPoints(string file);
+	vector <ofPoint> loadPoints(string file);
 	
-	
-	ofPolyline					shape;
-	ofxBox2d					box2d;
-	vector <ofxBox2dCircle>		circles;
-	vector <ofxBox2dPolygon>	triangles;
+	bool                                breakupIntoTriangles;
+	ofPolyline                          shape;
+	ofxBox2d                            box2d;
+	vector <ofPtr<ofxBox2dCircle> >     circles;
+	vector <ofPtr<ofxBox2dPolygon> >	polyShapes;
 };

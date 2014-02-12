@@ -1,8 +1,13 @@
 #include "testApp.h"
 
+static bool shouldRemove(ofPtr<ofxBox2dBaseShape>shape) {
+    return !ofRectangle(0, -400, ofGetWidth(), ofGetHeight()+400).inside(shape.get()->getPosition());
+}
+
 //--------------------------------------------------------------
 void testApp::setup() {
 	
+    ofDisableAntiAliasing();
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
@@ -13,49 +18,27 @@ void testApp::setup() {
 	box2d.createGround();
 	box2d.setFPS(30.0);
 	
-	
-	
+    breakupIntoTriangles = true;
+	    
 	// load the shape we saved...
-	vector <ofVec2f> pts = loadPoints("shape.dat");
-	ofxBox2dPolygon poly;
-	
-	// loop and add vertex points
-	for (int i=0; i<pts.size(); i++) {
-		poly.addVertex(pts[i]);
-	}
-	poly.setAsEdge(false);
-	poly.triangulate(15);
-	poly.setPhysics(1.0, 0.3, 0.3);
-	poly.create(box2d.getWorld());
-	triangles.push_back(poly);
+	vector <ofPoint> pts = loadPoints("shape.dat");
+    ofPtr<ofxBox2dPolygon> poly = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+    poly.get()->addVertices(pts);
+    poly.get()->setPhysics(1.0, 0.3, 0.3);
+	poly.get()->create(box2d.getWorld());
+	polyShapes.push_back(poly);
 	
 }
 
 //--------------------------------------------------------------
-vector <ofVec2f> testApp::loadPoints(string file) {
-	ifstream f;
-	vector <ofVec2f> pts;
-	f.exceptions ( ifstream::failbit | ifstream::badbit );
-	try {
-		f.open(ofToDataPath(file).c_str());
-		string strLines;
-		while (!f.eof()) {
-			string ptStr;
-			getline(f, ptStr);
-			strLines+=ptStr;
-		}
-		f.close();
-		
-		vector <string>  ptsStr = ofSplitString(strLines, ",");
-		for (int i=0; i<ptsStr.size(); i+=2) {
-			float x = ofToFloat(ptsStr[i]);
-			float y = ofToFloat(ptsStr[i+1]);
-			pts.push_back(ofVec2f(x, y));
-		}
-	}
-	catch (ifstream::failure e) {
-		printf("no file to load...\n");
-	}
+vector <ofPoint> testApp::loadPoints(string file) {
+    vector <ofPoint> pts;
+    vector <string>  ptsStr = ofSplitString(ofBufferFromFile(file).getText(), ",");
+    for (int i=0; i<ptsStr.size(); i+=2) {
+        float x = ofToFloat(ptsStr[i]);
+        float y = ofToFloat(ptsStr[i+1]);
+        pts.push_back(ofPoint(x, y));
+    }
 	return pts;
 }
 
@@ -65,12 +48,17 @@ void testApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-		ofxBox2dCircle c;
-		c.setPhysics(0.3, 0.5, 0.1);
-		c.setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 20));
-		circles.push_back(c);		
+        ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+        circle.get()->setPhysics(0.3, 0.5, 0.1);
+		circle.get()->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 20));
+		circles.push_back(circle);
 	}
 	
+    // remove shapes offscreen
+    ofRemove(circles, shouldRemove);
+   // ofRemove(polyShapes, shouldRemove);
+    
+    
 	box2d.update();	
 }
 
@@ -82,7 +70,7 @@ void testApp::draw() {
 	for (int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xc0dd3b);
-		circles[i].draw();
+		circles[i].get()->draw();
 	}
 	
 	ofSetHexColor(0x444342);
@@ -90,18 +78,23 @@ void testApp::draw() {
 	shape.draw();
 	
 	ofSetHexColor(0x444342);
-	ofFill(); // <- OF not working here... 
-	for (int i=0; i<triangles.size(); i++) {
-		triangles[i].draw();
+	ofNoFill();
+	for (int i=0; i<polyShapes.size(); i++) {
+		polyShapes[i].get()->draw();
+        
+        ofCircle(polyShapes[i].get()->getPosition(), 3);
 	}	
-	
+    
 	
 	// some debug information
 	string info = "Draw a shape with the mouse\n";
 	info += "Press 1 to add some circles\n";
 	info += "Press c to clear everything\n";
-	
-	ofSetHexColor(0x444342);
+	info += "Press t to break object up into triangles/convex poly: "+string(breakupIntoTriangles?"true":"false")+"\n";
+    info += "Total Bodies: "+ofToString(box2d.getBodyCount())+"\n";
+	info += "Total Joints: "+ofToString(box2d.getJointCount())+"\n\n";
+	info += "FPS: "+ofToString(ofGetFrameRate())+"\n";
+    ofSetHexColor(0x444342);
 	ofDrawBitmapString(info, 10, 15);
 }
 
@@ -110,18 +103,20 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 	
 	if(key == '1') {
-		ofxBox2dCircle c;
-		c.setPhysics(1, 0.5, 0.5);
-		c.setup(box2d.getWorld(), mouseX, mouseY, 10);
-		circles.push_back(c);
+        ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+        circle.get()->setPhysics(0.3, 0.5, 0.1);
+		circle.get()->setup(box2d.getWorld(), mouseX, mouseY, ofRandom(10, 20));
+		circles.push_back(circle);
 	}
+    
+    if(key == 't') breakupIntoTriangles = !breakupIntoTriangles;
 	
 	if(key == 'c') {
 		shape.clear();
-		for (int i=0; i<triangles.size(); i++) {
-			triangles[i].destroy();
-		}
+        polyShapes.clear();
+        circles.clear();
 	}
+    
 }
 
 //--------------------------------------------------------------
@@ -141,39 +136,57 @@ void testApp::mousePressed(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button) {
-	
-	// This is the manuel way to triangulate the shape
-	// you can then add many little triangles
-	
-	// first simplify the shape
-	shape.simplify();
-	
-	// save the outline of the shape
-	ofPolyline outline = shape;
-	
-	// resample shape
-	ofPolyline resampled = shape.getResampledBySpacing(25);
-	
-	// trangleate the shape, return am array of traingles
-	vector <TriangleShape> tris = triangulatePolygonWithOutline(resampled, outline);
-	
-	// add some random points inside
-	addRandomPointsInside(shape, 255);
-	
-	// now loop through all the trainles and make a box2d triangle
-	for (int i=0; i<tris.size(); i++) {
-		ofxBox2dPolygon p;
-		p.addTriangle(tris[i].a, tris[i].b, tris[i].c);
-		p.setPhysics(1.0, 0.3, 0.3);
-		p.setAsEdge(false);
-		if(p.isGoodShape()) {
-			p.create(box2d.getWorld());
-			triangles.push_back(p);
-		}
-	}
-	
-	// done with shape clear it now
-	shape.clear();
+
+    if(breakupIntoTriangles) {
+        
+        // This is the manual way to triangulate the shape
+        // you can then add many little triangles
+        
+        // first simplify the shape
+        shape.simplify();
+        
+        // save the outline of the shape
+        ofPolyline outline = shape;
+        
+        // resample shape
+        ofPolyline resampled = shape.getResampledBySpacing(25);
+        
+        // trangleate the shape, return am array of traingles
+        vector <TriangleShape> tris = triangulatePolygonWithOutline(resampled, outline);
+        
+        // add some random points inside
+        addRandomPointsInside(shape, 255);
+        
+        // now loop through all the trainles and make a box2d triangle
+        for (int i=0; i<tris.size(); i++) {
+            
+            ofPtr<ofxBox2dPolygon> triangle = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+            triangle.get()->addTriangle(tris[i].a, tris[i].b, tris[i].c);
+            triangle.get()->setPhysics(1.0, 0.3, 0.3);
+            triangle.get()->create(box2d.getWorld());
+
+            polyShapes.push_back(triangle);
+        }
+      
+    }
+    else {
+        
+        // create a poly shape with the max verts allowed
+        // and the get just the convex hull from the shape
+        shape = shape.getResampledByCount(b2_maxPolygonVertices);
+        shape = getConvexHull(shape);
+        
+        ofPtr<ofxBox2dPolygon> poly = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+        poly.get()->addVertices(shape.getVertices());
+        poly.get()->setPhysics(1.0, 0.3, 0.3);
+        poly.get()->create(box2d.getWorld());
+        polyShapes.push_back(poly);
+        
+        
+    }
+    
+    // done with shape clear it now
+    shape.clear();
 }
 
 //--------------------------------------------------------------

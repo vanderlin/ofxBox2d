@@ -28,13 +28,13 @@ void testApp::draw() {
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xf6c738);
-		circles[i].draw();
+		circles[i].get()->draw();
 	}
 	
 	for(int i=0; i<boxes.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xBF2545);
-		boxes[i].draw();
+		boxes[i].get()->draw();
 	}
 
 	// draw the ground
@@ -56,20 +56,19 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 	
 	if(key == 'c') {
-		float r = ofRandom(4, 20);		// a random radius 4px - 20px
-		ofxBox2dCircle circle;
-		circle.setPhysics(3.0, 0.53, 0.1);
-		circle.setup(box2d.getWorld(), mouseX, mouseY, r);
-		circles.push_back(circle);
+		float r = ofRandom(4, 20);
+		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+		circles.back().get()->setPhysics(3.0, 0.53, 0.1);
+		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+		
 	}
 	
 	if(key == 'b') {
-		float w = ofRandom(4, 20);	
-		float h = ofRandom(4, 20);	
-		ofxBox2dRect rect;
-		rect.setPhysics(3.0, 0.53, 0.1);
-		rect.setup(box2d.getWorld(), mouseX, mouseY, w, h);
-		boxes.push_back(rect);
+		float w = ofRandom(4, 20);
+		float h = ofRandom(4, 20);
+		boxes.push_back(ofPtr<ofxBox2dRect>(new ofxBox2dRect));
+		boxes.back().get()->setPhysics(3.0, 0.53, 0.1);
+		boxes.back().get()->setup(box2d.getWorld(), mouseX, mouseY, w, h);
 	}
 	
 	if(key == 't') ofToggleFullscreen();

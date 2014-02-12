@@ -1,4 +1,5 @@
 #pragma once
+
 #include "ofMain.h"
 #include "Box2D.h"
 #include "ofxBox2dUtils.h"
@@ -10,7 +11,6 @@ public:
 	b2BodyDef		bodyDef;
 	b2Body*			body;
 	
-	bool			dead;
 	bool			alive;
 	bool			setMassFromShape;
 	
@@ -26,7 +26,8 @@ public:
 	bool isBody();
 	
 	//----------------------------------------
-    static bool shouldRemove(ofxBox2dBaseShape &b);
+    static bool shouldRemove(ofPtr<ofxBox2dBaseShape> shape);
+    static bool shouldRemoveOffScreen(ofPtr<ofxBox2dBaseShape> shape);
 	bool isFixed();
 	bool isSleeping();
     

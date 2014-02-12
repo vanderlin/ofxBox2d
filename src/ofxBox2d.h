@@ -6,6 +6,7 @@
 
 #include "ofxBox2dCircle.h"
 #include "ofxBox2dPolygon.h"
+#include "ofxBox2dEdge.h"
 #include "ofxBox2dRect.h"
 
 #include "ofxBox2dJoint.h"
@@ -27,13 +28,14 @@ class ofxBox2d : public b2ContactListener {
 	
 private:
 	
+    bool                enableContactEvents;
 	float				fps;
 	int					velocityIterations;
 	int					positionIterations;
 	
 	// Called when two fixtures begin to touch.
 	void BeginContact(b2Contact* contact) { 
-		ofxBox2dContactArgs args;
+		static ofxBox2dContactArgs args;
 		args.a = contact->GetFixtureA();
 		args.b = contact->GetFixtureB();
 		ofNotifyEvent( contactStartEvents, args, this);
@@ -41,7 +43,7 @@ private:
 	
 	// Called when two fixtures cease to touch.
 	void EndContact(b2Contact* contact) { 
-		ofxBox2dContactArgs args;
+		static ofxBox2dContactArgs args;
 		args.a = contact->GetFixtureA();
 		args.b = contact->GetFixtureB();
 		ofNotifyEvent( contactEndEvents, args, this);
@@ -74,7 +76,9 @@ public:
 	b2Body*				ground;
 	b2Body*				mainBody;
 
-	// ------------------------------------------------------ 
+	// ------------------------------------------------------
+    void enableEvents();
+    void disableEvents();
 	ofEvent <ofxBox2dContactArgs> contactStartEvents;
 	ofEvent <ofxBox2dContactArgs> contactEndEvents;
 	
@@ -117,7 +121,7 @@ public:
     
 	void		setBounds(ofPoint lowBounds, ofPoint upBounds);
 	void		createBounds(float x=0, float y=0, float w=ofGetWidth(), float h=ofGetHeight());
-	void		createBounds(ofRectangle &rec);
+	void		createBounds(ofRectangle rec);
 	
 	void		createGround(const ofPoint & p1, const ofPoint & p2);
 	void		createGround(float x1=0, float y1=ofGetHeight(), float x2=ofGetWidth(), float y2=ofGetHeight());

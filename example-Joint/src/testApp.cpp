@@ -6,7 +6,9 @@ void testApp::setup() {
 	ofSetVerticalSync(true);
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
-
+    ofDisableAntiAliasing();
+    
+    
 	box2d.init();
 	box2d.setGravity(10, 0);
 	box2d.setFPS(30.0);
@@ -16,26 +18,26 @@ void testApp::setup() {
 	
 	// first we add just a few circles
 	for (int i=0; i<3; i++) {
-		ofxBox2dCircle circle;
-		circle.setPhysics(3.0, 0.53, 0.1);
-		circle.setup(box2d.getWorld(), ofGetWidth()/2, 100+(i*20), 8);
+		ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+		circle.get()->setPhysics(3.0, 0.53, 0.1);
+		circle.get()->setup(box2d.getWorld(), ofGetWidth()/2, 100+(i*20), 8);
 		circles.push_back(circle);
 	}
 	
 	// now connect each circle with a joint
 	for (int i=0; i<circles.size(); i++) {
 		
-		ofxBox2dJoint joint;
+		ofPtr<ofxBox2dJoint> joint = ofPtr<ofxBox2dJoint>(new ofxBox2dJoint);
 		
 		// if this is the first point connect to the top anchor.
 		if(i == 0) {
-			joint.setup(box2d.getWorld(), anchor.body, circles[i].body);		
+			joint.get()->setup(box2d.getWorld(), anchor.body, circles[i].get()->body);
 		}
 		else {
-			joint.setup(box2d.getWorld(), circles[i-1].body, circles[i].body);
+			joint.get()->setup(box2d.getWorld(), circles[i-1].get()->body, circles[i].get()->body);
 		}
 		
-		joint.setLength(25);
+		joint.get()->setLength(25);
 		joints.push_back(joint);
 	}
 }
@@ -55,12 +57,12 @@ void testApp::draw() {
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0x01b1f2);
-		circles[i].draw();
+		circles[i].get()->draw();
 	}
 	
 	for(int i=0; i<joints.size(); i++) {
 		ofSetHexColor(0x444342);
-		joints[i].draw();
+		joints[i].get()->draw();
 	}
 	
 	string info = "";
@@ -77,9 +79,9 @@ void testApp::keyPressed(int key) {
 	if(key == 'n') {
 		
 		// add a new circle
-		ofxBox2dCircle circle;
-		circle.setPhysics(3.0, 0.53, 0.1);
-		circle.setup(box2d.getWorld(), circles.back().getPosition().x+ofRandom(-30, 30), circles.back().getPosition().y-30, 8);
+		ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+		circle.get()->setPhysics(3.0, 0.53, 0.1);
+		circle.get()->setup(box2d.getWorld(), circles.back().get()->getPosition().x+ofRandom(-30, 30), circles.back().get()->getPosition().y-30, 8);
 		circles.push_back(circle);
 	
 		// get this cirlce and the prev cirlce
@@ -87,9 +89,9 @@ void testApp::keyPressed(int key) {
 		int b = (int)circles.size()-1; 
 
 		// now connect the new circle with a joint
-		ofxBox2dJoint joint;
-		joint.setup(box2d.getWorld(), circles[a].body, circles[b].body);
-		joint.setLength(25);
+		ofPtr<ofxBox2dJoint> joint = ofPtr<ofxBox2dJoint>(new ofxBox2dJoint);
+		joint.get()->setup(box2d.getWorld(), circles[a].get()->body, circles[b].get()->body);
+		joint.get()->setLength(25);
 		joints.push_back(joint);
 	}
 	
