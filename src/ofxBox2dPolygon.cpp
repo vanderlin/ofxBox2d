@@ -124,7 +124,7 @@ void ofxBox2dPolygon::makeConvexPoly() {
 //----------------------------------------
 void ofxBox2dPolygon::create(b2World * b2dworld) {
 
-	if(size() <= 3) {
+	if(size() < 3) {
 		ofLog(OF_LOG_NOTICE, "need at least 3 points: %i\n", (int)size());
 		return;	
 	}
