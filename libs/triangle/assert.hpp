@@ -17,11 +17,11 @@ namespace tpp {
 extern bool MyAssertFunction( bool b, char* desc, int line, char* file);
 
 
-#if defined( _DEBUG )
-#define Assert( exp, description ) MyAssertFunction( (int)(exp), description, __LINE__, __FILE__ )
-#else
+//#if defined( _DEBUG )
+//#define Assert( exp, description ) MyAssertFunction( (int)(exp), description, __LINE__, __FILE__ )
+//#else
 #define Assert( exp, description )
-#endif
+//#endif
 
 
 #endif

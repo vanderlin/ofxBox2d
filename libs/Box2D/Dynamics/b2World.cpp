@@ -138,7 +138,7 @@ void b2World::DestroyBody(b2Body* b)
 	}
 
 	// Delete the attached joints.
-	b2JointEdge* je = b->m_jointList;
+	b2JointEdge * je = b->m_jointList;
 	while (je)
 	{
 		b2JointEdge* je0 = je;

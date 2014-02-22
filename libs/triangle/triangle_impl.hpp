@@ -231,8 +231,8 @@
 
 /* If yours is not a Unix system, define the NO_TIMER compiler switch to     */
 /*   remove the Unix-specific timing code.                                   */
-
-#ifdef TARGET_WIN32
+//#define TARGET_WIN32 
+#ifdef _WIN32
 	#define NO_TIMER
 #endif
 

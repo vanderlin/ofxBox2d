@@ -9,6 +9,8 @@ class ofxBox2dCircle : public ofxBox2dBaseShape {
 private:
 	
 	float radius;
+	b2CircleShape shape;
+	b2Fixture * fixtureCircle;
 	
 public:
 	
@@ -22,6 +24,13 @@ public:
 	//------------------------------------------------
 	float getRadius();
 	void  setRadius(float r);
+
+	//------------------------------------------------
+	void setType(b2BodyType type);
+	b2BodyType getType();
+
+	//------------------------------------------------
+	void setShape(float radius);
 	
 	//------------------------------------------------
 	virtual void draw();

@@ -11,6 +11,8 @@ class ofxBox2dRect : public ofxBox2dBaseShape {
 
 private:
     float width, height;
+	b2PolygonShape shape;
+	b2Fixture * fixtureRect;
     
 public:
 	ofVboMesh mesh;
@@ -18,9 +20,16 @@ public:
 	ofxBox2dRect();	
 	
 	//------------------------------------------------
-	void setup(b2World * b2dworld, ofRectangle rec);
-	void setup(b2World * b2dworld, float x, float y, float w, float h);
-	   
+	void setup(b2World * b2dworld, ofRectangle rec,uint16 categoryBits, uint16 maskBits);
+	void setup(b2World * b2dworld, float x, float y, float w, float h,uint16 categoryBits, uint16 maskBits);
+	
+	//------------------------------------------------
+	void setType(b2BodyType type);
+	b2BodyType getType();
+
+	//------------------------------------------------
+	void setShape(float w,float h);
+
 	//------------------------------------------------
     float getWidth()  { return width * 2;  }
     float getHeight() { return height * 2; }

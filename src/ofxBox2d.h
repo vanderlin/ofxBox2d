@@ -98,6 +98,10 @@ public:
 	void		mouseDragged(ofMouseEventArgs &e);
 	void		mouseReleased(ofMouseEventArgs &e);
 #endif
+
+	void selected();
+	void dragged();
+	void released();
 	
 	void		registerGrabbing();
 	void		grabShapeDown(float x, float y, int id = -1 );		// -1 is reserved for mouse.

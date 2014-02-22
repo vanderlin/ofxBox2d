@@ -23,7 +23,6 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 	}
 	
 	// these are used to create the shape
-	b2CircleShape shape;
 	
 	shape.m_p.SetZero();
 	shape.m_radius		= radius / OFX_BOX2D_SCALE;
@@ -40,12 +39,30 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 	bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 	
 	body  = b2dworld->CreateBody(&bodyDef);
-	body->CreateFixture(&fixture);
-    
+	fixtureCircle = body->CreateFixture(&fixture);
+
     alive = true;
 }
 void ofxBox2dCircle::setup(b2World * b2dworld, ofVec2f &pts, float radius) {
     setup(b2dworld, pts.x, pts.y, radius);
+}
+
+void ofxBox2dCircle::setType(b2BodyType type){
+	body->SetType(type);
+}
+b2BodyType ofxBox2dCircle::getType(){
+	return body->GetType();
+}
+void ofxBox2dCircle::setShape(float radius){
+	shape.m_p.SetZero();
+	shape.m_radius		= radius / OFX_BOX2D_SCALE;
+	this->radius		= radius;
+
+	fixture.shape		= &shape;
+
+	body->DestroyFixture(fixtureCircle);
+	fixtureCircle = body->CreateFixture(&fixture);
+	alive = true;
 }
 
 //------------------------------------------------

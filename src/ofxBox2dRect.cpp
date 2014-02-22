@@ -17,12 +17,12 @@ ofxBox2dRect::ofxBox2dRect() {
 }
 
 //------------------------------------------------
-void ofxBox2dRect::setup(b2World * b2dworld, ofRectangle rec) {
-	setup(b2dworld, rec.x, rec.y, rec.width, rec.height);
+void ofxBox2dRect::setup(b2World * b2dworld, ofRectangle rec,uint16 categoryBits, uint16 maskBits) {
+	setup(b2dworld, rec.x, rec.y, rec.width, rec.height,categoryBits,maskBits);
 }
 
 //------------------------------------------------
-void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h) {
+void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h ,uint16 categoryBits, uint16 maskBits) {
 	
 	if(b2dworld == NULL) {
 		ofLog(OF_LOG_NOTICE, "- must have a valid world -");
@@ -33,13 +33,14 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
     h /= 2;
 	width = w; height = h;
     
-	b2PolygonShape shape;
 	shape.SetAsBox(width/OFX_BOX2D_SCALE, height/OFX_BOX2D_SCALE);
 	
 	fixture.shape		= &shape;
 	fixture.density		= density;
 	fixture.friction	= friction;
 	fixture.restitution = bounce;
+	fixture.filter.categoryBits = categoryBits;
+	fixture.filter.maskBits = maskBits;
 	
 	b2BodyDef bodyDef;
 	if(density == 0.f) bodyDef.type	= b2_staticBody;
@@ -48,9 +49,29 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
 	
 	
 	body = b2dworld->CreateBody(&bodyDef);
-	body->CreateFixture(&fixture);
+	fixtureRect = body->CreateFixture(&fixture);
     
     updateMesh();
+    alive = true;
+}
+
+void ofxBox2dRect::setType(b2BodyType type){
+	body->SetType(type);
+}
+b2BodyType ofxBox2dRect::getType(){
+	return body->GetType();
+}
+void ofxBox2dRect::setShape(float w,float h){
+	w /= 2;
+    h /= 2;
+	width = w; height = h;
+
+	shape.SetAsBox(w/OFX_BOX2D_SCALE,h/OFX_BOX2D_SCALE);
+	fixture.shape = &shape;
+	body->DestroyFixture(fixtureRect);
+	fixtureRect = body->CreateFixture(&fixture);
+
+	updateMesh();
     alive = true;
 }
 
@@ -158,46 +179,6 @@ void ofxBox2dRect::draw() {
     mesh.draw(ofGetFill()==OF_FILLED?OF_MESH_FILL:OF_MESH_WIREFRAME);
     ofPopMatrix();
     
-    /*
-    const b2Transform& xf = body->GetTransform();
-    ofPolyline shape;
-    for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
-        b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
-        if(poly) {
-            for(int i=0; i<poly->m_count; i++) {
-                b2Vec2 pt = b2Mul(xf, poly->m_vertices[i]);
-                shape.addVertex(worldPtToscreenPt(pt));
-            }
-        }
-    }
-    shape.close();
-    shape.draw();*/
-
-
-    // update the polyline
-    // getRectangleShape();
-    /*
-    ofPath path;
-    for (int i=0; i<shape.size(); i++) {
-        if(i==0)path.moveTo(shape[i]);
-        else path.lineTo(shape[i]);
-    }
-    
-    // draw the path
-    path.setColor(ofGetStyle().color);
-    path.setFilled(ofGetStyle().bFill);
-    path.draw();
-    
-    // are we sleeping
-    if(isSleeping()) {
-        ofPushStyle();
-        ofEnableAlphaBlending();
-        path.setColor(ofColor(255, 100));
-        path.setFilled(true);
-        path.draw();
-        ofPopStyle();
-    }
-	*/
 }
 
 
