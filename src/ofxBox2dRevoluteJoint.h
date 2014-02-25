@@ -6,6 +6,7 @@
 
 // based on Todd Vanderlin's ofxBox2dJoint class
 // set enableLimits and enableMotor true by default for ease of use.
+
 class ofxBox2dRevoluteJoint {
     
 public:

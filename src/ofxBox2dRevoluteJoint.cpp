@@ -1,6 +1,5 @@
 //
 //  ofxBox2dRevoluteJoint.cpp
-//  example-Joint
 //
 //  Created by Koki Nomura on 2014/01/27.
 //
