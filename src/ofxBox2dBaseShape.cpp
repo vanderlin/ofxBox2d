@@ -24,8 +24,10 @@ ofxBox2dBaseShape::ofxBox2dBaseShape() {
 
 //----------------------------------------
 ofxBox2dBaseShape::~ofxBox2dBaseShape() {
-    ofLog(OF_LOG_VERBOSE, "~ofxBox2dBaseShape(%p)\n", body);
-    destroy();
+	ofLog(OF_LOG_VERBOSE, "~ofxBox2dBaseShape(%p)\n", body);
+	if (isBody()) {
+		destroy();
+	}
 }
 
 //------------------------------------------------
@@ -56,8 +58,6 @@ bool ofxBox2dBaseShape::shouldRemoveOffScreen(ofPtr<ofxBox2dBaseShape> shape) {
 //----------------------------------------
 bool ofxBox2dBaseShape::isBody() {
 	if (body == NULL) {
-		//cout << __FILE__ << __func__ << endl;
-		ofLog(OF_LOG_ERROR, "ofxBox2dBaseShape:: - body is not defined -");
 		return false;
 	}
 	return true;
@@ -130,6 +130,7 @@ void* ofxBox2dBaseShape::setData(void*data) {
 	else {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - must have a valid body -");
 	}
+	return NULL;
 }
 
 //------------------------------------------------ 
