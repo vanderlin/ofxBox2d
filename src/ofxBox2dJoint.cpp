@@ -29,6 +29,12 @@ ofxBox2dJoint::ofxBox2dJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2V
 }
 
 //----------------------------------------
+ofxBox2dJoint::ofxBox2dJoint(b2World* b2world, b2DistanceJointDef jointDef) {
+    ofxBox2dJoint();
+    setup(b2world, jointDef);
+}
+
+//----------------------------------------
 void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, float frequencyHz, float damping, bool bCollideConnected) {
 	
 	if(body1 == NULL || body2 == NULL) {
@@ -48,8 +54,6 @@ void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, float 
 //----------------------------------------
 void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, float frequencyHz, float damping, bool bCollideConnected) {
 
-	setWorld(b2world);
-
 	if(body1 == NULL || body2 == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dJoint :: setup : - box2d body is NULL -");
 		return;
@@ -60,9 +64,18 @@ void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2
 	jointDef.collideConnected	= bCollideConnected;
 	jointDef.frequencyHz		= frequencyHz;
 	jointDef.dampingRatio		= damping;	
-	joint						= (b2DistanceJoint*)world->CreateJoint(&jointDef);
 	
-	alive						= true;
+    setup(b2world, jointDef);
+}
+
+//----------------------------------------
+void ofxBox2dJoint::setup(b2World* b2world, b2DistanceJointDef jointDef) {
+
+    setWorld(b2world);
+    
+    joint = (b2DistanceJoint*)world->CreateJoint(&jointDef);
+	
+	alive = true;
 }
 
 //----------------------------------------
