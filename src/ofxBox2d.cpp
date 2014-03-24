@@ -38,7 +38,7 @@ ofxBox2d::~ofxBox2d() {
 #endif
     if(world) {
             for (b2Body* f = world->GetBodyList(); f; f = f->GetNext()) {
-                //world->DestroyBody(f);
+               // world->DestroyBody(f);
             }
             for (b2Joint* f = world->GetJointList(); f; f = f->GetNext()) {
                 world->DestroyJoint(f);
