@@ -20,8 +20,12 @@
 #ifndef REVIVER_POINT_HPP
 #define REVIVER_POINT_HPP
 
-
+#ifdef _MSC_VER
+#include <assert.h>
+#else
 #include "assert.hpp"
+#endif
+
 #include <iostream>
 #include <valarray>
 #include <stdio.h>
@@ -334,8 +338,10 @@ public:
 	inline void move2origin(){ origin<NumType, D, D-1>::eval(*this); };
 
 	dpoint(){ 
-		Assert( (D >= 1), "Dimension < 1 not allowed" ); 
-		// move2origin(); 
+		//assert( (D >= 1), "Dimension < 1 not allowed" ); 
+		if(D >= 1){
+		// move2origin();
+		}
 	};
 
 	//! 1 D Point
@@ -467,7 +473,7 @@ template < typename NumType, unsigned D >
 dpoint<NumType,D>&
 dpoint<NumType,D>::operator=(const dpoint<NumType,D> &q)
 {
-  Assert((this != &q), "Error p = p");
+  assert((this != &q), "Error p = p");
   Equate<NumType,NumType,D,D-1>::eval(*this,q);	
   return *this;
 }

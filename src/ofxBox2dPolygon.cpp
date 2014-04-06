@@ -295,24 +295,24 @@ void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
 //----------------------------------------
 vector <ofPoint>& ofxBox2dPolygon::getVertices() {
 	
-    if(body == NULL) {
-		return;
-	}
+    if(body != NULL) {
 	
-	const b2Transform& xf = body->GetTransform();
+		const b2Transform& xf = body->GetTransform();
 	
-	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
+		for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
+			b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
 		
-		if(poly) {
-            ofPolyline::clear();
-            for(int i=0; i<poly->GetVertexCount(); i++) {
-				b2Vec2 pt = b2Mul(xf, poly->GetVertex(i));
-                ofPolyline::addVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
+			if(poly) {
+				ofPolyline::clear();
+				for(int i=0; i<poly->GetVertexCount(); i++) {
+					b2Vec2 pt = b2Mul(xf, poly->GetVertex(i));
+					ofPolyline::addVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
+				}
+				if(isClosed()) ofPolyline::close();
 			}
-			if(isClosed()) ofPolyline::close();
 		}
 	}
+
     return ofPolyline::getVertices();
 }
 

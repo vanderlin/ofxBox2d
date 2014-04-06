@@ -364,7 +364,11 @@
 #include <string.h>
 #include <math.h>
 #ifndef NO_TIMER
+#ifdef _MSC_VER
+#include <time.h>
+#else
 #include <sys/time.h>
+#endif
 #endif /* not NO_TIMER */
 #ifdef CPU86
 #include <float.h>
