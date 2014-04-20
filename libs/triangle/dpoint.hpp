@@ -473,7 +473,7 @@ template < typename NumType, unsigned D >
 dpoint<NumType,D>&
 dpoint<NumType,D>::operator=(const dpoint<NumType,D> &q)
 {
-  assert((this != &q), "Error p = p");
+  Assert((this != &q), "Error p = p");
   Equate<NumType,NumType,D,D-1>::eval(*this,q);	
   return *this;
 }
