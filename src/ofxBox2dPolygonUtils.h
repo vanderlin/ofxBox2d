@@ -9,7 +9,7 @@
 
 #pragma once
 #include "ofMain.h"
-#include "del_interface.hpp"
+#include "triangle/del_interface.hpp"
 #include <algorithm>
 
 using namespace tpp;
