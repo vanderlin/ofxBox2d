@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-#include "Box2D.h"
+#include "Box2d/Box2D.h"
 
 
 #define OFX_BOX2D_SCALE 30.0f

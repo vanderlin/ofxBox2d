@@ -14,11 +14,11 @@ namespace tpp {
    
     Details.
 */
-extern bool MyAssertFunction( bool b, char* desc, int line, char* file);
+//extern bool MyAssertFunction( bool b, char* desc, int line, char* file);
 
 
 #if defined( _DEBUG )
-#define Assert( exp, description ) MyAssertFunction( (int)(exp), description, __LINE__, __FILE__ )
+#define Assert( exp, description ) if (!exp) std::cout << description << std::endl << "file : " << __FILE__ << std::endl << "line : " << __LINE__; /*MyAssertFunction( (int)(exp), description, __LINE__, __FILE__ )*/
 #else
 #define Assert( exp, description )
 #endif
