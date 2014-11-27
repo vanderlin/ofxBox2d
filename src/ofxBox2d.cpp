@@ -472,7 +472,7 @@ void ofxBox2d::drawGround() {
             
 			ofNoFill();
 			ofSetColor(120, 0, 120);
-			ofLine(worldPtToscreenPt(edge->m_vertex0), worldPtToscreenPt(edge->m_vertex1));
+			ofDrawLine(worldPtToscreenPt(edge->m_vertex0), worldPtToscreenPt(edge->m_vertex1));
 		}
 	}
 }
