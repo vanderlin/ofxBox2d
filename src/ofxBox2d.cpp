@@ -465,7 +465,7 @@ void ofxBox2d::drawGround() {
 	
 	if(ground == NULL) return;
 	
-	const b2Transform& xf = ground->GetTransform();
+// 	const b2Transform& xf = ground->GetTransform();
 	for (b2Fixture* f = ground->GetFixtureList(); f; f = f->GetNext()) {
 		b2EdgeShape* edge = (b2EdgeShape*)f->GetShape();
 		if(edge) {

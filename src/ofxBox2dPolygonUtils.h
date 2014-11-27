@@ -110,7 +110,7 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 	
     int    i, k, m, pv;            // misc counters
     float  tol2 = tol * tol;       // tolerance squared
-    ofVec2f vt[n];
+    vector<ofVec2f> vt(n);
 	int mk[n];
 	
 	memset(mk, 0, sizeof(mk));
@@ -127,7 +127,7 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 	
     // STAGE 2.  Douglas-Peucker polyline simplification
     mk[0] = mk[k-1] = 1;       // mark the first and last vertices
-    simplifyDP( tol, vt, 0, k-1, mk );
+    simplifyDP( tol, &vt[0], 0, k-1, mk );
 	
     // copy marked vertices to the output simplified polyline
     for (i=m=0; i<k; i++) {

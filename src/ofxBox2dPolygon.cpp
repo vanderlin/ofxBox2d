@@ -56,7 +56,7 @@ void ofxBox2dPolygon::addVertexes(vector <ofVec2f> &pts) {
 
 //----------------------------------------
 void ofxBox2dPolygon::addVertexes(ofPolyline &polyline) {
-	for (int i=0; i<polyline.size(); i++) {
+	for (size_t i=0; i<polyline.size(); i++) {
 		addVertex(polyline[i].x, polyline[i].y);
 	}
 }
@@ -105,7 +105,7 @@ void ofxBox2dPolygon::triangulatePoly(float resampleAmt, int nPointsInside) {
 		if(wasClosed) ofPolyline::setClosed(wasClosed);
         
 		// now add back into polyshape
-		for (int i=0; i<newPoly.size(); i++) {
+		for (size_t i=0; i<newPoly.size(); i++) {
 			addVertex(newPoly[i]);
 		}
 	}
@@ -146,7 +146,7 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 		b2Vec2			verts[3];
 		
 		ofVec2f a, b, c;
-		for (int i=0; i<triangles.size(); i++) {
+		for (size_t i=0; i<triangles.size(); i++) {
 			
 			a = triangles[i].a;
 			b = triangles[i].b;
@@ -190,7 +190,7 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
     mesh.clear();
     ofPath path;
     ofPoint center = getCentroid2D();
-    for (int i=0; i<pts.size(); i++) {
+    for (size_t i=0; i<pts.size(); i++) {
         ofPoint p(pts[i].x, pts[i].y);
         p -= center;
         path.lineTo(p);

@@ -45,9 +45,9 @@ public:
 		ofEndShape();
 	}
 	void DrawSolidCircle(const b2Vec2& center, float32 radius, const b2Vec2& axis, const b2Color& color) {
-		const float32 k_segments    = 16.0f;
-		const float32 k_increment   = 2.0f * b2_pi / k_segments;
-		float32 theta			    = 0.0f;
+// 		const float32 k_segments    = 16.0f;
+// 		const float32 k_increment   = 2.0f * b2_pi / k_segments;
+// 		float32 theta			    = 0.0f;
 		float rad = (radius*scaleFactor);
 		glEnable(GL_BLEND);
 		glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
