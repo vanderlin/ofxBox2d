@@ -123,7 +123,7 @@ void* ofxBox2dBaseShape::setData(void*data) {
 	}
 	
 	if(isBody()) {
-		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - custom data set %p", data);
+		//ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - custom data set %p", data);
 		body->SetUserData(data);
 		return data;
 	}
