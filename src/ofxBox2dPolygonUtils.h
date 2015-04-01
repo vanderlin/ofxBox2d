@@ -34,7 +34,7 @@ typedef struct{
 typedef struct {
 	ofVec2f a,b,c;
     void draw() {
-        ofTriangle(a,b,c);
+        ofDrawTriangle(a,b,c);
     }
 } TriangleShape;
 
@@ -69,12 +69,12 @@ static void simplifyDP(float tol, ofVec2f* v, int j, int k, int* mk ){
         // compute distance squared
         w = v[i] - S.P0;
         cw = w.dot(u);
-        if ( cw <= 0 ) dv2 = v[i].distanceSquared( S.P0 );
-        else if ( cu <= cw ) dv2 = v[i].distanceSquared( S.P1 );
+        if ( cw <= 0 ) dv2 = v[i].squareDistance( S.P0 );
+        else if ( cu <= cw ) dv2 = v[i].squareDistance( S.P1 );
         else {
             b = (float)(cw / cu);
             Pb = S.P0 + u*b;
-            dv2 = v[i].distanceSquared( Pb );
+            dv2 = v[i].squareDistance( Pb );
         }
         // test with current max distance squared
         if (dv2 <= maxd2) continue;
@@ -115,7 +115,7 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
     // STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
     vt[0] = V[0];              // start at the beginning
     for (i=k=1, pv=0; i<n; i++) {
-        if (V[i].distanceSquared( V[pv] ) < tol2) continue;
+        if (V[i].squareDistance( V[pv] ) < tol2) continue;
 		
         vt[k++] = V[i];
         pv = i;
