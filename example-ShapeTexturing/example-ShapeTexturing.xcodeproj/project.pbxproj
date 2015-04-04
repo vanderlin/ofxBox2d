@@ -41,6 +41,7 @@
 		981EA7C2357295AE8501F4C6 /* b2PolygonShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC3FCAE32B28B52708484DC5 /* b2PolygonShape.cpp */; };
 		9D0AA091FE805EB564CD05D0 /* b2RopeJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF1A6A7D5CD5468B3F846A62 /* b2RopeJoint.cpp */; };
 		9F9D49CFC30BA1589822E7AB /* b2PulleyJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEED18744D2E82C919D7D152 /* b2PulleyJoint.cpp */; };
+		A113ECA21AD031AC00801B70 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A113EC9F1AD0319C00801B70 /* openFrameworksDebug.a */; };
 		A2E3224BF9B63DAA802A0F18 /* b2Distance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E83DBE901C4B79B39C15DC46 /* b2Distance.cpp */; };
 		A2E6B252D682A7FB048A1644 /* b2RevoluteJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D48FA57F2101B998AFF455C /* b2RevoluteJoint.cpp */; };
 		AC527216645D66921FB3E36F /* b2World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BCCD69F7BE28DA5483CC6DB5 /* b2World.cpp */; };
@@ -50,7 +51,6 @@
 		B103DF2084E0F38D03E0E6F1 /* ofxBox2dRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2613E67C51FDE6F55873E38 /* ofxBox2dRect.cpp */; };
 		B16C89D9CA996CA8FD860D81 /* ofxBox2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 229CB9C8AF92D3460F8D554A /* ofxBox2d.cpp */; };
 		BB885F5F39C8DA070D80EF02 /* b2BlockAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76D962905D0BA4DE02320A5 /* b2BlockAllocator.cpp */; };
-		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		BFD2A0EEBE3B4153659EC355 /* b2Contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBCA857DA9C5F92BF720A6C8 /* b2Contact.cpp */; };
 		C1DDE2EB6202440187690701 /* b2MotorJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4BB2D6A3717A8F7F88D52CD /* b2MotorJoint.cpp */; };
 		C3D8EF14A387EA959014AD91 /* b2ContactManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F573EB8A3C9D93203E1F20 /* b2ContactManager.cpp */; };
@@ -58,7 +58,6 @@
 		D2969DE2782BAE96A0C7ADC1 /* b2MouseJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D307392F3F50E30959E20EBA /* b2MouseJoint.cpp */; };
 		DA846513DA696B1E8921BBC3 /* b2CircleShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7414DA8EE4DE1570C05C5CA8 /* b2CircleShape.cpp */; };
 		DFACEC3A1E9D23315321D7EA /* ofxBox2dPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3392D405A715A07DCC8FAC2 /* ofxBox2dPolygon.cpp */; };
-		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
 		E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */; };
@@ -73,7 +72,6 @@
 		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
-		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
 		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
@@ -84,6 +82,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A113EC9E1AD0319C00801B70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A113EC9A1AD0319C00801B70 /* openFrameworksLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+		A113ECA01AD031A100801B70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A113EC9A1AD0319C00801B70 /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
 		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
@@ -107,7 +119,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +195,7 @@
 		993DA2BF507B037B97E6FA16 /* b2PolygonContact.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2PolygonContact.cpp; path = ../libs/Box2D/Dynamics/Contacts/b2PolygonContact.cpp; sourceTree = SOURCE_ROOT; };
 		9B868B25E5784F27CBC75D45 /* b2Draw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Draw.cpp; path = ../libs/Box2D/Common/b2Draw.cpp; sourceTree = SOURCE_ROOT; };
 		9E4379C040A2C0896393EEAB /* b2CollidePolygon.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2CollidePolygon.cpp; path = ../libs/Box2D/Collision/b2CollidePolygon.cpp; sourceTree = SOURCE_ROOT; };
+		A113EC9A1AD0319C00801B70 /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = "<group>"; };
 		A296623A714C9F8EDB4BCA26 /* b2Body.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Body.cpp; path = ../libs/Box2D/Dynamics/b2Body.cpp; sourceTree = SOURCE_ROOT; };
 		A50D78022165A0491D5BACDE /* ofxBox2dJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBox2dJoint.cpp; path = ../src/ofxBox2dJoint.cpp; sourceTree = SOURCE_ROOT; };
 		A53D126FAA18A596595C0C6F /* b2Math.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2Math.h; path = ../libs/Box2D/Common/b2Math.h; sourceTree = SOURCE_ROOT; };
@@ -263,10 +275,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A113ECA21AD031AC00801B70 /* openFrameworksDebug.a in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
-				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
-				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -429,6 +440,14 @@
 			name = triangle;
 			sourceTree = "<group>";
 		};
+		A113EC9B1AD0319C00801B70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A113EC9F1AD0319C00801B70 /* openFrameworksDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B950FBF3AE43D9EE9BC61FF5 /* Dynamics */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +555,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				A113EC9A1AD0319C00801B70 /* openFrameworksLib.xcodeproj */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
@@ -601,6 +621,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A113ECA11AD031A100801B70 /* PBXTargetDependency */,
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
 			name = "example-ShapeTexturing";
@@ -631,6 +652,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = A113EC9B1AD0319C00801B70 /* Products */;
+					ProjectRef = A113EC9A1AD0319C00801B70 /* openFrameworksLib.xcodeproj */;
+				},
+				{
 					ProductGroup = E4328144138ABC890047C5CB /* Products */;
 					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
 				},
@@ -643,6 +668,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A113EC9F1AD0319C00801B70 /* openFrameworksDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = openFrameworksDebug.a;
+			remoteRef = A113EC9E1AD0319C00801B70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -664,7 +696,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\nmkdir -p \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\ncp -f \"$ICON_FILE\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\n";
+			shellScript = "cp -f ../../../openFrameworks/libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\nmkdir -p \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\ncp -f \"$ICON_FILE\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -735,6 +767,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A113ECA11AD031A100801B70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openFrameworks;
+			targetProxy = A113ECA01AD031A100801B70 /* PBXContainerItemProxy */;
+		};
 		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = openFrameworks;
