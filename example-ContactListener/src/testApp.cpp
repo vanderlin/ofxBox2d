@@ -95,7 +95,7 @@ void testApp::update() {
 void testApp::draw() {
 	
 	
-	for(int i=0; i<circles.size(); i++) {
+	for(size_t i=0; i<circles.size(); i++) {
 		ofFill();
 		SoundData * data = (SoundData*)circles[i].get()->getData();
 		

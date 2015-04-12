@@ -34,16 +34,16 @@ typedef struct{
 typedef struct {
 	ofVec2f a,b,c;
     void draw() {
-        ofTriangle(a,b,c);
+        ofDrawTriangle(a,b,c);
     }
 } TriangleShape;
 
 // dot product (3D) which allows vector operations in arguments
-//#define dot(u,v)   ((u).x * (v).x + (u).y * (v).y + (u).z * (v).z)
-#define norm2(v)   dot(v,v)        // norm2 = squared length of vector
-#define norm(v)    sqrt(norm2(v))  // norm = length of vector
-#define d2(u,v)    norm2(u-v)      // distance squared = norm2 of difference
-#define d(u,v)     norm(u-v)       // distance = norm of difference
+// #define dot(u,v)   ((u).x * (v).x + (u).y * (v).y + (u).z * (v).z)
+// #define norm2(v)   dot(v,v)        // norm2 = squared length of vector
+// #define norm(v)    sqrt(norm2(v))  // norm = length of vector
+// #define d2(u,v)    norm2(u-v)      // distance squared = norm2 of difference
+// #define d(u,v)     norm(u-v)       // distance = norm of difference
 
 static void simplifyDP(float tol, ofVec2f* v, int j, int k, int* mk ){
     if (k <= j+1) // there is nothing to simplify
@@ -102,16 +102,20 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 
 	int n = V.size();
 	vector <ofVec2f> sV;
-	if(n <= 2) return sV;
+	if(n <= 2)
+	{
+	  return sV;
+	}
 	sV.assign(n, ofVec2f());
 
     int    i, k, m, pv;            // misc counters
     float  tol2 = tol * tol;       // tolerance squared
-    ofVec2f * vt = new ofVec2f[n];
-	int * mk = new int[n];
-
-	memset(mk, 0, sizeof(int) * n );
-
+    
+    vector<ofVec2f> vt(n);
+	int mk[n];
+	
+	memset(mk, 0, sizeof(mk));
+	
     // STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
     vt[0] = V[0];              // start at the beginning
     for (i=k=1, pv=0; i<n; i++) {
@@ -124,8 +128,9 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 
     // STAGE 2.  Douglas-Peucker polyline simplification
     mk[0] = mk[k-1] = 1;       // mark the first and last vertices
-    simplifyDP( tol, vt, 0, k-1, mk );
-
+    
+    simplifyDP( tol, &vt[0], 0, k-1, mk );
+	
     // copy marked vertices to the output simplified polyline
     for (i=m=0; i<k; i++) {
         if (mk[i]) sV[m++] = vt[i];
@@ -133,10 +138,7 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 
 	//get rid of the unused points
 	if( m < (int)sV.size() ) sV.erase( sV.begin()+m, sV.end() );
-
-	delete [] vt;
-	delete [] mk;
-
+    
 	return sV;
 }
 
@@ -272,9 +274,9 @@ static ofRectangle getPolygonBounds(const vector <ofVec2f> & vertices) {
 
 	float farRight  = -100000;
 	float bottom    = -100000;
-
-	for (unsigned int i=0; i<vertices.size(); i++) {
-		if( vertices[i].x < bounds.x ) bounds.x = vertices[i].x;
+    
+	for (size_t i=0; i<vertices.size(); i++) {
+        if( vertices[i].x < bounds.x ) bounds.x = vertices[i].x;
 		if( vertices[i].y < bounds.y ) bounds.y = vertices[i].y;
 		if( vertices[i].x > farRight ) farRight = vertices[i].x;
 		if( vertices[i].y > bottom   ) bottom   = vertices[i].y;
@@ -321,7 +323,8 @@ static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pt
 	// now triangluate from the polyline
 	vector <Delaunay::Point>	delaunayPts;
 	Delaunay::Point				tempP;
-	for(unsigned int i=0; i<pts.size(); i++) {
+    
+	for(size_t i=0; i<pts.size(); i++) {
 		tempP[0] = pts[i].x;
 		tempP[1] = pts[i].y;
 		delaunayPts.push_back(tempP);
@@ -379,7 +382,8 @@ static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pt
 static vector <TriangleShape> triangulatePolygonWithOutline(const vector <ofPoint> &pts,
 															const ofPolyline &polyOutline) {
     ofPolyline p;
-    for (unsigned int i=0; i<pts.size(); i++) p.addVertex(pts[i]);
+    
+    for (size_t i=0; i<pts.size(); i++) p.addVertex(pts[i]);
     return triangulatePolygonWithOutline(p, polyOutline);
 }
 
@@ -401,7 +405,8 @@ static vector <TriangleShape> triangulatePolygon(const vector <ofVec2f> &ptsIn, 
 	// now triangluate from the polyline (3)
 	vector <Delaunay::Point>	delaunayPts;
 	Delaunay::Point				tempP;
-	for(unsigned int i=0; i<pts.size(); i++) {
+    
+	for(size_t i=0; i<pts.size(); i++) {
 		tempP[0] = pts[i].x;
 		tempP[1] = pts[i].y;
 		delaunayPts.push_back(tempP);
@@ -458,7 +463,8 @@ static vector <TriangleShape> triangulatePolygon(const vector <ofVec2f> &ptsIn, 
 //-------------------------------------------------------------------
 static vector <TriangleShape> triangulatePolygon(const ofPolyline &poly, bool addPointsInside=false, int amt=100) {
 	vector <ofVec2f> pts;
-	for (unsigned int i=0; i<poly.size(); i++) {
+    
+	for (size_t i=0; i<poly.size(); i++) {
 		pts.push_back(poly[i]);
 	}
 	return triangulatePolygon(pts, addPointsInside, amt);
@@ -514,7 +520,8 @@ static vector<hPoint> calcConvexHull(vector<hPoint> P) {
 static ofPolyline getConvexHull(vector<ofPoint>&linePts){
 
     vector < hPoint > ptsIn;
-    for (unsigned int i = 0; i < linePts.size(); i++){
+    
+    for (size_t i = 0; i < linePts.size(); i++){
         hPoint pt;
         pt.x = linePts[i].x;
         pt.y = linePts[i].y;
@@ -526,8 +533,8 @@ static ofPolyline getConvexHull(vector<ofPoint>&linePts){
     ptsOut =  calcConvexHull(ptsIn);
 
     ofPolyline outLine;
-
-    for (unsigned int i = 0; i < ptsOut.size(); i++){
+    
+    for (size_t i = 0; i < ptsOut.size(); i++){
         outLine.addVertex(ofPoint(ptsOut[i].x, ptsOut[i].y));
     }
 
