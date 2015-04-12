@@ -130,7 +130,7 @@ void* ofxBox2dBaseShape::setData(void*data) {
 	else {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - must have a valid body -");
 	}
-	return NULL;
+    return NULL;
 }
 
 //------------------------------------------------ 

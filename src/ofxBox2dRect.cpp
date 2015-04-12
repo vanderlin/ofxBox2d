@@ -54,13 +54,23 @@ void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h)
     alive = true;
 }
 
+// Temporary fix until OF 0.8.0
+static void rectangle(ofPath & path, const ofRectangle & r){
+	path.moveTo(r.getTopLeft());
+	path.lineTo(r.getTopRight());
+	path.lineTo(r.getBottomRight());
+	path.lineTo(r.getBottomLeft());
+	path.close();
+}
+
 //------------------------------------------------
 void ofxBox2dRect::updateMesh() {
 
     float w = getWidth();
     float h = getHeight();
     ofPath path;
-    path.rectangle(-w/2, -h/2, w, h);
+    // Temporary fix until OF 0.8.0
+    rectangle(path, ofRectangle(-w/2, -h/2, w, h));
     mesh.clear();
     mesh = path.getTessellation();
     mesh.setUsage(GL_STATIC_DRAW);
@@ -155,7 +165,8 @@ void ofxBox2dRect::draw() {
     ofPushMatrix();
     ofTranslate(ofxBox2dBaseShape::getPosition());
     ofRotate(getRotation());
-    mesh.draw(ofGetFill()==OF_FILLED?OF_MESH_FILL:OF_MESH_WIREFRAME);
+    // Temporary fix until we switch to OF 0.8.0.
+    mesh.draw();
     ofPopMatrix();
 
     /*

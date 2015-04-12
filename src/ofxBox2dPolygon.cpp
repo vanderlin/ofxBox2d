@@ -25,8 +25,8 @@ ofxBox2dPolygon::~ofxBox2dPolygon() {
 //----------------------------------------
 void ofxBox2dPolygon::clear() {
 	ofxBox2dBaseShape::destroy();
-	ofPolyline::clear();
-	mesh.clear();
+    ofPolyline::clear();
+    mesh.clear();
 }
 
 //----------------------------------------
@@ -198,7 +198,9 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
     mesh = path.getTessellation();
     mesh.setUsage(GL_STATIC_DRAW);
 
-    flagHasChanged();
+    // Temporary hack to ensure it's flagged as changed, until we
+    // switch to OF 0.8.0.
+    setClosed(isClosed());
     alive = true;
 }
 
@@ -291,7 +293,8 @@ void ofxBox2dPolygon::draw() {
     ofPushMatrix();
     ofTranslate(getPosition());
     ofRotate(getRotation(), 0, 0, 1);
-    mesh.draw(ofGetFill()==OF_OUTLINE?OF_MESH_WIREFRAME:OF_MESH_FILL);
+    // Temporary fix until we switch to OF 0.8.0.
+    mesh.draw();
     ofPopMatrix();
 	
     /*
