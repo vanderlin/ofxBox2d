@@ -5,7 +5,6 @@ void testApp::setup() {
     
  
     ofDisableAntiAliasing();
-	ofSetFrameRate(30);
 	ofBackgroundHex(0x1F2C30);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	
@@ -24,7 +23,7 @@ void testApp::setup() {
 	
 	box2d.init();
 	box2d.setGravity(0, 20);
-	box2d.setFPS(30.0);
+	box2d.setFPS(60.0);
 	box2d.registerGrabbing();
 }
 
@@ -103,7 +102,7 @@ void testApp::keyPressed(int key) {
 	
 	if(key == 'c') {
 		float r = ofRandom(4, 20);		// a random radius 4px - 20px
-		circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+		circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
         ofxBox2dCircle * circle = circles.back().get();
 		circle->setPhysics(3.0, 0.53, 0.1);
 		circle->setup(box2d.getWorld(), mouseX, mouseY, r);
@@ -112,7 +111,7 @@ void testApp::keyPressed(int key) {
 	if(key == 'b') {
 		float w = ofRandom(4, 20);	
 		float h = ofRandom(4, 20);
-        boxes.push_back(ofPtr<ofxBox2dRect>(new ofxBox2dRect));
+        boxes.push_back(shared_ptr<ofxBox2dRect>(new ofxBox2dRect));
 		ofxBox2dRect * rect = boxes.back().get();
 		rect->setPhysics(3.0, 0.53, 0.1);
 		rect->setup(box2d.getWorld(), mouseX, mouseY, w, h);

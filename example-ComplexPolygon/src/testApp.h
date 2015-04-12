@@ -26,6 +26,6 @@ public:
 	bool                                breakupIntoTriangles;
 	ofPolyline                          shape;
 	ofxBox2d                            box2d;
-	vector <ofPtr<ofxBox2dCircle> >     circles;
-	vector <ofPtr<ofxBox2dPolygon> >	polyShapes;
+	vector <shared_ptr<ofxBox2dCircle> >     circles;
+	vector <shared_ptr<ofxBox2dPolygon> >	polyShapes;
 };

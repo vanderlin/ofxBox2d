@@ -1,6 +1,6 @@
 #include "testApp.h"
 
-static bool shouldRemove(ofPtr<ofxBox2dBaseShape>shape) {
+static bool shouldRemove(shared_ptr<ofxBox2dBaseShape>shape) {
     return !ofRectangle(0, -400, ofGetWidth(), ofGetHeight()+400).inside(shape.get()->getPosition());
 }
 
@@ -14,15 +14,15 @@ void testApp::setup() {
 	
 	// Box2d
 	box2d.init();
-	box2d.setGravity(0, 20);
+	box2d.setGravity(0, 10);
 	box2d.createGround();
-	box2d.setFPS(30.0);
+	box2d.setFPS(60.0);
 	
     breakupIntoTriangles = true;
 	    
 	// load the shape we saved...
 	vector <ofPoint> pts = loadPoints("shape.dat");
-    ofPtr<ofxBox2dPolygon> poly = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+    shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
     poly.get()->addVertices(pts);
     poly.get()->setPhysics(1.0, 0.3, 0.3);
 	poly.get()->create(box2d.getWorld());
@@ -48,7 +48,7 @@ void testApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-        ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+        shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
         circle.get()->setPhysics(0.3, 0.5, 0.1);
 		circle.get()->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 20));
 		circles.push_back(circle);
@@ -103,7 +103,7 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 	
 	if(key == '1') {
-        ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+        shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
         circle.get()->setPhysics(0.3, 0.5, 0.1);
 		circle.get()->setup(box2d.getWorld(), mouseX, mouseY, ofRandom(10, 20));
 		circles.push_back(circle);
@@ -160,7 +160,7 @@ void testApp::mouseReleased(int x, int y, int button) {
         // now loop through all the trainles and make a box2d triangle
         for (int i=0; i<tris.size(); i++) {
             
-            ofPtr<ofxBox2dPolygon> triangle = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+            shared_ptr<ofxBox2dPolygon> triangle = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
             triangle.get()->addTriangle(tris[i].a, tris[i].b, tris[i].c);
             triangle.get()->setPhysics(1.0, 0.3, 0.3);
             triangle.get()->create(box2d.getWorld());
@@ -176,7 +176,7 @@ void testApp::mouseReleased(int x, int y, int button) {
         shape = shape.getResampledByCount(b2_maxPolygonVertices);
         shape = getConvexHull(shape);
         
-        ofPtr<ofxBox2dPolygon> poly = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+        shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
         poly.get()->addVertices(shape.getVertices());
         poly.get()->setPhysics(1.0, 0.3, 0.3);
         poly.get()->create(box2d.getWorld());

@@ -25,9 +25,9 @@ public:
     ofxBox2d                 box2dA;
     ofxBox2d                 box2dB;
     
-    vector <ofPtr<ofxBox2dCircle> >  circlesA;
-    vector <ofPtr<ofxBox2dCircle> >  circlesB;
-    vector <ofPtr<ofxBox2dRect> >    sharedRects;
+    vector <shared_ptr<ofxBox2dCircle> >  circlesA;
+    vector <shared_ptr<ofxBox2dCircle> >  circlesB;
+    vector <shared_ptr<ofxBox2dRect> >    sharedRects;
     
     ofRectangle boundsA;
     ofRectangle boundsB;
