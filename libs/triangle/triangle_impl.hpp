@@ -3335,7 +3335,7 @@ struct behavior *b;
 #endif /* not TRILIBRARY */
   int i, j;
 
-  int k; char workstring[FILENAMESIZE];
+  /*int k; char workstring[FILENAMESIZE];*/
 
   b->poly = b->refine = b->quality = 0;
   b->vararea = b->fixedarea = b->usertest = 0;

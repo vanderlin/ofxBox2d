@@ -95,15 +95,14 @@ void testApp::draw() {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
 	
-    if(key == '1') {
+    if(key == 'c') {
         for(int i=0; i<10; i++) {
             float r = ofRandom(2, 5);
             circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
             circles.back().get()->setPhysics(3.0, 0.53, 0.1);
             circles.back().get()->setup(box2d.getWorld(), ofGetMouseX()+ofRandom(-10, 10), ofGetMouseY()+ofRandom(-10, 10), r);
         }
-    }
-	if(key == '2') {
+    } else if(key == 'b') {
         float w = ofRandom(2, 20);
         float h = ofRandom(2, 20);
         boxes.push_back(ofPtr<ofxBox2dRect>(new ofxBox2dRect));

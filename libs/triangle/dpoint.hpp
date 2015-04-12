@@ -642,7 +642,7 @@ orientation<float>(
   double pp[2] = { p[0], p[1] };
   double qq[2] = { q[0], q[1] };
   double rr[2] = { r[0], r[1] };
-  return orient2d(pp,qq,rr);
+  return static_cast<float>(orient2d(pp,qq,rr));
 }
 
 
