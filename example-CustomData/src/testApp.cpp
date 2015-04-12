@@ -2,14 +2,16 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
+    
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
-	
+    ofSetDrawBitmapMode(OF_BITMAPMODE_MODEL);
+    
 	// Box2d
 	box2d.init();
-	box2d.setGravity(0, 20);
-	box2d.createGround();
+	box2d.setGravity(0, 0);
+	box2d.createBounds();
 	box2d.setFPS(30.0);
 	
 }
@@ -23,7 +25,7 @@ void testApp::update() {
 void testApp::draw() {
 	
 	for(int i=0; i<particles.size(); i++) {
-		particles[i].draw();
+		particles[i].get()->draw();
 	}
 	
 	string info = "FPS: "+ofToString(ofGetFrameRate(), 1);
@@ -49,10 +51,11 @@ void testApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button) {
-	CustomParticle p;
-	p.setPhysics(1.0, 0.5, 0.3);
-	p.setup(box2d.getWorld(), x, y, ofRandom(20, 60));
-	p.setupTheCustomData();
+	ofPtr<CustomParticle> p = ofPtr<CustomParticle>(new CustomParticle);
+	p.get()->setPhysics(1.0, 0.5, 0.3);
+	p.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 60));
+    p.get()->setVelocity(ofRandom(-30, 30), ofRandom(-30, 30));
+	p.get()->setupTheCustomData();
 	particles.push_back(p);
 }
 

@@ -30,20 +30,20 @@ public:
         color.setHex(hexColors[(int)ofRandom(4)]);
         
         mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
-        int   nPts  = 30;
+        int   nPts  = 8;
         float scale = r / (float)texturePtr->getWidth();
         for (int i=0; i<nPts; i++) {
             float n = ofMap(i, 0, nPts-1, 0.0, TWO_PI);
             float x = cos(n);
             float y = sin(n);
-            polyShape.addVertex(ofPoint(cx + (x * r), cy + (y * r)));
+            float d = ofRandom(-r/2, r/2);
+            polyShape.addVertex(ofPoint(cx + (x * r + d), cy + (y * r + d)));
             mesh.addTexCoord(ofPoint(0, 0));
             mesh.addTexCoord(ofPoint(x * scale, y * scale));
         }
         
         polyShape.setPhysics(0.3, 0.5, 0.1);
-    	polyShape.setAsEdge(false);
-        polyShape.create(world.getWorld());
+    	polyShape.create(world.getWorld());
 
 
     }
@@ -55,8 +55,8 @@ public:
     void draw() {
         
         mesh.clearVertices();
-        vector<ofPoint> &pts = polyShape.getVertices();
-        ofPoint center       = polyShape.getCenter();
+        vector<ofPoint> &pts = polyShape.getPoints();
+        ofPoint center       = polyShape.getCentroid2D();
         for (int i=0; i<pts.size(); i++) {
             mesh.addVertex(center);
             mesh.addVertex(pts[i]);

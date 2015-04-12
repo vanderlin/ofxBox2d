@@ -21,10 +21,10 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
 	
-	ofxBox2d						box2d;			  //	the box2d world
-	ofxBox2dCircle					anchor;			  //	fixed anchor
-	vector		<ofxBox2dCircle>	circles;		  //	default box2d circles
-	vector		<ofxBox2dJoint>		joints;			  //	joints
+	ofxBox2d                                box2d;			  //	the box2d world
+	ofxBox2dCircle                          anchor;			  //	fixed anchor
+	vector		<ofPtr<ofxBox2dCircle> >	circles;		  //	default box2d circles
+	vector		<ofPtr<ofxBox2dJoint> >		joints;			  //	joints
 	
 };
 

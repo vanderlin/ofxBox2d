@@ -54,8 +54,13 @@ public:
 			ofFill();
 			ofCircle(0, 0, radius);	
 			
+            float textSize = radius/10;
+            ofPushMatrix();
+            ofScale(textSize, textSize);
 			ofSetColor(255);
-			ofDrawBitmapString(theData->name, -5, 5);
+			ofDrawBitmapString(theData->name, -textSize/2, textSize);
+            ofPopMatrix();
+            
 			ofPopMatrix();
 		}
 	}
@@ -79,7 +84,7 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void windowResized(int w, int h);
 	
-	ofxBox2d					box2d;
-	vector <CustomParticle>		particles;
+	ofxBox2d                            box2d;
+	vector <ofPtr<CustomParticle> >		particles;
 	
 };

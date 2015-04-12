@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-#include "Box2D.h"
+#include "Box2d/Box2D.h"
 
 
 #define OFX_BOX2D_SCALE 30.0f
@@ -17,6 +17,7 @@ static b2Vec2 screenPtToWorldPt(ofVec2f p) {
 static ofPoint worldPtToscreenPt(b2Vec2 p) {
 	return ofPoint(p.x*OFX_BOX2D_SCALE, p.y*OFX_BOX2D_SCALE);
 }
+
 
 class QueryCallback : public b2QueryCallback {
 	

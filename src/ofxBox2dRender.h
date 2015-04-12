@@ -1,8 +1,8 @@
 #pragma once
 #include "ofMain.h"
-#include "Box2D.h"
+#include "Box2D/Box2D.h"
 
-class ofxBox2dRender : public b2DebugDraw {
+class ofxBox2dRender : public b2Draw {
 	
 public:
 	

@@ -41,6 +41,8 @@ void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, float 
 	a2 = body2->GetWorldCenter();
 	
 	setup(b2world, body1, body2, a1, a2, frequencyHz, damping, bCollideConnected);
+    
+    alive = true;
 }
 
 //----------------------------------------

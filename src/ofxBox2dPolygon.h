@@ -10,16 +10,15 @@ private:
 	
 	bool	bIsSimplified;
 	bool    bIsTriangulated;
-	bool	bSetAsEdge;
-	
 	float   area;
 	ofVec2f center;
-	void calculateCentroid();
-	float calculateArea();
-	
+	void    calculateCentroid();
+	float   calculateArea();
+    void    makeConvexPoly();
+
 public:
 	
-	ofPolyline				drawShape;
+	ofVboMesh				mesh;
 	ofRectangle				bounds;
 	vector <TriangleShape>	triangles;
 	
@@ -27,9 +26,8 @@ public:
 	ofxBox2dPolygon();
 	~ofxBox2dPolygon();
 	void destroy();
-	
-	void setup(b2World * b2dworld);
-
+	void clear();
+    
 	//----------------------------------------
 	void addTriangle(const ofVec2f &a, const ofVec2f &b, const ofVec2f &c);
 	void addVertexes(vector <ofVec2f> &pts);
@@ -39,14 +37,12 @@ public:
 	// Polygon helper functions
 	//----------------------------------------
 	void simplify(float tolerance=0.3);
-	void triangulate(float resampleAmt=20, int nPointsInside=-1);
-	
+    void simplifyToMaxVerts();
+	void triangulatePoly(float resampleAmt=20, int nPointsInside=-1);
+    
 	//----------------------------------------
-	ofVec2f getCenter();
-	vector <ofPoint> &getVertices();
-    float   getArea()     { return area; };
+	vector <ofPoint> &getPoints();
 	bool	isGoodShape() { return calculateArea() > 15; }
-	void	setAsEdge(bool set) { bSetAsEdge = set; }
     
 	//------------------------------------------------
 	void addAttractionPoint(ofVec2f pt, float amt=1);
@@ -55,7 +51,6 @@ public:
 	void addRepulsionForce(ofVec2f pt, float amt);
 
 	//----------------------------------------
-	void updateShape();
 	void create(b2World * b2dworld);
 	void draw();
 	

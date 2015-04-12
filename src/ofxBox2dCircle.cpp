@@ -41,6 +41,8 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 	
 	body  = b2dworld->CreateBody(&bodyDef);
 	body->CreateFixture(&fixture);
+    
+    alive = true;
 }
 void ofxBox2dCircle::setup(b2World * b2dworld, ofVec2f &pts, float radius) {
     setup(b2dworld, pts.x, pts.y, radius);
@@ -71,8 +73,8 @@ void ofxBox2dCircle::addRepulsionForce(ofVec2f pt, float amt) {
 	b2Vec2 FA = amt * DA;
 	b2Vec2 FB = amt * DB;
 	
-	body->ApplyForce(-FA, P);
-	body->ApplyForce(-FB, P);
+	body->ApplyForce(-FA, P, true);
+	body->ApplyForce(-FB, P, true);
 }
 
 //------------------------------------------------
@@ -100,8 +102,8 @@ void ofxBox2dCircle::addAttractionPoint(ofVec2f pt, float amt) {
 	b2Vec2 FA = amt * DA;
 	b2Vec2 FB = amt * DB;
 	
-	body->ApplyForce(FA, P);
-	body->ApplyForce(FB, P);
+	body->ApplyForce(FA, P, true);
+	body->ApplyForce(FB, P, true);
 }
 
 //------------------------------------------------
