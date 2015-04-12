@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-#include "Box2D/Box2D.h"
+#include "Box2D.h"
 #include "ofxBox2dUtils.h"
 
 #define BOX2D_DEFAULT_FREQ      4.0
