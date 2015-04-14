@@ -45,19 +45,19 @@ public:
 		ofEndShape();
 	}
 	void DrawSolidCircle(const b2Vec2& center, float32 radius, const b2Vec2& axis, const b2Color& color) {
-		const float32 k_segments    = 16.0f;
-		const float32 k_increment   = 2.0f * b2_pi / k_segments;
-		float32 theta			    = 0.0f;
+// 		const float32 k_segments    = 16.0f;
+// 		const float32 k_increment   = 2.0f * b2_pi / k_segments;
+// 		float32 theta			    = 0.0f;
 		float rad = (radius*scaleFactor);
 		glEnable(GL_BLEND);
 		glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		ofSetColor(255, 255, 255, 200);
 		ofFill();
-		ofCircle(center.x*scaleFactor, center.y*scaleFactor, rad);
+		ofDrawCircle(center.x*scaleFactor, center.y*scaleFactor, rad);
 	}
 	void DrawSegment(const b2Vec2& p1, const b2Vec2& p2, const b2Color& color) {
 		ofSetColor(255, 255, 255, 200);
-		ofLine(p1.x*OFX_BOX2D_SCALE, p1.y*OFX_BOX2D_SCALE, p2.x*OFX_BOX2D_SCALE, p2.y*OFX_BOX2D_SCALE);
+		ofDrawLine(p1.x*OFX_BOX2D_SCALE, p1.y*OFX_BOX2D_SCALE, p2.x*OFX_BOX2D_SCALE, p2.y*OFX_BOX2D_SCALE);
 	}
 	void DrawTransform(const b2Transform& xf) {
 	}

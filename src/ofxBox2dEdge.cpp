@@ -81,7 +81,7 @@ void ofxBox2dEdge::addVertexes(ofPolyline &polyline) {
 //----------------------------------------
 void ofxBox2dEdge::updateShape() {
     if(body==NULL) return;
-    const b2Transform& xf = body->GetTransform();
+    // const b2Transform& xf = body->GetTransform();
     ofPolyline::clear();
     mesh.clear();
     mesh.setUsage(body->GetType()==b2_staticBody?GL_STATIC_DRAW:GL_DYNAMIC_DRAW);

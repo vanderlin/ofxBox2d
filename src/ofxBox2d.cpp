@@ -465,14 +465,14 @@ void ofxBox2d::drawGround() {
 	
 	if(ground == NULL) return;
 	
-	const b2Transform& xf = ground->GetTransform();
+// 	const b2Transform& xf = ground->GetTransform();
 	for (b2Fixture* f = ground->GetFixtureList(); f; f = f->GetNext()) {
 		b2EdgeShape* edge = (b2EdgeShape*)f->GetShape();
 		if(edge) {
             
 			ofNoFill();
 			ofSetColor(120, 0, 120);
-			ofLine(worldPtToscreenPt(edge->m_vertex0), worldPtToscreenPt(edge->m_vertex1));
+			ofDrawLine(worldPtToscreenPt(edge->m_vertex0), worldPtToscreenPt(edge->m_vertex1));
 		}
 	}
 }
