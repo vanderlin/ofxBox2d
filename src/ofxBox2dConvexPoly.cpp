@@ -172,7 +172,7 @@ void ofxBox2dConvexPoly::addAttractionPoint (ofVec2f pt, float amt) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
                     b2Vec2 D = P - qt; 
                     b2Vec2 F = amt * D;
-                    body->ApplyForce(F, P);
+                    body->ApplyForce(F, P, true);
                 }                    
             }
         }
@@ -204,7 +204,7 @@ void ofxBox2dConvexPoly::addRepulsionForce(ofVec2f pt, float amt) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
                     b2Vec2 D = P - qt; 
                     b2Vec2 F = amt * D;
-                    body->ApplyForce(-F, P);
+                    body->ApplyForce(-F, P, true);
                 }                    
             }
         }
