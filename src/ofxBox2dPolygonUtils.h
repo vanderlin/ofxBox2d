@@ -34,7 +34,7 @@ typedef struct{
 typedef struct {
 	ofVec2f a,b,c;
     void draw() {
-        ofDrawTriangle(a,b,c);
+        ofTriangle(a,b,c);
     }
 } TriangleShape;
 
@@ -111,11 +111,9 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
     int    i, k, m, pv;            // misc counters
     float  tol2 = tol * tol;       // tolerance squared
     vector<ofVec2f> vt(n);
-	int mk[n];
+	vector<int> mk(n);
 	
-	memset(mk, 0, sizeof(mk));
-	
-    // STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
+	// STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
     vt[0] = V[0];              // start at the beginning
     for (i=k=1, pv=0; i<n; i++) {
         if (V[i].distanceSquared( V[pv] ) < tol2) continue;
@@ -127,7 +125,7 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 	
     // STAGE 2.  Douglas-Peucker polyline simplification
     mk[0] = mk[k-1] = 1;       // mark the first and last vertices
-    simplifyDP( tol, &vt[0], 0, k-1, mk );
+    simplifyDP( tol, &vt[0], 0, k-1, &mk[0] );
 	
     // copy marked vertices to the output simplified polyline
     for (i=m=0; i<k; i++) {
