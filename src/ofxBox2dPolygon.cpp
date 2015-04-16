@@ -198,9 +198,7 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
     mesh = path.getTessellation();
     mesh.setUsage(GL_STATIC_DRAW);
 
-    // Temporary hack to ensure it's flagged as changed, until we
-    // switch to OF 0.8.0.
-    setClosed(isClosed());
+    flagHasChanged();
     alive = true;
 }
 

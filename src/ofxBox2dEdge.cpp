@@ -55,9 +55,7 @@ void ofxBox2dEdge::create(b2World * b2dworld) {
         mesh.addVertex(ofVec3f(pts[i].x, pts[i].y));
     }
     
-    // Temporary hack to ensure it's flagged as changed, until we
-    // switch to OF 0.8.0.
-    setClosed(isClosed());
+    flagHasChanged();
     alive = true;
 }
 
@@ -69,9 +67,7 @@ void ofxBox2dEdge::addVertexes(vector <ofVec2f> &pts) {
 	for (int i=0; i<pts.size(); i++) {
         ofPolyline::addVertex(pts[i].x, pts[i].y);
 	}
-    // Temporary hack to ensure it's flagged as changed, until we
-    // switch to OF 0.8.0.
-    setClosed(isClosed());
+    flagHasChanged();
 }
 
 //----------------------------------------
@@ -79,9 +75,7 @@ void ofxBox2dEdge::addVertexes(ofPolyline &polyline) {
 	for (int i=0; i<polyline.size(); i++) {
 		ofPolyline::addVertex(polyline[i].x, polyline[i].y);
 	}
-    // Temporary hack to ensure it's flagged as changed, until we
-    // switch to OF 0.8.0.
-    setClosed(isClosed());
+    flagHasChanged();
 }
 
 //----------------------------------------
@@ -106,9 +100,7 @@ void ofxBox2dEdge::updateShape() {
     }
     
     bFlagShapeUpdate = true;
-    // Temporary hack to ensure it's flagged as changed, until we
-    // switch to OF 0.8.0.
-    setClosed(isClosed());
+    flagHasChanged();
 }
 
 //----------------------------------------
