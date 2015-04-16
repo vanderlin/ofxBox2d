@@ -293,24 +293,8 @@ void ofxBox2dPolygon::draw() {
     ofPushMatrix();
     ofTranslate(getPosition());
     ofRotate(getRotation(), 0, 0, 1);
-    // Temporary fix until we switch to OF 0.8.0.
     mesh.draw();
     ofPopMatrix();
-	
-    /*
-	const b2Transform& xf = body->GetTransform();
-    for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
-		if(poly) {
-            drawShape.clear();
-            for(int i=0; i<poly->GetVertexCount(); i++) {
-                drawShape.addVertex( worldPtToscreenPt(b2Mul(xf, poly->GetVertex(i))) );
-			}
-			if(isClosed()) drawShape.close();
-            drawShape.draw();
-		}
-	}
-	*/
 }
 
 
