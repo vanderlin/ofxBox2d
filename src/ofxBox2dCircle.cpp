@@ -141,15 +141,15 @@ void ofxBox2dCircle::draw() {
 	ofPushMatrix();
 	ofTranslate(getPosition().x, getPosition().y, 0);
 	ofRotate(getRotation(), 0, 0, 1);
-	ofDrawCircle(0, 0, radius);
+	ofCircle(0, 0, radius);
 	
     ofPushStyle();
     ofEnableAlphaBlending();
     ofSetColor(0);
-	ofDrawLine(0, 0, radius, 0);
+	ofLine(0, 0, radius, 0);
     if(isSleeping()) {
         ofSetColor(255, 100);
-        ofDrawCircle(0, 0, radius);
+        ofCircle(0, 0, radius);
     }
     ofPopStyle();
     
