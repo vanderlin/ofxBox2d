@@ -12,7 +12,7 @@ void testApp::setup() {
 	box2d.init();
 	box2d.setGravity(0, 0);
 	box2d.createBounds();
-	box2d.setFPS(30.0);
+	box2d.setFPS(60.0);
 	
 }
 
@@ -51,7 +51,7 @@ void testApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button) {
-	ofPtr<CustomParticle> p = ofPtr<CustomParticle>(new CustomParticle);
+	shared_ptr<CustomParticle> p = shared_ptr<CustomParticle>(new CustomParticle);
 	p.get()->setPhysics(1.0, 0.5, 0.3);
 	p.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 60));
     p.get()->setVelocity(ofRandom(-30, 30), ofRandom(-30, 30));

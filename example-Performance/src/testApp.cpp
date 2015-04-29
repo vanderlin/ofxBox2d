@@ -1,6 +1,6 @@
 #include "testApp.h"
 
-static bool removeShapeOffScreen(ofPtr<ofxBox2dBaseShape> shape) {
+static bool removeShapeOffScreen(shared_ptr<ofxBox2dBaseShape> shape) {
     if (!ofRectangle(0, -400, ofGetWidth(), ofGetHeight()+400).inside(shape.get()->getPosition())) {
         return true;
     }
@@ -18,7 +18,7 @@ void testApp::setup() {
 	
 	box2d.init();
 	box2d.setGravity(0, 10);
-	box2d.setFPS(30.0);
+	box2d.setFPS(60.0);
 	box2d.registerGrabbing();
     box2d.createGround();
     
@@ -48,14 +48,14 @@ void testApp::update() {
  
      
     float r = ofRandom(4, 20);
-    circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+    circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
     circles.back().get()->setPhysics(3.0, 0.53, 0.1);
     circles.back().get()->setup(box2d.getWorld(), ofGetWidth()/2+ofRandom(-100, 100), -200+ofRandom(30, 100), r);
 
 
     float w = ofRandom(4, 20);
     float h = ofRandom(4, 20);
-    boxes.push_back(ofPtr<ofxBox2dRect>(new ofxBox2dRect));
+    boxes.push_back(shared_ptr<ofxBox2dRect>(new ofxBox2dRect));
     boxes.back().get()->setPhysics(3.0, 0.53, 0.1);
     boxes.back().get()->setup(box2d.getWorld(), ofGetWidth()/2+ofRandom(-100, 100), -200+ofRandom(30, 100), w, h);
     
@@ -95,18 +95,17 @@ void testApp::draw() {
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
 	
-    if(key == '1') {
+    if(key == 'c') {
         for(int i=0; i<10; i++) {
             float r = ofRandom(2, 5);
-            circles.push_back(ofPtr<ofxBox2dCircle>(new ofxBox2dCircle));
+            circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
             circles.back().get()->setPhysics(3.0, 0.53, 0.1);
             circles.back().get()->setup(box2d.getWorld(), ofGetMouseX()+ofRandom(-10, 10), ofGetMouseY()+ofRandom(-10, 10), r);
         }
-    }
-	if(key == '2') {
+    } else if(key == 'b') {
         float w = ofRandom(2, 20);
         float h = ofRandom(2, 20);
-        boxes.push_back(ofPtr<ofxBox2dRect>(new ofxBox2dRect));
+        boxes.push_back(shared_ptr<ofxBox2dRect>(new ofxBox2dRect));
         boxes.back().get()->setPhysics(3.0, 0.53, 0.1);
         boxes.back().get()->setup(box2d.getWorld(), ofGetMouseX(), ofGetMouseY(), w, h);
     }

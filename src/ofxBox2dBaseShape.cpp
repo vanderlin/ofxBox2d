@@ -48,10 +48,10 @@ void ofxBox2dBaseShape::destroy() {
 }
 
 //----------------------------------------
-bool ofxBox2dBaseShape::shouldRemove(ofPtr<ofxBox2dBaseShape> shape) {
+bool ofxBox2dBaseShape::shouldRemove(shared_ptr<ofxBox2dBaseShape> shape) {
     return !shape.get()->alive;
 }
-bool ofxBox2dBaseShape::shouldRemoveOffScreen(ofPtr<ofxBox2dBaseShape> shape) {
+bool ofxBox2dBaseShape::shouldRemoveOffScreen(shared_ptr<ofxBox2dBaseShape> shape) {
     return !ofRectangle(0, 0, ofGetWidth(), ofGetHeight()).inside(shape.get()->getPosition());
 }
 
@@ -123,14 +123,14 @@ void* ofxBox2dBaseShape::setData(void*data) {
 	}
 	
 	if(isBody()) {
-		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - custom data set %p", data);
+		//ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - custom data set %p", data);
 		body->SetUserData(data);
 		return data;
 	}
 	else {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - must have a valid body -");
 	}
-	return NULL;
+    return NULL;
 }
 
 //------------------------------------------------ 

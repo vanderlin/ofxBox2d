@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Box2D/Box2D.h"
+#include "Box2D.h"
 #include "ofxBox2dUtils.h"
 
 class ofxBox2dBaseShape {
@@ -26,8 +26,8 @@ public:
 	bool isBody();
 	
 	//----------------------------------------
-    static bool shouldRemove(ofPtr<ofxBox2dBaseShape> shape);
-    static bool shouldRemoveOffScreen(ofPtr<ofxBox2dBaseShape> shape);
+    static bool shouldRemove(shared_ptr<ofxBox2dBaseShape> shape);
+    static bool shouldRemoveOffScreen(shared_ptr<ofxBox2dBaseShape> shape);
 	bool isFixed();
 	bool isSleeping();
     

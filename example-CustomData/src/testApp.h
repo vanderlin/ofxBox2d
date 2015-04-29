@@ -85,6 +85,6 @@ public:
 	void windowResized(int w, int h);
 	
 	ofxBox2d                            box2d;
-	vector <ofPtr<CustomParticle> >		particles;
+	vector <shared_ptr<CustomParticle> >		particles;
 	
 };

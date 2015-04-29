@@ -23,8 +23,8 @@ public:
 	
 	ofxBox2d                                box2d;			  //	the box2d world
 	ofxBox2dCircle                          anchor;			  //	fixed anchor
-	vector		<ofPtr<ofxBox2dCircle> >	circles;		  //	default box2d circles
-	vector		<ofPtr<ofxBox2dJoint> >		joints;			  //	joints
+	vector		<shared_ptr<ofxBox2dCircle> >	circles;		  //	default box2d circles
+	vector		<shared_ptr<ofxBox2dJoint> >		joints;			  //	joints
 	
 };
 

@@ -37,7 +37,7 @@ public:
 	ofSoundPlayer  sound[N_SOUNDS];
 	
 	ofxBox2d                                box2d;			  //	the box2d world
-	vector		<ofPtr<ofxBox2dCircle> >	circles;		  //	default box2d circles
+	vector		<shared_ptr<ofxBox2dCircle> >	circles;		  //	default box2d circles
 	
 };
 

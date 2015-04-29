@@ -20,8 +20,12 @@
 #ifndef REVIVER_POINT_HPP
 #define REVIVER_POINT_HPP
 
-
+#ifdef _MSC_VER
+#include <assert.h>
+#else
 #include "assert.hpp"
+#endif
+
 #include <iostream>
 #include <valarray>
 #include <stdio.h>
@@ -334,8 +338,10 @@ public:
 	inline void move2origin(){ origin<NumType, D, D-1>::eval(*this); };
 
 	dpoint(){ 
-		Assert( (D >= 1), "Dimension < 1 not allowed" ); 
-		// move2origin(); 
+		//assert( (D >= 1), "Dimension < 1 not allowed" ); 
+		if(D >= 1){
+		// move2origin();
+		}
 	};
 
 	//! 1 D Point
@@ -467,7 +473,12 @@ template < typename NumType, unsigned D >
 dpoint<NumType,D>&
 dpoint<NumType,D>::operator=(const dpoint<NumType,D> &q)
 {
-  Assert((this != &q), "Error p = p");
+#ifdef _MSC_VER
+	assert((this != &q), "Error p = p");
+#else
+	Assert((this != &q), "Error p = p");
+#endif
+
   Equate<NumType,NumType,D,D-1>::eval(*this,q);	
   return *this;
 }
@@ -537,9 +548,9 @@ operator>>(std::istream& is,dpoint<NumType,D> &p)
 	 for (int i=0; i<D; ++i)
 		 if(!(is >> p[i])){
 			 if(!is.eof()){
-				std::cerr << "Error Reading Point:" 
-					  << is << std::endl;
-				exit(1);
+//				std::cerr << "Error Reading Point:" 
+//					  << string(is) << std::endl;
+//				exit(1);
 			 }
 		 }
 		 
@@ -631,7 +642,7 @@ orientation<float>(
   double pp[2] = { p[0], p[1] };
   double qq[2] = { q[0], q[1] };
   double rr[2] = { r[0], r[1] };
-  return orient2d(pp,qq,rr);
+  return static_cast<float>(orient2d(pp,qq,rr));
 }
 
 

@@ -21,7 +21,7 @@ void testApp::setup() {
 	box2d.init();
 	box2d.setGravity(0, 10);
 	box2d.createGround();
-	box2d.setFPS(30.0);
+	box2d.setFPS(60.0);
     box2d.registerGrabbing();
     
 
@@ -33,7 +33,7 @@ void testApp::update() {
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
 		 
-        shapes.push_back(ofPtr<TextureShape>(new TextureShape));
+        shapes.push_back(shared_ptr<TextureShape>(new TextureShape));
         shapes.back().get()->setTexture(&textures[(int)ofRandom(textures.size())]);
         shapes.back().get()->setup(box2d, (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 50));
    

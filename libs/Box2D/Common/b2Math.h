@@ -27,7 +27,6 @@
 inline bool b2IsValid(float32 x)
 {
 	int32 ix = 0;
-	static_assert(sizeof(x) == sizeof(ix), "Mismatched storage type sizes");
 	memcpy(&ix, &x, sizeof(x));
 	return (ix & 0x7f800000) != 0x7f800000;
 }
@@ -36,7 +35,6 @@ inline bool b2IsValid(float32 x)
 inline float32 b2InvSqrt(float32 x)
 {
 	int32 ix = 0;
-	static_assert(sizeof(x) == sizeof(ix), "Mismatched storage type sizes");
 	memcpy(&ix, &x, sizeof(x));
 	
 	float32 xhalf = 0.5f * x;

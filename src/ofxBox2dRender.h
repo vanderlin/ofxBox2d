@@ -1,17 +1,17 @@
 #pragma once
 #include "ofMain.h"
-#include "Box2D/Box2D.h"
+#include "Box2D.h"
 
 class ofxBox2dRender : public b2Draw {
-	
+
 public:
-	
+
 	float scaleFactor;
-	
+
 	void setScale(float f) {
 		scaleFactor = f;
 	}
-	
+
 	void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color) {
 		ofSetColor(color.r*255.0, color.g*255.0, color.b*255.0);
 		ofBeginShape();
@@ -21,15 +21,15 @@ public:
 		ofEndShape();
 	}
 	void DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color) {
-		
+
 		ofSetHexColor(0xffffff);
 		ofBeginShape();
 		for(int i=0; i<vertexCount; ++i) {
 			ofVertex(vertices[i].x*OFX_BOX2D_SCALE, vertices[i].y*OFX_BOX2D_SCALE);
 		}
 		ofEndShape();
-		
-	
+
+
 	}
 	void DrawCircle(const b2Vec2& center, float32 radius, const b2Color& color) {
 		const float32 k_segments = 16.0f;
@@ -61,7 +61,7 @@ public:
 	}
 	void DrawTransform(const b2Transform& xf) {
 	}
-	
+
 	void DrawPoint(const b2Vec2& p, float32 size, const b2Color& color) {
 	}
 	void DrawString(int x, int y, const char* string, ...) {
@@ -75,5 +75,4 @@ public:
 		ofVertex(aabb->lowerBound.x, aabb->upperBound.y);
 		ofEndShape();
 	}
-	
 };

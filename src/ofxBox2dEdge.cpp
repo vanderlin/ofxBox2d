@@ -110,7 +110,8 @@ void ofxBox2dEdge::draw() {
 	if(!bFlagShapeUpdate && body->GetType() != b2_staticBody) {
         printf("Need to update shape first\n");
     }
-    mesh.draw(OF_MESH_WIREFRAME);
+    // Temporary fix until we switch to OF 0.8.0.
+    mesh.draw();
     //ofPolyline::draw();
     bFlagShapeUpdate = false;
 }
