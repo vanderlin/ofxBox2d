@@ -53,11 +53,11 @@ public:
 		glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		ofSetColor(255, 255, 255, 200);
 		ofFill();
-		ofDrawCircle(center.x*scaleFactor, center.y*scaleFactor, rad);
+		ofCircle(center.x*scaleFactor, center.y*scaleFactor, rad);
 	}
 	void DrawSegment(const b2Vec2& p1, const b2Vec2& p2, const b2Color& color) {
 		ofSetColor(255, 255, 255, 200);
-		ofDrawLine(p1.x*OFX_BOX2D_SCALE, p1.y*OFX_BOX2D_SCALE, p2.x*OFX_BOX2D_SCALE, p2.y*OFX_BOX2D_SCALE);
+		ofLine(p1.x*OFX_BOX2D_SCALE, p1.y*OFX_BOX2D_SCALE, p2.x*OFX_BOX2D_SCALE, p2.y*OFX_BOX2D_SCALE);
 	}
 	void DrawTransform(const b2Transform& xf) {
 	}
