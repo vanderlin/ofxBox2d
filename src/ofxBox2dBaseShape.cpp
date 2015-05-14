@@ -90,6 +90,10 @@ void ofxBox2dBaseShape::create() {}
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setBounce(float val) {
 	bounce = val;
+	for (b2Fixture* f= body->GetFixtureList(); f; f = f->GetNext())
+	{
+	  f->SetRestitution(val);
+	}
 }
 
 //------------------------------------------------ 
