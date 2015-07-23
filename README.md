@@ -49,16 +49,4 @@ openframeworks/addons/ofxBox2d
 
 Compatibility
 ------------
-ofxBox2d is developed against the current version of OpenFramewroks.
-
-If you are using a stable version (007, 0071, ...) of OpenFrameworks then you want to use a git tag of ofxBox2d for that version. You can select the tag in the Github "Current Branch" menu or clone and check it out using git.
-
-For example, the following commands will clone ofxBox2d and switch to the OF 008 tagged version:
-<pre>
-git clone git://github.com/vanderlin/ofxBox2d.git
-cd ofxBox2d
-git checkout 008
-</pre>
-
-
-
+The `master` branch is compatible with [the current release of openFrameworks](http://openframeworks.cc/download/), and the `develop` branch tries to stay up to date with openFrameworks on GitHub.
