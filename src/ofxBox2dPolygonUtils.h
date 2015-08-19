@@ -100,45 +100,21 @@ static void simplifyDP(float tol, ofVec2f* v, int j, int k, int* mk ){
 // needs simplifyDP which is above
 static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 
-	int n = V.size();
-	vector <ofVec2f> sV;
-	if(n <= 2)
-	{
-	  return sV;
+	ofPolyline poly;
+	for (int i = 0; i < V.size(); i++) {
+		ofVec2f & point = V[i];
+		poly.addVertex(point);
 	}
-	sV.assign(n, ofVec2f());
+	poly.simplify(tol);
 
-    int    i, k, m, pv;            // misc counters
-    float  tol2 = tol * tol;       // tolerance squared
-    
-    vector<ofVec2f> vt(n);
-	int mk[n];
-	
-	memset(mk, 0, sizeof(mk));
-	
-    // STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
-    vt[0] = V[0];              // start at the beginning
-    for (i=k=1, pv=0; i<n; i++) {
-        if (V[i].squareDistance( V[pv] ) < tol2) continue;
-        vt[k++] = V[i];
-        pv = i;
-    }
-    if (pv < n-1) vt[k++] = V[n-1];      // finish at the end
+	vector<ofVec2f> points;
+	int numOfPoints = poly.getVertices().size();
+	for (int i = 0; i < numOfPoints; i++) {
+		ofVec3f & point = poly.getVertices()[i];
+		points.push_back(point);
+	}
 
-    // STAGE 2.  Douglas-Peucker polyline simplification
-    mk[0] = mk[k-1] = 1;       // mark the first and last vertices
-    
-    simplifyDP( tol, &vt[0], 0, k-1, mk );
-	
-    // copy marked vertices to the output simplified polyline
-    for (i=m=0; i<k; i++) {
-        if (mk[i]) sV[m++] = vt[i];
-    }
-
-	//get rid of the unused points
-	if( m < (int)sV.size() ) sV.erase( sV.begin()+m, sV.end() );
-    
-	return sV;
+	return points;
 }
 
 //-------------------------------------------------------------------
