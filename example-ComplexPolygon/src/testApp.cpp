@@ -1,7 +1,7 @@
 #include "testApp.h"
 
-static bool shouldRemove(ofPtr<ofxBox2dBaseShape>shape) {
-    return !ofRectangle(0, -400, ofGetWidth(), ofGetHeight()+400).inside(shape.get()->getPosition());
+static bool shouldRemove(shared_ptr<ofxBox2dBaseShape>shape) {
+    return !ofRectangle(0, -400, ofGetWidth(), ofGetHeight()+400).inside(shape->getPosition());
 }
 
 //--------------------------------------------------------------
@@ -14,7 +14,7 @@ void testApp::setup() {
 	
 	// Box2d
 	box2d.init();
-	box2d.setGravity(0, 20);
+	box2d.setGravity(0, 10);
 	box2d.createGround();
 	box2d.setFPS(30.0);
 	
@@ -22,10 +22,11 @@ void testApp::setup() {
 	    
 	// load the shape we saved...
 	vector <ofPoint> pts = loadPoints("shape.dat");
-    ofPtr<ofxBox2dPolygon> poly = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
-    poly.get()->addVertices(pts);
-    poly.get()->setPhysics(1.0, 0.3, 0.3);
-	poly.get()->create(box2d.getWorld());
+    shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+    poly->addVertices(pts);
+    poly->setPhysics(1.0, 0.3, 0.3);
+    poly->triangulatePoly();
+    poly->create(box2d.getWorld());
 	polyShapes.push_back(poly);
 	
 }
@@ -48,9 +49,9 @@ void testApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-        ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
-        circle.get()->setPhysics(0.3, 0.5, 0.1);
-		circle.get()->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 20));
+        shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+        circle->setPhysics(0.3, 0.5, 0.1);
+		circle->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 20));
 		circles.push_back(circle);
 	}
 	
@@ -70,7 +71,7 @@ void testApp::draw() {
 	for (int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xc0dd3b);
-		circles[i].get()->draw();
+		circles[i]->draw();
 	}
 	
 	ofSetHexColor(0x444342);
@@ -80,9 +81,9 @@ void testApp::draw() {
 	ofSetHexColor(0x444342);
 	ofNoFill();
 	for (int i=0; i<polyShapes.size(); i++) {
-		polyShapes[i].get()->draw();
+		polyShapes[i]->draw();
         
-        ofCircle(polyShapes[i].get()->getPosition(), 3);
+        ofCircle(polyShapes[i]->getPosition(), 3);
 	}	
     
 	
@@ -103,9 +104,9 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 	
 	if(key == '1') {
-        ofPtr<ofxBox2dCircle> circle = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
-        circle.get()->setPhysics(0.3, 0.5, 0.1);
-		circle.get()->setup(box2d.getWorld(), mouseX, mouseY, ofRandom(10, 20));
+        shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+        circle->setPhysics(0.3, 0.5, 0.1);
+		circle->setup(box2d.getWorld(), mouseX, mouseY, ofRandom(10, 20));
 		circles.push_back(circle);
 	}
     
@@ -160,29 +161,22 @@ void testApp::mouseReleased(int x, int y, int button) {
         // now loop through all the trainles and make a box2d triangle
         for (int i=0; i<tris.size(); i++) {
             
-            ofPtr<ofxBox2dPolygon> triangle = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
-            triangle.get()->addTriangle(tris[i].a, tris[i].b, tris[i].c);
-            triangle.get()->setPhysics(1.0, 0.3, 0.3);
-            triangle.get()->create(box2d.getWorld());
+            shared_ptr<ofxBox2dPolygon> triangle = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+            triangle->addTriangle(tris[i].a, tris[i].b, tris[i].c);
+            triangle->setPhysics(1.0, 0.3, 0.3);
+            triangle->create(box2d.getWorld());
 
             polyShapes.push_back(triangle);
         }
       
     }
     else {
-        
-        // create a poly shape with the max verts allowed
-        // and the get just the convex hull from the shape
-        shape = shape.getResampledByCount(b2_maxPolygonVertices);
-        shape = getConvexHull(shape);
-        
-        ofPtr<ofxBox2dPolygon> poly = ofPtr<ofxBox2dPolygon>(new ofxBox2dPolygon);
-        poly.get()->addVertices(shape.getVertices());
-        poly.get()->setPhysics(1.0, 0.3, 0.3);
-        poly.get()->create(box2d.getWorld());
+        shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+        poly->addVertices(shape.getVertices());
+        poly->setPhysics(1.0, 0.3, 0.3);
+        poly->triangulatePoly();
+        poly->create(box2d.getWorld());
         polyShapes.push_back(poly);
-        
-        
     }
     
     // done with shape clear it now

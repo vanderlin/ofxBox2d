@@ -23,8 +23,8 @@ public:
 	
     
 	ofxBox2d                            box2d;			  //	the box2d world
-	vector    <ofPtr<ofxBox2dCircle> >	circles;		  //	default box2d circles
-	vector	  <ofPtr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
+	vector    <shared_ptr<ofxBox2dCircle> >	circles;		  //	default box2d circles
+	vector	  <shared_ptr<ofxBox2dRect> >	boxes;			  //	defalut box2d rects
 	
 };
 

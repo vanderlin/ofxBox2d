@@ -12,7 +12,7 @@ void testApp::setup() {
 	box2d.init();
 	box2d.setGravity(0, 30);
 	box2d.createGround();
-	box2d.setFPS(30.0);
+	box2d.setFPS(60.0);
 	
 	
 	// load the lines we saved...
@@ -29,7 +29,7 @@ void testApp::setup() {
 	for (int i=0; i<strLines.size(); i++) {
 		vector <string> pts = ofSplitString(strLines[i], ",");
 		if(pts.size() > 0) {
-			ofPtr <ofxBox2dEdge> edge = ofPtr<ofxBox2dEdge>(new ofxBox2dEdge);
+			shared_ptr <ofxBox2dEdge> edge = shared_ptr<ofxBox2dEdge>(new ofxBox2dEdge);
 			for (int j=0; j<pts.size(); j+=2) {
 				if(pts[j].size() > 0) {
 					float x = ofToFloat(pts[j]);
@@ -49,7 +49,7 @@ void testApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-		ofPtr<ofxBox2dCircle> c = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
 		c.get()->setPhysics(0.2, 0.2, 0.002);
 		c.get()->setup(box2d.getWorld(), ofRandom(20, 50), -20, ofRandom(3, 10));
         c.get()->setVelocity(0, 15); // shoot them down!
@@ -94,7 +94,7 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 	
 	if(key == '1') {
-        ofPtr<ofxBox2dCircle> c = ofPtr<ofxBox2dCircle>(new ofxBox2dCircle);
+        shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
 		c.get()->setPhysics(1, 0.5, 0.5);
 		c.get()->setup(box2d.getWorld(), mouseX, mouseY, 10);
 		circles.push_back(c);
@@ -141,7 +141,7 @@ void testApp::mousePressed(int x, int y, int button) {
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button) {
 	
-    ofPtr <ofxBox2dEdge> edge = ofPtr<ofxBox2dEdge>(new ofxBox2dEdge);
+    shared_ptr <ofxBox2dEdge> edge = shared_ptr<ofxBox2dEdge>(new ofxBox2dEdge);
 	lines.back().simplify();
 	
 	for (int i=0; i<lines.back().size(); i++) {

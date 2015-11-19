@@ -25,5 +25,5 @@ public:
     vector <ofImage> textures;
 
     // a vector of all the texture shapes
-    vector <ofPtr<TextureShape> > shapes;
+    vector <shared_ptr<TextureShape> > shapes;
 };

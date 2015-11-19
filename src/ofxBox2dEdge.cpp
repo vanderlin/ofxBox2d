@@ -81,7 +81,7 @@ void ofxBox2dEdge::addVertexes(ofPolyline &polyline) {
 //----------------------------------------
 void ofxBox2dEdge::updateShape() {
     if(body==NULL) return;
-    const b2Transform& xf = body->GetTransform();
+    // const b2Transform& xf = body->GetTransform();
     ofPolyline::clear();
     mesh.clear();
     mesh.setUsage(body->GetType()==b2_staticBody?GL_STATIC_DRAW:GL_DYNAMIC_DRAW);
@@ -110,7 +110,8 @@ void ofxBox2dEdge::draw() {
 	if(!bFlagShapeUpdate && body->GetType() != b2_staticBody) {
         printf("Need to update shape first\n");
     }
-    mesh.draw(OF_MESH_WIREFRAME);
+    // Temporary fix until we switch to OF 0.8.0.
+    mesh.draw();
     //ofPolyline::draw();
     bFlagShapeUpdate = false;
 }

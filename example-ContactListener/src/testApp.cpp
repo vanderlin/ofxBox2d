@@ -10,7 +10,7 @@ void testApp::setup() {
     box2d.enableEvents();   // <-- turn on the event listener
 	box2d.setGravity(0, 10);
 	box2d.createGround();
-	box2d.setFPS(30.0);
+	box2d.setFPS(60.0);
 	box2d.registerGrabbing();
 	
 	// register the listener so that we get the events
@@ -76,7 +76,7 @@ void testApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 50) == 0) {
-		ofPtr <ofxBox2dCircle> c = ofPtr <ofxBox2dCircle>(new ofxBox2dCircle);
+		shared_ptr <ofxBox2dCircle> c = shared_ptr <ofxBox2dCircle>(new ofxBox2dCircle);
 		c.get()->setPhysics(1, 0.5, 0.9);
 		c.get()->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-30, 30), -20, ofRandom(20, 50));
 		
@@ -95,7 +95,7 @@ void testApp::update() {
 void testApp::draw() {
 	
 	
-	for(int i=0; i<circles.size(); i++) {
+	for(size_t i=0; i<circles.size(); i++) {
 		ofFill();
 		SoundData * data = (SoundData*)circles[i].get()->getData();
 		
@@ -136,7 +136,7 @@ void testApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button) {
-    ofPtr <ofxBox2dCircle> c = ofPtr <ofxBox2dCircle>(new ofxBox2dCircle);
+    shared_ptr <ofxBox2dCircle> c = shared_ptr <ofxBox2dCircle>(new ofxBox2dCircle);
     c.get()->setPhysics(1, 0.5, 0.9);
     c.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 50));
     

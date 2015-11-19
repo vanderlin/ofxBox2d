@@ -25,7 +25,7 @@ ofxBox2dPolygon::~ofxBox2dPolygon() {
 //----------------------------------------
 void ofxBox2dPolygon::clear() {
 	ofxBox2dBaseShape::destroy();
-    ofxBox2dPolygon::clear();
+    ofPolyline::clear();
     mesh.clear();
 }
 
@@ -49,14 +49,14 @@ void ofxBox2dPolygon::addTriangle(const ofVec2f &a, const ofVec2f &b, const ofVe
 */
 //----------------------------------------
 void ofxBox2dPolygon::addVertexes(vector <ofVec2f> &pts) {
-	for (int i=0; i<pts.size(); i++) {
+	for (size_t i=0; i<pts.size(); i++) {
 		addVertex(pts[i].x, pts[i].y);
 	}
 }
 
 //----------------------------------------
 void ofxBox2dPolygon::addVertexes(ofPolyline &polyline) {
-	for (int i=0; i<polyline.size(); i++) {
+	for (size_t i=0; i<polyline.size(); i++) {
 		addVertex(polyline[i].x, polyline[i].y);
 	}
 }
@@ -105,7 +105,7 @@ void ofxBox2dPolygon::triangulatePoly(float resampleAmt, int nPointsInside) {
 		if(wasClosed) ofPolyline::setClosed(wasClosed);
         
 		// now add back into polyshape
-		for (int i=0; i<newPoly.size(); i++) {
+		for (size_t i=0; i<newPoly.size(); i++) {
 			addVertex(newPoly[i]);
 		}
 	}
@@ -124,7 +124,7 @@ void ofxBox2dPolygon::makeConvexPoly() {
 //----------------------------------------
 void ofxBox2dPolygon::create(b2World * b2dworld) {
 
-	if(size() <= 3) {
+	if(size() < 3) {
 		ofLog(OF_LOG_NOTICE, "need at least 3 points: %i\n", (int)size());
 		return;	
 	}
@@ -146,7 +146,7 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
 		b2Vec2			verts[3];
 		
 		ofVec2f a, b, c;
-		for (int i=0; i<triangles.size(); i++) {
+		for (size_t i=0; i<triangles.size(); i++) {
 			
 			a = triangles[i].a;
 			b = triangles[i].b;
@@ -190,7 +190,7 @@ void ofxBox2dPolygon::create(b2World * b2dworld) {
     mesh.clear();
     ofPath path;
     ofPoint center = getCentroid2D();
-    for (int i=0; i<pts.size(); i++) {
+    for (size_t i=0; i<pts.size(); i++) {
         ofPoint p(pts[i].x, pts[i].y);
         p -= center;
         path.lineTo(p);
@@ -259,23 +259,25 @@ void ofxBox2dPolygon::addRepulsionForce(ofVec2f pt, float amt) {
 
 //----------------------------------------
 vector <ofPoint>& ofxBox2dPolygon::getPoints() {
+    
+    if(body != NULL) {
 	
-    if(body == NULL) {
-		return ofPolyline::getVertices();
-	}
-	bool wasClosed = isClosed();
-	const b2Transform& xf = body->GetTransform();
-    ofPolyline::clear();
-    ofPolyline::setClosed(wasClosed);
-	for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
-		if(poly) {
-            for(int i=0; i<poly->GetVertexCount(); i++) {
-                ofPolyline::addVertex( worldPtToscreenPt(b2Mul(xf, poly->GetVertex(i))) );
+		const b2Transform& xf = body->GetTransform();
+	
+		for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
+			b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
+		
+			if(poly) {
+				ofPolyline::clear();
+				for(int i=0; i<poly->GetVertexCount(); i++) {
+					b2Vec2 pt = b2Mul(xf, poly->GetVertex(i));
+					ofPolyline::addVertex(pt.x*OFX_BOX2D_SCALE, pt.y*OFX_BOX2D_SCALE);
+				}
+				if(isClosed()) ofPolyline::close();
 			}
-			if(isClosed()) ofPolyline::close();
 		}
 	}
+
     return ofPolyline::getVertices();
 }
 
@@ -289,23 +291,8 @@ void ofxBox2dPolygon::draw() {
     ofPushMatrix();
     ofTranslate(getPosition());
     ofRotate(getRotation(), 0, 0, 1);
-    mesh.draw(ofGetFill()==OF_OUTLINE?OF_MESH_WIREFRAME:OF_MESH_FILL);
+    mesh.draw();
     ofPopMatrix();
-	
-    /*
-	const b2Transform& xf = body->GetTransform();
-    for (b2Fixture * f = body->GetFixtureList(); f; f = f->GetNext()) {
-		b2PolygonShape * poly = (b2PolygonShape*)f->GetShape();
-		if(poly) {
-            drawShape.clear();
-            for(int i=0; i<poly->GetVertexCount(); i++) {
-                drawShape.addVertex( worldPtToscreenPt(b2Mul(xf, poly->GetVertex(i))) );
-			}
-			if(isClosed()) drawShape.close();
-            drawShape.draw();
-		}
-	}
-	*/
 }
 
 

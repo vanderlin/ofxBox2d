@@ -37,12 +37,19 @@ ofxBox2d::~ofxBox2d() {
 	}
 #endif
     if(world) {
-            for (b2Body* f = world->GetBodyList(); f; f = f->GetNext()) {
-                world->DestroyBody(f);
-            }
-            for (b2Joint* f = world->GetJointList(); f; f = f->GetNext()) {
-                world->DestroyJoint(f);
-            }
+        // Fix from: https://github.com/vanderlin/ofxBox2d/issues/62
+        b2Body* f = world->GetBodyList();
+        while (f) {
+            b2Body* next = f->GetNext();
+            world->DestroyBody(f);
+            f = next;
+        }
+        b2Joint* j = world->GetJointList();
+        while (j) {
+            b2Joint* next = j->GetNext();
+            world->DestroyJoint(j);
+            j = next;
+        }
         /*
         // This is not safe...
         delete world;
@@ -465,7 +472,7 @@ void ofxBox2d::drawGround() {
 	
 	if(ground == NULL) return;
 	
-	const b2Transform& xf = ground->GetTransform();
+// 	const b2Transform& xf = ground->GetTransform();
 	for (b2Fixture* f = ground->GetFixtureList(); f; f = f->GetNext()) {
 		b2EdgeShape* edge = (b2EdgeShape*)f->GetShape();
 		if(edge) {

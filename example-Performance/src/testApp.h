@@ -23,8 +23,8 @@ public:
     ofxBox2d                                box2d;            //    world
     ofxBox2dCircle                          ground;           //    ground
     ofVboMesh                               groundMesh;        //    ground mesh
-    vector		<ofPtr<ofxBox2dCircle> >    circles;		  //	default box2d circles
-	vector		<ofPtr<ofxBox2dRect> >		boxes;			  //	defalut box2d rects
+    vector		<shared_ptr<ofxBox2dCircle> >    circles;		  //	default box2d circles
+	vector		<shared_ptr<ofxBox2dRect> >		boxes;			  //	defalut box2d rects
 	   
 	
 };

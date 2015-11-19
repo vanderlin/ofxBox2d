@@ -232,7 +232,7 @@
 /* If yours is not a Unix system, define the NO_TIMER compiler switch to     */
 /*   remove the Unix-specific timing code.                                   */
 
-#ifdef TARGET_WIN32
+#ifdef _WIN32
 	#define NO_TIMER
 #endif
 
@@ -364,7 +364,11 @@
 #include <string.h>
 #include <math.h>
 #ifndef NO_TIMER
+#ifdef _MSC_VER
+#include <time.h>
+#else
 #include <sys/time.h>
+#endif
 #endif /* not NO_TIMER */
 #ifdef CPU86
 #include <float.h>
@@ -3331,7 +3335,7 @@ struct behavior *b;
 #endif /* not TRILIBRARY */
   int i, j;
 
-  int k; char workstring[FILENAMESIZE];
+  /*int k; char workstring[FILENAMESIZE];*/
 
   b->poly = b->refine = b->quality = 0;
   b->vararea = b->fixedarea = b->usertest = 0;

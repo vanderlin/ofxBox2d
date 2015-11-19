@@ -24,8 +24,10 @@ ofxBox2dBaseShape::ofxBox2dBaseShape() {
 
 //----------------------------------------
 ofxBox2dBaseShape::~ofxBox2dBaseShape() {
-    ofLog(OF_LOG_VERBOSE, "~ofxBox2dBaseShape(%p)\n", body);
-    destroy();
+	ofLog(OF_LOG_VERBOSE, "~ofxBox2dBaseShape(%p)\n", body);
+	if (isBody()) {
+		destroy();
+	}
 }
 
 //------------------------------------------------
@@ -46,18 +48,16 @@ void ofxBox2dBaseShape::destroy() {
 }
 
 //----------------------------------------
-bool ofxBox2dBaseShape::shouldRemove(ofPtr<ofxBox2dBaseShape> shape) {
+bool ofxBox2dBaseShape::shouldRemove(shared_ptr<ofxBox2dBaseShape> shape) {
     return !shape.get()->alive;
 }
-bool ofxBox2dBaseShape::shouldRemoveOffScreen(ofPtr<ofxBox2dBaseShape> shape) {
+bool ofxBox2dBaseShape::shouldRemoveOffScreen(shared_ptr<ofxBox2dBaseShape> shape) {
     return !ofRectangle(0, 0, ofGetWidth(), ofGetHeight()).inside(shape.get()->getPosition());
 }
 
 //----------------------------------------
 bool ofxBox2dBaseShape::isBody() {
 	if (body == NULL) {
-		//cout << __FILE__ << __func__ << endl;
-		ofLog(OF_LOG_ERROR, "ofxBox2dBaseShape:: - body is not defined -");
 		return false;
 	}
 	return true;
@@ -123,13 +123,14 @@ void* ofxBox2dBaseShape::setData(void*data) {
 	}
 	
 	if(isBody()) {
-		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - custom data set %p", data);
+		//ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - custom data set %p", data);
 		body->SetUserData(data);
 		return data;
 	}
 	else {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - must have a valid body -");
 	}
+    return NULL;
 }
 
 //------------------------------------------------ 

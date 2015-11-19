@@ -28,8 +28,8 @@ public:
 	ofPolyline                              groundLine;
 	ofxBox2dEdge                            ground;
     
-    vector		<ofPtr<ofxBox2dCircle> >	circles;		  //	default box2d circles
-	vector		<ofPtr<ofxBox2dRect> >      boxes;			  //	defalut box2d rects
+    vector		<shared_ptr<ofxBox2dCircle> >	circles;		  //	default box2d circles
+	vector		<shared_ptr<ofxBox2dRect> >      boxes;			  //	defalut box2d rects
 	
 	
 };

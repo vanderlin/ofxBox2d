@@ -26,8 +26,8 @@ public:
 	bool isBody();
 	
 	//----------------------------------------
-    static bool shouldRemove(ofPtr<ofxBox2dBaseShape> shape);
-    static bool shouldRemoveOffScreen(ofPtr<ofxBox2dBaseShape> shape);
+    static bool shouldRemove(shared_ptr<ofxBox2dBaseShape> shape);
+    static bool shouldRemoveOffScreen(shared_ptr<ofxBox2dBaseShape> shape);
 	bool isFixed();
 	bool isSleeping();
     
