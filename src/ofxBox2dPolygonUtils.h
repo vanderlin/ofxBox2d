@@ -112,10 +112,10 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
     float  tol2 = tol * tol;       // tolerance squared
     
     vector<ofVec2f> vt(n);
-	//int mk[n];
-	vector<int> mk(n, 0);
+
+	int* mk = new int[n]; //dynamically allocate a new int array
 	
-	//memset(mk, 0, sizeof(mk));
+	memset(mk, 0, n * sizeof(int));
 	
     // STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
     vt[0] = V[0];              // start at the beginning
@@ -129,7 +129,7 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
     // STAGE 2.  Douglas-Peucker polyline simplification
     mk[0] = mk[k-1] = 1;       // mark the first and last vertices
     
-    simplifyDP( tol, &vt[0], 0, k-1, &mk[0] );
+    simplifyDP( tol, &vt[0], 0, k-1, mk );
 	
     // copy marked vertices to the output simplified polyline
     for (i=m=0; i<k; i++) {
@@ -138,7 +138,7 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 
 	//get rid of the unused points
 	if( m < (int)sV.size() ) sV.erase( sV.begin()+m, sV.end() );
-    
+	delete [] mk;
 	return sV;
 }
 
