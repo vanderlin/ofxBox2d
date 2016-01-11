@@ -2,8 +2,8 @@
  *  ofxBox2dRevoluteJoint.cpp
  *  jointExample
  *
- *  Created by Nick Hardeman on 1/19/11.
- *  Copyright 2011 Nick Hardeman. All rights reserved.
+ *  Created by Neil Mendoza on 1/10/16.
+ *  Copyright 2016 Neil Mendoza. All rights reserved.
  *
  */
 
@@ -42,7 +42,7 @@ void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2
 		return;
 	}
 	
-    b2Vec2 a;//, a2;
+    b2Vec2 a;
 	a = body1->GetWorldCenter();
 	
 	setup(b2world, body1, body2, a, enableLimit, lowerAngle, upperAngle, bCollideConnected);
@@ -170,47 +170,6 @@ bool ofxBox2dRevoluteJoint::getEnableLimit() const
         return false;
     }
 }
-
-/*
-//----------------------------------------
-void ofxBox2dRevoluteJoint::setLength(float len) {
-	if(joint) {
-		joint->SetLength((float32)b2dNum(len));
-	}
-}
-float ofxBox2dRevoluteJoint::getLength() {
-	if(joint) {
-		return (float)joint->GetLength();
-	}
-	return 0;
-}
-
-//----------------------------------------
-void ofxBox2dRevoluteJoint::setFrequency(float freq) {
-	if(joint) {
-		joint->SetFrequency((float32)freq);
-	}
-}
-float ofxBox2dRevoluteJoint::getFrequency() {
-	if(joint) {
-		return (float)joint->GetFrequency();
-	}
-	return 0;
-}
-
-//----------------------------------------
-void ofxBox2dRevoluteJoint::setDamping(float ratio) {
-	if(joint) {
-		joint->SetDampingRatio((float32)ratio);
-	}
-}
-float ofxBox2dRevoluteJoint::getDamping() {
-	if(joint) {
-		return (float)joint->GetDampingRatio();
-	}
-	return 0;
-}
-*/
 
 //----------------------------------------
 ofVec2f ofxBox2dRevoluteJoint::getReactionForce(float inv_dt) const {
