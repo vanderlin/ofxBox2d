@@ -8,7 +8,6 @@ class ofxBox2dRevoluteJoint {
 public:
 	b2World			*	world;
 	b2RevoluteJoint *	joint;
-	int					jointType;
 	bool				alive;
 	
 	//----------------------------------------
