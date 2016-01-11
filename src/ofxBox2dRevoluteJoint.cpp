@@ -17,15 +17,15 @@ ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint() {
 }
 
 //----------------------------------------
-ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, float lowerAngle, float upperAngle, bool bCollideConnected) {
+ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit, float lowerAngle, float upperAngle, bool bCollideConnected) {
 	ofxBox2dRevoluteJoint();
-	setup(b2world, body1, body2, lowerAngle, upperAngle, bCollideConnected);
+	setup(b2world, body1, body2, enableLimit, lowerAngle, upperAngle, bCollideConnected);
 }
 
 //----------------------------------------
-ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, float lowerAngle, float upperAngle, bool bCollideConnected) {
+ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, bool enableLimit, float lowerAngle, float upperAngle, bool bCollideConnected) {
 	ofxBox2dRevoluteJoint();
-	setup(b2world, body1, body2, anchor, lowerAngle, upperAngle, bCollideConnected);
+	setup(b2world, body1, body2, anchor, enableLimit, lowerAngle, upperAngle, bCollideConnected);
 }
 
 //----------------------------------------
@@ -35,7 +35,7 @@ ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2RevoluteJointDe
 }
 
 //----------------------------------------
-void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, float lowerAngle, float upperAngle, bool bCollideConnected) {
+void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit, float lowerAngle, float upperAngle, bool bCollideConnected) {
 	
 	if(body1 == NULL || body2 == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dRevoluteJoint :: setup : - box2d body is NULL -");
@@ -44,15 +44,14 @@ void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2
 	
     b2Vec2 a;//, a2;
 	a = body1->GetWorldCenter();
-	//a2 = body2->GetWorldCenter();
 	
-	setup(b2world, body1, body2, a, lowerAngle, upperAngle, bCollideConnected);
+	setup(b2world, body1, body2, a, enableLimit, lowerAngle, upperAngle, bCollideConnected);
     
     alive = true;
 }
 
 //----------------------------------------
-void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, float lowerAngle, float upperAngle, bool bCollideConnected) {
+void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, bool enableLimit, float lowerAngle, float upperAngle, bool bCollideConnected) {
 
 	if(body1 == NULL || body2 == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dRevoluteJoint :: setup : - box2d body is NULL -");
@@ -64,6 +63,7 @@ void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2
 	jointDef.collideConnected	= bCollideConnected;
 	jointDef.lowerAngle	= lowerAngle;
 	jointDef.upperAngle = upperAngle;
+    jointDef.enableLimit = enableLimit;
 	
     setup(b2world, jointDef);
 }

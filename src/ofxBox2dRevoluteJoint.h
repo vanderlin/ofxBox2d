@@ -16,14 +16,14 @@ public:
 	
 	//----------------------------------------
 	ofxBox2dRevoluteJoint();
-	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, float lowerAngle=-HALF_PI, float upperAngle=HALF_PI, bool bCollideConnected=true);
-	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, float lowerAngle=-HALF_PI, float upperAngle=HALF_PI, bool bCollideConnected=true);
+	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit = false, float lowerAngle = -.25f * PI, float upperAngle = .25f * PI, bool bCollideConnected = true);
+    ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, bool enableLimit = false, float lowerAngle = -.25f * PI, float upperAngle = .25f * PI, bool bCollideConnected = true);
     ofxBox2dRevoluteJoint(b2World* b2world, b2RevoluteJointDef jointDef);
 	
 	//----------------------------------------
 	void setWorld(b2World * w);
-	void setup(b2World* b2world, b2Body* body1, b2Body* body2, float lowerAngle=-HALF_PI, float upperAngle=HALF_PI, bool bCollideConnected=true);
-	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, float lowerAngle=-HALF_PI, float upperAngle=HALF_PI, bool bCollideConnected=true);
+	void setup(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit = false, float lowerAngle = -.25f * PI, float upperAngle = .25f * PI, bool bCollideConnected = true);
+	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor, bool enableLimit = false, float lowerAngle = -.25f * PI, float upperAngle = .25f * PI, bool bCollideConnected = true);
     void setup(b2World* b2world, b2RevoluteJointDef jointDef);
 	
 	//----------------------------------------
