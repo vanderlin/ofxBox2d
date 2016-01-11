@@ -155,6 +155,21 @@ float ofxBox2dRevoluteJoint::getUpperAngle() const
     }
 }
 
+void ofxBox2dRevoluteJoint::setEnableLimit(bool enableLimit)
+{
+    if (joint) joint->EnableLimit(enableLimit);
+    else ofLogError() << "joint is null";
+}
+
+bool ofxBox2dRevoluteJoint::getEnableLimit() const
+{
+    if (joint) return joint->IsLimitEnabled();
+    else
+    {
+        ofLogError() << "joint is null";
+        return false;
+    }
+}
 
 /*
 //----------------------------------------

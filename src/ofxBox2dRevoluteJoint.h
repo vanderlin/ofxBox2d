@@ -36,7 +36,10 @@ public:
     
     void setUpperAngle(float upperAngle);
     float getUpperAngle() const;
-	
+    
+    void setEnableLimit(bool enableLimit);
+    bool getEnableLimit() const;
+    
 	//----------------------------------------
 	ofVec2f getReactionForce(float inv_dt) const;
 	b2Vec2  getReactionForceB2D(float inv_dt) const;
