@@ -50,7 +50,7 @@ public:
 	ofPolyline                              drawing;		  //	we draw with this first
 	ofxBox2dEdge                            edgeLine;		  //	the box2d edge/line shape (min 2 points)
 	vector		<shared_ptr<ofxBox2dCircle> >	circles;		  //	default box2d circles
-	vector		<shared_ptr<ofxBox2dRect> >		boxes;			  //	defalut box2d rects
+	vector		<shared_ptr<ofxBox2dRect> >		boxes;			  //	default box2d rects
 	vector		<shared_ptr<CustomParticle> >    customParticles;  //	this is a custom particle the extends a cirlce
 	
 	
