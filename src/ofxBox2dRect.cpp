@@ -100,6 +100,15 @@ ofPolyline& ofxBox2dRect::getRectangleShape() {
 
 }*/
 
+float ofxBox2dRect::getX() {
+	float cx  =  body->GetPosition().x * OFX_BOX2D_SCALE;
+	return cx;
+}
+float ofxBox2dRect::getY() {
+	float cy  =  body->GetPosition().y * OFX_BOX2D_SCALE;
+	return cy;
+}
+
 //------------------------------------------------
 void ofxBox2dRect::addRepulsionForce(float fx, float fy, float amt) {
 	addRepulsionForce(ofVec2f(fx,fy), amt);

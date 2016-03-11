@@ -107,6 +107,16 @@ void ofxBox2dCircle::addAttractionPoint(ofVec2f pt, float amt) {
 }
 
 //------------------------------------------------
+float ofxBox2dCircle::getX() {
+	float cx  =  body->GetPosition().x * OFX_BOX2D_SCALE;
+	return cx;
+}
+float ofxBox2dCircle::getY() {
+	float cy  =  body->GetPosition().y * OFX_BOX2D_SCALE;
+	return cy;
+}
+
+//------------------------------------------------
 float ofxBox2dCircle::getRadius() {
 	return radius;
 }
