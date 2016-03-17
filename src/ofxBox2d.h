@@ -80,6 +80,7 @@ public:
 	// ------------------------------------------------------
     void enableEvents();
     void disableEvents();
+	ofEvent <ofxBox2dContactArgs> mousePickEvent;
 	ofEvent <ofxBox2dContactArgs> contactStartEvents;
 	ofEvent <ofxBox2dContactArgs> contactEndEvents;
 	
