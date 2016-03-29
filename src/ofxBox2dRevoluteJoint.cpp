@@ -13,21 +13,21 @@ ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint() {
 }
 
 //----------------------------------------
-ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit, float lowerLimit, float upperLimit) {
+ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit, float lowerLimit, float upperLimit, bool bCollideConnected) {
 	ofxBox2dRevoluteJoint();
-	setup(b2world, body1, body2, enableLimit, lowerLimit, upperLimit);
+	setup(b2world, body1, body2, enableLimit, lowerLimit, upperLimit, bCollideConnected);
 }
 
 //----------------------------------------
-ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit, float lowerLimit, float upperLimit) {
+ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit, float lowerLimit, float upperLimit, bool bCollideConnected) {
 	ofxBox2dRevoluteJoint();
-	setup(b2world, body1, body2, anchor0, enableLimit, lowerLimit, upperLimit);
+	setup(b2world, body1, body2, anchor0, enableLimit, lowerLimit, upperLimit, bCollideConnected);
 }
 
 //----------------------------------------
-ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit, float lowerLimit, float upperLimit) {
+ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit, float lowerLimit, float upperLimit, bool bCollideConnected) {
 	ofxBox2dRevoluteJoint();
-	setup(b2world, body1, body2, anchor1, anchor2, enableLimit, lowerLimit, upperLimit);
+	setup(b2world, body1, body2, anchor1, anchor2, enableLimit, lowerLimit, upperLimit, bCollideConnected);
 }
 
 //----------------------------------------
@@ -37,7 +37,7 @@ ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2RevoluteJointDe
 }
 
 //----------------------------------------
-void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit, float lowerLimit, float upperLimit) {
+void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit, float lowerLimit, float upperLimit, bool bCollideConnected) {
 
 	if(body1 == NULL || body2 == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dRevoluteJoint :: setup : - box2d body is NULL -");
@@ -48,13 +48,13 @@ void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2
 	a1 = body1->GetWorldCenter();
 	a2 = body2->GetWorldCenter();
 
-	setup(b2world, body1, body2, a1, a2, enableLimit, lowerLimit, upperLimit);
+	setup(b2world, body1, body2, a1, a2, enableLimit, lowerLimit, upperLimit, bCollideConnected);
 
 	alive = true;
 }
 
 //----------------------------------------
-void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit, float lowerLimit, float upperLimit) {
+void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit, float lowerLimit, float upperLimit, bool bCollideConnected) {
 
 	if(body1 == NULL || body2 == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dRevoluteJoint :: setup : - box2d body is NULL -");
@@ -66,13 +66,14 @@ void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2
 	jointDef.enableLimit = enableLimit;
 	jointDef.lowerAngle = lowerLimit;
 	jointDef.upperAngle = upperLimit;
+	jointDef.collideConnected = bCollideConnected;
 
 	setup(b2world, jointDef);
 }
 
 
 //----------------------------------------
-void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit, float lowerLimit, float upperLimit) {
+void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit, float lowerLimit, float upperLimit, bool bCollideConnected) {
 
 	if (body1 == NULL || body2 == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dRevoluteJoint :: setup : - box2d body is NULL -");
@@ -89,6 +90,7 @@ void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2
 	jointDef.enableLimit = enableLimit;
 	jointDef.lowerAngle = lowerLimit;
 	jointDef.upperAngle = upperLimit;
+	jointDef.collideConnected = bCollideConnected;
 
 	setup(b2world, jointDef);
 }

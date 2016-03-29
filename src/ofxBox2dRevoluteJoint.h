@@ -17,16 +17,16 @@ public:
 
 	//----------------------------------------
 	ofxBox2dRevoluteJoint();
-	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f);
-	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f);	
-	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f);
+	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f, bool bCollideConnected=true);
+	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f, bool bCollideConnected=true);
+	ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f, bool bCollideConnected=true);
 	ofxBox2dRevoluteJoint(b2World* b2world, b2RevoluteJointDef jointDef);
 
 	//----------------------------------------
 	void setWorld(b2World * w);
-	void setup(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f);	
-	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f);
-	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f);
+	void setup(b2World* b2world, b2Body* body1, b2Body* body2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f, bool bCollideConnected=true);
+	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor0, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f, bool bCollideConnected=true);
+	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, bool enableLimit = false, float lowerLimit = -0.01f, float upperLimit = 0.01f, bool bCollideConnected=true);
 	void setup(b2World* b2world, b2RevoluteJointDef jointDef);
 
 	//----------------------------------------
