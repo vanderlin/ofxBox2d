@@ -6,7 +6,7 @@
 
 
 static float b2dNum(float f) {
-	return (float)f/OFX_BOX2D_SCALE;	
+	return (float)f/OFX_BOX2D_SCALE;
 }
 
 
@@ -19,13 +19,13 @@ static ofPoint worldPtToscreenPt(b2Vec2 p) {
 
 
 class QueryCallback : public b2QueryCallback {
-	
+
 public:
 	QueryCallback(const b2Vec2& point) {
 		m_point = point;
 		m_fixture = NULL;
 	}
-	
+
 	bool ReportFixture(b2Fixture* fixture) {
 		b2Body* body = fixture->GetBody();
 		if (body->GetType() == b2_dynamicBody)
@@ -39,11 +39,11 @@ public:
 				return false;
 			}
 		}
-		
+
 		// Continue the query.
 		return true;
 	}
-	
+
 	b2Vec2 m_point;
 	b2Fixture* m_fixture;
 };

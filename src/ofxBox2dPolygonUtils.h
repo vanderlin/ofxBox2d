@@ -14,7 +14,6 @@
 
 using namespace tpp;
 
-
 //This is for polygon/contour simplification - we use it to reduce the number of points needed in
 //representing the letters as openGL shapes - will soon be moved to ofGraphics.cpp
 
@@ -33,9 +32,9 @@ typedef struct{
 
 typedef struct {
 	ofVec2f a,b,c;
-    void draw() {
-        ofTriangle(a,b,c);
-    }
+	void draw() {
+		ofTriangle(a,b,c);
+	}
 } TriangleShape;
 
 // dot product (3D) which allows vector operations in arguments
@@ -46,53 +45,53 @@ typedef struct {
 // #define d(u,v)     norm(u-v)       // distance = norm of difference
 
 static void simplifyDP(float tol, ofVec2f* v, int j, int k, int* mk ){
-    if (k <= j+1) // there is nothing to simplify
-        return;
+	if (k <= j+1) // there is nothing to simplify
+		return;
 
-    // check for adequate approximation by segment S from v[j] to v[k]
-    int     maxi	= j;          // index of vertex farthest from S
-    float   maxd2	= 0;         // distance squared of farthest vertex
-    float   tol2	= tol * tol;  // tolerance squared
-    Segment S		= {v[j], v[k]};  // segment from v[j] to v[k]
-    ofVec2f u;
-	u				= S.P1 - S.P0;   // segment direction vector
-    double  cu		= u.dot(u);// dot(u,u);     // segment length squared
+	// check for adequate approximation by segment S from v[j] to v[k]
+	int     maxi	= j;          // index of vertex farthest from S
+	float   maxd2	= 0;         // distance squared of farthest vertex
+	float   tol2	= tol * tol;  // tolerance squared
+	Segment S   	= {v[j], v[k]};  // segment from v[j] to v[k]
+	ofVec2f u;
+	u           	= S.P1 - S.P0;   // segment direction vector
+	double  cu  	= u.dot(u);// dot(u,u);     // segment length squared
 
-    // test each vertex v[i] for max distance from S
-    // compute using the Feb 2001 Algorithm's dist_ofPoint_to_Segment()
-    // Note: this works in any dimension (2D, 3D, ...)
-    ofVec2f  w;
-    ofVec2f   Pb;                // base of perpendicular from v[i] to S
-    float  b, cw, dv2;        // dv2 = distance v[i] to S squared
+	// test each vertex v[i] for max distance from S
+	// compute using the Feb 2001 Algorithm's dist_ofPoint_to_Segment()
+	// Note: this works in any dimension (2D, 3D, ...)
+	ofVec2f  w;
+	ofVec2f   Pb;                // base of perpendicular from v[i] to S
+	float  b, cw, dv2;        // dv2 = distance v[i] to S squared
 
-    for (int i=j+1; i<k; i++){
-        // compute distance squared
-        w = v[i] - S.P0;
-        cw = w.dot(u);
-        if ( cw <= 0 ) dv2 = v[i].squareDistance( S.P0 );
-        else if ( cu <= cw ) dv2 = v[i].squareDistance( S.P1 );
-        else {
-            b = (float)(cw / cu);
-            Pb = S.P0 + u*b;
-            dv2 = v[i].squareDistance( Pb );
-        }
-        // test with current max distance squared
-        if (dv2 <= maxd2) continue;
+	for (int i=j+1; i<k; i++){
+		// compute distance squared
+		w = v[i] - S.P0;
+		cw = w.dot(u);
+		if ( cw <= 0 ) dv2 = v[i].squareDistance( S.P0 );
+		else if ( cu <= cw ) dv2 = v[i].squareDistance( S.P1 );
+		else {
+			b = (float)(cw / cu);
+			Pb = S.P0 + u*b;
+			dv2 = v[i].squareDistance( Pb );
+		}
+		// test with current max distance squared
+		if (dv2 <= maxd2) continue;
 
-        // v[i] is a new max vertex
-        maxi = i;
-        maxd2 = dv2;
-    }
-    if (maxd2 > tol2)        // error is worse than the tolerance
-    {
-        // split the polyline at the farthest vertex from S
-        mk[maxi] = 1;      // mark v[maxi] for the simplified polyline
-        // recursively simplify the two subpolylines at v[maxi]
-        simplifyDP( tol, v, j, maxi, mk );  // polyline v[j] to v[maxi]
-        simplifyDP( tol, v, maxi, k, mk );  // polyline v[maxi] to v[k]
-    }
-    // else the approximation is OK, so ignore intermediate vertices
-    return;
+		// v[i] is a new max vertex
+		maxi = i;
+		maxd2 = dv2;
+	}
+	if (maxd2 > tol2)        // error is worse than the tolerance
+	{
+		// split the polyline at the farthest vertex from S
+		mk[maxi] = 1;      // mark v[maxi] for the simplified polyline
+		// recursively simplify the two subpolylines at v[maxi]
+		simplifyDP( tol, v, j, maxi, mk );  // polyline v[j] to v[maxi]
+		simplifyDP( tol, v, maxi, k, mk );  // polyline v[maxi] to v[k]
+	}
+	// else the approximation is OK, so ignore intermediate vertices
+	return;
 }
 
 
@@ -104,37 +103,37 @@ static vector <ofVec2f> simplifyContour(vector <ofVec2f> &V, float tol) {
 	vector <ofVec2f> sV;
 	if(n <= 2)
 	{
-	  return sV;
+		 return sV;
 	}
 	sV.assign(n, ofVec2f());
 
-    int    i, k, m, pv;            // misc counters
-    float  tol2 = tol * tol;       // tolerance squared
-    
-    vector<ofVec2f> vt(n);
+	int    i, k, m, pv;            // misc counters
+	float  tol2 = tol * tol;       // tolerance squared
+
+	vector<ofVec2f> vt(n);
 
 	int* mk = new int[n]; //dynamically allocate a new int array
-	
-	memset(mk, 0, n * sizeof(int));
-	
-    // STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
-    vt[0] = V[0];              // start at the beginning
-    for (i=k=1, pv=0; i<n; i++) {
-        if (V[i].squareDistance( V[pv] ) < tol2) continue;
-        vt[k++] = V[i];
-        pv = i;
-    }
-    if (pv < n-1) vt[k++] = V[n-1];      // finish at the end
 
-    // STAGE 2.  Douglas-Peucker polyline simplification
-    mk[0] = mk[k-1] = 1;       // mark the first and last vertices
-    
-    simplifyDP( tol, &vt[0], 0, k-1, mk );
-	
-    // copy marked vertices to the output simplified polyline
-    for (i=m=0; i<k; i++) {
-        if (mk[i]) sV[m++] = vt[i];
-    }
+	memset(mk, 0, n * sizeof(int));
+
+	// STAGE 1.  Vertex Reduction within tolerance of prior vertex cluster
+	vt[0] = V[0];              // start at the beginning
+	for (i=k=1, pv=0; i<n; i++) {
+		if (V[i].squareDistance( V[pv] ) < tol2) continue;
+		vt[k++] = V[i];
+		pv = i;
+	}
+	if (pv < n-1) vt[k++] = V[n-1];      // finish at the end
+
+	// STAGE 2.  Douglas-Peucker polyline simplification
+	mk[0] = mk[k-1] = 1;       // mark the first and last vertices
+
+	simplifyDP( tol, &vt[0], 0, k-1, mk );
+
+	// copy marked vertices to the output simplified polyline
+	for (i=m=0; i<k; i++) {
+		if (mk[i]) sV[m++] = vt[i];
+	}
 
 	//get rid of the unused points
 	if( m < (int)sV.size() ) sV.erase( sV.begin()+m, sV.end() );
@@ -222,15 +221,15 @@ static float getTriangleRadius(ofVec2f v1, ofVec2f v2, ofVec2f v3) {
 //-------------------------------------------------------------------
 static ofVec2f getTriangleCenter(ofVec2f v1, ofVec2f v2, ofVec2f v3) {
 
-    float a = v2.distance(v3);
-    float b = v1.distance(v3);
-    float c = v1.distance(v2);
-    float d = a+b+c;
+	float a = v2.distance(v3);
+	float b = v1.distance(v3);
+	float c = v1.distance(v2);
+	float d = a+b+c;
 
-    float ix = ((a * v1.x) + (b * v2.x) + (c * v3.x)) / d;
-    float iy = ((a * v1.y) + (b * v2.y) + (c * v3.y)) / d;
+	float ix = ((a * v1.x) + (b * v2.x) + (c * v3.x)) / d;
+	float iy = ((a * v1.y) + (b * v2.y) + (c * v3.y)) / d;
 
-    return ofVec2f(ix, iy);
+	return ofVec2f(ix, iy);
 }
 
 
@@ -268,13 +267,13 @@ static float getTriangleArea(ofVec2f &a, ofVec2f &b, ofVec2f &c) {
 static ofRectangle getPolygonBounds(const vector <ofVec2f> & vertices) {
 	ofRectangle bounds;
 	bounds.x        = 100000;
-	bounds.y	    = 100000;
+	bounds.y        = 100000;
 	bounds.width    = 0;
 	bounds.height   = 0;
 
 	float farRight  = -100000;
 	float bottom    = -100000;
-    
+
 	for (size_t i=0; i<vertices.size(); i++) {
         if( vertices[i].x < bounds.x ) bounds.x = vertices[i].x;
 		if( vertices[i].y < bounds.y ) bounds.y = vertices[i].y;
@@ -313,8 +312,7 @@ static void addRandomPointsInside(vector <ofVec2f> & vertices, int amt=100) {
 
 
 //-------------------------------------------------------------------
-static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pts,
-															const ofPolyline &polyOutline) {
+static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pts, const ofPolyline &polyOutline) {
 
 	vector <TriangleShape> triangles;
 
@@ -322,8 +320,8 @@ static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pt
 
 	// now triangluate from the polyline
 	vector <Delaunay::Point>	delaunayPts;
-	Delaunay::Point				tempP;
-    
+	Delaunay::Point         	tempP;
+
 	for(size_t i=0; i<pts.size(); i++) {
 		tempP[0] = pts[i].x;
 		tempP[1] = pts[i].y;
@@ -379,12 +377,11 @@ static vector <TriangleShape> triangulatePolygonWithOutline(const ofPolyline &pt
 
 	return triangles;
 }
-static vector <TriangleShape> triangulatePolygonWithOutline(const vector <ofPoint> &pts,
-															const ofPolyline &polyOutline) {
-    ofPolyline p;
-    
-    for (size_t i=0; i<pts.size(); i++) p.addVertex(pts[i]);
-    return triangulatePolygonWithOutline(p, polyOutline);
+static vector <TriangleShape> triangulatePolygonWithOutline(const vector <ofPoint> &pts, const ofPolyline &polyOutline) {
+	ofPolyline p;
+
+	for (size_t i=0; i<pts.size(); i++) p.addVertex(pts[i]);
+	return triangulatePolygonWithOutline(p, polyOutline);
 }
 
 //-------------------------------------------------------------------
@@ -404,7 +401,7 @@ static vector <TriangleShape> triangulatePolygon(const vector <ofVec2f> &ptsIn, 
 
 	// now triangluate from the polyline (3)
 	vector <Delaunay::Point>	delaunayPts;
-	Delaunay::Point				tempP;
+	Delaunay::Point         	tempP;
     
 	for(size_t i=0; i<pts.size(); i++) {
 		tempP[0] = pts[i].x;
@@ -463,7 +460,7 @@ static vector <TriangleShape> triangulatePolygon(const vector <ofVec2f> &ptsIn, 
 //-------------------------------------------------------------------
 static vector <TriangleShape> triangulatePolygon(const ofPolyline &poly, bool addPointsInside=false, int amt=100) {
 	vector <ofVec2f> pts;
-    
+
 	for (size_t i=0; i<poly.size(); i++) {
 		pts.push_back(poly[i]);
 	}
@@ -519,29 +516,29 @@ static vector<hPoint> calcConvexHull(vector<hPoint> P) {
 
 static ofPolyline getConvexHull(vector<ofPoint>&linePts){
 
-    vector < hPoint > ptsIn;
-    
-    for (size_t i = 0; i < linePts.size(); i++){
-        hPoint pt;
-        pt.x = linePts[i].x;
-        pt.y = linePts[i].y;
+	vector<hPoint> ptsIn;
 
-        ptsIn.push_back(pt);
-    }
-    vector < hPoint > ptsOut;
+	for (size_t i = 0; i < linePts.size(); i++){
+		hPoint pt;
+		pt.x = linePts[i].x;
+		pt.y = linePts[i].y;
 
-    ptsOut =  calcConvexHull(ptsIn);
+		ptsIn.push_back(pt);
+	}
+	vector<hPoint> ptsOut;
 
-    ofPolyline outLine;
-    
-    for (size_t i = 0; i < ptsOut.size(); i++){
-        outLine.addVertex(ofPoint(ptsOut[i].x, ptsOut[i].y));
-    }
+	ptsOut =  calcConvexHull(ptsIn);
 
-    return outLine;
+	ofPolyline outLine;
+
+	for (size_t i = 0; i < ptsOut.size(); i++){
+		outLine.addVertex(ofPoint(ptsOut[i].x, ptsOut[i].y));
+	}
+
+	return outLine;
 }
 static ofPolyline getConvexHull(ofPolyline &line){
-    return getConvexHull(line.getVertices());
+	return getConvexHull(line.getVertices());
 }
 
 #undef norm2

@@ -32,8 +32,8 @@ ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2Body* body1, b2
 
 //----------------------------------------
 ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(b2World* b2world, b2RevoluteJointDef jointDef) {
-    ofxBox2dRevoluteJoint();
-    setup(b2world, jointDef);
+	ofxBox2dRevoluteJoint();
+	setup(b2world, jointDef);
 }
 
 //----------------------------------------
@@ -108,7 +108,7 @@ void ofxBox2dRevoluteJoint::setup(b2World* b2world, b2RevoluteJointDef jointDef)
 //----------------------------------------
 void ofxBox2dRevoluteJoint::setWorld(b2World* w) {
 	if (w == NULL) {
-		ofLog(OF_LOG_NOTICE, "ofxBox2dRevoluteJoint :: setWorld : - box2d world needed -");	
+		ofLog(OF_LOG_NOTICE, "ofxBox2dRevoluteJoint :: setWorld : - box2d world needed -");
 		return;
 	}
 	world = w;
