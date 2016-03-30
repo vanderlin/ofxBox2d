@@ -88,8 +88,8 @@ void testApp::drawGravity(ofPoint p, ofPoint gravity) {
     ofTranslate(p.x, p.y);
     ofRotate(angle);
     ofDrawLine(0, 0, 0, len);
-    ofTriangle(0, len, 
-               -5, len-10, 
+    ofDrawTriangle(0, len,
+               -5, len-10,
                5, len-10);
     ofPopMatrix();
 }
