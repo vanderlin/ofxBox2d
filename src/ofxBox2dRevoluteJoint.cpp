@@ -137,7 +137,7 @@ void ofxBox2dRevoluteJoint::draw() {
 
 	p1 *= OFX_BOX2D_SCALE;
 	p2 *= OFX_BOX2D_SCALE;
-	ofLine(p1.x, p1.y, p2.x, p2.y);
+	ofDrawLine(p1.x + 0.0001f, p1.y, p2.x, p2.y - 0.0001f);
 }
 
 //----------------------------------------
