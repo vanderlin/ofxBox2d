@@ -98,13 +98,36 @@ ofPolyline& ofxBox2dRect::getRectangleShape() {
 }*/
 
 float ofxBox2dRect::getX() {
-	float cx  =  body->GetPosition().x * OFX_BOX2D_SCALE;
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get X of unitialized rect -");
+		return 0;
+	}
+	float cx = body->GetPosition().x * OFX_BOX2D_SCALE;
 	return cx;
 }
 float ofxBox2dRect::getY() {
-	float cy  =  body->GetPosition().y * OFX_BOX2D_SCALE;
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get Y of unitialized rect -");
+		return 0;
+	}
+	float cy = body->GetPosition().y * OFX_BOX2D_SCALE;
 	return cy;
 }
+float ofxBox2dRect::getWidth() {
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get Width of unitialized rect -");
+		return 0;
+	}
+	return width * 2;
+}
+float ofxBox2dRect::getHeight() {
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get Height of unitialized rect -");
+		return 0;
+	}
+	return height * 2;
+}
+
 
 //------------------------------------------------
 void ofxBox2dRect::addRepulsionForce(float fx, float fy, float amt) {
