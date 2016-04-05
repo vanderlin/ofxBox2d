@@ -23,4 +23,4 @@ meta:
 
 vs:
 	# avoid errors when building triangle in Visual Studio
-	ADDON_CFLAGS += -DNO_TIMERS
+	ADDON_CFLAGS += -DNO_TIMER
