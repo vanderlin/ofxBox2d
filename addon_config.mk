@@ -24,6 +24,3 @@ meta:
 vs:
 	# avoid errors when building triangle in Visual Studio
 	ADDON_CFLAGS += -DNO_TIMER
-
-ios:
-	ADDON_SOURCES_INCLUDE += libs
