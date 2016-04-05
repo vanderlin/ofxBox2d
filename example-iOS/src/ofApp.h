@@ -1,12 +1,11 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxiPhone.h"
-#include "ofxiPhoneExtras.h"
+#include "ofxiOS.h"
+#include "ofxiOSExtras.h"
 #include "ofxBox2d.h"
 
-
-class testApp : public ofxiPhoneApp {
+class ofApp : public ofxiOSApp {
 	
 public:
 	void setup();
@@ -25,9 +24,6 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
-    ofxBox2d                box2d;
-    vector <ofxBox2dCircle> circles;
-    
+	ofxBox2d                             box2d;
+	vector <shared_ptr<ofxBox2dCircle> > circles; 
 };
-
-

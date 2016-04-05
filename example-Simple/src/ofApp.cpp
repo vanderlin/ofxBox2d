@@ -1,7 +1,7 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup() {
+void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
@@ -11,19 +11,15 @@ void testApp::setup() {
 	box2d.createBounds();
 	box2d.setFPS(60.0);
 	box2d.registerGrabbing();
-	
-	
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
+void ofApp::update() {
 	box2d.update();	
 }
 
-
 //--------------------------------------------------------------
-void testApp::draw() {
-	
+void ofApp::draw() {
 	
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
@@ -40,8 +36,6 @@ void testApp::draw() {
 	// draw the ground
 	box2d.drawGround();
 	
-	
-	
 	string info = "";
 	info += "Press [c] for circles\n";
 	info += "Press [b] for blocks\n";
@@ -53,14 +47,13 @@ void testApp::draw() {
 }
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key) {
+void ofApp::keyPressed(int key) {
 	
 	if(key == 'c') {
 		float r = ofRandom(4, 20);
 		circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
 		circles.back().get()->setPhysics(3.0, 0.53, 0.1);
 		circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
-		
 	}
 	
 	if(key == 'b') {
@@ -75,28 +68,31 @@ void testApp::keyPressed(int key) {
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key) {
+void ofApp::keyReleased(int key) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ) {
-	
+void ofApp::mouseMoved(int x, int y) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button) {
+void ofApp::mouseDragged(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button) {
-	
+void ofApp::mousePressed(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button) {
+void ofApp::mouseReleased(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::resized(int w, int h){
-}
+void ofApp::resized(int w, int h){
 
+}

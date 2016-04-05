@@ -1,55 +1,49 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup() {
+void ofApp::setup() {
 	
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
 	ofDisableAntiAliasing();
-    
-    // find all the texture files and load them
-    ofDirectory dir;
-    ofDisableArbTex();
-    int n = dir.listDir("textures");
-    for (int i=0; i<n; i++) {
-        textures.push_back(ofImage(dir.getPath(i)));
-    }
-    printf("%i Textures Loaded\n", (int)textures.size());
-    
+	
+	// find all the texture files and load them
+	ofDirectory dir;
+	ofDisableArbTex();
+	int n = dir.listDir("textures");
+	for (int i=0; i<n; i++) {
+		textures.push_back(ofImage(dir.getPath(i)));
+	}
+	printf("%i Textures Loaded\n", (int)textures.size());
+	
 	// Box2d
 	box2d.init();
 	box2d.setGravity(0, 10);
 	box2d.createGround();
 	box2d.setFPS(60.0);
-    box2d.registerGrabbing();
-    
-
+	box2d.registerGrabbing();
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
+void ofApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-		 
-        shapes.push_back(shared_ptr<TextureShape>(new TextureShape));
-        shapes.back().get()->setTexture(&textures[(int)ofRandom(textures.size())]);
-        shapes.back().get()->setup(box2d, (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 50));
-   
-    }
+		shapes.push_back(shared_ptr<TextureShape>(new TextureShape));
+		shapes.back().get()->setTexture(&textures[(int)ofRandom(textures.size())]);
+		shapes.back().get()->setup(box2d, (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 50));
+	}
 	
 	box2d.update();	
 }
 
 //--------------------------------------------------------------
-void testApp::draw() {
+void ofApp::draw() {
 	
-	for (int i=0; i<shapes.size(); i++) {
-        shapes[i].get()->draw();
-    }
-    
-	
+	for(int i=0; i<shapes.size(); i++) {
+		shapes[i].get()->draw();
+	}
 	
 	// some debug information
 	string info = "Textures from subtlepatterns.com\n";
@@ -61,31 +55,33 @@ void testApp::draw() {
 
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key) {
-	
-	
+void ofApp::keyPressed(int key) {
 	if(key == 'c') {
 		shapes.clear();
 	}
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ) {
+void ofApp::mouseMoved(int x, int y) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button) {
+void ofApp::mouseDragged(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button) {
+void ofApp::mousePressed(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button) {
+void ofApp::mouseReleased(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h) {
-}
+void ofApp::windowResized(int w, int h) {
 
+}

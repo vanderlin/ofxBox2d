@@ -2,18 +2,16 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 
-
 // A simple little Data class. This is were
 // you can store anything you want.
 class Data {
 public:
 	ofColor color;
 	string  name;
-	int		id;
+	int     id;
 };
 
-
-// A Custom Particle extedning the box2d circle
+// A Custom Particle extending the box2d circle
 class CustomParticle : public ofxBox2dCircle {
 	
 public:
@@ -34,16 +32,15 @@ public:
 		theData->color.setHex(colors[(int)ofRandom(0, 3)]);
 
 		printf("setting the custom data!\n");
-		
 	}
 	
 	void draw() {
 		Data* theData = (Data*)getData();
 		if(theData) {
 			
-			// Evan though we know the data object lets just 
-			// see how we can get the data out from box2d
-			// you would use this when using a contact listener
+			// Even though we know the data object, let's just
+			// see how we can get the data out from box2d.
+			// You would use this when using a contact listener
 			// or tapping into box2d's solver.
 			
 			float radius = getRadius();
@@ -52,24 +49,22 @@ public:
 			ofRotateZ(getRotation());
 			ofSetColor(theData->color);
 			ofFill();
-			ofCircle(0, 0, radius);	
+			ofDrawCircle(0, 0, radius);
 			
-            float textSize = radius/10;
-            ofPushMatrix();
-            ofScale(textSize, textSize);
+			float textSize = radius/10;
+			ofPushMatrix();
+			ofScale(textSize, textSize);
 			ofSetColor(255);
 			ofDrawBitmapString(theData->name, -textSize/2, textSize);
-            ofPopMatrix();
-            
+			ofPopMatrix();
+			
 			ofPopMatrix();
 		}
 	}
-		
-		
 };
 
 // ------------------------------------------------- App
-class testApp : public ofBaseApp {
+class ofApp : public ofBaseApp {
 	
 public:
 	
@@ -77,14 +72,14 @@ public:
 	void update();
 	void draw();
 	
-	void keyPressed  (int key);
-	void mouseMoved(int x, int y );
+	void keyPressed(int key);
+	void mouseMoved(int x, int y);
 	void mouseDragged(int x, int y, int button);
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
 	void windowResized(int w, int h);
 	
-	ofxBox2d                            box2d;
-	vector <shared_ptr<CustomParticle> >		particles;
+	ofxBox2d                             box2d;
+	vector <shared_ptr<CustomParticle> > particles;
 	
 };

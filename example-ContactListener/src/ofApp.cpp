@@ -1,33 +1,32 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup() {
+void ofApp::setup() {
 	
 	ofSetVerticalSync(true);
 	ofBackgroundHex(0xfdefc2);
 
 	box2d.init();
-    box2d.enableEvents();   // <-- turn on the event listener
+	box2d.enableEvents();   // <-- turn on the event listener
 	box2d.setGravity(0, 10);
 	box2d.createGround();
 	box2d.setFPS(60.0);
 	box2d.registerGrabbing();
 	
 	// register the listener so that we get the events
-	ofAddListener(box2d.contactStartEvents, this, &testApp::contactStart);
-	ofAddListener(box2d.contactEndEvents, this, &testApp::contactEnd);
+	ofAddListener(box2d.contactStartEvents, this, &ofApp::contactStart);
+	ofAddListener(box2d.contactEndEvents, this, &ofApp::contactEnd);
 
 	// load the 8 sfx soundfile
-	for (int i=0; i<N_SOUNDS; i++) {
-		sound[i].loadSound("sfx/"+ofToString(i)+".mp3");
+	for(int i=0; i<N_SOUNDS; i++) {
+		sound[i].load("sfx/"+ofToString(i)+".mp3");
 		sound[i].setMultiPlay(true);
 		sound[i].setLoop(false);
 	}
 }
 
-
 //--------------------------------------------------------------
-void testApp::contactStart(ofxBox2dContactArgs &e) {
+void ofApp::contactStart(ofxBox2dContactArgs &e) {
 	if(e.a != NULL && e.b != NULL) { 
 		
 		// if we collide with the ground we do not
@@ -51,7 +50,7 @@ void testApp::contactStart(ofxBox2dContactArgs &e) {
 }
 
 //--------------------------------------------------------------
-void testApp::contactEnd(ofxBox2dContactArgs &e) {
+void ofApp::contactEnd(ofxBox2dContactArgs &e) {
 	if(e.a != NULL && e.b != NULL) { 
 		
 		SoundData * aData = (SoundData*)e.a->GetBody()->GetUserData();
@@ -67,10 +66,8 @@ void testApp::contactEnd(ofxBox2dContactArgs &e) {
 	}
 }
 
-
-
 //--------------------------------------------------------------
-void testApp::update() {
+void ofApp::update() {
 	
 	box2d.update();
 	
@@ -87,13 +84,10 @@ void testApp::update() {
 		
 		circles.push_back(c);	
 	}
-
 }
 
-
 //--------------------------------------------------------------
-void testApp::draw() {
-	
+void ofApp::draw() {
 	
 	for(size_t i=0; i<circles.size(); i++) {
 		ofFill();
@@ -102,10 +96,9 @@ void testApp::draw() {
 		if(data && data->bHit) ofSetHexColor(0xff0000);
 		else ofSetHexColor(0x4ccae9);
 		
-
+		
 		circles[i].get()->draw();
 	}
-	
 	
 	string info = "";
 	info += "FPS: "+ofToString(ofGetFrameRate(), 1)+"\n";
@@ -114,45 +107,47 @@ void testApp::draw() {
 }
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key) {
+void ofApp::keyPressed(int key) {
 	if(key == 't') ofToggleFullscreen();
-    if(key == '1') box2d.enableEvents();
-    if(key == '2') box2d.disableEvents();
-    
+	if(key == '1') box2d.enableEvents();
+	if(key == '2') box2d.disableEvents();
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key) {
+void ofApp::keyReleased(int key) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ) {
+void ofApp::mouseMoved(int x, int y) {
 	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button) {
+void ofApp::mouseDragged(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button) {
-    shared_ptr <ofxBox2dCircle> c = shared_ptr <ofxBox2dCircle>(new ofxBox2dCircle);
-    c.get()->setPhysics(1, 0.5, 0.9);
-    c.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 50));
-    
-    c.get()->setData(new SoundData());
-    SoundData * sd = (SoundData*)c.get()->getData();
-    sd->soundID = ofRandom(0, N_SOUNDS);
-    sd->bHit	= false;
-    
-    circles.push_back(c);
+void ofApp::mousePressed(int x, int y, int button) {
+	shared_ptr <ofxBox2dCircle> c = shared_ptr <ofxBox2dCircle>(new ofxBox2dCircle);
+	c.get()->setPhysics(1, 0.5, 0.9);
+	c.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 50));
+	
+	c.get()->setData(new SoundData());
+	SoundData * sd = (SoundData*)c.get()->getData();
+	sd->soundID = ofRandom(0, N_SOUNDS);
+	sd->bHit    = false;
+	
+	circles.push_back(c);
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button) {
+void ofApp::mouseReleased(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::resized(int w, int h){
-}
+void ofApp::resized(int w, int h) {
 
+}

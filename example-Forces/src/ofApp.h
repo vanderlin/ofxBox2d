@@ -2,10 +2,9 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 
-
 // -------------------------------------------------
 
-class testApp : public ofBaseApp {
+class ofApp : public ofBaseApp {
 	
 public:
 	
@@ -21,9 +20,8 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void resized(int w, int h);
 	
-	
-	ofxBox2d                                box2d;			  //	the box2d world
-	vector		<shared_ptr<ofxBox2dCircle> >	circles;		  //	default box2d circles
-	vector		<shared_ptr<ofxBox2dRect> >		boxes;			  //	defalut box2d rects
+	ofxBox2d                                 box2d;   // the box2d world
+	vector     <shared_ptr<ofxBox2dCircle> > circles; // default box2d circles
+	vector     <shared_ptr<ofxBox2dRect> >   boxes;   // defalut box2d rects
 };
 

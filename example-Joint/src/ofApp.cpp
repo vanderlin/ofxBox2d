@@ -1,14 +1,13 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup() {
+void ofApp::setup() {
 	
 	ofSetVerticalSync(true);
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
-    ofDisableAntiAliasing();
-    
-    
+	ofDisableAntiAliasing();
+	
 	box2d.init();
 	box2d.setGravity(10, 0);
 	box2d.setFPS(60.0);
@@ -17,7 +16,7 @@ void testApp::setup() {
 	anchor.setup(box2d.getWorld(), 20, ofGetHeight()/2, 4);
 	
 	// first we add just a few circles
-	for (int i=0; i<3; i++) {
+	for(int i=0; i<3; i++) {
 		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
 		circle.get()->setPhysics(3.0, 0.53, 0.1);
 		circle.get()->setup(box2d.getWorld(), ofGetWidth()/2, 100+(i*20), 8);
@@ -25,7 +24,7 @@ void testApp::setup() {
 	}
 	
 	// now connect each circle with a joint
-	for (int i=0; i<circles.size(); i++) {
+	for(int i=0; i<circles.size(); i++) {
 		
 		shared_ptr<ofxBox2dJoint> joint = shared_ptr<ofxBox2dJoint>(new ofxBox2dJoint);
 		
@@ -43,13 +42,13 @@ void testApp::setup() {
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
+void ofApp::update() {
 	box2d.update();	
 }
 
 
 //--------------------------------------------------------------
-void testApp::draw() {
+void ofApp::draw() {
 	
 	ofSetHexColor(0xf2ab01);
 	anchor.draw();
@@ -74,7 +73,7 @@ void testApp::draw() {
 }
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key) {
+void ofApp::keyPressed(int key) {
 	
 	if(key == 'n') {
 		
@@ -99,28 +98,31 @@ void testApp::keyPressed(int key) {
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key) {
+void ofApp::keyReleased(int key) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ) {
+void ofApp::mouseMoved(int x, int y) {
 	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button) {
+void ofApp::mouseDragged(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button) {
+void ofApp::mousePressed(int x, int y, int button) {
 	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button) {
+void ofApp::mouseReleased(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::resized(int w, int h){
-}
+void ofApp::resized(int w, int h) {
 
+}

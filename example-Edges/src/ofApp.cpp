@@ -1,9 +1,10 @@
-#include "testApp.h"
+
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup() {
+void ofApp::setup() {
 	
-    ofDisableAntiAliasing();
+	ofDisableAntiAliasing();
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
@@ -13,7 +14,6 @@ void testApp::setup() {
 	box2d.setGravity(0, 30);
 	box2d.createGround();
 	box2d.setFPS(60.0);
-	
 	
 	// load the lines we saved...
 	ifstream f;
@@ -35,35 +35,31 @@ void testApp::setup() {
 					float x = ofToFloat(pts[j]);
 					float y = ofToFloat(pts[j+1]);
 					edge.get()->addVertex(x, y);
-				}				
+				}
 			}
 			edge.get()->create(box2d.getWorld());
 			edges.push_back(edge);
 		}
 	}
-	
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
+void ofApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
 		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
 		c.get()->setPhysics(0.2, 0.2, 0.002);
 		c.get()->setup(box2d.getWorld(), ofRandom(20, 50), -20, ofRandom(3, 10));
-        c.get()->setVelocity(0, 15); // shoot them down!
+		c.get()->setVelocity(0, 15); // shoot them down!
 		circles.push_back(c);
 	}
 	
-    
-    
-	box2d.update();	
+	box2d.update();
 }
 
 //--------------------------------------------------------------
-void testApp::draw() {
-	
+void ofApp::draw() {
 	
 	// some circles :)
 	for (int i=0; i<circles.size(); i++) {
@@ -89,12 +85,11 @@ void testApp::draw() {
 	ofDrawBitmapString(info, 10, 15);
 }
 
-
 //--------------------------------------------------------------
-void testApp::keyPressed(int key) {
+void ofApp::keyPressed(int key) {
 	
 	if(key == '1') {
-        shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
 		c.get()->setPhysics(1, 0.5, 0.5);
 		c.get()->setup(box2d.getWorld(), mouseX, mouseY, 10);
 		circles.push_back(c);
@@ -124,24 +119,25 @@ void testApp::keyPressed(int key) {
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ) {
+void ofApp::mouseMoved(int x, int y) {
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button) {
+void ofApp::mouseDragged(int x, int y, int button) {
 	lines.back().addVertex(x, y);
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button) {
+void ofApp::mousePressed(int x, int y, int button) {
 	lines.push_back(ofPolyline());
 	lines.back().addVertex(x, y);
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button) {
+void ofApp::mouseReleased(int x, int y, int button) {
 	
-    shared_ptr <ofxBox2dEdge> edge = shared_ptr<ofxBox2dEdge>(new ofxBox2dEdge);
+	shared_ptr <ofxBox2dEdge> edge = shared_ptr<ofxBox2dEdge>(new ofxBox2dEdge);
 	lines.back().simplify();
 	
 	for (int i=0; i<lines.back().size(); i++) {
@@ -156,6 +152,6 @@ void testApp::mouseReleased(int x, int y, int button) {
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h) {
-}
+void ofApp::windowResized(int w, int h) {
 
+}

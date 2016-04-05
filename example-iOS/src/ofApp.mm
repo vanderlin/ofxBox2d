@@ -1,14 +1,13 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup(){	
+void ofApp::setup(){	
     
 	ofRegisterTouchEvents(this);
 	ofxAccelerometer.setup();
 	ofxiPhoneAlerts.addListener(this);
 	ofSetFrameRate(30);
 	ofBackgroundHex(0xfdefc2);
-    
     
     box2d.init();
     box2d.setGravity(0, 10);
@@ -17,17 +16,16 @@ void testApp::setup(){
     box2d.createBounds();
     box2d.setIterations(1, 1); // minimum for IOS
     
-    for (int i=0; i<10; i++) {
-        ofxBox2dCircle c;
-        c.setPhysics(1, 0.4, 0.4);
-        c.setup(box2d.getWorld(), ofRandomWidth(), ofRandomHeight(), ofRandom(13, 25));
+    for(int i=0; i<10; i++) {
+        shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+        c->setPhysics(1, 0.4, 0.4);
+        c->setup(box2d.getWorld(), ofRandomWidth(), ofRandomHeight(), ofRandom(13, 25));
         circles.push_back(c);
     }
-    
 }
 
 //--------------------------------------------------------------
-void testApp::update() {
+void ofApp::update() {
     
     ofVec2f gravity = ofxAccelerometer.getForce();
     gravity.y *= -1;
@@ -38,11 +36,11 @@ void testApp::update() {
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void ofApp::draw(){
     
     ofSetHexColor(0xABDB44);
-    for(vector<ofxBox2dCircle>::iterator it = circles.begin(); it != circles.end(); ++it) {
-        it->draw();
+    for(auto c : circles) {
+        c->draw();
     }
  
     ofSetColor(90);
@@ -51,56 +49,54 @@ void testApp::draw(){
 }
 
 //--------------------------------------------------------------
-void testApp::exit(){
+void ofApp::exit(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::touchDown(ofTouchEventArgs &touch){
+void ofApp::touchDown(ofTouchEventArgs &touch){
     
 }
 
 //--------------------------------------------------------------
-void testApp::touchMoved(ofTouchEventArgs &touch){
+void ofApp::touchMoved(ofTouchEventArgs &touch){
     
 }
 
 //--------------------------------------------------------------
-void testApp::touchUp(ofTouchEventArgs &touch){
+void ofApp::touchUp(ofTouchEventArgs &touch){
     
 }
 
 //--------------------------------------------------------------
-void testApp::touchDoubleTap(ofTouchEventArgs &touch){
-    ofxBox2dCircle c;
-    c.setPhysics(1, 0.4, 0.4);
-    c.setup(box2d.getWorld(), touch.x, touch.y, ofRandom(13, 25));
+void ofApp::touchDoubleTap(ofTouchEventArgs &touch){
+    shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+    c->setPhysics(1, 0.4, 0.4);
+    c->setup(box2d.getWorld(), touch.x, touch.y, ofRandom(13, 25));
     circles.push_back(c);
 }
 
 //--------------------------------------------------------------
-void testApp::lostFocus(){
+void ofApp::lostFocus(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::gotFocus(){
+void ofApp::gotFocus(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::gotMemoryWarning(){
+void ofApp::gotMemoryWarning(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::deviceOrientationChanged(int newOrientation){
+void ofApp::deviceOrientationChanged(int newOrientation){
     
 }
-
 
 //--------------------------------------------------------------
-void testApp::touchCancelled(ofTouchEventArgs& args){
+void ofApp::touchCancelled(ofTouchEventArgs& args){
     
 }
-

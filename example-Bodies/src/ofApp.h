@@ -17,16 +17,14 @@ public:
 		
 		ofSetColor(color.r, color.g, color.b);
 		ofFill();
-		ofCircle(0, 0, radius);	
+		ofDrawCircle(0, 0, radius);
 		
 		glPopMatrix();
-		
 	}
 };
 
-
 // -------------------------------------------------
-class testApp : public ofBaseApp {
+class ofApp : public ofBaseApp {
 	
 public:
 	
@@ -46,12 +44,10 @@ public:
 	bool                                    bDrawLines;
 	bool                                    bMouseForce;
 	
-	ofxBox2d                                box2d;			  //	the box2d world
-	ofPolyline                              drawing;		  //	we draw with this first
-	ofxBox2dEdge                            edgeLine;		  //	the box2d edge/line shape (min 2 points)
-	vector		<shared_ptr<ofxBox2dCircle> >	circles;		  //	default box2d circles
-	vector		<shared_ptr<ofxBox2dRect> >		boxes;			  //	default box2d rects
-	vector		<shared_ptr<CustomParticle> >    customParticles;  //	this is a custom particle the extends a cirlce
-	
-	
+	ofxBox2d                                box2d;            // the box2d world
+	ofPolyline                              drawing;          // we draw with this first
+	ofxBox2dEdge                            edgeLine;         // the box2d edge/line shape (min 2 points)
+	vector    <shared_ptr<ofxBox2dCircle> > circles;          // default box2d circles
+	vector    <shared_ptr<ofxBox2dRect> >   boxes;            // default box2d rects
+	vector    <shared_ptr<CustomParticle> > customParticles; // this is a custom particle the extends a cirlce
 };
