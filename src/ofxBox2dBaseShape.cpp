@@ -212,6 +212,18 @@ ofVec2f ofxBox2dBaseShape::getB2DPosition() {
 }
 
 //------------------------------------------------ 
+ofVec2f ofxBox2dBaseShape::getWorldPosition() {
+	ofVec2f p;
+	if(body != NULL) {
+        const b2Transform& xf = body->GetTransform();
+        b2Vec2 pos      = body->GetWorldCenter();
+        b2Vec2 b2Center = b2Mul(xf, pos);
+		p = worldPtToscreenPt(b2Center);
+    }
+	return p;
+}
+
+//------------------------------------------------ 
 void ofxBox2dBaseShape::setVelocity(float x, float y) {
 	if(body != NULL) {
 		body->SetLinearVelocity(b2Vec2(x, y));
@@ -248,7 +260,7 @@ void ofxBox2dBaseShape::addForce(ofVec2f frc, float scale) {
 //------------------------------------------------
 void ofxBox2dBaseShape::addImpulseForce(ofVec2f pt, ofVec2f amt) {
 	if(body != NULL) {
-		body->ApplyLinearImpulse(b2Vec2(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE), b2Vec2(amt.x, amt.y), true);
+		body->ApplyLinearImpulse(screenPtToWorldPt(pt), screenPtToWorldPt(amt), true);
 	}
 }
 
