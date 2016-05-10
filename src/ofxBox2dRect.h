@@ -22,6 +22,8 @@ public:
 	void setup(b2World * b2dworld, float x, float y, float w, float h);
 	   
 	//------------------------------------------------
+	float getX();
+	float getY();
     float getWidth()  { return width * 2;  }
     float getHeight() { return height * 2; }
     

@@ -217,6 +217,14 @@ void ofxBox2d::grabShapeDown(float x, float y, int id) {
 		world->QueryAABB(&callback, aabb);
 		
 		if (callback.m_fixture) {
+
+			//!!!
+			static ofxBox2dContactArgs ev_args;
+			ev_args.a = callback.m_fixture;
+			ev_args.b = NULL;
+			ofNotifyEvent(mousePickEvent, ev_args);
+			//!!!
+
 			b2Body* body = callback.m_fixture->GetBody();
 			b2MouseJointDef md;                
 			md.bodyB    = body;
