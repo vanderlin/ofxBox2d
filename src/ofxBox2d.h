@@ -91,6 +91,7 @@ public:
 
 	void    	init();
 	void    	setFPS(float theFps) { fps = theFps; }
+	float    getFPS() { return fps; }
 
 #ifdef TARGET_OPENGLES
 	void    	touchDown(ofTouchEventArgs &touch);

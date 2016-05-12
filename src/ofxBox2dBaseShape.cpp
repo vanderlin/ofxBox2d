@@ -212,6 +212,16 @@ ofVec2f ofxBox2dBaseShape::getB2DPosition() {
 }
 
 //------------------------------------------------
+float ofxBox2dBaseShape::getMass() {
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get Mass of unitialized rect -");
+		return 0;
+	}
+	return (float)body->GetMass();
+}
+
+
+//------------------------------------------------
 void ofxBox2dBaseShape::setVelocity(float x, float y) {
 	if(body != NULL) {
 		body->SetLinearVelocity(b2Vec2(x, y));

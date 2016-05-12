@@ -38,7 +38,7 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 
 	bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 
-	body  = b2dworld->CreateBody(&bodyDef);
+	body = b2dworld->CreateBody(&bodyDef);
 	body->CreateFixture(&fixture);
 
 	alive = true;
@@ -107,16 +107,28 @@ void ofxBox2dCircle::addAttractionPoint(ofVec2f pt, float amt) {
 
 //------------------------------------------------
 float ofxBox2dCircle::getX() {
-	float cx  =  body->GetPosition().x * OFX_BOX2D_SCALE;
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get X of unitialized circle -");
+		return 0;
+	}
+	float cx = body->GetPosition().x * OFX_BOX2D_SCALE;
 	return cx;
 }
 float ofxBox2dCircle::getY() {
-	float cy  =  body->GetPosition().y * OFX_BOX2D_SCALE;
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get X of unitialized circle -");
+		return 0;
+	}
+	float cy = body->GetPosition().y * OFX_BOX2D_SCALE;
 	return cy;
 }
 
 //------------------------------------------------
 float ofxBox2dCircle::getRadius() {
+	if (!isBody()) {
+		ofLog(OF_LOG_ERROR, "- trying to get Radius of unitialized circle -");
+		return 0;
+	}
 	return radius;
 }
 
@@ -134,6 +146,9 @@ float ofxBox2dCircle::getRadius() {
 
  */
 void ofxBox2dCircle::setRadius(float r) {
+
+	if(!isBody()) return;
+
 	this->radius = r;
 
 	for (b2Fixture* f= body->GetFixtureList(); f; f = f->GetNext())

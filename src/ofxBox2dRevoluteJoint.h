@@ -38,6 +38,11 @@ public:
 	//read-only
 	float getJointAngle(); //in radians
 
+	float getJointSpeed();
+	float getMotorTorque(float inv_dt);
+	float getReactionTorque(float inv_dt);
+	ofVec2f getReactionForce(float inv_dt);
+
 	//----------------------------------------
 	//read-write
 	void setLimitEnabled(bool toggle);
@@ -50,7 +55,7 @@ public:
 
 	void setMotorEnabled(bool toggle);
 	bool getMotorEnabled();
-	void setMotorSpeed(float speed);
+	void setMotorSpeed(float speed); // radians per second
 	float getMotorSpeed();
 	void setMaxMotorTorque(float torque);
 	float getMaxMotorTorque();

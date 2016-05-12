@@ -76,6 +76,8 @@ public:
 	ofVec2f getPosition();
 	ofVec2f getB2DPosition();
 
+	//------------------------------------------------
+	float getMass();
 
 	//------------------------------------------------
 	virtual void setVelocity(float x, float y);

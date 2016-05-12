@@ -159,6 +159,14 @@ float ofxBox2dRevoluteJoint::getJointAngle() { //in radians
 }
 
 //----------------------------------------
+float ofxBox2dRevoluteJoint::getJointSpeed() { //in radians per second
+	if (joint) {
+		return (float)joint->GetJointSpeed();
+	}
+	return 0;
+}
+
+//----------------------------------------
 void ofxBox2dRevoluteJoint::setLimitEnabled(bool toggle) {
 	if (joint) {
 		joint->EnableLimit(toggle);
@@ -242,3 +250,31 @@ float ofxBox2dRevoluteJoint::getMaxMotorTorque() {
 	}
 	return 0;
 }
+
+
+//----------------------------------------
+float ofxBox2dRevoluteJoint::getMotorTorque(float inv_dt) {
+	if (joint) {
+		return (float)joint->GetMotorTorque((float32)inv_dt);
+	}
+	return 0;
+}
+
+//----------------------------------------
+float ofxBox2dRevoluteJoint::getReactionTorque(float inv_dt) {
+	if (joint) {
+		return (float)joint->GetReactionTorque((float32)inv_dt);
+	}
+	return 0;
+}
+
+//----------------------------------------
+ofVec2f ofxBox2dRevoluteJoint::getReactionForce(float inv_dt) {
+	ofVec2f r;
+	if (joint) {
+		b2Vec2 rf = joint->GetReactionForce((float32)inv_dt);
+		r.x = rf.x;
+		r.y = rf.y;
+	}
+	return r;
+}

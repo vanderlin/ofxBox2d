@@ -175,7 +175,7 @@ void ofxBox2d::grabShapeDown(float x, float y, int id) {
 		return;
 	}
 
-	if(bEnableGrabbing) {
+	if(bEnableGrabbing || bEnablePicking) {
 		b2Vec2 p(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
 
 #ifdef TARGET_OPENGLES
@@ -217,10 +217,12 @@ void ofxBox2d::grabShapeDown(float x, float y, int id) {
 		if (callback.m_fixture) {
 
 			//!!!
-			static ofxBox2dContactArgs ev_args;
-			ev_args.a = callback.m_fixture;
-			ev_args.b = NULL;
-			ofNotifyEvent(mousePickEvent, ev_args);
+			if (bEnablePicking) {
+				static ofxBox2dContactArgs ev_args;
+				ev_args.a = callback.m_fixture;
+				ev_args.b = NULL;
+				ofNotifyEvent(mousePickEvent, ev_args);
+			}
 			//!!!
 
 			b2Body* body = callback.m_fixture->GetBody();
@@ -258,7 +260,7 @@ void ofxBox2d::grabShapeUp(float x, float y, int id) {
 		}
 	}
 #else
-	if(mouseJoint && bEnableGrabbing) {
+	if(mouseJoint && (bEnableGrabbing || bEnablePicking)) {
 		if(world == NULL) {
 			ofLog(OF_LOG_WARNING, "ofxBox2d:: - Need a world, call init first! -");
 			return;
