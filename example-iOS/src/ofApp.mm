@@ -2,10 +2,12 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){	
-	
-	ofRegisterTouchEvents(this);
-	ofxAccelerometer.setup();
-	ofxiPhoneAlerts.addListener(this);
+
+    coreMotion.setupMagnetometer();
+    coreMotion.setupGyroscope();
+    coreMotion.setupAccelerometer();
+    coreMotion.setupAttitude(CMAttitudeReferenceFrameXMagneticNorthZVertical);
+
 	ofSetFrameRate(30);
 	ofBackgroundHex(0xfdefc2);
 	
@@ -26,8 +28,10 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update() {
-	
-	ofVec2f gravity = ofxAccelerometer.getForce();
+
+    coreMotion.update();
+
+    ofVec2f gravity = coreMotion.getAccelerometerData();
 	gravity.y *= -1;
 	gravity *= 30;
 	box2d.setGravity(gravity);

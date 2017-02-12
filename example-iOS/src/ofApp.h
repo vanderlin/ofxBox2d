@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxiOS.h"
-#include "ofxiOSExtras.h"
+#include "ofxiOSCoreMotion.h"
 #include "ofxBox2d.h"
 
 class ofApp : public ofxiOSApp {
@@ -23,6 +23,7 @@ public:
 	void gotFocus();
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
+    ofxiOSCoreMotion coreMotion;
 
 	ofxBox2d                             box2d;
 	vector <shared_ptr<ofxBox2dCircle> > circles; 
