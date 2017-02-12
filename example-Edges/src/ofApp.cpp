@@ -16,21 +16,14 @@ void ofApp::setup() {
 	box2d.setFPS(60.0);
 	
 	// load the lines we saved...
-	ifstream f;
-	f.open(ofToDataPath("lines.txt").c_str());
-	vector <string> strLines;
-	while (!f.eof()) {
-		string ptStr;
-		getline(f, ptStr);
-		strLines.push_back(ptStr);
-	}
-	f.close();
-	
-	for (int i=0; i<strLines.size(); i++) {
-		vector <string> pts = ofSplitString(strLines[i], ",");
+
+    ofBuffer buffer = ofBufferFromFile("lines.txt");
+
+    for (auto line: buffer.getLines()) {
+		vector <string> pts = ofSplitString(line, ",");
 		if(pts.size() > 0) {
-			shared_ptr <ofxBox2dEdge> edge = shared_ptr<ofxBox2dEdge>(new ofxBox2dEdge);
-			for (int j=0; j<pts.size(); j+=2) {
+            auto edge = std::make_shared<ofxBox2dEdge>();
+			for (auto j=0; j<pts.size(); j+=2) {
 				if(pts[j].size() > 0) {
 					float x = ofToFloat(pts[j]);
 					float y = ofToFloat(pts[j+1]);
