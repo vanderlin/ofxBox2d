@@ -6,7 +6,7 @@
 #include "ofxBox2d.h"
 
 class ofApp : public ofxiOSApp {
-	
+
 public:
 	void setup();
 	void update();
@@ -14,8 +14,8 @@ public:
 
 	void touchDoubleTap(ofTouchEventArgs &touch);
 
-    ofxiOSCoreMotion coreMotion;
+	ofxiOSCoreMotion coreMotion;
 
-	ofxBox2d                             box2d;
-	vector <shared_ptr<ofxBox2dCircle> > circles; 
+	ofxBox2d box2d;
+	vector <shared_ptr<ofxBox2dCircle>> circles;
 };
