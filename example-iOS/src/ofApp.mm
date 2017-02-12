@@ -19,7 +19,7 @@ void ofApp::setup(){
 	box2d.setIterations(1, 1); // minimum for IOS
 	
 	for(int i=0; i<10; i++) {
-		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+        auto c = std::make_shared<ofxBox2dCircle>();
 		c->setPhysics(1, 0.4, 0.4);
 		c->setup(box2d.getWorld(), ofRandomWidth(), ofRandomHeight(), ofRandom(13, 25));
 		circles.push_back(c);
@@ -55,7 +55,7 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::touchDoubleTap(ofTouchEventArgs &touch){
-	shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+    auto c = std::make_shared<ofxBox2dCircle>();
 	c->setPhysics(1, 0.4, 0.4);
 	c->setup(box2d.getWorld(), touch.x, touch.y, ofRandom(13, 25));
 	circles.push_back(c);

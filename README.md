@@ -33,7 +33,7 @@ circles.push_back(circle);
 vector <shared_ptr<ofxBox2dCircle> > circles;
 
 // now add a circle to the vector
-shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+auto circle = std::make_shared<ofxBox2dCircle>();
 
 // to grab the pointer you use the get() function of shared_ptr (std::shared_ptr)
 circle.get()->setPhysics(3.0, 0.53, 0.1);

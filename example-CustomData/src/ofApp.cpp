@@ -51,7 +51,7 @@ void ofApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-	shared_ptr<CustomParticle> p = shared_ptr<CustomParticle>(new CustomParticle);
+	auto p = std::make_shared<CustomParticle>();
 	p.get()->setPhysics(1.0, 0.5, 0.3);
 	p.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 60));
 	p.get()->setVelocity(ofRandom(-30, 30), ofRandom(-30, 30));

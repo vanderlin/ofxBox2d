@@ -48,7 +48,7 @@ void ofApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto circle = std::make_shared<ofxBox2dCircle>();
 		circle->setPhysics(0.3, 0.5, 0.1);
 		circle->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 20));
 		circles.push_back(circle);
@@ -174,7 +174,7 @@ void ofApp::mouseReleased(int x, int y, int button) {
 	  
 	}
 	else {
-		shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+        auto poly = std::make_shared<ofxBox2dPolygon>();
 		poly->addVertices(shape.getVertices());
 		poly->setPhysics(1.0, 0.3, 0.3);
 		poly->triangulatePoly();

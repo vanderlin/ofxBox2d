@@ -48,7 +48,7 @@ void ofApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto c = std::make_shared<ofxBox2dCircle>();
 		c.get()->setPhysics(0.2, 0.2, 0.002);
 		c.get()->setup(box2d.getWorld(), ofRandom(20, 50), -20, ofRandom(3, 10));
 		c.get()->setVelocity(0, 15); // shoot them down!
@@ -89,7 +89,7 @@ void ofApp::draw() {
 void ofApp::keyPressed(int key) {
 	
 	if(key == '1') {
-		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+        auto c = std::make_shared<ofxBox2dCircle>();
 		c.get()->setPhysics(1, 0.5, 0.5);
 		c.get()->setup(box2d.getWorld(), mouseX, mouseY, 10);
 		circles.push_back(c);
@@ -137,10 +137,10 @@ void ofApp::mousePressed(int x, int y, int button) {
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button) {
 	
-	shared_ptr <ofxBox2dEdge> edge = shared_ptr<ofxBox2dEdge>(new ofxBox2dEdge);
+    auto edge = std::make_shared<ofxBox2dEdge>();
 	lines.back().simplify();
 	
-	for (int i=0; i<lines.back().size(); i++) {
+	for (auto i=0; i<lines.back().size(); i++) {
 		edge.get()->addVertex(lines.back()[i]);
 	}
 	

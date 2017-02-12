@@ -25,7 +25,7 @@ void ofApp::setup(){
 	
 	// add some cirlces to world A
 	for(int i=0; i<10; i++) {
-		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto c = std::make_shared<ofxBox2dCircle>();
 		c.get()->setPhysics(1, 0.5, 1);
 		c.get()->setup(box2dA.getWorld(), 250+ofRandom(-50, 50), 10, ofRandom(10,30));
 		circlesA.push_back(c);
@@ -33,7 +33,7 @@ void ofApp::setup(){
 	
 	// add some cirlces to world B
 	for(int i=0; i<10; i++) {
-		shared_ptr<ofxBox2dCircle> c = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto c = std::make_shared<ofxBox2dCircle>();
 		c.get()->setPhysics(1, 0.5, 1);
 		c.get()->setup(box2dB.getWorld(), 750+ofRandom(-50, 50), 10, ofRandom(10,30));
 		circlesB.push_back(c);
@@ -43,7 +43,7 @@ void ofApp::setup(){
 	// shared between both worlds
 	for(int i=0; i<20; i++) {
 		
-		shared_ptr<ofxBox2dRect> r = shared_ptr<ofxBox2dRect>(new ofxBox2dRect);
+		auto r = std::make_shared<ofxBox2dRect>();
 		r.get()->setPhysics(1, 0.7, 0.9);
 		
 		// add to world A
