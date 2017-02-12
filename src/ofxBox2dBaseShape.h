@@ -75,6 +75,7 @@ public:
 	//------------------------------------------------ 
 	ofVec2f getPosition();
 	ofVec2f getB2DPosition();
+	ofVec2f getWorldPosition();
 	
 	
 	//------------------------------------------------ 
