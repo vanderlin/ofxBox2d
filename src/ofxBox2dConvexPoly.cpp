@@ -99,7 +99,7 @@ void ofxBox2dConvexPoly::setup(b2World * b2dworld, ofPolyline & _line){
 	for (int i = 0; i < vertexCount; i++){
 		vertices[i].x -= pos.x;
 		vertices[i].y -= pos.y;
-		ofVec2f cur(vertices[i].x, vertices[i].y);
+		ofDefaultVertexType cur(vertices[i].x, vertices[i].y, 0);
 		polyPts.addVertex(cur);
 		path.lineTo(cur);
 	}

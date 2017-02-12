@@ -21,11 +21,11 @@ public:
 	
 	// little helper function to load
 	// point that we saved
-	vector <ofPoint> loadPoints(string file);
+    std::vector<ofDefaultVertexType> loadPoints(const std::string& file);
 	
 	bool                                  breakupIntoTriangles;
 	ofPolyline                            shape;
 	ofxBox2d                              box2d;
-	vector <shared_ptr<ofxBox2dCircle> >  circles;
-	vector <shared_ptr<ofxBox2dPolygon> > polyShapes;
+	vector <shared_ptr<ofxBox2dCircle>>   circles;
+	vector <shared_ptr<ofxBox2dPolygon>>  polyShapes;
 };

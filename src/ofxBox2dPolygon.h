@@ -29,8 +29,8 @@ public:
 	void clear();
     
 	//----------------------------------------
-	void addTriangle(const ofVec2f &a, const ofVec2f &b, const ofVec2f &c);
-	void addVertexes(vector <ofVec2f> &pts);
+	void addTriangle(const ofDefaultVertexType &a, const ofDefaultVertexType &b, const ofDefaultVertexType &c);
+	void addVertexes(vector <ofDefaultVertexType> &pts);
 	void addVertexes(ofPolyline &polyline);
 
 	//----------------------------------------
@@ -41,7 +41,7 @@ public:
 	void triangulatePoly(float resampleAmt=20, int nPointsInside=-1);
     
 	//----------------------------------------
-	vector <ofPoint> &getPoints();
+	vector <ofDefaultVertexType> &getPoints();
 	bool	isGoodShape() { return calculateArea() > 15; }
     
 	//------------------------------------------------

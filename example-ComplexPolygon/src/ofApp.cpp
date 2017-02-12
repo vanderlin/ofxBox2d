@@ -21,8 +21,8 @@ void ofApp::setup() {
 	breakupIntoTriangles = true;
 		
 	// load the shape we saved...
-	vector <ofPoint> pts = loadPoints("shape.dat");
-	shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+	auto pts = loadPoints("shape.dat");
+    auto poly = std::make_shared<ofxBox2dPolygon>();
 	poly->addVertices(pts);
 	poly->setPhysics(1.0, 0.3, 0.3);
 	poly->triangulatePoly();
@@ -31,13 +31,13 @@ void ofApp::setup() {
 }
 
 //--------------------------------------------------------------
-vector <ofPoint> ofApp::loadPoints(string file) {
-	vector <ofPoint> pts;
+vector <ofDefaultVertexType> ofApp::loadPoints(const std::string& file) {
+	vector <ofDefaultVertexType> pts;
 	vector <string>  ptsStr = ofSplitString(ofBufferFromFile(file).getText(), ",");
 	for(int i=0; i<ptsStr.size(); i+=2) {
 		float x = ofToFloat(ptsStr[i]);
 		float y = ofToFloat(ptsStr[i+1]);
-		pts.push_back(ofPoint(x, y));
+		pts.push_back(ofDefaultVertexType(x, y, 0));
 	}
 	return pts;
 }
@@ -99,7 +99,7 @@ void ofApp::draw() {
 void ofApp::keyPressed(int key) {
 	
 	if(key == '1') {
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+        auto circle = std::make_shared<ofxBox2dCircle>();
 		circle->setPhysics(0.3, 0.5, 0.1);
 		circle->setup(box2d.getWorld(), mouseX, mouseY, ofRandom(10, 20));
 		circles.push_back(circle);
@@ -156,8 +156,16 @@ void ofApp::mouseReleased(int x, int y, int button) {
 		// now loop through all the trainles and make a box2d triangle
 		for(int i=0; i<tris.size(); i++) {
 			
-			shared_ptr<ofxBox2dPolygon> triangle = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
-			triangle->addTriangle(tris[i].a, tris[i].b, tris[i].c);
+            auto triangle = std::make_shared<ofxBox2dPolygon>();
+			triangle->addTriangle(ofDefaultVertexType(tris[i].a.x,
+                                                      tris[i].a.y,
+                                                      0),
+                                  ofDefaultVertexType(tris[i].b.x,
+                                                      tris[i].b.y,
+                                                      0),
+                                  ofDefaultVertexType(tris[i].c.x,
+                                                      tris[i].c.y,
+                                                      0));
 			triangle->setPhysics(1.0, 0.3, 0.3);
 			triangle->create(box2d.getWorld());
 
