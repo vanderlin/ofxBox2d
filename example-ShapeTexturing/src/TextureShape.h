@@ -38,8 +38,8 @@ public:
 			float y = sin(n);
 			float d = ofRandom(-r/2, r/2);
 			polyShape.addVertex(ofPoint(cx + (x * r + d), cy + (y * r + d)));
-			mesh.addTexCoord(ofPoint(0, 0));
-			mesh.addTexCoord(ofPoint(x * scale, y * scale));
+			mesh.addTexCoord(ofVec2f(0, 0));
+			mesh.addTexCoord(ofVec2f(x * scale, y * scale));
 		}
 		
 		polyShape.setPhysics(0.3, 0.5, 0.1);
@@ -55,8 +55,8 @@ public:
 	void draw() {
 		
 		mesh.clearVertices();
-		vector<ofPoint> &pts = polyShape.getPoints();
-		ofPoint center       = polyShape.getCentroid2D();
+		auto& pts = polyShape.getPoints();
+		ofPoint center = polyShape.getCentroid2D();
 		for (int i=0; i<pts.size(); i++) {
 			mesh.addVertex(center);
 			mesh.addVertex(pts[i]);

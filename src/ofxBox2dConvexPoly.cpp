@@ -99,7 +99,7 @@ void ofxBox2dConvexPoly::setup(b2World * b2dworld, ofPolyline & _line){
 	for (int i = 0; i < vertexCount; i++){
 		vertices[i].x -= pos.x;
 		vertices[i].y -= pos.y;
-		ofVec2f cur(vertices[i].x, vertices[i].y);
+		ofDefaultVertexType cur(vertices[i].x, vertices[i].y, 0);
 		polyPts.addVertex(cur);
 		path.lineTo(cur);
 	}
@@ -220,7 +220,7 @@ void ofxBox2dConvexPoly::draw() {
 	
 	ofPushMatrix();
 	ofTranslate(getPosition().x, getPosition().y, 0);
-	ofRotate(getRotation(), 0, 0, 1);
+	ofRotateDeg(getRotation(), 0, 0, 1);
 	ofScale(OFX_BOX2D_SCALE*scale, OFX_BOX2D_SCALE*scale);
 	gpuCachedTesselation.draw();
 	ofPopMatrix();

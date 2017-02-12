@@ -17,7 +17,7 @@ void ofApp::setup() {
 	
 	// first we add just a few circles
 	for(int i=0; i<3; i++) {
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto circle = std::make_shared<ofxBox2dCircle>();
 		circle.get()->setPhysics(3.0, 0.53, 0.1);
 		circle.get()->setup(box2d.getWorld(), ofGetWidth()/2, 100+(i*20), 8);
 		circles.push_back(circle);
@@ -26,7 +26,7 @@ void ofApp::setup() {
 	// now connect each circle with a joint
 	for(int i=0; i<circles.size(); i++) {
 		
-		shared_ptr<ofxBox2dJoint> joint = shared_ptr<ofxBox2dJoint>(new ofxBox2dJoint);
+		auto joint = std::make_shared<ofxBox2dJoint>();
 		
 		// if this is the first point connect to the top anchor.
 		if(i == 0) {
@@ -78,7 +78,7 @@ void ofApp::keyPressed(int key) {
 	if(key == 'n') {
 		
 		// add a new circle
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto circle = std::make_shared<ofxBox2dCircle>();
 		circle.get()->setPhysics(3.0, 0.53, 0.1);
 		circle.get()->setup(box2d.getWorld(), circles.back().get()->getPosition().x+ofRandom(-30, 30), circles.back().get()->getPosition().y-30, 8);
 		circles.push_back(circle);
@@ -88,7 +88,7 @@ void ofApp::keyPressed(int key) {
 		int b = (int)circles.size()-1; 
 
 		// now connect the new circle with a joint
-		shared_ptr<ofxBox2dJoint> joint = shared_ptr<ofxBox2dJoint>(new ofxBox2dJoint);
+		auto joint = std::make_shared<ofxBox2dJoint>();
 		joint.get()->setup(box2d.getWorld(), circles[a].get()->body, circles[b].get()->body);
 		joint.get()->setLength(25);
 		joints.push_back(joint);

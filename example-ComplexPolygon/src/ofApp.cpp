@@ -6,23 +6,23 @@ static bool shouldRemove(shared_ptr<ofxBox2dBaseShape>shape) {
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	
+
 	ofDisableAntiAliasing();
 	ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
-	
+
 	// Box2d
 	box2d.init();
 	box2d.setGravity(0, 10);
 	box2d.createGround();
 	box2d.setFPS(30.0);
-	
+
 	breakupIntoTriangles = true;
-		
+
 	// load the shape we saved...
-	vector <ofPoint> pts = loadPoints("shape.dat");
-	shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+	auto pts = loadPoints("shape.dat");
+	auto poly = std::make_shared<ofxBox2dPolygon>();
 	poly->addVertices(pts);
 	poly->setPhysics(1.0, 0.3, 0.3);
 	poly->triangulatePoly();
@@ -31,13 +31,13 @@ void ofApp::setup() {
 }
 
 //--------------------------------------------------------------
-vector <ofPoint> ofApp::loadPoints(string file) {
-	vector <ofPoint> pts;
+vector <ofDefaultVertexType> ofApp::loadPoints(const std::string& file) {
+	vector <ofDefaultVertexType> pts;
 	vector <string>  ptsStr = ofSplitString(ofBufferFromFile(file).getText(), ",");
 	for(int i=0; i<ptsStr.size(); i+=2) {
 		float x = ofToFloat(ptsStr[i]);
 		float y = ofToFloat(ptsStr[i+1]);
-		pts.push_back(ofPoint(x, y));
+		pts.push_back(ofDefaultVertexType(x, y, 0));
 	}
 	return pts;
 }
@@ -45,44 +45,44 @@ vector <ofPoint> ofApp::loadPoints(string file) {
 
 //--------------------------------------------------------------
 void ofApp::update() {
-	
+
 	// add some circles every so often
 	if((int)ofRandom(0, 10) == 0) {
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto circle = std::make_shared<ofxBox2dCircle>();
 		circle->setPhysics(0.3, 0.5, 0.1);
 		circle->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-20, 20), -20, ofRandom(10, 20));
 		circles.push_back(circle);
 	}
-	
+
 	// remove shapes offscreen
 	ofRemove(circles, shouldRemove);
 	// ofRemove(polyShapes, shouldRemove);
-	
-	box2d.update();	
+
+	box2d.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	
+
 	// some circles :)
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0xc0dd3b);
 		circles[i]->draw();
 	}
-	
+
 	ofSetHexColor(0x444342);
 	ofFill();
 	shape.draw();
-	
+
 	ofSetHexColor(0x444342);
 	ofNoFill();
 	for(int i=0; i<polyShapes.size(); i++) {
 		polyShapes[i]->draw();
-		
-		ofCircle(polyShapes[i]->getPosition(), 3);
-	}	
-	
+
+		ofDrawCircle(polyShapes[i]->getPosition(), 3);
+	}
+
 	// some debug information
 	string info = "Draw a shape with the mouse\n";
 	info += "Press 1 to add some circles\n";
@@ -97,16 +97,16 @@ void ofApp::draw() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
-	
+
 	if(key == '1') {
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto circle = std::make_shared<ofxBox2dCircle>();
 		circle->setPhysics(0.3, 0.5, 0.1);
 		circle->setup(box2d.getWorld(), mouseX, mouseY, ofRandom(10, 20));
 		circles.push_back(circle);
 	}
-	
+
 	if(key == 't') breakupIntoTriangles = !breakupIntoTriangles;
-	
+
 	if(key == 'c') {
 		shape.clear();
 		polyShapes.clear();
@@ -134,46 +134,54 @@ void ofApp::mousePressed(int x, int y, int button) {
 void ofApp::mouseReleased(int x, int y, int button) {
 
 	if(breakupIntoTriangles) {
-		
+
 		// This is the manual way to triangulate the shape
 		// you can then add many little triangles
-		
+
 		// first simplify the shape
 		shape.simplify();
-		
+
 		// save the outline of the shape
 		ofPolyline outline = shape;
-		
+
 		// resample shape
 		ofPolyline resampled = shape.getResampledBySpacing(25);
-		
+
 		// trangleate the shape, return am array of traingles
 		vector <TriangleShape> tris = triangulatePolygonWithOutline(resampled, outline);
-		
+
 		// add some random points inside
 		addRandomPointsInside(shape, 255);
-		
+
 		// now loop through all the trainles and make a box2d triangle
 		for(int i=0; i<tris.size(); i++) {
-			
-			shared_ptr<ofxBox2dPolygon> triangle = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
-			triangle->addTriangle(tris[i].a, tris[i].b, tris[i].c);
+
+			auto triangle = std::make_shared<ofxBox2dPolygon>();
+			triangle->addTriangle(ofDefaultVertexType(tris[i].a.x,
+																								tris[i].a.y,
+																								0),
+														ofDefaultVertexType(tris[i].b.x,
+																								tris[i].b.y,
+																								0),
+														ofDefaultVertexType(tris[i].c.x,
+																								tris[i].c.y,
+																								0));
 			triangle->setPhysics(1.0, 0.3, 0.3);
 			triangle->create(box2d.getWorld());
 
 			polyShapes.push_back(triangle);
 		}
-	  
+
 	}
 	else {
-		shared_ptr<ofxBox2dPolygon> poly = shared_ptr<ofxBox2dPolygon>(new ofxBox2dPolygon);
+		auto poly = std::make_shared<ofxBox2dPolygon>();
 		poly->addVertices(shape.getVertices());
 		poly->setPhysics(1.0, 0.3, 0.3);
 		poly->triangulatePoly();
 		poly->create(box2d.getWorld());
 		polyShapes.push_back(poly);
 	}
-	
+
 	// done with shape clear it now
 	shape.clear();
 }

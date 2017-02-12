@@ -164,7 +164,7 @@ void ofxBox2dRect::draw() {
 
     ofPushMatrix();
     ofTranslate(ofxBox2dBaseShape::getPosition());
-    ofRotate(getRotation());
+    ofRotateDeg(getRotation());
     // Temporary fix until we switch to OF 0.8.0.
     mesh.draw();
     ofPopMatrix();

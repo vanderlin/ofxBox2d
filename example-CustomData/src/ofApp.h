@@ -46,7 +46,7 @@ public:
 			float radius = getRadius();
 			ofPushMatrix();
 			ofTranslate(getPosition());
-			ofRotateZ(getRotation());
+			ofRotateZDeg(getRotation());
 			ofSetColor(theData->color);
 			ofFill();
 			ofDrawCircle(0, 0, radius);

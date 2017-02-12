@@ -517,7 +517,7 @@ static vector<hPoint> calcConvexHull(vector<hPoint> P) {
 	return H;
 }
 
-static ofPolyline getConvexHull(vector<ofPoint>&linePts){
+static ofPolyline getConvexHull(vector<ofDefaultVertexType>& linePts){
 
     vector < hPoint > ptsIn;
     

@@ -15,14 +15,14 @@ void ofApp::setup() {
 	for(int i=0; i<100; i++) {
 		
 		float r = ofRandom(10, 20);
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto circle = std::make_shared<ofxBox2dCircle>();
 		circle.get()->setPhysics(3.0, 0.53, 0.9);
 		circle.get()->setup(box2d.getWorld(), ofGetWidth()/2, ofGetHeight()/2, r);
 		circles.push_back(circle);
 		
 		float w = ofRandom(4, 20);
 		float h = ofRandom(4, 20);
-		shared_ptr<ofxBox2dRect> rect = shared_ptr<ofxBox2dRect>(new ofxBox2dRect);
+		auto rect = std::make_shared<ofxBox2dRect>();
 		rect.get()->setPhysics(3.0, 0.53, 0.9);
 		rect.get()->setup(box2d.getWorld(), ofGetWidth()/2, ofGetHeight()/2, w, h);
 		boxes.push_back(rect);
@@ -84,7 +84,7 @@ void ofApp::keyPressed(int key) {
 	
 	if(key == 'c') {
 		float r = ofRandom(14, 20);		// a random radius 4px - 20px
-		shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+		auto circle = std::make_shared<ofxBox2dCircle>();
 		circle.get()->setPhysics(3.0, 0.53, 0.9);
 		circle.get()->setup(box2d.getWorld(), mouseX, mouseY, r);
 		circles.push_back(circle);
@@ -93,7 +93,7 @@ void ofApp::keyPressed(int key) {
 	if(key == 'b') {
 		float w = ofRandom(14, 20);	
 		float h = ofRandom(14, 20);	
-		shared_ptr<ofxBox2dRect> rect = shared_ptr<ofxBox2dRect>(new ofxBox2dRect);
+		auto rect = std::make_shared<ofxBox2dRect>();
 		rect.get()->setPhysics(3.0, 0.53, 0.9);
 		rect.get()->setup(box2d.getWorld(), mouseX, mouseY, w, h);
 		boxes.push_back(rect);
