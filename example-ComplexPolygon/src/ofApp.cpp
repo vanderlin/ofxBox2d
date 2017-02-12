@@ -80,7 +80,7 @@ void ofApp::draw() {
 	for(int i=0; i<polyShapes.size(); i++) {
 		polyShapes[i]->draw();
 		
-		ofCircle(polyShapes[i]->getPosition(), 3);
+		ofDrawCircle(polyShapes[i]->getPosition(), 3);
 	}	
 	
 	// some debug information

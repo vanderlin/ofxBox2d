@@ -220,7 +220,7 @@ void ofxBox2dConvexPoly::draw() {
 	
 	ofPushMatrix();
 	ofTranslate(getPosition().x, getPosition().y, 0);
-	ofRotate(getRotation(), 0, 0, 1);
+	ofRotateDeg(getRotation(), 0, 0, 1);
 	ofScale(OFX_BOX2D_SCALE*scale, OFX_BOX2D_SCALE*scale);
 	gpuCachedTesselation.draw();
 	ofPopMatrix();

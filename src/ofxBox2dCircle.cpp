@@ -140,7 +140,7 @@ void ofxBox2dCircle::draw() {
 	
 	ofPushMatrix();
 	ofTranslate(getPosition().x, getPosition().y, 0);
-	ofRotate(getRotation(), 0, 0, 1);
+	ofRotateDeg(getRotation(), 0, 0, 1);
 	ofDrawCircle(0, 0, radius);
 	
     ofPushStyle();

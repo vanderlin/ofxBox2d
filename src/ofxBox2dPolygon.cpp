@@ -290,7 +290,7 @@ void ofxBox2dPolygon::draw() {
 	}
     ofPushMatrix();
     ofTranslate(getPosition());
-    ofRotate(getRotation(), 0, 0, 1);
+    ofRotateDeg(getRotation(), 0, 0, 1);
     mesh.draw();
     ofPopMatrix();
 }
