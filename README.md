@@ -10,6 +10,14 @@ This is a simple wrapper for box2d using Openframeworks. The examples below are 
 Thanks,
 Todd
 
+Installation
+------------
+
+First, pick the branch that matches your version of openFrameworks:
+
+* OF [stable](https://github.com/openframeworks/openFrameworks/tree/stable) (0.9.8): use [ofxBox2d/stable](https://github.com/vanderlin/ofxBox2d/tree/stable)
+* OF [master](https://github.com/openframeworks/openFrameworks) (0.10.0): use [ofxBox2d/master](https://github.com/vanderlin/ofxBox2d/)
+
 Instructions
 ------------
 When making a vector of objects you need to be careful. You either need to make a vector of pointers of use the `shared_ptr` object.     
