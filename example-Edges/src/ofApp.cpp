@@ -150,8 +150,3 @@ void ofApp::mouseReleased(int x, int y, int button) {
 	
 	//lines.clear();
 }
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h) {
-
-}
