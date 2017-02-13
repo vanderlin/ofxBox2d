@@ -21,7 +21,7 @@ First, pick the branch that matches your version of openFrameworks:
 Instructions
 ------------
 
-When making a vector of objects you need to be careful. You either need to make a vector of pointers of use the `shared_ptr` object.     
+When making a vector of objects you need to be careful. You either need to make a vector of pointers or use the `shared_ptr` object.     
     
 Everytime you push into the vector `circles` the object is destroyed and the created.
 This causing issues for the `b2dBody body` object owned by Box2d.       
