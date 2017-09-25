@@ -34,7 +34,7 @@ typedef struct{
 typedef struct {
 	ofVec2f a,b,c;
     void draw() {
-        ofTriangle(a,b,c);
+        ofDrawTriangle(a,b,c);
     }
 } TriangleShape;
 
