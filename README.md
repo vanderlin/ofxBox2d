@@ -1,7 +1,7 @@
 ofxBox2d
 =====================================
 
-![ofxBox2d](http://farm7.staticflickr.com/6010/5964216482_a11debc021_b.jpg)
+[![ofxBox2d](http://farm7.staticflickr.com/6010/5964216482_a11debc021_b.jpg)](https://vimeo.com/26747704)
 
 Introduction
 ------------
