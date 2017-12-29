@@ -474,7 +474,7 @@ dpoint<NumType,D>&
 dpoint<NumType,D>::operator=(const dpoint<NumType,D> &q)
 {
 #ifdef _MSC_VER
-	assert((this != &q), "Error p = p");
+	assert(this != &q);
 #else
 	Assert((this != &q), "Error p = p");
 #endif
