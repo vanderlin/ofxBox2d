@@ -260,7 +260,7 @@ void ofxBox2dBaseShape::addForce(ofVec2f frc, float scale) {
 //------------------------------------------------
 void ofxBox2dBaseShape::addImpulseForce(ofVec2f pt, ofVec2f amt) {
 	if(body != NULL) {
-		body->ApplyLinearImpulse(screenPtToWorldPt(pt), screenPtToWorldPt(amt), true);
+		body->ApplyLinearImpulse(screenPtToWorldPt(amt), screenPtToWorldPt(pt), true);
 	}
 }
 
