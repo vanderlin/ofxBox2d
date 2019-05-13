@@ -27,24 +27,23 @@ This causing issues for the `b2dBody body` object owned by box2d.
   
         
 ***Incorrect way to store objects.***         
-```
+``` c++
 vector <ofxBox2dCircle> circles;
 ofxBox2dCircle circle;
 circles.push_back(circle);
 ```
 
 ***Here is the how to create a vector of box2d objects.***   
-```
+``` c++
 // in your header files
 vector <shared_ptr<ofxBox2dCircle> > circles;
 
-
 // now add a circle to the vector
-shared_ptr<ofxBox2dCircle> circle = shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle);
+auto circle = std::make_shared<ofxBox2dCircle>();
 
 // to grab the pointer you use the get() function of shared_ptr (std::shared_ptr)
-circle.get()->setPhysics(3.0, 0.53, 0.1);
-circle.get()->setup(box2d.getWorld(), 100, 100, 10);
+circle->setPhysics(3.0, 0.53, 0.1);
+circle->setup(box2d.getWorld(), 100, 100, 10);
 circles.push_back(circle);
 ```
 
