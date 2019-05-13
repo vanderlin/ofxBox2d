@@ -16,7 +16,7 @@ public:
 	ofxBox2dCircle();
 	
 	//------------------------------------------------
-	void setup(b2World * b2dworld, float x, float y, float radius);
+	void setup(b2World * b2dworld, float x, float y, float radius, bool is_sensor = false);
 	void setup(b2World * b2dworld, ofVec2f &pts, float radius);
 	
 	//------------------------------------------------

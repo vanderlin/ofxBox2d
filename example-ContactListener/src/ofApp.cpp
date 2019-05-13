@@ -7,7 +7,7 @@ void ofApp::setup() {
 	ofBackgroundHex(0xfdefc2);
 
 	box2d.init();
-	box2d.enableEvents();   // <-- turn on the event listener
+    box2d.enableEvents();   // <-- turn on the event listener
 	box2d.setGravity(0, 10);
 	box2d.createGround();
 	box2d.setFPS(60.0);
@@ -18,12 +18,13 @@ void ofApp::setup() {
 	ofAddListener(box2d.contactEndEvents, this, &ofApp::contactEnd);
 
 	// load the 8 sfx soundfile
-	for(int i=0; i<N_SOUNDS; i++) {
+	for (int i=0; i<N_SOUNDS; i++) {
 		sound[i].load("sfx/"+ofToString(i)+".mp3");
 		sound[i].setMultiPlay(true);
 		sound[i].setLoop(false);
 	}
 }
+
 
 //--------------------------------------------------------------
 void ofApp::contactStart(ofxBox2dContactArgs &e) {
@@ -66,6 +67,8 @@ void ofApp::contactEnd(ofxBox2dContactArgs &e) {
 	}
 }
 
+
+
 //--------------------------------------------------------------
 void ofApp::update() {
 	
@@ -73,21 +76,25 @@ void ofApp::update() {
 	
 	// add some circles every so often
 	if((int)ofRandom(0, 50) == 0) {
-		shared_ptr <ofxBox2dCircle> c = shared_ptr <ofxBox2dCircle>(new ofxBox2dCircle);
-		c.get()->setPhysics(1, 0.5, 0.9);
-		c.get()->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-30, 30), -20, ofRandom(20, 50));
 		
-		c.get()->setData(new SoundData());
-		SoundData * sd = (SoundData*)c.get()->getData();
-		sd->soundID = ofRandom(0, N_SOUNDS);
-		sd->bHit	= false;
-		
-		circles.push_back(c);	
+        auto c = std::make_shared<ofxBox2dCircle>();
+        c->setPhysics(1, 0.5, 0.9);
+        c->setup(box2d.getWorld(), (ofGetWidth()/2)+ofRandom(-30, 30), -20, ofRandom(20, 50));
+
+        c->setData(new SoundData());
+        auto * sd = (SoundData*)c->getData();
+        sd->soundID = ofRandom(0, N_SOUNDS);
+        sd->bHit    = false;
+        
+        circles.push_back(c);
 	}
+
 }
+
 
 //--------------------------------------------------------------
 void ofApp::draw() {
+	
 	
 	for(size_t i=0; i<circles.size(); i++) {
 		ofFill();
@@ -96,9 +103,10 @@ void ofApp::draw() {
 		if(data && data->bHit) ofSetHexColor(0xff0000);
 		else ofSetHexColor(0x4ccae9);
 		
-		
+
 		circles[i].get()->draw();
 	}
+	
 	
 	string info = "";
 	info += "FPS: "+ofToString(ofGetFrameRate(), 1)+"\n";
@@ -109,45 +117,44 @@ void ofApp::draw() {
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	if(key == 't') ofToggleFullscreen();
-	if(key == '1') box2d.enableEvents();
-	if(key == '2') box2d.disableEvents();
+    if(key == '1') box2d.enableEvents();
+    if(key == '2') box2d.disableEvents();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
-
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y) {
+void ofApp::mouseMoved(int x, int y ) {
 	
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button) {
-
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-	shared_ptr <ofxBox2dCircle> c = shared_ptr <ofxBox2dCircle>(new ofxBox2dCircle);
-	c.get()->setPhysics(1, 0.5, 0.9);
-	c.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 50));
-	
-	c.get()->setData(new SoundData());
-	SoundData * sd = (SoundData*)c.get()->getData();
-	sd->soundID = ofRandom(0, N_SOUNDS);
-	sd->bHit    = false;
-	
-	circles.push_back(c);
+    
+    auto c = std::make_shared<ofxBox2dCircle>();
+    c->setPhysics(1, 0.5, 0.9);
+    c->setup(box2d.getWorld(), x, y, ofRandom(20, 50));
+    
+    c->setData(new SoundData());
+    auto * sd = (SoundData*)c->getData();
+    sd->soundID = ofRandom(0, N_SOUNDS);
+    sd->bHit	= false;
+    
+    circles.push_back(c);
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button) {
-
 }
 
 //--------------------------------------------------------------
-void ofApp::resized(int w, int h) {
-
+void ofApp::resized(int w, int h){
 }
+

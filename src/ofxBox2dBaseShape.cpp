@@ -8,6 +8,7 @@
  */
 
 #include "ofxBox2dBaseShape.h"
+#include "ofxBox2d.h"
 
 //----------------------------------------
 ofxBox2dBaseShape::ofxBox2dBaseShape() {
@@ -185,14 +186,33 @@ void ofxBox2dBaseShape::setPosition(float x, float y) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dBaseShape:: - Body is NULL -");
 		return;
 	}
-	body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), 0);
-	body->SetLinearVelocity(b2Vec2(0, 0)); // maybe bring this back...
-	body->SetAwake(true); // this sounds backwards but that is what the doc says todo...
+	body->SetTransform(b2Vec2(toB2d(x), toB2d(y)), body->GetAngle());
+	body->SetAwake(true);
 }
 
 void ofxBox2dBaseShape::setPosition(ofVec2f p) {
 	setPosition(p.x, p.y);
 }
+
+//------------------------------------------------
+ofVec2f ofxBox2dBaseShape::toOf(const b2Vec2 v){
+	float scale = ofxBox2d::getScale();
+	return ofVec2f(v.x * scale, v.y * scale);
+}
+float ofxBox2dBaseShape::toOf(const float f) {
+	float scale = ofxBox2d::getScale();
+	return f * scale;
+}
+
+b2Vec2 ofxBox2dBaseShape::toB2d(const ofVec2f pt) {
+	float scale = ofxBox2d::getScale();
+	return b2Vec2(pt.x / scale, pt.y / scale);
+}
+float ofxBox2dBaseShape::toB2d(const float f) {
+	float scale = ofxBox2d::getScale();
+	return f / scale;
+}
+
 
 //------------------------------------------------ 
 ofVec2f ofxBox2dBaseShape::getPosition() {
@@ -201,26 +221,14 @@ ofVec2f ofxBox2dBaseShape::getPosition() {
         const b2Transform& xf = body->GetTransform();
         b2Vec2 pos      = body->GetLocalCenter();
         b2Vec2 b2Center = b2Mul(xf, pos);
-		p = worldPtToscreenPt(b2Center);
+		p = toOf(b2Center);
     }
 	return p;
 }
 
 //------------------------------------------------
 ofVec2f ofxBox2dBaseShape::getB2DPosition() {
-	return getPosition() / OFX_BOX2D_SCALE;
-}
-
-//------------------------------------------------ 
-ofVec2f ofxBox2dBaseShape::getWorldPosition() {
-	ofVec2f p;
-	if(body != NULL) {
-        const b2Transform& xf = body->GetTransform();
-        b2Vec2 pos      = body->GetWorldCenter();
-        b2Vec2 b2Center = b2Mul(xf, pos);
-		p = worldPtToscreenPt(b2Center);
-    }
-	return p;
+	return getPosition() / ofxBox2d::getScale();
 }
 
 //------------------------------------------------ 
@@ -260,25 +268,14 @@ void ofxBox2dBaseShape::addForce(ofVec2f frc, float scale) {
 //------------------------------------------------
 void ofxBox2dBaseShape::addImpulseForce(ofVec2f pt, ofVec2f amt) {
 	if(body != NULL) {
-		body->ApplyLinearImpulse(screenPtToWorldPt(pt), screenPtToWorldPt(amt), true);
+		body->ApplyLinearImpulse(toB2d(pt), b2Vec2(amt.x, amt.y), true);
 	}
 }
 
 //------------------------------------------------
 void ofxBox2dBaseShape::addRepulsionForce(ofVec2f pt, float radius, float amt) {
-	/*if(body != NULL) {
-	 b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
-	 b2Vec2 D = P - body->GetPosition(); 
-	 if(D.LengthSquared() < minDis) {;
-	 P.Normalize();
-	 b2Vec2 F = amt * D;
-	 body->ApplyForce(F, P);
-	 }
-	 }*/
-	
-	
 	if(body != NULL) {
-		b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+		b2Vec2 P = toB2d(pt);
 		b2Vec2 D = P - body->GetPosition(); 
 		if(D.LengthSquared() < radius) {;
 			P.Normalize();

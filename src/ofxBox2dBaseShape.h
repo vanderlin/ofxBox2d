@@ -10,6 +10,7 @@ public:
 	b2FixtureDef	fixture;
 	b2BodyDef		bodyDef;
 	b2Body*			body;
+    string          name = "unset";
 	
 	bool			alive;
 	bool			setMassFromShape;
@@ -75,8 +76,13 @@ public:
 	//------------------------------------------------ 
 	ofVec2f getPosition();
 	ofVec2f getB2DPosition();
-	ofVec2f getWorldPosition();
 	
+	//------------------------------------------------
+	ofVec2f toOf(const b2Vec2 v);
+	float toOf(const float f);
+	
+	b2Vec2 toB2d(const ofVec2f pt);
+	float toB2d(const float f);
 	
 	//------------------------------------------------ 
 	virtual void setVelocity(float x, float y);

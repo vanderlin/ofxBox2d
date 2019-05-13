@@ -83,3 +83,11 @@ Desktop.ini
 *.log
 *.sql
 *.sqlite
+*.vcxproj.filters
+*.xcodeproj/
+*.vcproj
+libs/Box2D/*.cmake
+libs/Box2D/Documentation
+libs/Box2D/CMakeLists.txt
+libs/liquidfun/.gitignore
+libs/liquidfun/.gitattributes

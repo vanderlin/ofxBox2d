@@ -9,35 +9,7 @@
 
 #include "ofxBox2dConvexPoly.h"
 #include "ofxBox2dPolygon.h"
-
-
-
-
-
-ofPolyline convexHull(ofPolyline & line){
-    
-    vector < hPoint > ptsIn;
-    for (int i = 0; i < line.getVertices().size(); i++){
-        hPoint pt;
-        pt.x = line.getVertices()[i].x;
-        pt.y = line.getVertices()[i].y;
-        
-        ptsIn.push_back(pt);
-    }
-    vector < hPoint > ptsOut;
-    
-    ptsOut =  calcConvexHull(ptsIn);
-    
-    ofPolyline out;
-    
-    for (int i = 0; i < ptsOut.size(); i++){
-        out.addVertex(ofPoint(ptsOut[i].x, ptsOut[i].y));
-    }
-    
-    return out;
-    
-}
-
+#include "ofxBox2d.h"
 
 ////----------------------------------------
 //ofxBox2dConvexPoly::~ofxBox2dPolygon() { 
@@ -49,16 +21,16 @@ ofPolyline convexHull(ofPolyline & line){
 //	//clear();
 //}
 
-
-
 //------------------------------------------------
 ofxBox2dConvexPoly::ofxBox2dConvexPoly() {
 }
 
 //------------------------------------------------
 void ofxBox2dConvexPoly::setup(b2World * b2dworld, ofPolyline & _line){
-
-    ofPolyline line = convexHull(_line);
+	
+	float scale = ofxBox2d::getScale();
+	
+	ofPolyline line = ofxBox2dPolygonUtils::getConvexHull(_line);
     line.getVertices().erase(line.getVertices().end()-1);
     
     
@@ -85,21 +57,21 @@ void ofxBox2dConvexPoly::setup(b2World * b2dworld, ofPolyline & _line){
 
     
     for (int i = 0; i < vertexCount; i++){
-        vertices[i].x /= OFX_BOX2D_SCALE;
-        vertices[i].y /= OFX_BOX2D_SCALE;
+        vertices[i].x /= scale;
+        vertices[i].y /= scale;
     }
     
     ofPoint posCent = ofPoint(200,200) - pos;
     
-    pos /= OFX_BOX2D_SCALE;
-    posCent /= OFX_BOX2D_SCALE;
-    ghettoRadius    /= OFX_BOX2D_SCALE;
+    pos /= scale;
+    posCent /= scale;
+    ghettoRadius    /= scale;
 
 	ofPath path;
 	for (int i = 0; i < vertexCount; i++){
 		vertices[i].x -= pos.x;
 		vertices[i].y -= pos.y;
-		ofDefaultVertexType cur(vertices[i].x, vertices[i].y, 0);
+		glm::vec3 cur(vertices[i].x, vertices[i].y, 0);
 		polyPts.addVertex(cur);
 		path.lineTo(cur);
 	}
@@ -166,8 +138,7 @@ void ofxBox2dConvexPoly::addAttractionPoint (ofVec2f pt, float amt) {
             b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
             
             if(poly) {
-                b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
-                
+                b2Vec2 P = toB2d(pt);
                 for(int i=0; i<poly->GetVertexCount(); i++) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
                     b2Vec2 D = P - qt; 
@@ -198,7 +169,8 @@ void ofxBox2dConvexPoly::addRepulsionForce(ofVec2f pt, float amt) {
             b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
             
             if(poly) {
-                b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+				
+                b2Vec2 P = toB2d(pt);
                 
                 for(int i=0; i<poly->GetVertexCount(); i++) {
                     b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
@@ -217,11 +189,11 @@ void ofxBox2dConvexPoly::addRepulsionForce(ofVec2f pt, float amt) {
 //------------------------------------------------
 void ofxBox2dConvexPoly::draw() {
 	if(!isBody()) return;
-	
+	float scale = ofxBox2d::getScale();
 	ofPushMatrix();
 	ofTranslate(getPosition().x, getPosition().y, 0);
 	ofRotateDeg(getRotation(), 0, 0, 1);
-	ofScale(OFX_BOX2D_SCALE*scale, OFX_BOX2D_SCALE*scale);
+	ofScale(scale, scale);
 	gpuCachedTesselation.draw();
 	ofPopMatrix();
 }

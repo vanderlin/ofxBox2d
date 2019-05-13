@@ -8,8 +8,7 @@
  */
 
 #include "ofxBox2dRect.h"
-
-
+#include "ofxBox2d.h"
 
 //------------------------------------------------
 
@@ -17,36 +16,36 @@ ofxBox2dRect::ofxBox2dRect() {
 }
 
 //------------------------------------------------
-void ofxBox2dRect::setup(b2World * b2dworld, ofRectangle rec) {
-	setup(b2dworld, rec.x, rec.y, rec.width, rec.height);
+void ofxBox2dRect::setup(b2World * b2dworld, ofRectangle rec, float angle) {
+	setup(b2dworld, rec.x, rec.y, rec.width, rec.height, angle);
 }
 
 //------------------------------------------------
-void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h) {
+void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h, float angle) {
 
+	
 	if(b2dworld == NULL) {
 		ofLog(OF_LOG_NOTICE, "- must have a valid world -");
 		return;
 	}
-
+	
     w /= 2;
     h /= 2;
 	width = w; height = h;
 
 	b2PolygonShape shape;
-	shape.SetAsBox(width/OFX_BOX2D_SCALE, height/OFX_BOX2D_SCALE);
-
+	shape.SetAsBox(toB2d(width), toB2d(height));
 	fixture.shape		= &shape;
 	fixture.density		= density;
 	fixture.friction	= friction;
 	fixture.restitution = bounce;
-
+	
 	b2BodyDef bodyDef;
 	if(density == 0.f) bodyDef.type	= b2_staticBody;
 	else               bodyDef.type	= b2_dynamicBody;
-	bodyDef.position.Set(x/OFX_BOX2D_SCALE, y/OFX_BOX2D_SCALE);
-
-
+	bodyDef.position.Set(toB2d(x), toB2d(y));
+	bodyDef.angle = ofDegToRad(angle);
+	
 	body = b2dworld->CreateBody(&bodyDef);
 	body->CreateFixture(&fixture);
 
@@ -65,11 +64,9 @@ static void rectangle(ofPath & path, const ofRectangle & r){
 
 //------------------------------------------------
 void ofxBox2dRect::updateMesh() {
-
     float w = getWidth();
     float h = getHeight();
     ofPath path;
-    // Temporary fix until OF 0.8.0
     rectangle(path, ofRectangle(-w/2, -h/2, w, h));
     mesh.clear();
     mesh = path.getTessellation();
@@ -113,7 +110,7 @@ void ofxBox2dRect::addRepulsionForce(ofVec2f pt, float amt) {
 			b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
 
 			if(poly) {
-				b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+				b2Vec2 P = toB2d(pt);
 				for (int i=0; i<poly->GetVertexCount(); i++) {
 					b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
 					b2Vec2 D = P - qt;
@@ -143,7 +140,7 @@ void ofxBox2dRect::addAttractionPoint (ofVec2f pt, float amt) {
 			b2PolygonShape* poly = (b2PolygonShape*)f->GetShape();
 
 			if(poly) {
-				b2Vec2 P(pt.x/OFX_BOX2D_SCALE, pt.y/OFX_BOX2D_SCALE);
+				b2Vec2 P = toB2d(pt);
 				for (int i=0; i<poly->GetVertexCount(); i++) {
 					b2Vec2 qt = b2Mul(xf, poly->GetVertex(i));
 					b2Vec2 D = P - qt;
@@ -161,11 +158,10 @@ void ofxBox2dRect::draw() {
 	if(body == NULL) {
 		return;
 	}
-
+	
     ofPushMatrix();
     ofTranslate(ofxBox2dBaseShape::getPosition());
     ofRotateDeg(getRotation());
-    // Temporary fix until we switch to OF 0.8.0.
     mesh.draw();
     ofPopMatrix();
 

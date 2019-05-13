@@ -19,11 +19,10 @@ public:
 	void mouseReleased(int x, int y, int button);
 	void windowResized(int w, int h);
 
-	// little helper function to load
-	// point that we saved
-	std::vector<ofDefaultVertexType> loadPoints(const std::string& file);
+    shared_ptr<ofxBox2dPolygon> loadSavedShape(const std::string& file);
 
 	bool                                  breakupIntoTriangles;
+    bool                                  bFill;
 	ofPolyline                            shape;
 	ofxBox2d                              box2d;
 	vector <shared_ptr<ofxBox2dCircle>>   circles;
