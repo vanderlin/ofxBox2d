@@ -2,65 +2,76 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 
+
 // A simple little Data class. This is were
 // you can store anything you want.
 class Data {
 public:
 	ofColor color;
 	string  name;
-	int     id;
+	int		id;
 };
 
-// A Custom Particle extending the box2d circle
+
+// A Custom Particle extedning the box2d circle
 class CustomParticle : public ofxBox2dCircle {
 	
 public:
 	
-	void setupTheCustomData() {
+	CustomParticle(b2World * world, float x, float y, float radius) {
 		
 		static int colors[] = {0xcae72b, 0xe63b8f, 0x2bb0e7};
 		static string abc   = "abcdefghijklmnopqrstuvwxyz";
 		
+        setPhysics(1.0, 0.5, 0.3);
+        setup(world, x, y, radius);
+        setVelocity(ofRandom(-30, 30), ofRandom(-30, 30));
+        
 		// we are using a Data pointer because 
 		// box2d needs to have a pointer not 
 		// a referance
 		setData(new Data());
-		Data * theData = (Data*)getData();
+		auto * theData = (Data*)getData();
 		
 		theData->id = ofRandom(0, 100);
 		theData->name += abc[(int)ofRandom(0, abc.size())];
 		theData->color.setHex(colors[(int)ofRandom(0, 3)]);
 
 		printf("setting the custom data!\n");
+		
 	}
 	
 	void draw() {
-		Data* theData = (Data*)getData();
+		
+        auto * theData = (Data*)getData();
+        
 		if(theData) {
 			
-			// Even though we know the data object, let's just
-			// see how we can get the data out from box2d.
-			// You would use this when using a contact listener
+			// Evan though we know the data object lets just 
+			// see how we can get the data out from box2d
+			// you would use this when using a contact listener
 			// or tapping into box2d's solver.
 			
 			float radius = getRadius();
 			ofPushMatrix();
 			ofTranslate(getPosition());
-			ofRotateZDeg(getRotation());
+			ofRotateDeg(getRotation());
 			ofSetColor(theData->color);
 			ofFill();
 			ofDrawCircle(0, 0, radius);
 			
-			float textSize = radius/10;
-			ofPushMatrix();
-			ofScale(textSize, textSize);
+            float textSize = radius/10;
+            ofPushMatrix();
+            ofScale(textSize, textSize);
 			ofSetColor(255);
-			ofDrawBitmapString(theData->name, -textSize/2, textSize);
-			ofPopMatrix();
-			
+			ofDrawBitmapString(theData->name, -textSize, textSize);
+            ofPopMatrix();
+            
 			ofPopMatrix();
 		}
 	}
+		
+		
 };
 
 // ------------------------------------------------- App
@@ -72,14 +83,14 @@ public:
 	void update();
 	void draw();
 	
-	void keyPressed(int key);
-	void mouseMoved(int x, int y);
+	void keyPressed  (int key);
+	void mouseMoved(int x, int y );
 	void mouseDragged(int x, int y, int button);
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
 	void windowResized(int w, int h);
 	
-	ofxBox2d                             box2d;
-	vector <shared_ptr<CustomParticle> > particles;
+	ofxBox2d                            box2d;
+	vector <shared_ptr<CustomParticle> >		particles;
 	
 };

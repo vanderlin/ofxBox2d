@@ -7,7 +7,7 @@
 //
 
 #include "ofxBox2dEdge.h"
-
+#include "ofxBox2d.h"
 //----------------------------------------
 void ofxBox2dEdge::clear() {
     ofPolyline::clear();
@@ -43,10 +43,9 @@ void ofxBox2dEdge::create(b2World * b2dworld) {
 	body			= b2dworld->CreateBody(&bd);
     
     vector<ofDefaultVertexType>&pts = ofPolyline::getVertices();
-
-    for(int i=1; i<(int)size(); i++) {
+	for(int i=1; i<(int)size(); i++) {
         b2EdgeShape edge;
-        edge.Set(screenPtToWorldPt(pts[i-1]), screenPtToWorldPt(pts[i]));
+		edge.Set(ofxBox2d::toB2d(pts[i-1]), ofxBox2d::toB2d(pts[i]));
         body->CreateFixture(&edge, density);
     }
     mesh.clear();
@@ -81,8 +80,9 @@ void ofxBox2dEdge::addVertexes(ofPolyline &polyline) {
 
 //----------------------------------------
 void ofxBox2dEdge::updateShape() {
+    
     if(body==NULL) return;
-    // const b2Transform& xf = body->GetTransform();
+    
     ofPolyline::clear();
     mesh.clear();
     mesh.setUsage(body->GetType()==b2_staticBody?GL_STATIC_DRAW:GL_DYNAMIC_DRAW);
@@ -92,11 +92,15 @@ void ofxBox2dEdge::updateShape() {
         b2EdgeShape * edge = (b2EdgeShape*)f->GetShape();
         
         if(edge) {
-            ofPolyline::addVertex(worldPtToscreenPt(edge->m_vertex2));
-            ofPolyline::addVertex(worldPtToscreenPt(edge->m_vertex1));
             
-            mesh.addVertex(ofVec3f(worldPtToscreenPt(edge->m_vertex2)));
-            mesh.addVertex(ofVec3f(worldPtToscreenPt(edge->m_vertex1)));
+            ofVec2f a(ofxBox2d::toOf(edge->m_vertex1));
+            ofVec2f b(ofxBox2d::toOf(edge->m_vertex2));
+            
+			ofPolyline::addVertex(a.x, a.y, 0);
+            ofPolyline::addVertex(b.x, b.y, 0);
+            
+            mesh.addVertex(glm::vec3(a.x, a.y, 0));
+            mesh.addVertex(glm::vec3(b.x, b.y, 0));
         }
     }
     
@@ -111,9 +115,7 @@ void ofxBox2dEdge::draw() {
 	if(!bFlagShapeUpdate && body->GetType() != b2_staticBody) {
         printf("Need to update shape first\n");
     }
-    // Temporary fix until we switch to OF 0.8.0.
     mesh.draw();
-    //ofPolyline::draw();
     bFlagShapeUpdate = false;
 }
 

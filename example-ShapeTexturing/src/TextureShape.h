@@ -10,63 +10,57 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 
-static int hexColors[4] = {0x31988A, 0xFDB978, 0xFF8340, 0xE8491B};
-
-class TextureShape {
+class TextureShape : public ofxBox2dPolygon {
   
 public:
-	
-	ofImage    *    texturePtr;
-	ofMesh          mesh;
-	ofColor         color;
-	ofxBox2dPolygon polyShape;
-	
-	TextureShape() {
-		texturePtr = NULL;
-	}
-	
-	void setup(ofxBox2d &world, float cx, float cy, float r) {
-		
-		color.setHex(hexColors[(int)ofRandom(4)]);
-		
-		mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
-		int   nPts  = 8;
-		float scale = r / (float)texturePtr->getWidth();
-		for (int i=0; i<nPts; i++) {
-			float n = ofMap(i, 0, nPts-1, 0.0, TWO_PI);
-			float x = cos(n);
-			float y = sin(n);
-			float d = ofRandom(-r/2, r/2);
-			polyShape.addVertex(ofPoint(cx + (x * r + d), cy + (y * r + d)));
-			mesh.addTexCoord(ofVec2f(0, 0));
-			mesh.addTexCoord(ofVec2f(x * scale, y * scale));
-		}
-		
-		polyShape.setPhysics(0.3, 0.5, 0.1);
-		polyShape.create(world.getWorld());
-	}
-	
-	void setTexture(ofImage * texture) {
-		texturePtr = texture;
-		texturePtr->getTexture().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
-		texturePtr->getTexture().setTextureWrap(GL_REPEAT, GL_REPEAT);
-	}
-	
-	void draw() {
-		
-		mesh.clearVertices();
-		auto& pts = polyShape.getPoints();
-		ofPoint center = polyShape.getCentroid2D();
-		for (int i=0; i<pts.size(); i++) {
-			mesh.addVertex(center);
-			mesh.addVertex(pts[i]);
-		}
-		mesh.addVertex(center);
-		mesh.addVertex(pts.front());
-		
-		ofSetColor(color);
-		texturePtr->bind();
-		mesh.draw();
-		texturePtr->unbind();
-	}
+    
+    shared_ptr<ofTexture>      texture;
+    ofMesh                     mesh;
+    
+    TextureShape(b2World * world, shared_ptr<ofTexture> tex, float cx, float cy, float r) {
+        
+        texture = tex;
+       
+        mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
+        
+        int   nPts  = ofRandom(3, 10);
+        float step = TWO_PI / float(nPts-1);
+        float angle = 0;
+        for (int i=0; i<nPts; i++) {
+            
+            float x = cos(angle);
+            float y = sin(angle);
+           
+            float px = (x * r);
+            float py = (y * r);
+            
+            auto tc = texture->getCoordFromPoint(px, py);
+            
+            addVertex(cx + px, cy + py);
+        
+            mesh.addVertex({0, 0, 0});   mesh.addTexCoord({0.5, 0.5});
+            mesh.addVertex({px, py, 0}); mesh.addTexCoord({tc.x, tc.y});
+            
+            angle += step;
+        }
+        
+        setPhysics(0.3, 0.5, 0.1);
+        create(world);
+        
+    }
+    void draw() {
+        
+        ofPushMatrix();
+        ofTranslate(getPosition());
+        ofRotateDeg(getRotation());
+        
+        ofSetColor(255);
+        
+        texture->bind();
+        mesh.draw();
+        texture->unbind();
+        
+        ofPopMatrix();
+    }
+    
 };

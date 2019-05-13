@@ -18,8 +18,8 @@ public:
 	ofxBox2dRect();	
 	
 	//------------------------------------------------
-	void setup(b2World * b2dworld, ofRectangle rec);
-	void setup(b2World * b2dworld, float x, float y, float w, float h);
+	void setup(b2World * b2dworld, ofRectangle rec, float angle=0);
+	void setup(b2World * b2dworld, float x, float y, float w, float h, float angle=0);
 	   
 	//------------------------------------------------
     float getWidth()  { return width * 2;  }

@@ -11,8 +11,8 @@ class ofxBox2dJoint {
 public:
 	
 	b2World			*	world;
-	b2DistanceJoint *	joint;
-	int					jointType;
+    b2Joint         *   joint;
+    b2JointType         jointType = e_distanceJoint;
 	bool				alive;
 	
 	//----------------------------------------
@@ -26,6 +26,7 @@ public:
 	void setup(b2World* b2world, b2Body* body1, b2Body* body2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
 	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
     void setup(b2World* b2world, b2DistanceJointDef jointDef);
+    void setupMouseJoint(b2World* b2world, b2Body* body1, b2Body* body2, float frequencyHz=4.f, float damping=.5f);
 	
 	//----------------------------------------
 	bool isSetup();
@@ -34,7 +35,9 @@ public:
 	
 	//----------------------------------------
 	// Manipulating the length can lead to non-physical behavior when the frequency is zero.
-	void  setLength(float len);
+	
+    // distance joints only
+    void  setLength(float len);
 	float getLength();
 	
 	void  setFrequency(float freq);
@@ -42,6 +45,9 @@ public:
 	
 	void  setDamping(float ratio);
 	float getDamping();
+    
+    // mouse joints only
+    void  updateTarget();
 	
 	//----------------------------------------
 	ofVec2f getReactionForce(float inv_dt) const;

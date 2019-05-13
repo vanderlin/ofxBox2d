@@ -1,5 +1,6 @@
 /*
 * Copyright (c) 2006-2011 Erin Catto http://www.box2d.org
+* Copyright (c) 2014 Google, Inc.
 *
 * This software is provided 'as-is', without any express or implied
 * warranty.  In no event will the authors be held liable for any damages
@@ -25,8 +26,6 @@
 #include <Box2D/Common/b2StackAllocator.h>
 
 #define B2_DEBUG_SOLVER 0
-
-bool g_blockSolve = true;
 
 struct b2ContactPositionConstraint
 {
@@ -215,7 +214,7 @@ void b2ContactSolver::InitializeVelocityConstraints()
 		}
 
 		// If we have two points, then prepare the block solver.
-		if (vc->pointCount == 2 && g_blockSolve)
+		if (vc->pointCount == 2)
 		{
 			b2VelocityConstraintPoint* vcp1 = vc->points + 0;
 			b2VelocityConstraintPoint* vcp2 = vc->points + 1;
@@ -343,32 +342,29 @@ void b2ContactSolver::SolveVelocityConstraints()
 		}
 
 		// Solve normal constraints
-		if (pointCount == 1 || g_blockSolve == false)
+		if (vc->pointCount == 1)
 		{
-			for (int32 i = 0; i < pointCount; ++i)
-			{
-				b2VelocityConstraintPoint* vcp = vc->points + i;
+			b2VelocityConstraintPoint* vcp = vc->points + 0;
 
-				// Relative velocity at contact
-				b2Vec2 dv = vB + b2Cross(wB, vcp->rB) - vA - b2Cross(wA, vcp->rA);
+			// Relative velocity at contact
+			b2Vec2 dv = vB + b2Cross(wB, vcp->rB) - vA - b2Cross(wA, vcp->rA);
 
-				// Compute normal impulse
-				float32 vn = b2Dot(dv, normal);
-				float32 lambda = -vcp->normalMass * (vn - vcp->velocityBias);
+			// Compute normal impulse
+			float32 vn = b2Dot(dv, normal);
+			float32 lambda = -vcp->normalMass * (vn - vcp->velocityBias);
 
-				// b2Clamp the accumulated impulse
-				float32 newImpulse = b2Max(vcp->normalImpulse + lambda, 0.0f);
-				lambda = newImpulse - vcp->normalImpulse;
-				vcp->normalImpulse = newImpulse;
+			// b2Clamp the accumulated impulse
+			float32 newImpulse = b2Max(vcp->normalImpulse + lambda, 0.0f);
+			lambda = newImpulse - vcp->normalImpulse;
+			vcp->normalImpulse = newImpulse;
 
-				// Apply contact impulse
-				b2Vec2 P = lambda * normal;
-				vA -= mA * P;
-				wA -= iA * b2Cross(vcp->rA, P);
+			// Apply contact impulse
+			b2Vec2 P = lambda * normal;
+			vA -= mA * P;
+			wA -= iA * b2Cross(vcp->rA, P);
 
-				vB += mB * P;
-				wB += iB * b2Cross(vcp->rB, P);
-			}
+			vB += mB * P;
+			wB += iB * b2Cross(vcp->rB, P);
 		}
 		else
 		{
@@ -483,7 +479,6 @@ void b2ContactSolver::SolveVelocityConstraints()
 				//
 				x.x = - cp1->normalMass * b.x;
 				x.y = 0.0f;
-				vn1 = 0.0f;
 				vn2 = vc->K.ex.y * x.x + b.y;
 
 				if (x.x >= 0.0f && vn2 >= 0.0f)
@@ -526,7 +521,6 @@ void b2ContactSolver::SolveVelocityConstraints()
 				x.x = 0.0f;
 				x.y = - cp2->normalMass * b.y;
 				vn1 = vc->K.ey.x * x.y + b.x;
-				vn2 = 0.0f;
 
 				if (x.y >= 0.0f && vn1 >= 0.0f)
 				{
@@ -657,6 +651,15 @@ struct b2PositionSolverManifold
 
 				// Ensure normal points from A to B
 				normal = -normal;
+			}
+			break;
+		default:
+			{
+				// This shouldn't be executed if pc->type is valid.
+				separation = 0.0f;
+				normal = b2Vec2_zero;
+				point = b2Vec2_zero;
+				b2Assert(false);
 			}
 			break;
 		}

@@ -8,6 +8,7 @@
  */
 
 #include "ofxBox2dJoint.h"
+#include "ofxBox2d.h"
 
 //----------------------------------------
 ofxBox2dJoint::ofxBox2dJoint() {
@@ -79,6 +80,33 @@ void ofxBox2dJoint::setup(b2World* b2world, b2DistanceJointDef jointDef) {
 }
 
 //----------------------------------------
+void ofxBox2dJoint::setupMouseJoint(b2World* b2world, b2Body* bodyMouse, b2Body* bodyObj, float frequencyHz, float damping) {
+    jointType = e_mouseJoint;
+    b2MouseJointDef jointDef;
+    
+    jointDef.bodyA = bodyMouse;
+    jointDef.bodyB = bodyObj;
+    jointDef.target = bodyObj->GetWorldCenter();
+    jointDef.maxForce = bodyObj->GetMass()*1000;
+    jointDef.frequencyHz = frequencyHz;
+    jointDef.dampingRatio = damping;
+    
+    
+    setWorld(b2world);
+    
+    joint = world->CreateJoint(&jointDef);
+    
+    alive = true;
+}
+
+void ofxBox2dJoint::updateTarget() {
+    if (joint && jointType == e_mouseJoint) {
+        ((b2MouseJoint *)joint)->SetTarget(joint->GetBodyA()->GetWorldCenter());
+    }
+}
+
+
+//----------------------------------------
 void ofxBox2dJoint::setWorld(b2World* w) {
 	if(w == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dJoint :: setWorld : - box2d world needed -");	
@@ -104,13 +132,9 @@ bool ofxBox2dJoint::isSetup() {
 //----------------------------------------
 void ofxBox2dJoint::draw() {
 	if(!alive) return;
-	
-	b2Vec2 p1 = joint->GetAnchorA();
-	b2Vec2 p2 = joint->GetAnchorB();
-	
-	p1 *= OFX_BOX2D_SCALE;
-	p2 *= OFX_BOX2D_SCALE;
-	ofDrawLine(p1.x, p1.y, p2.x, p2.y);
+	ofVec2f p1 = ofxBox2d::toOf(joint->GetAnchorA());
+	ofVec2f p2 = ofxBox2d::toOf(joint->GetAnchorB());
+	ofDrawLine(p1, p2);
 }
 
 //----------------------------------------
@@ -127,41 +151,41 @@ void ofxBox2dJoint::destroy() {
 
 //----------------------------------------
 void ofxBox2dJoint::setLength(float len) {
-	if(joint) {
-		joint->SetLength((float32)b2dNum(len));
-	}
+    if(joint && jointType == e_distanceJoint) {
+        ((b2DistanceJoint *)joint)->SetLength((float32)ofxBox2d::toB2d(len));
+    }
 }
 float ofxBox2dJoint::getLength() {
-	if(joint) {
-		return (float)joint->GetLength();
-	}
-	return 0;
+    if(joint && jointType == e_distanceJoint) {
+        return (float)((b2DistanceJoint *)joint)->GetLength();
+    }
+    return 0;
 }
 
 //----------------------------------------
 void ofxBox2dJoint::setFrequency(float freq) {
-	if(joint) {
-		joint->SetFrequency((float32)freq);
-	}
+    if(joint && jointType == e_distanceJoint) {
+        ((b2DistanceJoint *)joint)->SetFrequency((float32)freq);
+    }
 }
 float ofxBox2dJoint::getFrequency() {
-	if(joint) {
-		return (float)joint->GetFrequency();
-	}
-	return 0;
+    if(joint && jointType == e_distanceJoint) {
+        return (float)((b2DistanceJoint *)joint)->GetFrequency();
+    }
+    return 0;
 }
 
 //----------------------------------------
 void ofxBox2dJoint::setDamping(float ratio) {
-	if(joint) {
-		joint->SetDampingRatio((float32)ratio);
-	}
+    if(joint) {
+        ((b2DistanceJoint *)joint)->SetDampingRatio((float32)ratio);
+    }
 }
 float ofxBox2dJoint::getDamping() {
-	if(joint) {
-		return (float)joint->GetDampingRatio();
-	}
-	return 0;
+    if(joint && jointType == e_distanceJoint) {
+        return (float)((b2DistanceJoint *)joint)->GetDampingRatio();
+    }
+    return 0;
 }
 
 
