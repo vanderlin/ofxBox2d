@@ -348,9 +348,7 @@ int	ofxBox2d::getBodyCount() {
 
 // ------------------------------------------------------
 int	ofxBox2d::getJointCount() {
-	if(world)
-		return world->GetJointCount();
-	return 0;
+	return world ? world->GetJointCount() : 0;
 }
 
 // ------------------------------------------------------ wake up
@@ -554,8 +552,12 @@ void ofxBox2d::update() {
 		
 	}
 	
-	float timeStep = hz > 0.0f ? 1.0f / hz : 0.0f;
-	world->Step(timeStep, velocityIterations, positionIterations, particleIterations);
+	world->Step(getTimeStep(), velocityIterations, positionIterations, particleIterations);
+}
+
+// ------------------------------------------------------
+float ofxBox2d::getTimeStep() {
+    return hz > 0.0f ? 1.0f / hz : 0.0f;
 }
 
 // ------------------------------------------------------ 
