@@ -123,6 +123,7 @@ namespace ofxBox2dParticleSystem {
 		
 		// these are the possible particle types
 		static vector <string> particleTypesNames;
+        
 	};
 }
 
