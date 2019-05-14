@@ -170,7 +170,6 @@ void ParticleSystem::setMaxParticles(int count) {
 	
 	for(int i=0; i<count; i++) {
 		mesh.addVertex(ofVec3f(-1000, -1000, 0));
-		// mesh.addColor(ofFloatColor(1.0, 1.0, 1.0));
 	}
 	
 	// set the mesh to draw points
@@ -185,7 +184,7 @@ uint32 ParticleSystem::setParticleType(int type) {
 			particleFlag = b2_waterParticle;
 			break;
 		case 1:
-			// particleFlag = b2_zombieParticle;
+             particleFlag = b2_zombieParticle;
 			break;
 		case 2:
 			particleFlag = b2_wallParticle;
