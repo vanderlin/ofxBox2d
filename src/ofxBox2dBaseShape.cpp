@@ -258,7 +258,7 @@ void ofxBox2dBaseShape::setLinearDamping(float f) {
         body->SetLinearDamping(f);
     }
     else {
-        bodyDef.linearDamping = b2Vec2(x, y);
+        bodyDef.linearDamping = f;
     }
 }
 
@@ -268,7 +268,7 @@ void ofxBox2dBaseShape::setAngularDamping(float f) {
         body->SetAngularDamping(f);
     }
     else {
-        bodyDef.angularDamping = b2Vec2(x, y);
+        bodyDef.angularDamping = f;
     }
 }
 
