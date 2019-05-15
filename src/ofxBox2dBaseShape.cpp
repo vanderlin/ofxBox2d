@@ -154,7 +154,12 @@ void ofxBox2dBaseShape::setFilterData(b2Filter filter) {
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::enableGravity(bool b) {
-	//bodyDef.isGravitated = b;
+    if (body) {
+        body->SetGravityScale(b ? 1 : 0);
+    }
+    else {
+        bodyDef.gravityScale = b ? 1 : 0;
+    }
 }
 
 //------------------------------------------------ 
