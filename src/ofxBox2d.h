@@ -143,6 +143,9 @@ public:
 	// number of joints in the world
 	int getJointCount();
 	
+    // get timestep
+    float getTimeStep();
+    
 	// grabbing of shapes with mouse
 	void enableGrabbing()  { bEnableGrabbing = true;  };
 	void disableGrabbing() { bEnableGrabbing = false; };

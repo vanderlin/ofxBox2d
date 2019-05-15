@@ -131,24 +131,29 @@ void ofxBox2d::init(float _hz, float _gx, float _gy) {
 #ifdef TARGET_OPENGLES    
     // touch grabbing
     for( int i=0; i<OF_MAX_TOUCH_JOINTS; i++ )
-		touchJoints[ i ] = NULL;
+		touchJoints[ i ] = nullptr;
     for( int i=0; i<OF_MAX_TOUCH_JOINTS; i++ )
-		touchBodies[ i ] = NULL;
+		touchBodies[ i ] = nullptr;
 #else
     // mouse grabbing
-	mouseJoint = NULL;
-	mouseBody  = NULL;
+	mouseJoint = nullptr;
+	mouseBody  = nullptr;
 #endif
 	
 	// ground/bounds
 	// debug drawer
 	debugRender.setScale(scale);
 	debugRender.SetFlags(1);
-	
+    
+    if(ground) {
+        world->DestroyBody(ground);
+        ground = nullptr;
+    }
+
 	//worldAABB.lowerBound.Set(-100.0f, -100.0f);
 	//worldAABB.upperBound.Set(100.0f, 100.0f);
 	delete world;
-    world = NULL;
+    world = nullptr;
 	world = new b2World(b2Vec2(gravity.x, gravity.y));
     world->SetAllowSleeping(doSleep);
 	//world->SetDebugDraw(&debugRender);
@@ -159,12 +164,6 @@ void ofxBox2d::init(float _hz, float _gx, float _gy) {
 	positionIterations = 3;
 	particleIterations = world->CalculateReasonableParticleIterations(hz);
 	
-	
-	if(ground!=NULL) {
-        world->DestroyBody(ground);
-        ground = NULL;
-    }
-
 	ofLog(OF_LOG_NOTICE, "ofxBox2d:: - world created -");
 }
 
@@ -348,9 +347,7 @@ int	ofxBox2d::getBodyCount() {
 
 // ------------------------------------------------------
 int	ofxBox2d::getJointCount() {
-	if(world)
-		return world->GetJointCount();
-	return 0;
+	return world ? world->GetJointCount() : 0;
 }
 
 // ------------------------------------------------------ wake up
@@ -554,8 +551,12 @@ void ofxBox2d::update() {
 		
 	}
 	
-	float timeStep = hz > 0.0f ? 1.0f / hz : 0.0f;
-	world->Step(timeStep, velocityIterations, positionIterations, particleIterations);
+	world->Step(getTimeStep(), velocityIterations, positionIterations, particleIterations);
+}
+
+// ------------------------------------------------------
+float ofxBox2d::getTimeStep() {
+    return hz > 0.0f ? 1.0f / hz : 0.0f;
 }
 
 // ------------------------------------------------------ 

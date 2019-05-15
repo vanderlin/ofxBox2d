@@ -65,7 +65,6 @@ public:
 	
 	//------------------------------------------------ 
 	virtual void setFixedRotation(bool b);
-	virtual void setRotationFriction(float f);
 	float getRotation();
 	void setRotation(float angle);
 	
@@ -89,9 +88,9 @@ public:
 	virtual void setVelocity(ofVec2f p);
 	ofVec2f getVelocity();
 	
-	//------------------------------------------------ 
-	virtual void setDamping(float f);
-	virtual void setDamping(float fx, float fy);
+    //------------------------------------------------
+    virtual void setLinearDamping(float f);
+    virtual void setAngularDamping(float f);
 	
 	
 	

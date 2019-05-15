@@ -154,17 +154,22 @@ void ofxBox2dBaseShape::setFilterData(b2Filter filter) {
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::enableGravity(bool b) {
-	//bodyDef.isGravitated = b;
+    if (body) {
+        body->SetGravityScale(b ? 1 : 0);
+    }
+    else {
+        bodyDef.gravityScale = b ? 1 : 0;
+    }
 }
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setFixedRotation(bool b) {
-	bodyDef.fixedRotation = b;
-}
-
-//------------------------------------------------ 
-void ofxBox2dBaseShape::setRotationFriction(float f) {
-	bodyDef.angularDamping = f;
+	if(body) {
+        body->SetFixedRotation(b);
+    }
+    else {
+        bodyDef.fixedRotation = b;
+    }
 }
 
 //------------------------------------------------
@@ -236,6 +241,9 @@ void ofxBox2dBaseShape::setVelocity(float x, float y) {
 	if(body != NULL) {
 		body->SetLinearVelocity(b2Vec2(x, y));
 	}
+    else {
+        bodyDef.linearVelocity = b2Vec2(x, y);
+    }
 }
 void ofxBox2dBaseShape::setVelocity(ofVec2f p) {
 	setVelocity(p.x, p.y);
@@ -244,18 +252,25 @@ ofVec2f ofxBox2dBaseShape::getVelocity() {
 	return ofVec2f(body->GetLinearVelocity().x, body->GetLinearVelocity().y);
 }
 
-//------------------------------------------------ 
-void ofxBox2dBaseShape::setDamping(float fx, float fy) {
-	if(body != NULL) {
-		b2Vec2 v = body->GetLinearVelocity();
-		v.x *= fx;	v.y *= fy;
-		body->SetLinearVelocity(v);
-	}
-}
-void ofxBox2dBaseShape::setDamping(float f) {
-	setDamping(f, f);
+//------------------------------------------------
+void ofxBox2dBaseShape::setLinearDamping(float f) {
+    if(body != NULL) {
+        body->SetLinearDamping(f);
+    }
+    else {
+        bodyDef.linearDamping = f;
+    }
 }
 
+//------------------------------------------------
+void ofxBox2dBaseShape::setAngularDamping(float f) {
+    if(body != NULL) {
+        body->SetAngularDamping(f);
+    }
+    else {
+        bodyDef.angularDamping = f;
+    }
+}
 
 //------------------------------------------------
 void ofxBox2dBaseShape::addForce(ofVec2f frc, float scale) {
