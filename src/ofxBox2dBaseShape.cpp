@@ -281,9 +281,9 @@ void ofxBox2dBaseShape::addForce(ofVec2f frc, float scale) {
 }
 
 //------------------------------------------------
-void ofxBox2dBaseShape::addImpulseForce(ofVec2f pt, ofVec2f amt) {
+void ofxBox2dBaseShape::addImpulseForce(ofVec2f point, ofVec2f force) {
 	if(body != NULL) {
-		body->ApplyLinearImpulse(toB2d(pt), b2Vec2(amt.x, amt.y), true);
+		body->ApplyLinearImpulse(b2Vec2(force.x, force.y), toB2d(point), true);
 	}
 }
 

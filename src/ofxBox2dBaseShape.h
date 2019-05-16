@@ -98,7 +98,7 @@ public:
 	virtual void addForce(ofVec2f frc, float scale);
 	
 	//------------------------------------------------
-	virtual void addImpulseForce(ofVec2f pt, ofVec2f amt);
+	virtual void addImpulseForce(ofVec2f point, ofVec2f force);
 	
 	//------------------------------------------------
 	virtual void addRepulsionForce(ofVec2f pt, float radius, float amt);
