@@ -91,27 +91,38 @@ void ofxBox2dBaseShape::create() {}
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setBounce(float val) {
 	bounce = val;
+    if (body) {
+        for (auto * f = body->GetFixtureList(); f; f = f->GetNext()) {
+            f->SetRestitution(bounce);
+        }
+    }
 }
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setDensity(float val) {
-	// -- this is not working ! --
-	/*b2MassData data;
-	 data.mass = 3;
-	 data.center = body->GetPosition();
-	 data.I = body->GetInertia();
-	 body->SetMass(&data);
-	 */
+    density = val;
+    if (body) {
+        for (auto * f = body->GetFixtureList(); f; f = f->GetNext()) {
+            f->SetDensity(density);
+        }
+    }
 }
 
 //----------------------------------------
 void ofxBox2dBaseShape::setFriction(float val) {
-	friction	= val;
+	friction = val;
+    if (body) {
+        for (auto * f = body->GetFixtureList(); f; f = f->GetNext()) {
+            f->SetFriction(friction);
+        }
+    }
 }
 
 //------------------------------------------------ 
 void ofxBox2dBaseShape::setPhysics(float density, float bounce, float friction) {
-	this->density = density; this->bounce = bounce; this->friction = friction;
+    setFriction(friction);
+    setDensity(density);
+    setBounce(bounce);
 }
 
 
@@ -281,9 +292,9 @@ void ofxBox2dBaseShape::addForce(ofVec2f frc, float scale) {
 }
 
 //------------------------------------------------
-void ofxBox2dBaseShape::addImpulseForce(ofVec2f pt, ofVec2f amt) {
+void ofxBox2dBaseShape::addImpulseForce(ofVec2f point, ofVec2f force) {
 	if(body != NULL) {
-		body->ApplyLinearImpulse(toB2d(pt), b2Vec2(amt.x, amt.y), true);
+		body->ApplyLinearImpulse(b2Vec2(force.x, force.y), toB2d(point), true);
 	}
 }
 
