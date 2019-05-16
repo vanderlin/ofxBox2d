@@ -1,9 +1,11 @@
 #include "ofApp.h"
 
+static int colors[] = {0xFFBDBA, 0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
+
 //--------------------------------------------------------------
 void ofApp::setup() {
 	
-	ofBackgroundHex(0xfdefc2);
+	ofBackgroundHex(colors[0]);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
 	ofDisableAntiAliasing();

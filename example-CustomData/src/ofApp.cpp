@@ -1,9 +1,11 @@
 #include "ofApp.h"
 
+static int colors[] = {0xFFBDBA, 0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
+
 //--------------------------------------------------------------
 void ofApp::setup() {
     
-	ofBackgroundHex(0xfdefc2);
+	ofBackgroundHex(colors[0]);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
     ofSetDrawBitmapMode(OF_BITMAPMODE_MODEL);
@@ -30,7 +32,7 @@ void ofApp::draw() {
 	
 	string info = "FPS: "+ofToString(ofGetFrameRate(), 1);
 	info += "\nClick to add particles\nThe letters and color are from the custom data.";
-	ofSetHexColor(0x444342);
+	ofSetColor(20);
 	ofDrawBitmapString(info, 20, 20);
 }
 

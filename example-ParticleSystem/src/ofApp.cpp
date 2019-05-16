@@ -1,9 +1,11 @@
 #include "ofApp.h"
 
+static int colors[] = {0xFFBDBA, 0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
+
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    ofBackground(253, 239, 193);
+    ofBackgroundHex(colors[0]);
     ofSetVerticalSync(true);
     
     box2d.init();
@@ -30,7 +32,7 @@ void ofApp::update(){
     
     if (ofGetFrameNum() == 20) {
         auto rect = make_shared<ofxBox2dRect>();
-        rect->setPhysics(1.2, 1, 0.2);
+        rect->setPhysics(1.2, 0.2, 0.2);
         rect->setup(box2d.getWorld(), ofGetWidth()/2, 100, 200, 200);
         rects.push_back(rect);
     }
@@ -41,7 +43,7 @@ void ofApp::draw(){
 
     particleSystem.updateMesh();
     
-    ofSetColor(247, 199, 54);
+    ofSetHexColor(colors[1]);
     particleSystem.draw();
     
     // get the connections between particles
@@ -58,7 +60,7 @@ void ofApp::draw(){
     }*/
     
     for(auto &rect : rects) {
-        ofSetColor(196, 34, 70);
+        ofSetHexColor(colors[3]);
         ofFill();
         rect->draw();
     }
@@ -68,9 +70,18 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
     if (key == ' ') {
         auto rect = make_shared<ofxBox2dRect>();
-        rect->setPhysics(0.5, 1, 0.2);
+        rect->setPhysics(0.8, 0.2, 0.2);
         rect->setup(box2d.getWorld(), ofGetMouseX(), ofGetMouseY(), ofRandom(10, 50), ofRandom(10, 50));
         rects.push_back(rect);
+    }
+    
+    if (key == '1') {
+        for(int i=0; i<particleSystem.getTotalParticles(); i++) {
+            
+            glm::vec2 center(ofGetWidth()/2, ofGetHeight()/2);
+            
+            particleSystem.addParticle(center.x + ofRandom(-50, 50), center.y + ofRandom(-50, 50));
+        }
     }
 }
 
@@ -111,7 +122,7 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+    box2d.createBounds();
 }
 
 //--------------------------------------------------------------

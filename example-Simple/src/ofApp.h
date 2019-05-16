@@ -10,9 +10,9 @@ public:
     CustomParticle(b2World * world, float x, float y) {
         setPhysics(0.4, 0.53, 0.31);
         setup(world, x, y, ofRandom(3, 10));
-        color.r = ofRandom(20, 100);
-        color.g = 0;
-        color.b = ofRandom(150, 255);
+        
+        color.setHex(0x030692);
+        color.setBrightness(ofRandom(0, 255));
 	}
 	
 	void draw() {

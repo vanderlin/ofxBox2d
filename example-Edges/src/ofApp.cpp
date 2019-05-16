@@ -1,10 +1,12 @@
 #include "ofApp.h"
 
+static int colors[] = {0xFFBDBA, 0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
+
 //--------------------------------------------------------------
 void ofApp::setup() {
 	
     ofDisableAntiAliasing();
-	ofBackgroundHex(0xfdefc2);
+	ofBackgroundHex(colors[0]);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
 	
@@ -66,11 +68,11 @@ void ofApp::draw() {
 	
     for (auto &circle : circles) {
 		ofFill();
-		ofSetHexColor(0xc0dd3b);
+		ofSetHexColor(colors[1]);
 		circle->draw();
 	}
 	
-	ofSetHexColor(0x444342);
+	ofSetHexColor(colors[3]);
 	ofNoFill();
     for (auto &line : lines) {
 		line.draw();
@@ -83,7 +85,7 @@ void ofApp::draw() {
 	info += "Press 1 to add some circles\n";
 	info += "Press c to clear everything\n";
 	
-	ofSetHexColor(0x444342);
+	ofSetColor(20);
 	ofDrawBitmapString(info, 10, 15);
 }
 
@@ -103,7 +105,7 @@ void ofApp::keyPressed(int key) {
 		edges.clear();
 	}
 	
-	/*
+	
 	// want to save out some line...
 	if(key == ' ') {
 		ofstream f;
@@ -118,7 +120,7 @@ void ofApp::keyPressed(int key) {
 			f << "\n";
 		}
 		f.close();lines.clear();
-	}*/
+	}
 }
 
 //--------------------------------------------------------------

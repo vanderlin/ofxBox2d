@@ -20,7 +20,7 @@ public:
 	
 	CustomParticle(b2World * world, float x, float y, float radius) {
 		
-		static int colors[] = {0xcae72b, 0xe63b8f, 0x2bb0e7};
+		static int particlesColors[] = {0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
 		static string abc   = "abcdefghijklmnopqrstuvwxyz";
 		
         setPhysics(1.0, 0.5, 0.3);
@@ -35,7 +35,7 @@ public:
 		
 		theData->id = ofRandom(0, 100);
 		theData->name += abc[(int)ofRandom(0, abc.size())];
-		theData->color.setHex(colors[(int)ofRandom(0, 3)]);
+		theData->color.setHex(particlesColors[int(ofRandom(0, 4))]);
 
 		printf("setting the custom data!\n");
 		

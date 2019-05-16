@@ -1,9 +1,12 @@
 #include "ofApp.h"
 
+static int colors[] = {0xFFBDBA, 0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
+
 //--------------------------------------------------------------
 void ofApp::setup() {
 
-	ofBackgroundHex(0xfdefc2);
+	ofBackgroundHex(colors[0]);
+    
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetVerticalSync(true);
 
@@ -14,7 +17,7 @@ void ofApp::setup() {
 	box2d.setFPS(60.0);
 
 	breakupIntoTriangles = true;
-    bFill = false;
+    bFill = true;
     
 	// load the shapes we saved...
     polyShapes.push_back(loadSavedShape("shape_0.xml"));
@@ -74,15 +77,15 @@ void ofApp::draw() {
 
     for(auto &circle : circles) {
 		ofFill();
-		ofSetHexColor(0xc0dd3b);
+		ofSetHexColor(colors[1]);
 		circle->draw();
 	}
 
-	ofSetHexColor(0x444342);
+	ofSetHexColor(colors[3]);
 	ofFill();
 	shape.draw();
 
-	ofSetHexColor(0x444342);
+	ofSetHexColor(colors[3]);
     bFill ? ofFill() : ofNoFill();
     for(auto & poly : polyShapes) {
         poly->isTriangulated() ? poly->drawTriangles() : poly->draw();
@@ -96,7 +99,7 @@ void ofApp::draw() {
 	info += "Total Bodies: "+ofToString(box2d.getBodyCount())+"\n";
 	info += "Total Joints: "+ofToString(box2d.getJointCount())+"\n\n";
 	info += "FPS: "+ofToString(ofGetFrameRate(), 1)+"\n";
-	ofSetHexColor(0x444342);
+	ofSetColor(20);
 	ofDrawBitmapString(info, 10, 15);
 }
 
@@ -109,6 +112,11 @@ void ofApp::keyPressed(int key) {
 		circle->setup(box2d.getWorld(), mouseX, mouseY, ofRandom(10, 20));
 		circles.push_back(circle);
 	}
+    if(key == '2') {
+        
+        polyShapes.push_back(loadSavedShape("shape_0.xml"));
+        polyShapes.push_back(loadSavedShape("shape_1.xml"));
+    }
 
 	if(key == 't') breakupIntoTriangles = !breakupIntoTriangles;
     if(key == 'b') bFill = !bFill;
@@ -197,5 +205,5 @@ void ofApp::mouseReleased(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h) {
-
+    box2d.createGround();
 }

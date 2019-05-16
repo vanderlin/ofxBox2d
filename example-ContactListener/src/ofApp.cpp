@@ -1,10 +1,12 @@
 #include "ofApp.h"
 
+static int colors[] = {0xFFBDBA, 0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
+
 //--------------------------------------------------------------
 void ofApp::setup() {
 	
 	ofSetVerticalSync(true);
-	ofBackgroundHex(0xfdefc2);
+	ofBackgroundHex(colors[0]);
 
 	box2d.init();
     box2d.enableEvents();   // <-- turn on the event listener
@@ -100,8 +102,8 @@ void ofApp::draw() {
 		ofFill();
 		SoundData * data = (SoundData*)circles[i].get()->getData();
 		
-		if(data && data->bHit) ofSetHexColor(0xff0000);
-		else ofSetHexColor(0x4ccae9);
+		if(data && data->bHit) ofSetHexColor(colors[3]);
+		else ofSetHexColor(colors[1]);
 		
 
 		circles[i].get()->draw();
@@ -110,7 +112,7 @@ void ofApp::draw() {
 	
 	string info = "";
 	info += "FPS: "+ofToString(ofGetFrameRate(), 1)+"\n";
-	ofSetHexColor(0x444342);
+	ofSetColor(20);
 	ofDrawBitmapString(info, 30, 30);
 }
 

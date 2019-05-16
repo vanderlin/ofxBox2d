@@ -1,10 +1,12 @@
 #include "ofApp.h"
 
+static int colors[] = {0xFFBDBA, 0xFFF68D, 0xFF6DA9, 0x030692, 0x1F1F1F};
+
 //--------------------------------------------------------------
 void ofApp::setup() {
 	
 	ofSetVerticalSync(true);
-	ofBackgroundHex(0xfdefc2);
+	ofBackgroundHex(colors[0]);
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofDisableAntiAliasing();
     
@@ -62,13 +64,13 @@ void ofApp::draw() {
 	
     for(auto &circle : circles) {
 		ofFill();
-		ofSetHexColor(0xf6c738);
+		ofSetHexColor(colors[1]);
 		circle->draw();
 	}
 	
     for(auto &box : boxes) {
 		ofFill();
-		ofSetHexColor(0xBF2545);
+		ofSetHexColor(colors[3]);
 		box->draw();
 	}
 	
@@ -81,7 +83,7 @@ void ofApp::draw() {
 	info += "Total Bodies: "+ofToString(box2d.getBodyCount())+"\n";
 	info += "Total Joints: "+ofToString(box2d.getJointCount())+"\n\n";
 	info += "FPS: "+ofToString(ofGetFrameRate(), 1)+"\n";
-	ofSetHexColor(0x444342);
+	ofSetColor(20);
 	ofDrawBitmapString(info, 30, 30);
 }
 
