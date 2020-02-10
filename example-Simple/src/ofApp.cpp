@@ -41,11 +41,11 @@ void ofApp::update() {
 		float minDis   = 100;
 		for(int i=0; i<circles.size(); i++) {
 			circles[i].get()->addAttractionPoint(mouseX, mouseY, strength);
-			circles[i].get()->setDamping(damping, damping);
+			circles[i].get()->setLinearDamping(damping);
 		}
 		for(int i=0; i<customParticles.size(); i++) {
 			customParticles[i].get()->addAttractionPoint(mouseX, mouseY, strength);
-			customParticles[i].get()->setDamping(damping, damping);
+			customParticles[i].get()->setLinearDamping(damping);
 		}
 	}
 	
