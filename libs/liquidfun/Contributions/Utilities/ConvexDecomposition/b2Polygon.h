@@ -21,6 +21,7 @@
 
 #include "Box2D.h"
 #include "b2Triangle.h"
+#include <cstdio>
 
 class b2Polygon;
 
