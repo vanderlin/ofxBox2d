@@ -12,6 +12,10 @@ class ofxBox2dRect : public ofxBox2dBaseShape {
 private:
     float width, height;
     
+    b2Fixture* fixturePtr = nullptr;
+    
+    unique_ptr<b2PolygonShape> shape = nullptr;
+//    b2PolygonShape shape;
 public:
 	ofVboMesh mesh;
 	//------------------------------------------------
@@ -24,6 +28,10 @@ public:
 	//------------------------------------------------
     float getWidth()  { return width * 2;  }
     float getHeight() { return height * 2; }
+    
+    
+    void setRectangle(const ofRectangle& rect);
+    ofRectangle getRect() ;
     
     void updateMesh();
     void draw();

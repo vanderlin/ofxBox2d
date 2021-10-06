@@ -17,41 +17,83 @@ ofxBox2dRect::ofxBox2dRect() {
 
 //------------------------------------------------
 void ofxBox2dRect::setup(b2World * b2dworld, ofRectangle rec, float angle) {
-	setup(b2dworld, rec.x, rec.y, rec.width, rec.height, angle);
+
+        if(b2dworld == NULL) {
+            ofLog(OF_LOG_NOTICE, "- must have a valid world -");
+            return;
+        }
+        
+        width = rec.width/2;
+        height = rec.height/2;
+    
+    
+    
+        auto p = rec.getCenter();
+        b2BodyDef bodyDef;
+        if(density == 0.f) bodyDef.type    = b2_staticBody;
+        else               bodyDef.type    = b2_dynamicBody;
+        auto x = toB2d(p.x);
+        auto y = toB2d(p.y);
+
+        bodyDef.position.Set(x, y);
+        bodyDef.angle = ofDegToRad(angle);
+        
+        body = b2dworld->CreateBody(&bodyDef);
+        
+        setRectangle(rec);
+        
+////        b2PolygonShape shape;
+//        shape = make_unique<b2PolygonShape>();
+//        shape->SetAsBox(toB2d(width), toB2d(height));
+//        fixture.shape        = shape.get();
+//        fixture.density        = density;
+//        fixture.friction    = friction;
+//        fixture.restitution = bounce;
+//
+//        fixturePtr = body->CreateFixture(&fixture);
+//        setPosition(p.x, p.y);
+//
+//        updateMesh();
+        alive = true;
+    
 }
 
 //------------------------------------------------
 void ofxBox2dRect::setup(b2World * b2dworld, float x, float y, float w, float h, float angle) {
-
-	
-	if(b2dworld == NULL) {
-		ofLog(OF_LOG_NOTICE, "- must have a valid world -");
-		return;
-	}
-	
-    w /= 2;
-    h /= 2;
-	width = w; height = h;
-
-	b2PolygonShape shape;
-	shape.SetAsBox(toB2d(width), toB2d(height));
-	fixture.shape		= &shape;
-	fixture.density		= density;
-	fixture.friction	= friction;
-	fixture.restitution = bounce;
-	
-	b2BodyDef bodyDef;
-	if(density == 0.f) bodyDef.type	= b2_staticBody;
-	else               bodyDef.type	= b2_dynamicBody;
-	bodyDef.position.Set(toB2d(x), toB2d(y));
-	bodyDef.angle = ofDegToRad(angle);
-	
-	body = b2dworld->CreateBody(&bodyDef);
-	body->CreateFixture(&fixture);
-
-    updateMesh();
-    alive = true;
+    ofRectangle r;
+    r.setFromCenter(x, y, w, h);
+    setup(b2dworld, r, angle);
 }
+void ofxBox2dRect::setRectangle(const ofRectangle& rect){
+    if(body){
+        if(body->GetFixtureList()){
+            body->DestroyFixture(body->GetFixtureList());
+        }
+        width = rect.width/2;
+        height = rect.height/2;
+        
+        
+        if(shape == nullptr){
+            shape = make_unique<b2PolygonShape>();
+        }
+        
+        
+        shape->SetAsBox(toB2d(width), toB2d(height));
+        fixture.shape        = shape.get();
+        fixture.density      = density;
+        fixture.friction    = friction;
+        fixture.restitution = bounce;
+        
+        fixturePtr = body->CreateFixture(&fixture);
+
+        auto p = rect.getCenter();
+        setPosition(p.x, p.y);
+        
+        updateMesh();
+        
+    }
+}
+
 
 // Temporary fix until OF 0.8.0
 static void rectangle(ofPath & path, const ofRectangle & r){
@@ -205,6 +247,14 @@ void ofxBox2dRect::draw() {
         ofPopStyle();
     }
 	*/
+}
+
+//------------------------------------------------
+ofRectangle ofxBox2dRect::getRect(){
+    ofRectangle r;
+    auto p = getPosition();
+    r.setFromCenter(p.x, p.y, getWidth(), getHeight());
+    return r;
 }
 
 
