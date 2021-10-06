@@ -65,7 +65,8 @@ bool ofxBox2dBaseShape::isBody() {
 }
 
 bool ofxBox2dBaseShape::isFixed() {
-	return density == 0.f ? true : false;
+    return ofIsFloatEqual(density, 0.0f);
+//	return density == 0.f ? true : false;
 }
 
 bool ofxBox2dBaseShape::isSleeping() {
@@ -105,6 +106,7 @@ void ofxBox2dBaseShape::setDensity(float val) {
         for (auto * f = body->GetFixtureList(); f; f = f->GetNext()) {
             f->SetDensity(density);
         }
+        body->ResetMassData();
     }
 }
 
@@ -233,11 +235,13 @@ float ofxBox2dBaseShape::toB2d(const float f) {
 //------------------------------------------------ 
 ofVec2f ofxBox2dBaseShape::getPosition() {
 	ofVec2f p;
-	if(body != NULL) {
+	if(body != nullptr) {
         const b2Transform& xf = body->GetTransform();
         b2Vec2 pos      = body->GetLocalCenter();
         b2Vec2 b2Center = b2Mul(xf, pos);
-		p = toOf(b2Center);
+ 		p = toOf(b2Center);
+    }else{
+        cout << "ofxBox2dBaseShape::getPosition() body is null\n";
     }
 	return p;
 }

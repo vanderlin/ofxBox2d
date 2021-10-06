@@ -164,7 +164,11 @@ void ofxBox2dCircle::draw() {
 
 
 
-
+ofRectangle ofxBox2dCircle::getRect() {
+    ofRectangle r;
+    r.setFromCenter(getPosition(), radius, radius);
+    return r;
+}
 
 
 
