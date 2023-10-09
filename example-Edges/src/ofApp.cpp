@@ -16,7 +16,7 @@ void ofApp::setup() {
 	
 	
 	// load the lines we saved...
-	ifstream f;
+	std::ifstream f;
 	f.open(ofToDataPath("lines.txt").c_str());
 	vector <string> strLines;
 	while (!f.eof()) {
@@ -106,7 +106,7 @@ void ofApp::keyPressed(int key) {
 	/*
 	// want to save out some line...
 	if(key == ' ') {
-		ofstream f;
+		std::ofstream f;
 		f.clear();
 		f.open(ofToDataPath("lines.txt").c_str());
 		for (int i=0; i<lines.size(); i++) {
